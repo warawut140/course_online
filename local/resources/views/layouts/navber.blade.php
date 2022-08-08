@@ -40,7 +40,7 @@
 
 </head>
 <body>
-{{-- begin #navber--}}
+{{-- begin z#navber--}}
     <nav class="navbar navbar-expand-md navbar-light bg-white">
         <h3 class="my-auto"><a class="navbar-brand" href="{{ url('index') }}">
                 <img src="{{ asset('images/logo-color.svg') }}" class="img-fluid" alt="Responsive image"></a>
