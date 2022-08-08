@@ -1,0 +1,6 @@
+.is-collapsed {
+
+  li:nth-child(n+5) {
+    display: none;
+  }
+}

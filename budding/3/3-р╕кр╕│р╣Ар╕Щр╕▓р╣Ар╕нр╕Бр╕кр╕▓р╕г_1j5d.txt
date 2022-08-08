@@ -1,0 +1,32 @@
+น้ำยาแอร์
+- id , brand , name , price
+ท่อร้อนสายไฟ  => product_pipe_wire
+- id , name_type , size_inch , size_mm , price_line , price_m 
+
+ท่อทองแดง  =>   product_
+
+ฉนวนใยแก้ว  =>   product_fiberglass_insulation
+- id , fi_brand_id , fi_brand_name , fi_model , fi_code , fi_density , fi_thickness , fi_size , fi_price1 , fi_price2
+
+ฉนวนยางดำ =>   product_blackrubber_insulation
+- id ,  bi_inch , bi_mm , bi_pipe_steel (null) 
+=> product_bi_detail
+- id , bi_id , bi_d_thickness , bi_d_price  
+
+pvc ท่อน้ำ =>   product_pvc_water_pipe
+- id , pwp_type(1: แบบ pvc , 2: แบบ ข้อต่อ PVC) ,  pwp_type2(เฉพาะ  pwp_type 2 ,  null) , 
+ =>   product_pwp_detail
+- id , pwp_id , pwp_d_class , pwp_d_price , pwp_d_count , pwp_d_laborcost 
+
+
+hdpe งานประปา =>   product_
+
+hdpe งานไฟฟ้า =>   product_
+
+copper tube =>   product_copper_tube
+
+aeroduct  =>   product_aeroduct
+- id , size_inch , size_mm , bareduct (baht/m ,ALP เปลือย) 
+=> product_aeroduct_detail
+- id , aeroduct_id , name , price 
+ 

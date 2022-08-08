@@ -1,0 +1,274 @@
+@extends('layouts.nevber-admin')
+@section('head')
+    @include('sweetalert::alert')
+    <link href="{{ asset('assets/plugins/parsley/src/parsley.css') }}" rel="stylesheet"/>
+    <style>
+        .text-oranger {
+            color: #f2a22f;
+            font-size: 15px;
+        }
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+@endsection
+@section('content')
+    <div id="app">
+        <div id="content" class="content">
+            <!-- begin breadcrumb -->
+            <ol class="breadcrumb pull-right">
+                <li><a href="{{ url('/admin/work') }}">ประกาศงาน</a></li>
+                <li class="active">ดูข้อมูล</li>
+            </ol>
+            <!-- end breadcrumb -->
+            <!-- begin page-header -->
+            <h1 class="page-header"><i class="fa fa-bullhorn"></i> ประกาศงาน</h1>
+            <!-- end page-header -->
+
+            <!-- begin row -->
+            <div class="row">
+                <!-- begin col-12 -->
+                <div class="col-md-12">
+                    <!-- begin panel -->
+                    <div class="panel panel-warning" data-sortable-id="table-basic-7">
+                        <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default"
+                                   data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success"
+                                   data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                            </div>
+                            <h4 class="panel-title">ดูข้อมูล : ประกาศงาน</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="card">
+                                            <div class="card-body p-2 text-center">
+
+                                                <img class="card-img-top rounded-corner"
+                                                     src="{{ asset('images/profile/'.$works->image_profile) }}"
+                                                     alt="Card image cap"
+                                                     style="width:100px;height:100px;object-fit:cover;">
+                                                <h5 class="card-title">{{ $works->firstname }} {{ $works->lastname }}
+                                                    <i class="fa fa-check-square"></i></h5>
+                                                <div class="row">
+                                                    <div class="col-sm-4 text-center">
+                                                        <img src="{{ asset('image/icon-eye.png') }}">
+                                                        <p class="mb-1">เข้าชม</p>
+                                                        <h5>40</h5>
+                                                    </div>
+                                                    <div class="col-sm-4 text-center border-left border-right">
+                                                        <img src="{{ asset('image/icon-boxindex.png') }}">
+                                                        <p class="mb-1">งานที่ได้</p>
+                                                        <h5>5</h5>
+                                                    </div>
+                                                    <div class="col-sm-4 text-center">
+                                                        <img src="{{ asset('image/icon-like.png') }}">
+                                                        <p class="mb-1">สำเร็จ</p>
+                                                        <h5>100%</h5>
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-warning w-100 mt-2"><i
+                                                            class="far fa-comment-dots"></i> ดูประวัติการสนทนา
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <h3> {!! $works->title !!}</h3>
+                                        <hr>
+                                        <h6>หมวดหมู่:
+                                            @foreach($works->tags as $keyB => $dataB)
+                                                <span class="badge badge-primary">{{ $dataB->name }}</span>
+                                            @endforeach
+                                        </h6>
+                                        <p class="text-justify">
+                                            {!! $works->detail_data !!}
+                                        </p>
+
+                                        <!--Gallery-->
+                                        @if($work_gallery != null)
+
+                                            <hr>
+                                            <h4 class="media-heading"><i class="fa fa-file-photo-o"></i> &nbsp;อัมบั้มรูปกิจกรรม
+                                            </h4>
+                                            <br>
+                                            <!-- begin superbox -->
+                                            <div class="superbox" data-offset="54">
+                                                @foreach($work_gallery as $data)
+                                                    <div class="superbox-list">
+                                                        <img src="{{ asset('images/gallery-work/'.$data->filename) }}"
+                                                             data-img="{{ asset('images/gallery-work/'.$data->filename) }}"
+                                                             alt="" class="superbox-img"/>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        @endif
+                                        <hr>
+                                        <h4>รายละเอียดการให้บริการ</h4>
+                                        <div class="card mb-3">
+                                            <div class="card-body">
+                                                @if($services != null)
+                                                    <ul>
+                                                        @foreach($services as $data)
+                                                            <li>{{ $data->detail }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                    <span class="fa-stack fa-2x text-warning">
+                                                        <i class="fa fa-circle-o fa-stack-2x"></i>
+                                                        <i class="fa fa-calendar fa-stack-1x"></i>
+                                                    </span>
+                                                        ระยะเวลาในการทำงาน {{ $works->time_work }} วัน
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                   <span class="fa-stack fa-2x text-warning">
+                                                        <i class="fa fa-circle-o fa-stack-2x"></i>
+                                                        <i class="fa fa-dollar (alias) fa-stack-1x"></i>
+                                                    </span>
+                                                        ราคา THB {{ $works->price }}
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>รายละเอียดราคาเพิ่มเติม</h4>
+                                                <p><b>เพิ่มเติม : </b> {{ $works->detail_price }}</p>
+                                            </div>
+                                        </div>
+                                        @if($procedures != null)
+                                            <div class="mb-5">
+                                                <h4>ขั้นตอนการทำงาน</h4>
+                                                @foreach($procedures as $key => $value)
+                                                    <h6 class="text-oranger">ขั้นตอนที่ {{ $key+1 }}</h6>
+                                                    <p>{!! $value->detail !!}</p>
+                                                @endforeach
+                                                {{--<h6 class="text-oranger">ขั้นตอนที่2</h6>--}}
+                                                {{--<p>Pede augue ipsum, et elit.</p>--}}
+                                                {{--<h6 class="text-oranger">ขั้นตอนที่3</h6>--}}
+                                                {{--<p>Leo platea, est gravida semper.</p>--}}
+                                                {{--<h6 class="text-oranger">ขั้นตอนที่4</h6>--}}
+                                                {{--<p>Tristique semper aliquam, nullam pharetra.</p>--}}
+                                            </div>
+                                        @endif
+
+                                        <div id="list">
+                                            <h4>ความคิดเห็น <span class="text-muted h6">(10)</span></h4>
+                                            <h6 class="text-orange"><span class="fa fa-star"></span> 4.8</h6>
+                                            <div class="card">
+                                                {{--<example-component></example-component>--}}
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item">
+                                                        <div class="media mb-2">
+                                                            <img src="//placehold.it/50x50?text=Img"
+                                                                 class="img-fluid rounded-corner mr-2"
+                                                                 alt="Responsive image">
+                                                            <div class="media-body">
+                                                                <h6 class="mt-0 mb-0 font-weight-light"><b>Username</b>
+                                                                    <span class="text-muted small"> 2 สัปดาห์ที่แล้ว</span>
+                                                                </h6>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            </div>
+                                                        </div>
+                                                        Lorem ipsum dolor sit amet, vestibulum ac, cras placerat.
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="media mb-2">
+                                                            <img src="//placehold.it/50x50?text=Img"
+                                                                 class="img-fluid rounded-corner mr-2"
+                                                                 alt="Responsive image">
+                                                            <div class="media-body">
+                                                                <h6 class="mt-0 mb-0 font-weight-light"><b>Username</b>
+                                                                    <span class="text-muted small"> 2 สัปดาห์ที่แล้ว</span>
+                                                                </h6>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            </div>
+                                                        </div>
+                                                        Lorem ipsum dolor sit amet, vestibulum ac, cras placerat.
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="media mb-2">
+                                                            <img src="//placehold.it/50x50?text=Img"
+                                                                 class="img-fluid rounded-corner mr-2"
+                                                                 alt="Responsive image">
+                                                            <div class="media-body">
+                                                                <h6 class="mt-0 mb-0 font-weight-light"><b>Username</b>
+                                                                    <span class="text-muted small"> 2 สัปดาห์ที่แล้ว</span>
+                                                                </h6>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            </div>
+                                                        </div>
+                                                        Lorem ipsum dolor sit amet, vestibulum ac, cras placerat.
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="media mb-2">
+                                                            <img src="//placehold.it/50x50?text=Img"
+                                                                 class="img-fluid rounded-corner mr-2"
+                                                                 alt="Responsive image">
+                                                            <div class="media-body">
+                                                                <h6 class="mt-0 mb-0 font-weight-light"><b>Username</b>
+                                                                    <span class="text-muted small"> 2 สัปดาห์ที่แล้ว</span>
+                                                                </h6>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            </div>
+                                                        </div>
+                                                        Lorem ipsum dolor sit amet, vestibulum ac, cras placerat.
+                                                    </li>
+                                                    <li class="list-group-item text-center">
+                                                        <a href="" class="text-oranger h5">อ่านความคิดเห็นเพิ่มเติม</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="{{ url('admin/work') }}" class="btn btn-warning"><i class="fa fa-arrow-circle-o-left"></i>
+                        ย้อนกลับ</a>
+                    <!-- end panel -->
+                </div>
+                <!-- end col-12 -->
+            </div>
+            <!-- end row -->
+        </div>
+    </div>
+
+    <script src="{{ asset('js/app.js') }}" ></script>
+
+@endsection
+@section('script')
+    <script src="{{ asset('assets/plugins/superbox/js/superbox.js') }}"></script>
+    <script src="{{ asset('assets/js/gallery-v2.demo.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/superbox/js/superbox.js') }}"></script>
+    <script src="{{ asset('assets/js/gallery-v2.demo.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            App.init();
+            Gallery.init();
+        });
+    </script>
+
+@endsection
