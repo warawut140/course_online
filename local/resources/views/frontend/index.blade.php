@@ -99,7 +99,7 @@
         <h1 class="mb-3 text-center">แนะนำหลักสูตร</span></h1>
         <div class="row text-center">
             <div class="col-xl-6 col-md-6">
-                <a href="{{ url('projectauction') }}">
+                <a href="#">
                     <div class="card mb-3 card-popup1">
                         <div class="card-body">
                             <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
@@ -109,7 +109,7 @@
                 </a>
             </div>
             <div class="col-xl-6 col-md-6">
-                <a href="{{ url('work') }}">
+                <a href="#">
                     <div class="card  mb-3 card-popup2">
                         <div class="card-body">
                             <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
@@ -119,7 +119,7 @@
                 </a>
             </div>
             <div class="col-xl-6 col-md-6">
-                <a href="{{ url('training') }}">
+                <a href="#">
                     <div class="card  mb-3 card-popup3">
                         <div class="card-body">
                             <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
@@ -129,7 +129,7 @@
                 </a>
             </div>
             <div class="col-xl-6 col-md-6">
-                <a href="{{ url('erp-home') }}">
+                <a href="#">
                     <div class="card  mb-3 card-popup4">
                         <div class="card-body">
                             <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
@@ -507,7 +507,7 @@ mining, visualization, and big data, using tools like Excel, R, Hadoop, and Pyth
     </script>
     <style>
         .card-popup1:hover, .card-popup2:hover, .card-popup3:hover, .card-popup4:hover {
-            background-color: #f2a32f;
+            background-color: #504f4b;
             color:#fff;
         }
         .card-popup1:hover h4, .card-popup2:hover h4, .card-popup3:hover h4, .card-popup4:hover h4 {
