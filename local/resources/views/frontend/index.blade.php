@@ -96,7 +96,7 @@
 </div> -->
     <a data-fancybox data-src="#hidden-content-b" href="javascript:" class="btnpopup"></a>
     <div style="display: none;max-width:100%" id="hidden-content-b">
-        <h1 class="mb-3 text-center">แนะนำ<span class="text-orange">ผึ้งงาน</span></h1>
+        <h1 class="mb-3 text-center">แนะนำหลักสูตร</span></h1>
         <div class="row text-center">
             <div class="col-xl-6 col-md-6">
                 <a href="{{ url('projectauction') }}">
@@ -198,7 +198,7 @@
         <div class="container text-center py-4">
             <br>     <br>
  
-            <h3 class=" text-left"><font style="color:black">หลักสูตรที่กำลังเป็นกระแส</font></h3>
+            <h1 class=" text-left"><font style="color:black">หลักสูตรที่กำลังเป็นกระแส</font></h1>
                  <br>     <br>
     
             <div class="row">
@@ -283,9 +283,9 @@
     {{-- end #content 1--}}
 
     {{-- begin #work 1--}}
-    <div id="index-section2" class="bg-light">
+    <div id="index-section2" class="row">
          <div class="col-12">
-        <div class="container text-center py-4">
+        <div class="container text-center py-4" >
           
               <br>     <br>
  
