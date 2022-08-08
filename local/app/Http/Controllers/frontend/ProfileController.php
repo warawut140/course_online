@@ -35,11 +35,16 @@ class ProfileController extends Controller
 
     public function index()
     {
+
+        return redirect()->to('register_company_detail');
+
+
         $profile = Profile::join('bit_coins','bit_coins.profile_id','profiles.id')
                 ->join('users','users.id','=','profiles.user_id')
                 ->select('profiles.*','bit_coins.coins','users.name as username','users.email')
                 ->where('profiles.user_id','=', Auth::user()->id)
                 ->first();
+
         $typeUser1 = ($profile->type_user_id != null)?"ผู้ว่าจ้าง":'';
         $typeUser1_1 = ($profile->type_user_id != null && $profile->type_user_id_2 != null)?"/":'';
         $typeUser1_13 = ($profile->type_user_id != null && $profile->type_user_id_3 != null)?"/":'';
@@ -206,7 +211,7 @@ class ProfileController extends Controller
             ->orderby('project_auctions.countDown', 'asc')
             ->orderby('project_auctions.id', 'desc')
             ->paginate(6, ['*'], 'page_project');
-            
+
         foreach ($projectAuction as $key => $value) {
             $Logview1 = DB::table('project_auctions_air')->where('project_id', $value->id)->get();
             $projectAuction[$key]->sum = count($Logview1);

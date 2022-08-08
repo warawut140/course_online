@@ -39,9 +39,9 @@
                                      </ul>
                                  </div>
                              @endif
-                             <form method="POST" action="{{ url('register_full') }}" id="searchForm"  enctype="multipart/form-data">
+                             <form method="POST" action="{{ route('register') }}" id="searchForm"  enctype="multipart/form-data">
                                  @csrf
-                                 {{-- <div class="form-row align-items-center">
+                                 <div class="form-row align-items-center">
                                      <div class="col-auto">
                                          <label class="form-label" for="inlineFormInput">ประเภท</label>
                                      </div>
@@ -78,19 +78,7 @@
                                              </label>
                                          </div>
                                      </div>
-                                 </div> --}}
-                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">ประเภท</label>
-                                    <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" disabled name="typeAccount1" id="inlineRadio1" value="1">
-                                        <label class="form-check-label" for="inlineRadio1">ผู้เรียน</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="typeAccount1" id="inlineRadio2" value="2">
-                                        <label class="form-check-label" for="inlineRadio2">ผู้ประกอบการ</label>
-                                      </div>
-                                </div>
+                                 </div>
                                  <hr>
                                  <div class="form-row">
                                      <div class="form-group col-md-3">
@@ -99,7 +87,7 @@
                                          <?php
                                          $prefixes = App\Models\Prefix::select('name','id')->get();
                                          ?>
-                                         <select class="form-control" name="prefixe_id" required>
+                                         <select class="form-control" name="prefixe_id">
                                             <option value="">เลือก</option>
                                             @foreach($prefixes as $prefixe)
                                             <option value="{{$prefixe->id}}">{{$prefixe->name}}</option>
@@ -109,21 +97,21 @@
                                      </div>
                                      <div class="form-group col-md-5">
                                          <label for="inputEmail4">ชื่อจริง</label>
-                                         <input name="firstname" type="text" required class="form-control" id="inputEmail4">
+                                         <input name="firstname" type="text" class="form-control" id="inputEmail4">
                                      </div>
                                      <div class="form-group col-md-4">
                                          <label for="inputPassword4">นามสกุล</label>
-                                         <input name="lastname" type="text" required class="form-control" id="inputPassword4">
+                                         <input name="lastname" type="text" class="form-control" id="inputPassword4">
                                      </div>
                                  </div>
                                  <div class="form-group">
                                      <label for="exampleInputEmail1">เบอร์โทร</label>
-                                     <input type="text" class="form-control" required id="exampleInputEmail1" name="tel">
+                                     <input type="text" class="form-control" id="exampleInputEmail1" name="tel">
                                  </div>
                                  <a href="ref"></a>
                                  <div class="form-group">
                                      <label for="exampleInputEmail1">Username</label>
-                                     <input id="name" type="text" required class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                     <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
                                      @if ($errors->has('name'))
                                          <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -132,7 +120,7 @@
                                  </div>
                                  <div class="form-group">
                                      <label for="exampleInputEmail1">อีเมล์</label>
-                                     <input id="email" type="email" required class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                                     <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
                                      @if ($errors->has('email'))
                                          <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>
@@ -141,7 +129,7 @@
                                  </div>
                                  <div class="form-group">
                                      <label for="exampleInputEmail1">รหัสผ่าน</label>
-                                     <input id="password" type="password" required class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                     <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                                      @if ($errors->has('password'))
                                          <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -150,20 +138,20 @@
                                  </div>
                                  <div class="form-group">
                                      <label for="exampleInputEmail1">ยืนยัน รหัสผ่าน</label>
-                                     <input id="password-confirm" required type="password" class="form-control" name="password_confirmation" required>
+                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                                  </div>
                                  <div class="form-group">
                                      <label for="exampleFormControlFile1">รูปประจำตัว</label>
                                      <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imageProfile">
                                  </div>
-                                 {{-- <div class="form-group">
+                                 <div class="form-group">
                                      <label for="exampleFormControlFile1">รูปสำเนาบัตรประชาชน</label>
                                      <input type="file" class="form-control-file" id="exampleFormControlFile1" name="fileCard">
                                  </div>
                                  <div class="form-group">
                                      <label for="exampleFormControlFile1">เอกสารอ้างอิง/ใบอนุญาต เพื่อใช้ยืนยันตัวตน</label>
                                      <input type="file" class="form-control-file" id="exampleFormControlFile1" name="fileProfile">
-                                 </div> --}}
+                                 </div>
                                          <div class="form-group form-check">
                                              <input type="checkbox" class="form-check-input" name="i_accept" id="i_accept">
                                              <label class="form-check-label" for="exampleCheck1">ยอมรับ

@@ -1,6 +1,6 @@
 @extends('layouts.navber')
 @section('head')
-    @include('sweetalert::alert')
+    {{-- @include('sweetalert::alert') --}}
 @endsection
 @section('content')
     <div id="app">
@@ -24,7 +24,7 @@
 
         <!-- Modal  Edit Profile-->
         <div class="modal fade" id="headprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            {!! Form::model($profile,['url' => ['profile/'.$profile->id],'method' => 'put' ,'files'=> true]) !!}
+            {{-- {!! Form::model($profile,['url' => ['profile/'.$profile->id],'method' => 'put' ,'files'=> true]) !!} --}}
                 <input type="hidden" name="type" value="1">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -37,21 +37,21 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Username</label>
-                                {!!  Form::text('username',null,['class' => 'form-control' ]) !!}
+                                {{-- {!!  Form::text('username',null,['class' => 'form-control' ]) !!} --}}
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputEmail4">ชื่อจริง</label>
-                                    {!!  Form::text('firstname',null,['class' => 'form-control' ]) !!}
+                                    {{-- {!!  Form::text('firstname',null,['class' => 'form-control' ]) !!} --}}
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputPassword4">นามสกุล</label>
-                                    {!!  Form::text('lastname',null,['class' => 'form-control' ]) !!}
+                                    {{-- {!!  Form::text('lastname',null,['class' => 'form-control' ]) !!} --}}
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">รูปภาพโปรไฟล์</label>
-                                {!!  Form::file('image_profile',['class' => 'form-control']) !!}
+                                {{-- {!!  Form::file('image_profile',['class' => 'form-control']) !!} --}}
                                 <br>
                                 @if ($profile->image_profile != "")
                                     <center>
@@ -61,19 +61,19 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Email</label>
-                                {!! Form::text('email', old('email'), ['class'=>'form-control']) !!}
+                                {{-- {!! Form::text('email', old('email'), ['class'=>'form-control']) !!} --}}
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">เบอร์โทรติดต่อ</label>
-                                {!!  Form::text('tel',null,['class' => 'form-control' ]) !!}
+                                {{-- {!!  Form::text('tel',null,['class' => 'form-control' ]) !!} --}}
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">จังหวัด</label>
-                                {!!  Form::select('provinces_id', $provinces, null, ['id' => 'provinces_id','class' => 'form-control' , 'placeholder' => 'ทั้งหมด' ]) !!}
+                                {{-- {!!  Form::select('provinces_id', $provinces, null, ['id' => 'provinces_id','class' => 'form-control' , 'placeholder' => 'ทั้งหมด' ]) !!} --}}
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">วัน/เดือน/ปีเกิด</label>
-                                {!!  Form::date('birthday',null,['class' => 'form-control' ]) !!}
+                                {{-- {!!  Form::date('birthday',null,['class' => 'form-control' ]) !!} --}}
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-12">
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-            {!! Form::close() !!}
+            {{-- {!! Form::close() !!} --}}
         </div>
 
         <div id="traning-section2" class="bg-light">
@@ -149,7 +149,7 @@
                             </div>
                             <!-- Modal ยืนยันตัวตน -->
                             <div class="modal fade" id="verify" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                {!! Form::model($profile,['url' => ['profile/'.$profile->id],'method' => 'put' ,'files'=> true]) !!}
+                                {{-- {!! Form::model($profile,['url' => ['profile/'.$profile->id],'method' => 'put' ,'files'=> true]) !!} --}}
                                 <input type="hidden" name="type" value="2">
                                 <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -184,7 +184,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                {!! Form::close() !!}
+                                {{-- {!! Form::close() !!} --}}
                             </div>
                             <div class="card">
                                 <div class="card-header p-2 bg-transparent font-weight-bold">ประสบการณ์การทำงาน <a class="pointer" data-toggle="modal" data-target="#experience"><i class='fas fa-edit'></i></a></div>
@@ -214,7 +214,7 @@
                             </div>
                             <!-- Modal ประสบการณ์การทำงาน-->
                             <div class="modal fade" id="experience" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                {!! Form::model($profile,['url' => ['profile/'.$profile->id],'method' => 'put' ,'files'=> true]) !!}
+                                {{-- {!! Form::model($profile,['url' => ['profile/'.$profile->id],'method' => 'put' ,'files'=> true]) !!} --}}
                                     <input type="hidden" name="type" value="3">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -241,7 +241,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                {!! Form::close() !!}
+                                {{-- {!! Form::close() !!} --}}
                             </div>
                             <div class="modal fade" id="experience2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <form>
@@ -292,7 +292,7 @@
                             </div>
                             <!-- Modal -->
                             <div class="modal fade" id="certifiacte" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                {!! Form::model($profile,['url' => ['profile/'.$profile->id],'method' => 'put' ,'files'=> true]) !!}
+                                {{-- {!! Form::model($profile,['url' => ['profile/'.$profile->id],'method' => 'put' ,'files'=> true]) !!} --}}
                                     <input type="hidden" name="type" value="4">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -351,7 +351,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                {!! Form::close() !!}
+                                {{-- {!! Form::close() !!} --}}
                             </div>
                         </div>
                     </div>

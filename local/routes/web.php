@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +11,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+//Route::get('/welcome', function () {
+//    return view('welcome');
+//});
+
 Auth::routes();
+
+Route::post('/register_full','frontend\RegisterFullController@register');
+Route::get('/register_company_detail','frontend\RegisterFullController@register_company_detail');
+Route::post('/register_company_detail_basic_store','frontend\RegisterFullController@register_company_detail_basic_store');
+Route::get('/register_company_on_web','frontend\RegisterFullController@register_company_on_web');
+
+Route::get('/register_company_job','frontend\RegisterFullController@register_company_job');
+
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontend\HomeController@index')->name('index');
 Route::get('/index', 'frontend\HomeController@index')->name('index');
 Route::resource('/work', 'frontend\WorkController');
