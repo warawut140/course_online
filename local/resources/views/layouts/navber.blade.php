@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="th">
+<style>
+.vl {
+  border-left: 2px solid gray;
+  height: 30px;
+}
+</style>
 <head>
+
     <link rel="icon" href="">
     <title>{{ config('app.title', 'Phungngan') }}</title>
     <!-- Required meta tags -->
@@ -43,22 +50,27 @@
 {{-- begin z#navber--}}
     <nav class="navbar navbar-expand-md navbar-light bg-white">
         <h3 class="my-auto"><a class="navbar-brand" href="{{ url('index') }}">
-                <img src="{{ asset('images/logo-color.svg') }}" class="img-fluid" alt="Responsive image"></a>
+                <img src="{{ asset('images/logowutco.png') }}" class="img-fluid" alt="Responsive image"></a>
         </h3>
+      
+                    <a class="nav-link py-1" href="{{ url('index') }}"><font style="color:black"> คอร์สการเรียนรู้</font></a>
+                
+                    <a class="nav-link py-1" href="{{ url('work') }}"><font style="color:black">การรับสมัครงาน</font></a>
+  
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse flex-md-column" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto small mb-2" style="background-color:#efefef">
+            <!-- <ul class="navbar-nav ml-auto small mb-2" style="background-color:#efefef">
                 <li class="nav-item {{ Request::segment(1) === 'howtouse' ? 'active' : null }}">
                     <a class="nav-link py-1" href="{{ url('howtouse') }}">คู่มือการใช้งาน</a>
                 </li>
                 <li class="nav-item {{ Request::segment(1) === 'payment' ? 'active' : null }}">
                     <a class="nav-link py-1" href="{{ url('payment') }}">ช่องทางการชำระเงิน</a>
                 </li>
-            </ul>
+            </ul> -->
             <ul class="navbar-nav ml-auto  mb-2 mb-md-0">
-                <li class="nav-item {{ Request::segment(1) === 'index' ? 'active' : null }}{{ Request::segment(1) === 'search' ? 'active' : null }}" >
+                <!-- <li class="nav-item {{ Request::segment(1) === 'index' ? 'active' : null }}{{ Request::segment(1) === 'search' ? 'active' : null }}" >
                     <a class="nav-link py-1" href="{{ url('index') }}">หน้าแรก</a>
                 </li>
                 <li class="nav-item {{ Request::segment(1) === 'work' ? 'active' : null }}{{ Request::segment(1) === 'searchWork' ? 'active' : null }}">
@@ -70,17 +82,20 @@
                 <li class="nav-item {{ Request::segment(1) === 'training' ? 'active' : null }}
                                     {{ Request::segment(1) === 'course' ? 'active' : null }}">
                     <a class="nav-link py-1" href="{{ url('training') }}">อบรมและสาระ</a>
-                </li>
+                </li> -->
                 <li class="nav-item {{ Request::segment(1) === 'suggest' ? 'active' : null }}">
-                    <a class="nav-link py-1" href="{{ url('suggest') }}">ปรึกษาและแนะนำ</a>
+                    <a class="nav-link py-1">เข้าร่วมเลย</a>
                 </li>
+                 <div class="vl"></div>
+               
                 @if (Auth::guest())
+                 <li class="nav-item {{ Request::segment(1) === 'register' ? 'active' : null }}">
+                        <a class="nav-link py-1" href="{{ url('register') }}">ลงชื่อเข้าใช้</a>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link py-1 btn-warning" href="{{ url('login') }}">เข้าสู่ระบบ</a>
+                        <a class="nav-link py-1 btn-danger" href="{{ url('login') }}"><font style="color:white"> ผู้ประกอบการเข้าสู่ระบบ</font></a>
                     </li>
-                    <li class="nav-item {{ Request::segment(1) === 'register' ? 'active' : null }}">
-                        <a class="nav-link py-1" href="{{ url('register') }}">สมัครสมาชิก?</a>
-                    </li>
+                   
                 @else
                      <li class="nav-item dropdown {{ Request::segment(1) === 'profile' ? 'active' : null }}">
                         <a class="nav-link py-1 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
