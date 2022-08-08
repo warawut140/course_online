@@ -507,7 +507,7 @@ mining, visualization, and big data, using tools like Excel, R, Hadoop, and Pyth
     </script>
     <style>
         .card-popup1:hover, .card-popup2:hover, .card-popup3:hover, .card-popup4:hover {
-            background-color: #504f4b;
+            background-color: #8B0900;
             color:#fff;
         }
         .card-popup1:hover h4, .card-popup2:hover h4, .card-popup3:hover h4, .card-popup4:hover h4 {
