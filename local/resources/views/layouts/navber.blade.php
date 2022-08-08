@@ -147,7 +147,7 @@
     @yield('content')
 <!-- end #content -->
 {{-- begin #Footer--}}
-    <div id="section-footer" class="bg-black">
+    {{-- <div id="section-footer" class="bg-black">
         <div class="container py-4">
             <div class="row">
                 <div class="col-sm-4">
@@ -181,7 +181,7 @@
     </div>
     <div id="" class="text-white text-center bg-gray p-2">
         <span class="font-weight-light small">© Copyright. All Right Reserved 2018 by Phungngan</span>
-    </div>
+    </div> --}}
 {{-- end #Footer--}}
 
 @yield('script')

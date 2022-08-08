@@ -116,17 +116,8 @@
             background-color: #8B0900;
             /* background-image: url("{{ asset('image/bg.png') }}"); */
         }
-
-        .row_new {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    /* margin-right: -15px; */
-    /* margin-left: -15px; */
-}
     </style>
-    <div class="row_new bg-light2">
+    <div class="row bg-light2">
         <div class="col-md-5">
             <h1 class="center_text" style="color:white;">Welcome to <br>Online education & job</h1>
         </div>

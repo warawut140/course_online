@@ -11,11 +11,18 @@
             }
         }
     </script>
+    <style>
+          .bg-light2 {
+            background-color: #8B0900;
+            background-image: url("{{ asset('image/bg.png') }}");
+        }
+
+    </style>
 @endsection
 @section('content')
     <div id="app">
      {{--begin #register --}}
-     <div id="register-section1" class="bg-light">
+     <div id="register-section1" class="bg-light2">
          <div class="container py-5">
              <div class="row">
                  <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
