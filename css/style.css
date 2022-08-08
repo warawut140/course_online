@@ -187,13 +187,13 @@ table.planner td.user-name {
     Font color
 ------------------------------------------*/
 .text-orange {
-    color: #f2b42f;
+    color: #504f4b;
 }
 .card-text {
-    color: #636363;
+    color: #504f4b;
 }
 .text-oranger {
-    color: #f2a22f;
+    color: #504f4b;
 }
 /*------------------------------------------
     Button
@@ -921,7 +921,7 @@ table.quiz th {
 }
 .box-train {
     background-color: #fff;
-    border: 1px solid #f2a32f;
+    border: 1px solid #1b1a56;
     padding: 10px;
 }
 .box-test {

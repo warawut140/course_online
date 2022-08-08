@@ -5,6 +5,16 @@
   border-left: 2px solid gray;
   height: 30px;
 }
+.buttonred {
+  background-color: while;
+  border: 1px solid red;
+  font-size: 0.9em;
+    padding: 8px 10px;
+ 
+  border-radius: 50px;
+ 
+}
+
 </style>
 <head>
 
@@ -55,7 +65,8 @@
       
                     <a class="nav-link py-1" href="{{ url('index') }}"><font style="color:black"> คอร์สการเรียนรู้</font></a>
                 
-                    <a class="nav-link py-1" href="{{ url('work') }}"><font style="color:black">การรับสมัครงาน</font></a>
+                    <a class="nav-link py-1" href="#"><font style="color:black">การรับสมัครงาน</font></a>
+                     <!-- <a class="nav-link py-1" href="{{ url('work') }}"><font style="color:black">การรับสมัครงาน</font></a> -->
   
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -84,13 +95,13 @@
                     <a class="nav-link py-1" href="{{ url('training') }}">อบรมและสาระ</a>
                 </li> -->
                 <li class="nav-item {{ Request::segment(1) === 'suggest' ? 'active' : null }}">
-                    <a class="nav-link py-1">เข้าร่วมเลย</a>
+                    <div class="nav-link py-1">เข้าร่วมเลย</div>
                 </li>
                  <div class="vl"></div>
                
                 @if (Auth::guest())
                  <li class="nav-item {{ Request::segment(1) === 'register' ? 'active' : null }}">
-                        <a class="nav-link py-1" href="{{ url('register') }}">ลงชื่อเข้าใช้</a>
+                        <a class="nav-link py-1 buttonred redd" href="{{ url('register') }}"><font style="color:red">ลงชื่อเข้าใช้</font></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link py-1 btn-danger" href="{{ url('login') }}"><font style="color:white"> ผู้ประกอบการเข้าสู่ระบบ</font></a>
