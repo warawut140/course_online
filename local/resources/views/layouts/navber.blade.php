@@ -19,12 +19,12 @@
 <head>
 
     <link rel="icon" href="">
-    <title>{{ config('app.title', 'Phungngan') }}</title>
+    <title>{{ config('app.title', 'Course Online') }}</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link type="image/ico" rel="shortcut icon" href="{{ asset('image/favicon.ico') }}" sizes="32x32">
+    <link type="image/ico" rel="shortcut icon" href="{{ asset('image/faviconx.ico') }}" sizes="32x32">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
