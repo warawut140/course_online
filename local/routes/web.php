@@ -18,7 +18,7 @@
 Auth::routes();
 
 Route::post('/register_full','frontend\RegisterFullController@register');
-Route::get('/register_company_detail','frontend\RegisterFullController@register_company_detail');
+Route::get('/register_company_detail/{type?}','frontend\RegisterFullController@register_company_detail');
 Route::post('/register_company_detail_basic_store','frontend\RegisterFullController@register_company_detail_basic_store');
 Route::get('/register_company_on_web','frontend\RegisterFullController@register_company_on_web');
 
