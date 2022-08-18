@@ -15,7 +15,7 @@
     <style>
         .bg-light2 {
             /* background-color: #8B0900;
-                                    background-image: url("{{ asset('image/bg.png') }}"); */
+                                        background-image: url("{{ asset('image/bg.png') }}"); */
             /* clear: both; */
         }
 
@@ -32,6 +32,24 @@
 
         .select2-container .select2-selection--single {
             height: 30px;
+        }
+
+        .input-group-text {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 0.375rem 0.75rem;
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #ffffff;
+            text-align: center;
+            white-space: nowrap;
+            background-color: #8B0900;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
         }
     </style>
 @endsection
@@ -92,8 +110,12 @@
                         @include('auth.tab.job')
                     @endif
                     @if ($type == 'receive')
-                    @include('auth.tab.receive')
-                @endif
+                        @include('auth.tab.receive')
+                    @endif
+
+                    @if ($type == 'course')
+                        @include('auth.tab.course')
+                    @endif
                 </div>
             </div>
         </div>

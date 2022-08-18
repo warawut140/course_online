@@ -1,6 +1,7 @@
 <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
     <br>
-    <h4 style="color:#8B0900;">ADD A JOB DESCRIPTION</h4>
+    <h4 style="color:#8B0900;">How would you like to
+        receive your applicants?</h4>
     <div class="card">
         <div class="card-body">
             {{-- <h5 class="card-title text-center">สมัครสมาชิก</h5> --}}
