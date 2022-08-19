@@ -75,6 +75,10 @@ Route::get('/faq', 'frontend\FaqController@index');
 //Route::get('/profile', 'frontend\ProfileController@index');
 Route::resource('/profile', 'frontend\ProfileController');
 
+Route::get('/profilecompany', function () {
+   return view('frontend/profilecompany');
+});
+
 Route::get('/chat', 'ChatController@index')->name('chat');
 Route::get('/chat/{id}', 'ChatController@chat');
 Route::get('/message/{id}', 'ChatController@getMessage')->name('message');
