@@ -2,7 +2,8 @@
 @section('head')
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     {{-- <script src="https://rawgit.com/vuejs/vue/dev/dist/vue.js"></script> --}}
-    <script>
+    <link href="{{ asset('select2/select2.min.css') }}" rel="stylesheet">
+    {{-- <script>
         function checkTypeUser(id) {
             if (id == 2) {
                 $('#typeUser').show();
@@ -10,11 +11,11 @@
                 $('#typeUser').hide();
             }
         }
-    </script>
+    </script> --}}
     <style>
         .bg-light2 {
             /* background-color: #8B0900;
-                        background-image: url("{{ asset('image/bg.png') }}"); */
+                                        background-image: url("{{ asset('image/bg.png') }}"); */
             /* clear: both; */
         }
 
@@ -28,10 +29,31 @@
             color: black;
             border-bottom: 1px solid #d9d9d9;
         }
+
+        .select2-container .select2-selection--single {
+            height: 30px;
+        }
+
+        .input-group-text {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 0.375rem 0.75rem;
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #ffffff;
+            text-align: center;
+            white-space: nowrap;
+            background-color: #8B0900;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
     </style>
 @endsection
 @section('content')
-
     <div id="app">
 
         {{-- begin #register --}}
@@ -40,16 +62,34 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <a class="nav-link active" id="v-pills-home-tab"  href="{{url('register_company_detail')}}"
-                                role="tab" aria-controls="v-pills-home" aria-selected="true">BASIC INFORMATION</a>
-                            <a class="nav-link" id="v-pills-profile-tab"  href="{{url('register_company_on_web')}}"
-                                role="tab" aria-controls="v-pills-profile" aria-selected="false">ON THE WEB</a>
-                            <a class="nav-link" id="v-pills-messages-tab"  href="{{url('register_company_job')}}"
-                                role="tab" aria-controls="v-pills-messages" aria-selected="false">Add a job
+                            <a class="nav-link <?php if ($type == '') {
+                                echo 'active';
+                            } ?>" id="v-pills-home-tab"
+                                href="{{ url('register_company_detail') }}" role="tab" aria-controls="v-pills-home"
+                                aria-selected="true">BASIC INFORMATION</a>
+                            <a class="nav-link <?php if ($type == 'web') {
+                                echo 'active';
+                            } ?>" id="v-pills-profile-tab"
+                                href="{{ url('register_company_detail/web') }}" role="tab"
+                                aria-controls="v-pills-profile" aria-selected="false">ON THE WEB</a>
+                            <a class="nav-link <?php if ($type == 'job') {
+                                echo 'active';
+                            } ?>" id="v-pills-messages-tab"
+                                href="{{ url('register_company_detail/job') }}" role="tab"
+                                aria-controls="v-pills-messages" aria-selected="false">Add a job
                                 description</a>
-                            <a class="nav-link" id="v-pills-settings-tab"  href="#v-pills-settings"
-                                role="tab" aria-controls="v-pills-settings" aria-selected="false">How would you like to
+                            <a class="nav-link <?php if ($type == 'receive') {
+                                echo 'active';
+                            } ?>" id="v-pills-settings-tab"
+                                href="{{ url('register_company_detail/receive') }}" role="tab"
+                                aria-controls="v-pills-settings" aria-selected="false">How would you like to
                                 receive your applicants?
+                            </a>
+                            <a class="nav-link <?php if ($type == 'course') {
+                                echo 'active';
+                            } ?>" id="v-pills-settings-tab"
+                                href="{{ url('register_company_detail/course') }}" role="tab"
+                                aria-controls="v-pills-settings" aria-selected="false">course
                             </a>
                         </div>
                         {{-- <div class="tab-content" id="v-pills-tabContent">
@@ -60,147 +100,65 @@
                           </div> --}}
                     </div>
 
-                    <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
-                        <h4 style="color:#8B0900;">BASIC INFORMATION</h4>
-                        <div class="card">
-                            <div class="card-body">
-                                {{-- <h5 class="card-title text-center">สมัครสมาชิก</h5> --}}
-                                @if (count($errors) > 0)
-                                    <div class="alert alert-danger">
-                                        <strong>Whoops!</strong> There were some problems with your input.
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
-                                <form method="POST" action="{{ url('register_company_detail_basic_store') }}" id="searchForm"
-                                    enctype="multipart/form-data">
-                                    @csrf
+                    @if ($type == '')
+                        @include('auth.tab.basic')
+                    @endif
+                    @if ($type == 'web')
+                        @include('auth.tab.on_web')
+                    @endif
+                    @if ($type == 'job')
+                        @include('auth.tab.job')
+                    @endif
+                    @if ($type == 'receive')
+                        @include('auth.tab.receive')
+                    @endif
 
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">ชื่อบริษัท</label>
-                                        <input type="text" class="form-control"  id="exampleInputEmail1"
-                                            name="tel">
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">ID</label>
-                                            <input name="firstname" type="text"  class="form-control"
-                                                id="inputEmail4">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4">รหัสผ่าน</label>
-                                            <input name="lastname" type="text"  class="form-control"
-                                                id="inputPassword4">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">ผลิตภัณฑ์/บริการ</label>
-                                            <input name="firstname" type="text"  class="form-control"
-                                                id="inputEmail4">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4">จำนวนพนักงานทั้งหมด</label>
-                                            <input name="lastname" type="text"  class="form-control"
-                                                id="inputPassword4">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">เลขที่จดแจ้ง</label>
-                                            <input name="firstname" type="text"  class="form-control"
-                                                id="inputEmail4">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4">เบอร์โทรติดต่อสำนักงาน</label>
-                                            <input name="lastname" type="text"  class="form-control"
-                                                id="inputPassword4">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">วันทำงาน</label>
-                                            <input name="firstname" type="text"  class="form-control"
-                                                id="inputEmail4">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4">วันหยุด</label>
-                                            <input name="lastname" type="text" class="form-control">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">สถานที่ตั้ง</label>
-                                        <textarea type="text" class="form-control" name="ssxx"></textarea>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label for="inputEmail4">ธนาคาร</label>
-                                                <input name="firstname" type="text"  class="form-control"
-                                                    id="inputEmail4">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="inputPassword4">เลขบัญชี <span style="color:rgb(47, 137, 255); font-size:10px;">ส่วนนี้สำหรับการโอนรายได้ค่าคอร์สเรียน</span></label>
-                                                <input name="lastname" type="text" class="form-control">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleFormControlFile1">รูปภาพเกี่ยวกับบริษัทเพิ่มเติม</label>
-                                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imageProfile">
-                                        </div>
-                                        <div class="form-group" >
-                                            <button type="submit" style="background-color: #8B0900; color:white;" class="btn  w-100">Submit</button>
-                                         </div>
-                                    </form>
-                                </div>
-                            </div>
-                    </div>
-
-                    </div>
+                    @if ($type == 'course')
+                        @include('auth.tab.course')
+                    @endif
                 </div>
             </div>
-
-            <!-- Modal ข้อตกลงและเงื่อนไข-->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">ข้อตกลงและเงื่อนไข</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true"><i class="material-icons">&#xe5cd;</i></span>
-                            </button>
-                        </div>
-                        <div class="modal-body text-justify">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                            anim id est laborum
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- end #register --}}
         </div>
-        {{-- <script src="/js/app.js" charset="utf-8"></script> --}}
-        <script src="{{ asset('js/app.js') }}"></script>
+
+        <!-- Modal ข้อตกลงและเงื่อนไข-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ข้อตกลงและเงื่อนไข</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="material-icons">&#xe5cd;</i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-justify">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- end #register --}}
+    </div>
+    {{-- <script src="/js/app.js" charset="utf-8"></script> --}}
+    <script src="{{ asset('js/app.js') }}"></script>
 @endsection
 @section('script')
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('select2/select2.min.js') }}"></script>
+
     <script type="text/javascript">
         $(document).ready(function() {
-            // console.log( "ready!" );
-            // console.log($('#otp').val());
-            $('#typeUser').hide();
+            // $('#typeUser').hide();
+            $('.select2').select2({
+                width: '100%',
+            });
+            // CKEDITOR.replace('detail_scope');
+
         });
 
 
@@ -216,9 +174,9 @@
             });
         });
     </script>
-        <script>
-            $('.bg-light').css({
-                'min-height': $(window).height() - $('.navbar').height() - $('#section-footer').height()
-            });
-        </script>
+    <script>
+        $('.bg-light').css({
+            'min-height': $(window).height() - $('.navbar').height() - $('#section-footer').height()
+        });
+    </script>
 @endsection

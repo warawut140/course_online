@@ -19,24 +19,16 @@ class RegisterFullController extends Controller
         return view('frontend.faq');
     }
 
-    public function register_company_detail()
+    public function register_company_detail($type='')
     {
-        return view('auth.register_company_detail');
+            return view('auth.register_company_detail',[
+                'type'=>$type,
+            ]);
     }
 
     public function register_company_detail_basic_store(Request $r)
     {
         return redirect()->to('register_company_on_web');
-    }
-
-    public function register_company_on_web()
-    {
-        return view('auth.register_company_detail_on_web');
-    }
-
-    public function register_company_job()
-    {
-        return view('auth.register_company_detail_job');
     }
 
 
