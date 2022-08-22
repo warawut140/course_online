@@ -24,21 +24,24 @@
   margin-right: 200px;
   margin-left: 200px;
 }
+.circleco{
+    color:gray;
+        border-radius: 50%;
+           border: 2px solid gray;
+}
         .bg-light2 {
             /* background-color: #8B0900;
-                                            background-image: url("{{ asset('image/bg.png') }}"); */
+                                        background-image: url("{{ asset('image/bg.png') }}"); */
             /* clear: both; */
         }
 
         .nav-pills .nav-link.active,
         .nav-pills .show>.nav-link {
-            color: #fff;
-            background-color: #8B0900;
+            border-left: 15px solid #8B0900;
+                 background-color: white;
+                     color: black;
         }
-     .gray {
-            color: #fff;
-            background-color: #8B0900;
-        }
+
         .nav-pills a.nav-link {
             color: black;
             border-bottom: 1px solid #d9d9d9;
@@ -65,35 +68,10 @@
             border: 1px solid #ced4da;
             border-radius: 0.25rem;
         }
-        .input-group-text2 {
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-align: center;
-            align-items: center;
-            padding: 0.375rem 0.75rem;
-            margin-bottom: 0;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #ffffff;
-            text-align: center;
-            white-space: nowrap;
-            background-color: #f8f8f8;
-            border: 1px solid #ced4da;
-            border-radius: 0.25rem;
-        }
     </style>
 @endsection
 @section('content')
     <div id="app" class="main">
-
-        @if(session('success'))
-        <div class="p-3 mb-2 bg-success text-white success text-center">{{session('success')}}</div>
-        @endif
-
-        @if(session('error'))
-        <div class="p-3 mb-2 bg-danger text-white error text-center">{{session('error')}}</div>
-        @endif
 
         {{-- begin #register --}}
         <div id="register-section1" class="bg-light2">
@@ -104,31 +82,29 @@
                             <a class="nav-link <?php if ($type == '') {
                                 echo 'active';
                             } ?>" id="v-pills-home-tab"
-                                href="{{ url('register_company_detail') }}" role="tab" aria-controls="v-pills-home"
+                                href="{{ url('register_user_detail') }}" role="tab" aria-controls="v-pills-home"
                                 aria-selected="true">BASIC INFORMATION</a>
                             <a class="nav-link <?php if ($type == 'web') {
                                 echo 'active';
                             } ?>" id="v-pills-profile-tab"
-                                href="{{ url('register_company_detail/web') }}" role="tab"
+                                href="{{ url('register_user_detail/web') }}" role="tab"
                                 aria-controls="v-pills-profile" aria-selected="false">ON THE WEB</a>
                             <a class="nav-link <?php if ($type == 'job') {
                                 echo 'active';
                             } ?>" id="v-pills-messages-tab"
-                                href="{{ url('register_company_detail/job') }}" role="tab"
-                                aria-controls="v-pills-messages" aria-selected="false">Add a job
-                                description</a>
+                                href="{{ url('register_user_detail/job') }}" role="tab"
+                                aria-controls="v-pills-messages" aria-selected="false">ABOUT ME</a>
                             <a class="nav-link <?php if ($type == 'receive') {
                                 echo 'active';
                             } ?>" id="v-pills-settings-tab"
-                                href="{{ url('register_company_detail/receive') }}" role="tab"
-                                aria-controls="v-pills-settings" aria-selected="false">How would you like to
-                                receive your applicants?
+                                href="{{ url('register_user_detail/receive') }}" role="tab"
+                                aria-controls="v-pills-settings" aria-selected="false">Education
                             </a>
                             <a class="nav-link <?php if ($type == 'course') {
                                 echo 'active';
                             } ?>" id="v-pills-settings-tab"
-                                href="{{ url('register_company_detail/course') }}" role="tab"
-                                aria-controls="v-pills-settings" aria-selected="false">COURSE
+                                href="{{ url('register_user_detail/course') }}" role="tab"
+                                aria-controls="v-pills-settings" aria-selected="false">WORK EXPERIENCE
                             </a>
                         </div>
                         {{-- <div class="tab-content" id="v-pills-tabContent">
@@ -140,20 +116,20 @@
                     </div>
 
                     @if ($type == '')
-                        @include('auth.tab.basic')
+                        @include('auth.usertab.basic')
                     @endif
                     @if ($type == 'web')
-                        @include('auth.tab.on_web')
+                        @include('auth.usertab.on_web')
                     @endif
                     @if ($type == 'job')
-                        @include('auth.tab.job')
+                        @include('auth.usertab.job')
                     @endif
                     @if ($type == 'receive')
-                        @include('auth.tab.receive')
+                        @include('auth.usertab.receive')
                     @endif
 
                     @if ($type == 'course')
-                        @include('auth.tab.course')
+                        @include('auth.usertab.course')
                     @endif
                 </div>
             </div>
@@ -198,15 +174,7 @@
             });
             // CKEDITOR.replace('detail_scope');
 
-            setTimeout(function() {
-                $('.success').hide()
-            }, 2000);
-            setTimeout(function() {
-                $('.error').hide()
-            }, 2000);
-
         });
-
 
 
         $(function() {

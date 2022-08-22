@@ -83,9 +83,10 @@ Route::resource('/profile', 'frontend\ProfileController');
 Route::get('/profilecompany', function () {
    return view('frontend/profilecompany');
 });
+('frontend/worklist');
+});
 
-Route::get('/chat', 'ChatController@index')->name('chat');
-Route::get('/chat/{id}', 'ChatController@chat');
+'ChatController@chat');
 Route::get('/message/{id}', 'ChatController@getMessage')->name('message');
 Route::post('message', 'ChatController@sendMessage');
 
