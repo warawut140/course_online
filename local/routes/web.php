@@ -84,7 +84,9 @@ Route::get('/profilecompany', function () {
    return view('frontend/profilecompany');
 });
 
-
+Route::get('/worklist', function () {
+   return view('frontend/worklist');
+});
 
 
 Route::get('/chat', 'ChatController@index')->name('chat');

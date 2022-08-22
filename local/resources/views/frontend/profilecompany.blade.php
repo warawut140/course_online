@@ -1,4 +1,4 @@
-@extends('layouts.navbercompany')
+@extends('layouts.navber')
 @section('head')
     {{-- @include('sweetalert::alert') --}}
 @endsection
