@@ -81,14 +81,13 @@ Route::get('/faq', 'frontend\FaqController@index');
 Route::resource('/profile', 'frontend\ProfileController');
 
 Route::get('/profilecompany', function () {
-   return view('frontend/profilecompany');
-});
-('frontend/worklist');
-});
+    return view('frontend/profilecompany');
+ });
 
-'ChatController@chat');
-Route::get('/message/{id}', 'ChatController@getMessage')->name('message');
-Route::post('message', 'ChatController@sendMessage');
+ Route::get('/worklist', function () {
+    return view('frontend/worklist');
+ });
+
 
 
 Route::post('/search', 'frontend\HomeController@search');
