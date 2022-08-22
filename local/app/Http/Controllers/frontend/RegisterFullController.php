@@ -26,6 +26,14 @@ class RegisterFullController extends Controller
             ]);
     }
 
+ 
+    public function register_user_detail($type='')
+    {
+            return view('auth.register_user_detail',[
+                'type'=>$type,
+            ]);
+    }
+
     public function register_company_detail_basic_store(Request $r)
     {
         return redirect()->to('register_company_on_web');

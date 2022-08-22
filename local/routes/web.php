@@ -23,7 +23,12 @@ Route::post('/register_company_detail_basic_store','frontend\RegisterFullControl
 Route::get('/register_company_on_web','frontend\RegisterFullController@register_company_on_web');
 
 Route::get('/register_company_job','frontend\RegisterFullController@register_company_job');
+// Route::get('/register_user_detail', function () {
+//    return view('frontend/register_user_detail');
+// });
+Route::get('/register_user_detail/{type?}','frontend\RegisterFullController@register_user_detail');
 
+Route::get('/register_user_job/{type?}','frontend\RegisterFullController@register_user_job');
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontend\HomeController@index')->name('index');
 Route::get('/index', 'frontend\HomeController@index')->name('index');
@@ -78,6 +83,9 @@ Route::resource('/profile', 'frontend\ProfileController');
 Route::get('/profilecompany', function () {
    return view('frontend/profilecompany');
 });
+
+
+
 
 Route::get('/chat', 'ChatController@index')->name('chat');
 Route::get('/chat/{id}', 'ChatController@chat');
