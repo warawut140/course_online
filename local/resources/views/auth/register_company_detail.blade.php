@@ -15,7 +15,7 @@
     <style>
         .bg-light2 {
             /* background-color: #8B0900;
-                                        background-image: url("{{ asset('image/bg.png') }}"); */
+                                            background-image: url("{{ asset('image/bg.png') }}"); */
             /* clear: both; */
         }
 
@@ -51,10 +51,35 @@
             border: 1px solid #ced4da;
             border-radius: 0.25rem;
         }
+        .input-group-text2 {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 0.375rem 0.75rem;
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #ffffff;
+            text-align: center;
+            white-space: nowrap;
+            background-color: #f8f8f8;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
     </style>
 @endsection
 @section('content')
     <div id="app">
+
+        @if(session('success'))
+        <div class="p-3 mb-2 bg-success text-white success text-center">{{session('success')}}</div>
+        @endif
+
+        @if(session('error'))
+        <div class="p-3 mb-2 bg-danger text-white error text-center">{{session('error')}}</div>
+        @endif
 
         {{-- begin #register --}}
         <div id="register-section1" class="bg-light2">
@@ -89,7 +114,7 @@
                                 echo 'active';
                             } ?>" id="v-pills-settings-tab"
                                 href="{{ url('register_company_detail/course') }}" role="tab"
-                                aria-controls="v-pills-settings" aria-selected="false">course
+                                aria-controls="v-pills-settings" aria-selected="false">COURSE
                             </a>
                         </div>
                         {{-- <div class="tab-content" id="v-pills-tabContent">
@@ -159,7 +184,15 @@
             });
             // CKEDITOR.replace('detail_scope');
 
+            setTimeout(function() {
+                $('.success').hide()
+            }, 2000);
+            setTimeout(function() {
+                $('.error').hide()
+            }, 2000);
+
         });
+
 
 
         $(function() {

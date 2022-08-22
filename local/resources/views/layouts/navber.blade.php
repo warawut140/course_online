@@ -10,9 +10,9 @@
   border: 1px solid red;
   font-size: 0.9em;
     padding: 8px 10px;
- 
+
   border-radius: 50px;
- 
+
 }
 
 </style>
@@ -62,12 +62,12 @@
         <h3 class="my-auto"><a class="navbar-brand" href="{{ url('index') }}">
                 <img src="{{ asset('images/logowutco.png') }}" class="img-fluid" alt="Responsive image"></a>
         </h3>
-      
+
                     <a class="nav-link py-1" href="{{ url('index') }}"><font style="color:black"> คอร์สการเรียนรู้</font></a>
-                
+
                     <a class="nav-link py-1" href="#"><font style="color:black">การรับสมัครงาน</font></a>
                      <!-- <a class="nav-link py-1" href="{{ url('work') }}"><font style="color:black">การรับสมัครงาน</font></a> -->
-  
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -98,7 +98,7 @@
                     <div class="nav-link py-1">เข้าร่วมเลย</div>
                 </li>
                  <div class="vl"></div>
-               
+
                 @if (Auth::guest())
                  <li class="nav-item {{ Request::segment(1) === 'register' ? 'active' : null }}">
                         <a class="nav-link py-1 buttonred redd" href="{{ url('register') }}"><font style="color:red">ลงชื่อเข้าใช้</font></a>
@@ -106,7 +106,7 @@
                     <li class="nav-item">
                         <a class="nav-link py-1 btn-danger" href="{{ url('login') }}"><font style="color:white"> ผู้ประกอบการเข้าสู่ระบบ</font></a>
                     </li>
-                   
+
                 @else
                      <li class="nav-item dropdown {{ Request::segment(1) === 'profile' ? 'active' : null }}">
                         <a class="nav-link py-1 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -114,7 +114,8 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 {{--                            <a class="dropdown-item" href="{{ url('erp-home') }}"><i class='fas fa-shopping-cart'></i> ผู้จัดชื้อ / ร้านค้า</a>--}}
-                            <a class="dropdown-item" href="{{ url('profile') }}"><i class='fas fa-user-alt'></i> ข้อมูลโปรไฟล์</a>
+                            <a class="dropdown-item" href="{{ url('profilecompany') }}"><i class='fas fa-user-alt'></i> ข้อมูลโปรไฟล์</a>
+                            <a class="dropdown-item" href="{{ url('profile') }}"><i class='fas fa-gear'></i> ตั้งค่าข้อมูลบริษัท</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

@@ -32,7 +32,8 @@
 
                             <div class="form-group" >
                                 {{-- <button type="submit" class="btn btn-outline-success w-100">บันทึก</button> --}}
-                                <button class="btn btn-outline-primary">+ เพิ่มคอร์สเรียน</button>
+                                {{-- <button class="btn btn-outline-primary">+ เพิ่มคอร์สเรียน</button> --}}
+                                <a class="btn btn-outline-primary" href="{{url('course_add')}}">+ เพิ่มคอร์สเรียน</a>
                              </div>
 
                     {{-- <div class="form-group" >

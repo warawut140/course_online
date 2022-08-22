@@ -17,12 +17,17 @@
 
 Auth::routes();
 
+Route::group(['middleware' => ['web','auth']], function () {
+    Route::get('/register_company_detail/{type?}','frontend\RegisterFullController@register_company_detail');
+    Route::get('/course_add','frontend\CourseNewController@course_add');
+    Route::post('/course_store','frontend\CourseNewController@course_store');
+    Route::get('/job_add','frontend\JobNewController@job_add');
+    Route::post('/job_store','frontend\JobNewController@job_store');
+    Route::get('/job_view/{id}','frontend\JobNewController@job_view');
+    Route::get('/job_delete/{id}','frontend\JobNewController@job_delete');
+    Route::post('/register_company_detail_basic_store','frontend\RegisterFullController@register_company_detail_basic_store');
+});
 Route::post('/register_full','frontend\RegisterFullController@register');
-Route::get('/register_company_detail/{type?}','frontend\RegisterFullController@register_company_detail');
-Route::post('/register_company_detail_basic_store','frontend\RegisterFullController@register_company_detail_basic_store');
-Route::get('/register_company_on_web','frontend\RegisterFullController@register_company_on_web');
-
-Route::get('/register_company_job','frontend\RegisterFullController@register_company_job');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontend\HomeController@index')->name('index');
