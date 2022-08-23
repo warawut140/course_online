@@ -116,8 +116,12 @@ Route::get('/profilecompany', function () {
 Route::get('/worklist', function () {
    return view('frontend/worklist');
 });
-
-
+Route::get('/interes_course', function () {
+   return view('frontend/interes_course');
+});
+ Route::get('/findjob', function () {
+    return view('frontend/findjob');
+ });
 Route::get('/chat', 'ChatController@index')->name('chat');
 Route::get('/chat/{id}', 'ChatController@chat');
 Route::get('/message/{id}', 'ChatController@getMessage')->name('message');

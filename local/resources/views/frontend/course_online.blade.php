@@ -160,6 +160,7 @@
                 <br>
                 <div class="opcenter">
                     <div id="accordion">
+
                         @foreach($chapter as $key => $chap)
                         <div class="card">
                             <div class="card-header" id="headingOne">
