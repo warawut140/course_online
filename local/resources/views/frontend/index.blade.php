@@ -380,7 +380,7 @@
                     <div class="hotclass_slide owl-carousel owl-theme">
                         @foreach ($courses_trending as $c)
                             <div class="item">
-                                <a href="{{ url('projectauction') }}">
+                                <a href="{{ url('course_online_view/'.$c->id) }}">
                                     {{-- <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-2"> --}}
                                     <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
                                 </a>
@@ -428,7 +428,7 @@
                 <br> <br>
                 <div class="hotclass_slide owl-carousel owl-theme">
                     <div class="item">
-                        <a href="{{ url('projectauction') }}">
+                        <a href="javascript:;">
                             <img src="{{ asset('images/2c.png') }}" style=""class="mw-100 mb-3">
                         </a>
                         <h4 class="text-orange"></h4>
@@ -523,7 +523,7 @@
 
                 @foreach ($courses_trending as $key=> $c)
                 <div class="item">
-                    <a href="{{ url('projectauction') }}">
+                    <a href="{{ url('course_online_view/'.$c->id) }}">
                         <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number{{$key+1}}.png"
                                 alt="" class="lazy"></span>
                         <img src="{{ asset('images/profile/'.$c->image) }}" class="mw-100 mb-2">
@@ -625,7 +625,7 @@
             <div class="hotclass_slide owl-carousel owl-theme">
                 @foreach ($courses_trending as $c)
                 <div class="item">
-                    <a href="{{ url('projectauction') }}">
+                    <a href="{{ url('course_online_view/'.$c->id) }}">
                         <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
                     </a>
                     <h6 class="text-orange text-left">{{ $c->name }}</h6>
@@ -677,7 +677,7 @@
 
                 @foreach ($courses_trending as $c)
                 <div class="item">
-                    <a href="{{ url('projectauction') }}">
+                    <a href="{{ url('course_online_view/'.$c->id) }}">
                         <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
                     </a>
                     <h6 class="text-orange text-left">{{ $c->name }}</h6>

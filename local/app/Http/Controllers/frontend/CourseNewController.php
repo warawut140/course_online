@@ -217,6 +217,7 @@ class CourseNewController extends Controller
                 $list->course_free = $r->course_free;
                 $list->actby = Auth::guard('web')->user()->name;
                 $list->course_time = $r->course_time;
+                $list->course_order = $r->course_order;
 
                 if (!empty($r->course_video)) {
                     if ($r->hasFile('course_video') != '') {
@@ -225,6 +226,15 @@ class CourseNewController extends Controller
                         $r->file('course_video')->move(public_path() . '/images/profile/', $course_video);
                     }
                     $list->course_video = $course_video;
+                }
+
+                if (!empty($r->course_image)) {
+                    if ($r->hasFile('course_image') != '') {
+                        File::delete(public_path() . '/images/profile/' . $course->course_image);
+                        $course_image = 'profile_'.$course->id.date('YmdHis')."cover.".$r->file('course_image')->getClientOriginalExtension();
+                        $r->file('course_image')->move(public_path() . '/images/profile/', $course_image);
+                    }
+                    $list->course_image = $course_image;
                 }
 
                 $list->save();
@@ -440,6 +450,39 @@ class CourseNewController extends Controller
         }
 
         return redirect()->to('workshop_view/'.$r->chapter_id.'/'.$question_detail->id)->with('success','บันทึกข้อมูลสำเร็จ');
+    }
+
+    public function course_online_view($course_id)
+    {
+        $course = Course::where('id',$course_id)->first();
+        if(!$course){
+            return redirect()->back()->with('error','ไม่พบข้อมูล');
+        }
+        $chapter = CourseChapter::where('course_id',$course_id)->orderBy('order','asc')->get();
+
+            return view('frontend.course_online',[
+                'course' => $course,
+                'chapter' => $chapter,
+            ]);
+    }
+
+    public function course_online_inside_view($course_list_id)
+    {
+        $list = CourseList::where('id',$course_list_id)->first();
+        if(!$list){
+            return redirect()->back()->with('error','ไม่พบข้อมูล');
+        }
+        $course = Course::where('id',$list->course_id)->first();
+        if(!$course){
+            return redirect()->back()->with('error','ไม่พบข้อมูล');
+        }
+        $course_list = CourseList::where('course_id',$course->id)->where('chapter_id',$list->chapter_id)->get();
+
+            return view('frontend.course_online_inside',[
+                'course' => $course,
+                'course_list' => $course_list,
+                'list' => $list,
+            ]);
     }
 
 }

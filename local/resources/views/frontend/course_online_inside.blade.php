@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-<style> 
+<style>
 .main {
     width: 90%;
   margin-right: 20px;
@@ -22,18 +22,18 @@ img.center {
 .optop {
    text-align: center;
       padding: 10px;
-       
+
 }
 .left {
    text-align: left;
     margin-left: 80px;
-      margin-Right: 20px;  
+      margin-Right: 20px;
 }
 .right {
    text-align: right;
    margin-top: 10px;
     margin-Right: 80px;
-      margin-left: 20px;   
+      margin-left: 20px;
 }
 .op2center {
    text-align: center;
@@ -49,8 +49,8 @@ img.center {
       padding: 10px;
         margin: auto;
         color:  #8B0900;
-    
-    
+
+
       font-style: normal;
 }
 .circle {
@@ -103,12 +103,11 @@ img.center {
 }
 </style>
         {{-- begin #Profile --}}
-    
-         <video style="  width: 100%;" controls src="{{ asset('images/training/video/video_training_EB2q8.MP4') }}" >
 
+         <video style="  width: 100%;" controls src="{{ asset('images/profile/'.$list->course_video) }}" >
 </video>
                <br>
- 
+
   <div class="main opcenter">
 
         <div class="row">
@@ -150,94 +149,41 @@ tr:nth-child(even) {
 
 <br>
 		<h4 class="left" style="color: black;" >เนื้อหาหลักสูตร</h4>
-   
+
  				<br>
                     <div class="opcenter">
                   <div class="card-body">
+@foreach($course_list as $key => $c)
        {{-- start #course --}}
-       <div class="course"><br>
+       <div class="course <?php if($c->id == $list->id){echo 'active';} ?>"><br>
  <div class="row ">
          <div class="col-1">
-          <h5>1</h5>
+          <h5>{{$c->course_order}}</h5>
         </div>
       <div class="col-2">
-          <a href="{{ url('course_online_inside') }}">
-                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
+          <a href="{{ url('course_online_inside_view/'.$c->id) }}">
+                        <img src="{{ asset('images/profile/'.$c->course_image) }}" class="mw-100 mb-3">
                     </a>
           </div>
  <div class="col-7">
           <div class="row">
          <div class="col-12 left">
-          <h5>เรียนรู้การใช้งาน React ร่วมกับ API</h5>
+          <h5>{{$c->course_name}}</h5>
         </div>
       <div class="col-12 left">
-       <p>  หลักสูตรนี้คุณจะได้เรียนรู้การการประยุกต์ใช้งาน React สำหรับการสร้างเว็บแอพพลิเคชั่น
-ซึ่งมีทั้งหมด 15 แอพพลิเคชั่นด้วยกันรวมอยู่ในคอร์สเดียว สามารถนำไปต่อยอดในการนำ 
-React ไปใช้งานจริง ในคอร์สนี้นอกจากคุณจะได้เรียนเรื่อง React แล้ว </p>
+       <p> {{$c->course_detail}}</p>
 
           </div>
           </div> </div>
 <div class="col-2">
-    01 : 30 นาที
+    {{$c->course_time}} นาที
        </div>
       </div>  </div> {{-- end #course --}}
-       {{-- start #course --}}
-        <div class="course active"><br>
- <div class="row">
-         <div class="col-1">
-          <h5>2</h5>
-        </div>
-      <div class="col-2">
-          <a href="{{ url('course_online_inside') }}">
-                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                    </a>
-          </div>
- <div class="col-7">
-          <div class="row">
-         <div class="col-12 left">
-          <h5>เรียนรู้การใช้งาน React ร่วมกับ API</h5>
-        </div>
-      <div class="col-12 left">
-       <p>  หลักสูตรนี้คุณจะได้เรียนรู้การการประยุกต์ใช้งาน React สำหรับการสร้างเว็บแอพพลิเคชั่น
-ซึ่งมีทั้งหมด 15 แอพพลิเคชั่นด้วยกันรวมอยู่ในคอร์สเดียว สามารถนำไปต่อยอดในการนำ 
-React ไปใช้งานจริง ในคอร์สนี้นอกจากคุณจะได้เรียนเรื่อง React แล้ว </p>
+@endforeach
 
-          </div>
-          </div> </div>
-<div class="col-2">
-    01 : 30 นาที
-       </div>
-      </div> </div> {{-- end #course --}}
-       {{-- start #course --}}
-              <div class="course"><br>
- <div class="row">
-         <div class="col-1">
-          <h5>3</h5>
-        </div>
-      <div class="col-2">
-          <a href="{{ url('course_online_inside') }}">
-                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                    </a>
-          </div>
- <div class="col-7">
-          <div class="row">
-         <div class="col-12 left">
-          <h5>เรียนรู้การใช้งาน React ร่วมกับ API</h5>
-        </div>
-      <div class="col-12 left">
-       <p>  หลักสูตรนี้คุณจะได้เรียนรู้การการประยุกต์ใช้งาน React สำหรับการสร้างเว็บแอพพลิเคชั่น
-ซึ่งมีทั้งหมด 15 แอพพลิเคชั่นด้วยกันรวมอยู่ในคอร์สเดียว สามารถนำไปต่อยอดในการนำ 
-React ไปใช้งานจริง ในคอร์สนี้นอกจากคุณจะได้เรียนเรื่อง React แล้ว </p>
-
-          </div>
-          </div> </div>
-<div class="col-2">
-    01 : 30 นาที
-       </div>
-      </div> {{-- end #course --}}
 </div> </div> {{-- end #main --}}
-   
-              
+
+
     {{-- end #Profile --}}
     <script src="{{ asset('js/app.js') }}" ></script>
 

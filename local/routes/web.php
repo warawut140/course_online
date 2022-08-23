@@ -39,6 +39,16 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::get('/job_delete/{id}','frontend\JobNewController@job_delete');
     Route::post('/register_company_detail_basic_store','frontend\RegisterFullController@register_company_detail_basic_store');
 
+
+    Route::get('/course_online_view/{course_id}','frontend\CourseNewController@course_online_view');
+    Route::get('/course_online_inside_view/{course_list_id}','frontend\CourseNewController@course_online_inside_view');
+    // Route::get('/course_online', function () {
+    //     return view('frontend/course_online');
+    //  });
+    //  Route::get('/course_online_inside', function () {
+    //     return view('frontend/course_online_inside');
+    //  });
+
     // Route::get('/certificate_dowload/{id}','frontend\CourseNewController@course_view');
 
 });
@@ -102,12 +112,7 @@ Route::get('/profilecompany', function () {
  });
 
 
-Route::get('/course_online', function () {
-   return view('frontend/course_online');
-});
-Route::get('/course_online_inside', function () {
-   return view('frontend/course_online_inside');
-});
+
 Route::get('/worklist', function () {
    return view('frontend/worklist');
 });

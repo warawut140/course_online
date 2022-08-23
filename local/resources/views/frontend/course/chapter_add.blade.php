@@ -15,7 +15,7 @@
     <style>
         .bg-light2 {
             /* background-color: #8B0900;
-                                                                        background-image: url("{{ asset('image/bg.png') }}"); */
+                                                                            background-image: url("{{ asset('image/bg.png') }}"); */
             /* clear: both; */
         }
 
@@ -211,6 +211,8 @@
                                                             course_video="{{ @$c->course_video }}"
                                                             course_free="{{ @$c->course_free }}"
                                                             course_time="{{ @$c->course_time }}"
+                                                            course_image="{{ @$c->course_image }}"
+                                                            course_order="{{ @$c->course_order }}"
                                                             chapter_id="{{ @$c->chapter_id }}"><span
                                                                 class="input-group-text" id="basic-addon2">ตั้งค่า
                                                                 &nbsp;<i class="fa fa-gear"></i></span></a>
@@ -265,7 +267,7 @@
                                                         placeholder="Recipient's username" readonly
                                                         aria-label="Recipient's username" aria-describedby="basic-addon2">
                                                     <div class="input-group-append">
-                                                        <a href="{{url('workshop_view/'.@$data->id.'/'.@$c->id)}}"><span
+                                                        <a href="{{ url('workshop_view/' . @$data->id . '/' . @$c->id) }}"><span
                                                                 class="input-group-text" id="basic-addon2">ตั้งค่า
                                                                 &nbsp;<i class="fa fa-gear"></i></span></a>
                                                     </div>
@@ -277,7 +279,8 @@
                                     <div class="form-group">
                                         {{-- <button type="submit" class="btn btn-outline-success w-100">บันทึก</button> --}}
                                         {{-- <button class="btn btn-outline-primary">+ เพิ่มคอร์สเรียน</button> --}}
-                                        <a class="btn btn-outline-primary" href="{{ url('workshop_add/' . @$data->id) }}">+
+                                        <a class="btn btn-outline-primary"
+                                            href="{{ url('workshop_add/' . @$data->id) }}">+
                                             แบบทดสอบ/Workshop</a>
                                     </div>
 
@@ -328,6 +331,13 @@
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-md-6">
+                                                    <label for="course_order">ลำดับ</label>
+                                                    <input type="text" class="form-control course_order" required
+                                                        name="course_order">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-6">
                                                     <label for="">อัพโหลดไฟล์วิดิโอ</label>
                                                     <input type="file" class="form-control-file course_video"
                                                         name="course_video">
@@ -342,16 +352,23 @@
                                             </div>
 
                                             <div class="form-group row">
+                                                <div class="col-md-6">
+                                                    <label for="">ภาพหน้าปกวิดิโอ</label>
+                                                    <input type="file" class="form-control-file course_image"
+                                                        id="course_image" name="course_image">
+                                                        <br>
+                                                    <img class="course_image_img" src="" width="300px"
+                                                        height="250px">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
                                                 <div class="col-md-3">
                                                     <label for="course_free">สถานะ</label>
                                                     <select class="form-control course_free" required name="course_free">
                                                         <option value="">กรุณาเลือก</option>
-                                                        <option <?php if (@$data->status == 0) {
-                                                            echo 'selected';
-                                                        } ?> value="0">ฟรี</option>
-                                                        <option <?php if (@$data->status == 1) {
-                                                            echo 'selected';
-                                                        } ?> value="1">ไม่ฟรี</option>
+                                                        <option value="0">ฟรี</option>
+                                                        <option value="1">ไม่ฟรี</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -420,7 +437,7 @@
             $('#add_course_list_modal .course_detail').val('');
             $('#add_course_list_modal .course_free').val('');
             $('#add_course_list_modal .course_time').val('');
-
+            $('#add_course_list_modal .course_order').val('');
             $('#add_course_list_modal .course_video_play').attr('src', "");
             $("#add_course_list_modal video")[0].load();
             $("#add_course_list_modal video").hide();
@@ -437,14 +454,20 @@
             var course_video = $(this).attr('course_video');
             var course_free = $(this).attr('course_free');
             var course_time = $(this).attr('course_time');
+            var course_image = $(this).attr('course_image');
+            var course_order = $(this).attr('course_order');
+
             $('#add_course_list_modal .list_id').val(list_id);
             $('#add_course_list_modal .course_name').val(course_name);
             $('#add_course_list_modal .course_detail').val(course_detail);
             $('#add_course_list_modal .course_free').val(course_free);
             $('#add_course_list_modal .course_time').val(course_time);
+            $('#add_course_list_modal .course_order').val(course_order);
 
             $('#add_course_list_modal .course_video_play').attr('src', "{{ asset('images/profile') }}/" +
                 course_video);
+            $('#add_course_list_modal .course_image_img').attr('src', "{{ asset('images/profile') }}/" +
+                course_image);
             $("#add_course_list_modal video")[0].load();
             $("#add_course_list_modal video").show();
             $('#add_course_list_modal').modal('show');
