@@ -1,49 +1,49 @@
 @extends('layouts.navber')
 @section('head')
-    <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
-<!--  video css start -->
- <link rel="stylesheet" type="text/css" href="assets/fontend/css/bootstrap.min.css"/>
-<link type="text/css" rel="stylesheet" href="assets/fontend/css/layout.css?v=218&time=1660202862" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <!--  video css start -->
+    <link rel="stylesheet" type="text/css" href="assets/fontend/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/fontend/css/layout.css?v=218&time=1660202862" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
 
 
 
 
-<link rel="stylesheet" href="assets/fontend/css/jquery.fancybox.css" />
+    <link rel="stylesheet" href="assets/fontend/css/jquery.fancybox.css" />
 
 
 
 
-<link rel="stylesheet" href="assets/fontend/css/aos.css">
+    <link rel="stylesheet" href="assets/fontend/css/aos.css">
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<script src="assets/fontend/js/jquery.min.js"></script>
+    <script src="assets/fontend/js/jquery.min.js"></script>
 
-<script src="assets/fontend/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/fontend/js/bootstrap.bundle.min.js"></script>
 
-<script src="assets/fontend/js/modernizr.js"></script>
+    <script src="assets/fontend/js/modernizr.js"></script>
 
-<script defer src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
 
 
 
-<script src="assets/fontend/js/jquery.fancybox.min.js"></script>
+    <script src="assets/fontend/js/jquery.fancybox.min.js"></script>
 
-<script src="assets/fontend/js/aos.js"></script>
+    <script src="assets/fontend/js/aos.js"></script>
 
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
-<script src="assets/fontend/OwlCarousel/dist/owl.carousel.min.js"></script>
-<link rel="stylesheet" href="assets/fontend/OwlCarousel/dist/assets/owl.carousel.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/fontend/OwlCarousel/dist/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="assets/fontend/OwlCarousel/dist/assets/owl.carousel.min.css">
 
-<link rel="stylesheet" href="assets/fontend/OwlCarousel/dist/assets/owl.theme.default.min.css">
-<!--  video css end -->
+    <link rel="stylesheet" href="assets/fontend/OwlCarousel/dist/assets/owl.theme.default.min.css">
+    <!--  video css end -->
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
@@ -166,84 +166,100 @@
             width: 100% !important;
         }
     </style>
-<style>
-    .slick-slide img {
-    display: block;
-    width: 200;
-    height: 100px;
-    object-fit: cover;
-}
-/* Container holding the image and the text */
-.container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-.buttonblack {
-  background-color: while;
-  border: 1px solid grey;
-  font-size: 1.0em;
-    padding: 8px 10px;
- 
-  border-radius: 50px;
- 
-}
-/* Bottom left text */
-.bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
+    <style>
+        .slick-slide img {
+            display: block;
+            width: 200;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        /* Container holding the image and the text */
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .buttonblack {
+            background-color: while;
+            border: 1px solid grey;
+            font-size: 1.0em;
+            padding: 8px 10px;
+
+            border-radius: 50px;
+
+        }
+
+        /* Bottom left text */
+        .bottom-left {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+        }
+
+        /* Top left text */
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+
+        /* Top right text */
+        .top-right {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+        }
+
+        /* Bottom right text */
+        .bottom-right {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+        }
+
+        /* Centered text */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .horizontal-scroll-wrapper {
+            width: 100px;
+            height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .horizontal-scroll-wrapper>div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .horizontal-scroll-wrapper {
+            ... transform: rotate(-90deg);
+            transform-origin: right top;
+        }
+
+        .horizontal-scroll-wrapper>div {
+            ... transform: rotate(90deg);
+            transform-origin: right top;
+        }
+
+        .row {
+    --bs-gutter-x: 0rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 
-/* Top left text */
-.top-left {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-}
-
-/* Top right text */
-.top-right {
-  position: absolute;
-  top: 8px;
-  right: 16px;
-}
-
-/* Bottom right text */
-.bottom-right {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-}
-
-/* Centered text */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.horizontal-scroll-wrapper {
-  width: 100px;
-  height: 300px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-.horizontal-scroll-wrapper > div {
-  width: 100px;
-  height: 100px;
-}
-.horizontal-scroll-wrapper {
-  ...
-  transform: rotate(-90deg);
-  transform-origin: right top;
-}
-.horizontal-scroll-wrapper > div {
-  ...
-  transform: rotate(90deg);
-  transform-origin: right top;
-}
-</style>
+    </style>
 @endsection
 @section('content')
 
@@ -251,7 +267,7 @@
     <div style="display: none;max-width:100%" id="hidden-content-b">
         <h1 class="mb-3 text-center">แนะนำหลักสูตร</span></h1>
         <div class="row text-center">
-            
+
             <div class="col-xl-6 col-md-6">
                 <a href="#">
                     <div class="card mb-3 card-popup1">
@@ -292,15 +308,16 @@
                     </div>
                 </a>
             </div>
-            
+
         </div>
     </div>
 
-    @if($search == null)
+    @if ($search == null)
         <?php
         // check cookie ครั้งแรกจะไม่มี ก็ให้แสดง
-        if(!isset($_COOKIE["cookie1"])){ // เช็คว่ามีตัวแปรนี้อยู่ก่อนแล้วหรือไม่
-            setcookie("cookie1", "ทดสอบ",time()+3600,"/");  // กำหนดตัวแปร
+        if (!isset($_COOKIE['cookie1'])) {
+            // เช็คว่ามีตัวแปรนี้อยู่ก่อนแล้วหรือไม่
+            setcookie('cookie1', 'ทดสอบ', time() + 3600, '/'); // กำหนดตัวแปร
         }
         ?>
         <?php
@@ -310,60 +327,67 @@
             $('[data-src="hidden-content-b"]').fancybox({
                 // toolbar : false
             });
-            $( ".btnpopup" ).trigger( "click" );
+            $(".btnpopup").trigger("click");
         </script>
         <!--โค้ด javascript-->
         <?php } ?>
-     @endif
+    @endif
 
-    {{-- begin #banner--}}
-    
+    {{-- begin #banner --}}
+
     <div id="index-banner" class="bg-white">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                @if($home_gellery != "")
-                    <?php $active = 'active'; $class = 'class="active"'?>
-                    @for($i = 0 ; $i < count($home_gellery);$i++)
-                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i }}" {{ $class }}></li>
+                @if ($home_gellery != '')
+                    <?php $active = 'active';
+                    $class = 'class="active"'; ?>
+                    @for ($i = 0; $i < count($home_gellery); $i++)
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i }}"
+                            {{ $class }}></li>
                     @endfor
                 @endif
             </ol>
             <div class="carousel-inner">
-                @if($home_gellery != "")
-                    @foreach($home_gellery as $data)
+                @if ($home_gellery != '')
+                    @foreach ($home_gellery as $data)
                         <div class="carousel-item {{ $active }}">
-                            
+
                             <img src="{{ asset('images/bannermockup.png') }}" class="d-block w-100" alt="...">
-                          
+
                         </div>
-                        <?php $active = ''?>
+                        <?php $active = ''; ?>
                     @endforeach
                 @endif
             </div>
         </div>
     </div>
-    {{-- end #banner--}}
+    {{-- end #banner --}}
 
-    {{-- begin #content 1--}}
+    {{-- begin #content 1 --}}
 
- <div class="row">
-         <div class="col-1">
+    <div class="row">
+        <div class="col-1">
         </div>
-      <div class="col-8">
-        <div class="container text-center py-4">
-            <br>     <br>
- 
-            <h1 class=" text-left"><font style="color:black">หลักสูตรที่กำลังเป็นกระแส</font></h1>
-                 <br>     <br>
-     <div class="col-10">
-            <div class="hotclass_slide owl-carousel owl-theme">
-                <div class="item">
-                    <a href="{{ url('projectauction') }}">
-                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
+        <div class="col-8">
+            <div class="container text-center py-4">
+                <br> <br>
+
+                <h1 class=" text-left">
+                    <font style="color:black">หลักสูตรที่กำลังเป็นกระแส</font>
+                </h1>
+                <br> <br>
+                <div class="col-10">
+                    <div class="hotclass_slide owl-carousel owl-theme">
+                        @foreach ($courses_trending as $c)
+                            <div class="item">
+                                <a href="{{ url('projectauction') }}">
+                                    {{-- <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-2"> --}}
+                                    <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
+                                </a>
+                                <h6 class="text-orange text-left">{{ $c->name }}</h6>
+                            </div>
+                        @endforeach
+                        {{-- <div class="item">
                     <a href="{{ url('work') }}">
                         <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
                     </a>
@@ -392,89 +416,134 @@
                         <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
+                </div> --}}
+
+                    </div>
                 </div>
-                
+                <br> <br>
+
+                <h1 class="mb-3 text-left">
+                    <font style="color:black">คอร์สเรียนของคุณเรียนต่อเลย :-)</font>
+                </h1>
+                <br> <br>
+                <div class="hotclass_slide owl-carousel owl-theme">
+                    <div class="item">
+                        <a href="{{ url('projectauction') }}">
+                            <img src="{{ asset('images/2c.png') }}" style=""class="mw-100 mb-3">
+                        </a>
+                        <h4 class="text-orange"></h4>
+                    </div>
+
+
+                </div>
             </div>
+        </div>
+        <div class="col-2">
+
+
+            <div class="container text-center py-4">
+                <br> <br> <br>
+
+                <h5 class="mb-3 text-left">
+                    <font style="color:grey">หัวข้อหลักสูตรน่าสนใจ</font>
+                </h5>
+                <br>
+
+                <div class="row">
+
+                    <a class="nav-link py-1 buttonblack " style="margin-right: 20px;margin-top: 20px;"
+                        href="{{ url('register') }}">
+                        <font style="color:grey">Business</font>
+                    </a>
+                    <a class="nav-link py-1 buttonblack" style="margin-right: 20px;margin-top: 20px;"
+                        href="{{ url('register') }}">
+                        <font style="color:grey">CRM Software</font>
+                    </a>
+                    <a class="nav-link py-1 buttonblack"
+                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        <font style="color:grey">Customer Service</font>
+                    </a>
+                    <a class="nav-link py-1 buttonblack"
+                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        <font style="color:grey">Communication</font>
+                    </a>
+                    <a class="nav-link py-1 buttonblack"
+                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        <font style="color:grey">Marketing</font>
+                    </a>
+                    <a class="nav-link py-1 buttonblack"
+                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        <font style="color:grey">Customer Service</font>
+                    </a>
+                    <a class="nav-link py-1 buttonblack"
+                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        <font style="color:grey">Web Marketing Analytics</font>
+                    </a>
+                    <a class="nav-link py-1 buttonblack"
+                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        <font style="color:grey">Google Analytics</font>
+                    </a>
+                    <a class="nav-link py-1 buttonblack"
+                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        <font style="color:grey">Data Analysis</font>
+                    </a>
+                    <a class="nav-link py-1 buttonblack"
+                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        <font style="color:grey">Leadership and Management</font>
+                    </a>
+                    <a class="nav-link py-1 buttonblack"
+                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        <font style="color:grey">Leadership Skills</font>
+                    </a>
+
+                </div>
             </div>
-              <br>     <br>
- 
-            <h1 class="mb-3 text-left"><font style="color:black">คอร์สเรียนของคุณเรียนต่อเลย :-)</font></h1>
-                 <br>     <br>
-                      <div class="hotclass_slide owl-carousel owl-theme">
+        </div>
+
+    </div>
+    <div class="col-1">
+    </div>
+    </div>
+
+    </div>
+    {{-- end #content 1 --}}
+
+    {{-- begin #work 1 --}}
+
+    <div class="col-12">
+        <div class="container text-center py-4">
+
+            <br> <br>
+
+            <h1 class="mb-3 text-left">
+                <font style="color:black">10 หลักสูตรที่มีการซื้อสูงสุด</font>
+            </h1>
+            <br> <br>
+            <div class="hotclass_slide owl-carousel owl-theme">
+
+                @foreach ($courses_trending as $key=> $c)
                 <div class="item">
                     <a href="{{ url('projectauction') }}">
-                        <img src="{{ asset('images/2c.png') }}" style=""class="mw-100 mb-3">
+                        <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number{{$key+1}}.png"
+                                alt="" class="lazy"></span>
+                        <img src="{{ asset('images/profile/'.$c->image) }}" class="mw-100 mb-2">
                     </a>
-                    <h4 class="text-orange"></h4>
+                    <span class="numberHot"></span>
+                    <h6 class="text-orange text-left">{{ $c->name }}</h6>
+
                 </div>
-            
-                
-            </div>
-        </div>
-    </div>
-    <div class="col-2">
+                @endforeach
 
- 
-           <div class="container text-center py-4">
-            <br>     <br>  <br> 
- 
-            <h5 class="mb-3 text-left"><font style="color:grey">หัวข้อหลักสูตรน่าสนใจ</font></h5>
-                   <br>
-    
-            <div class="row">
-                
-                <a class="nav-link py-1 buttonblack " style="margin-right: 20px;margin-top: 20px;" href="{{ url('register') }}"><font style="color:grey">Business</font></a>
-                <a class="nav-link py-1 buttonblack"  style="margin-right: 20px;margin-top: 20px;" href="{{ url('register') }}"><font style="color:grey">CRM Software</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Customer Service</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Communication</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Marketing</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Customer Service</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Web Marketing Analytics</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Google Analytics</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Data Analysis</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Leadership and Management</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Leadership Skills</font></a>
-        
-            </div>
-        </div>
-    </div>
-           
-  </div>   <div class="col-1">
-        </div>
-  </div>
 
-       </div> 
-    {{-- end #content 1--}}
-
-    {{-- begin #work 1--}}
-
-         <div class="col-12">
-        <div class="container text-center py-4" >
-          
-              <br>     <br>
- 
-            <h1 class="mb-3 text-left"><font style="color:black">10 หลักสูตรที่มีการซื้อสูงสุด</font></h1>
-                    <br>     <br>  
-                      <div class="hotclass_slide owl-carousel owl-theme" >
-                    
-                <div class="item" >
-                           
-                    <a href="{{ url('projectauction') }}">
-                     <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number1.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
-                    </a>
-                     <span class="numberHot"></span>
-                    <h4 class="text-orange"></h4>
-                   
-                </div>
-                <div class="item">
+                {{-- <div class="item">
                     <a href="{{ url('work') }}">
-                          <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number2.png" alt="" class="lazy"></span>
+                        <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number2.png"
+                                alt="" class="lazy"></span>
                         <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
+                </div> --}}
+                {{-- <div class="item">
                     <a href="{{ url('training') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number3.png" alt="" class="lazy"></span>
                         <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
@@ -489,14 +558,14 @@
                     <h4 class="text-orange"></h4>
                 </div>
                       <div class="item" >
-                           
+
                     <a href="{{ url('projectauction') }}">
                      <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number5.png" alt="" class="lazy"></span>
                         <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
                     </a>
                      <span class="numberHot"></span>
                     <h4 class="text-orange"></h4>
-                   
+
                 </div>
                 <div class="item">
                     <a href="{{ url('work') }}">
@@ -520,14 +589,14 @@
                     <h4 class="text-orange"></h4>
                 </div>
                       <div class="item" >
-                           
+
                     <a href="{{ url('projectauction') }}">
                      <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number9.png" alt="" class="lazy"></span>
                         <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
                     </a>
                      <span class="numberHot"></span>
                     <h4 class="text-orange"></h4>
-                   
+
                 </div>
                 <div class="item">
                     <a href="{{ url('work') }}">
@@ -535,18 +604,87 @@
                         <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
-                </div>
-         
+                </div> --}}
+
             </div>
-             <br>     <br>
- 
-            <h1 class="mb-3 text-left"><font style="color:black">หลักสูตรแนะนำ</font></h1>
-                 <br>  
-                  <h1 class="mb-3 text-left"><font style="color:black">Leadership and Management</font></h1> 
-                    <h5 class="mb-3 text-left"><font style="color:grey">Leadership is a skill for any role—not just managers. Learn how to become a more successful leader, 
-improve communication, make better decisions, manage conflict, and lead others through times of change.</font></h5>  <br>  
-                   <div class="hotclass_slide owl-carousel owl-theme">
+            <br> <br>
+
+            <h1 class="mb-3 text-left">
+                <font style="color:black">หลักสูตรแนะนำ</font>
+            </h1>
+            <br>
+            <h1 class="mb-3 text-left">
+                <font style="color:black">Leadership and Management</font>
+            </h1>
+            <h5 class="mb-3 text-left">
+                <font style="color:grey">Leadership is a skill for any role—not just managers. Learn how to become a more
+                    successful leader,
+                    improve communication, make better decisions, manage conflict, and lead others through times of change.
+                </font>
+            </h5> <br>
+            <div class="hotclass_slide owl-carousel owl-theme">
+                @foreach ($courses_trending as $c)
                 <div class="item">
+                    <a href="{{ url('projectauction') }}">
+                        <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
+                    </a>
+                    <h6 class="text-orange text-left">{{ $c->name }}</h6>
+                </div>
+                @endforeach
+                {{-- <div class="item">
+                    <a href="{{ url('work') }}">
+                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
+                    </a>
+                    <h4 class="text-orange"></h4>
+                </div>
+                <div class="item">
+                    <a href="{{ url('training') }}">
+                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
+                    </a>
+                    <h4 class="text-orange"></h4>
+                </div>
+                <div class="item">
+                    <a href="{{ url('#') }}">
+                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
+                    </a>
+                    <h4 class="text-orange"></h4>
+                </div>
+                <div class="item">
+                    <a href="{{ url('#') }}">
+                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
+                    </a>
+                    <h4 class="text-orange"></h4>
+                </div>
+                <div class="item">
+                    <a href="{{ url('#') }}">
+                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
+                    </a>
+                    <h4 class="text-orange"></h4>
+                </div> --}}
+                <br>
+
+            </div> <br>
+
+            <h1 class="mb-3 text-left">
+                <font style="color:black">Data Science</font>
+            </h1>
+            <h5 class="mb-3 text-left">
+                <font style="color:grey">Data science is one of today's top careers. Get the training you need to get
+                    ahead—or stay on top—in fields such as data analysis,
+                    mining, visualization, and big data, using tools like Excel, R, Hadoop, and Python.</font>
+            </h5> <br>
+            <div class="hotclass_slide owl-carousel owl-theme">
+
+                @foreach ($courses_trending as $c)
+                <div class="item">
+                    <a href="{{ url('projectauction') }}">
+                        <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
+                    </a>
+                    <h6 class="text-orange text-left">{{ $c->name }}</h6>
+                </div>
+                @endforeach
+
+                {{-- <div class="item">
                     <a href="{{ url('projectauction') }}">
                         <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
                     </a>
@@ -570,40 +708,9 @@ improve communication, make better decisions, manage conflict, and lead others t
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
-                   <div class="item">
-                    <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>   
-                <div class="item">
-                    <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                 <br>  
-                  
-            </div>    <br> 
 
-            <h1 class="mb-3 text-left"><font style="color:black">Data Science</font></h1> 
-                    <h5 class="mb-3 text-left"><font style="color:grey">Data science is one of today's top careers. Get the training you need to get ahead—or stay on top—in fields such as data analysis, 
-mining, visualization, and big data, using tools like Excel, R, Hadoop, and Python.</font></h5>  <br>  
-                 <div class="hotclass_slide owl-carousel owl-theme">
                 <div class="item">
-                    <a href="{{ url('projectauction') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
-                    <a href="{{ url('work') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
-                    <a href="{{ url('training') }}">
+                    <a href="{{ url('#') }}">
                         <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
@@ -613,105 +720,91 @@ mining, visualization, and big data, using tools like Excel, R, Hadoop, and Pyth
                         <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
-                </div>
+                </div> --}}
+            </div>
 
-                   <div class="item">
-                    <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                   <div class="item">
-                    <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
         </div>
-           
     </div>
-    </div>
-    
-    {{-- end #work 1--}}
 
-      
-         
+    {{-- end #work 1 --}}
 
 
-    {{--<script src="/js/app.js" charset="utf-8"></script>--}}
-    <script src="{{ asset('js/app.js') }}" ></script>
+
+
+
+    {{-- <script src="/js/app.js" charset="utf-8"></script> --}}
+    <script src="{{ asset('js/app.js') }}"></script>
 
 
 @endsection
 @section('script')
-
-
-    
     <script>
-               $('.owl-carousel2').owlCarousel({
-                nav:false,
-    loop:false,
-  
-    margin:10,
-    arrows: false,
-    infinite: false,
-    dots: false,
-    autoHeight: true,
-    
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:4
-        }
-    }
-})
+        $('.owl-carousel2').owlCarousel({
+            nav: false,
+            loop: false,
+
+            margin: 10,
+            arrows: false,
+            infinite: false,
+            dots: false,
+            autoHeight: true,
+
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        })
         $('.owl-carousel').owlCarousel({
-    loop:false,
-    
-    margin:10,
-    nav:true,
-        dots: false,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:
-        }
-    }
-})
+            loop: false,
+
+            margin: 10,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items:
+                }
+            }
+        })
         $('.owl-carousel3').owlCarousel({
-    loop:false,
-    margin:10,
-    nav:true,
-        dots: false,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
-    }
-})
+            loop: false,
+            margin: 10,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        })
     </script>
     <script>
-        FontAwesomeConfig = { searchPseudoElements: true };
+        FontAwesomeConfig = {
+            searchPseudoElements: true
+        };
     </script>
-       <script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function() {
-            
+
 
             $("body").on("mouseover", ".hotclass_slide .owl-item,.movie-carousel .owl-item", function() {
                 $(this).parent().find(".owl-item.active").addClass("hov");
@@ -728,7 +821,9 @@ mining, visualization, and big data, using tools like Excel, R, Hadoop, and Pyth
                 margin: 10,
                 nav: true,
                 lazyLoad: true,
-                navText: ['<img src="assets/fontend/images/arrow_left.png">', '<img src="assets/fontend/images/arrow_right.png">'],
+                navText: ['<img src="assets/fontend/images/arrow_left.png">',
+                    '<img src="assets/fontend/images/arrow_right.png">'
+                ],
                 autoplayHoverPause: false,
                 dots: false,
                 autoplay: false,
@@ -773,7 +868,9 @@ mining, visualization, and big data, using tools like Excel, R, Hadoop, and Pyth
                 margin: 10,
                 nav: true,
                 lazyLoad: true,
-                navText: ['<img src="assets/fontend/images/arrow_left.png">', '<img src="assets/fontend/images/arrow_right.png">'],
+                navText: ['<img src="assets/fontend/images/arrow_left.png">',
+                    '<img src="assets/fontend/images/arrow_right.png">'
+                ],
                 autoplayHoverPause: false,
                 dots: false,
                 autoplay: false,
@@ -809,7 +906,9 @@ mining, visualization, and big data, using tools like Excel, R, Hadoop, and Pyth
                 margin: 10,
                 nav: true,
                 lazyLoad: true,
-                navText: ['<img src="assets/fontend/images/arrow_left.png">', '<img src="assets/fontend/images/arrow_right.png">'],
+                navText: ['<img src="assets/fontend/images/arrow_left.png">',
+                    '<img src="assets/fontend/images/arrow_right.png">'
+                ],
                 autoplayHoverPause: false,
                 dots: false,
                 autoplay: false,
@@ -858,7 +957,9 @@ mining, visualization, and big data, using tools like Excel, R, Hadoop, and Pyth
                 autoplayTimeout: 10000,
                 smartSpeed: 1000,
                 lazyLoad: true,
-                navText: ['<img src="assets/fontend/images/BN_left.png">', '<img src="assets/fontend/images/BN_right.png">'],
+                navText: ['<img src="assets/fontend/images/BN_left.png">',
+                    '<img src="assets/fontend/images/BN_right.png">'
+                ],
                 dotsSpeed: 500,
                 dotsData: true,
                 responsive: {
@@ -905,12 +1006,12 @@ mining, visualization, and big data, using tools like Excel, R, Hadoop, and Pyth
                     }
                 } else {
                     if (mobilesize.matches) {
-                        // $('#mypromotevideo2').get(0).pause(); 
+                        // $('#mypromotevideo2').get(0).pause();
                         /* if (!player2.paused) {
                             player2.paused = false;
                             //player2.pause();
                         } */
-                         player2.pause(); 
+                        player2.pause();
                     } else {
                         player.pause();
                     }
@@ -982,58 +1083,66 @@ mining, visualization, and big data, using tools like Excel, R, Hadoop, and Pyth
 
     <!-- Lazy Load -->
     <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyloadImages = document.querySelectorAll("img.lazy");
+            var lazyloadThrottleTimeout;
 
-      document.addEventListener("DOMContentLoaded", function() {
-      var lazyloadImages = document.querySelectorAll("img.lazy");    
-      var lazyloadThrottleTimeout;
-      
-      function lazyload () {
-        if(lazyloadThrottleTimeout) {
-          clearTimeout(lazyloadThrottleTimeout);
-        }    
-        
-        lazyloadThrottleTimeout = setTimeout(function() {
-            var scrollTop = window.pageYOffset;
-            lazyloadImages.forEach(function(img) {
-                if(img.offsetTop < (window.innerHeight + scrollTop)) {
-                  img.src = img.dataset.src;
-                  img.classList.remove('lazy');
+            function lazyload() {
+                if (lazyloadThrottleTimeout) {
+                    clearTimeout(lazyloadThrottleTimeout);
                 }
-            });
-            if(lazyloadImages.length == 0) { 
-              document.removeEventListener("scroll", lazyload);
-              window.removeEventListener("resize", lazyload);
-              window.removeEventListener("orientationChange", lazyload);
-            }
-        }, 20);
-      }
-      
-      document.addEventListener("scroll", lazyload);
-      window.addEventListener("resize", lazyload);
-      window.addEventListener("orientationChange", lazyload);
-    });
 
+                lazyloadThrottleTimeout = setTimeout(function() {
+                    var scrollTop = window.pageYOffset;
+                    lazyloadImages.forEach(function(img) {
+                        if (img.offsetTop < (window.innerHeight + scrollTop)) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy');
+                        }
+                    });
+                    if (lazyloadImages.length == 0) {
+                        document.removeEventListener("scroll", lazyload);
+                        window.removeEventListener("resize", lazyload);
+                        window.removeEventListener("orientationChange", lazyload);
+                    }
+                }, 20);
+            }
+
+            document.addEventListener("scroll", lazyload);
+            window.addEventListener("resize", lazyload);
+            window.addEventListener("orientationChange", lazyload);
+        });
     </script>
     <style>
-        .card-popup1:hover, .card-popup2:hover, .card-popup3:hover, .card-popup4:hover {
+        .card-popup1:hover,
+        .card-popup2:hover,
+        .card-popup3:hover,
+        .card-popup4:hover {
             background-color: #8B0900;
-            color:#fff;
+            color: #fff;
         }
-        .card-popup1:hover h4, .card-popup2:hover h4, .card-popup3:hover h4, .card-popup4:hover h4 {
-            color:#fff;
+
+        .card-popup1:hover h4,
+        .card-popup2:hover h4,
+        .card-popup3:hover h4,
+        .card-popup4:hover h4 {
+            color: #fff;
         }
-        .card-popup1:hover img{
+
+        .card-popup1:hover img {
             content: url({{ asset('image/index-auction - Copy.png') }});
         }
-        .card-popup2:hover img{
-            content: url({{ asset('image/index-findjob - Copy.png')}});
+
+        .card-popup2:hover img {
+            content: url({{ asset('image/index-findjob - Copy.png') }});
         }
-        .card-popup3:hover img{
-            content: url({{ asset('image/index-knowledge - Copy.png')}});
+
+        .card-popup3:hover img {
+            content: url({{ asset('image/index-knowledge - Copy.png') }});
         }
-        .card-popup4:hover img{
-            content: url({{ asset('image/index-store - Copy.png')}});
+
+        .card-popup4:hover img {
+            content: url({{ asset('image/index-store - Copy.png') }});
         }
     </style>
 @endsection
-  

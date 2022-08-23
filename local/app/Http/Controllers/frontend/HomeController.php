@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontend;
 use App\Models\CourseComment;
 use App\Models\CourseList;
 use App\Models\CourseLogView;
+use App\Models\Course;
 use App\Models\Gallery;
 use App\Models\Logview;
 use App\Models\Profile;
@@ -245,6 +246,7 @@ class HomeController extends Controller
             ->limit(3)
             ->get();
 
+        $courses_trending = Course::where('status',1)->get();
 
 
         return view('frontend.index',[
@@ -260,6 +262,8 @@ class HomeController extends Controller
             'course_list' => $course_list ,
             'review' => $review ,
             'recoommend' => $recoommend_profile ,
+
+            'courses_trending' => $courses_trending,
         ]);
 
     }

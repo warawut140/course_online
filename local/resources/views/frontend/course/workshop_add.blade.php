@@ -520,7 +520,6 @@
                 $('#add_course_list_modal .display_choice_2').hide();
             }
 
-
             $('#add_course_list_modal').modal('show');
         });
 
