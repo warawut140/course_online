@@ -30,10 +30,12 @@
             /* clear: both; */
         }
 
+
         .nav-pills .nav-link.active,
         .nav-pills .show>.nav-link {
-            color: #fff;
-            background-color: #8B0900;
+            border-left: 15px solid #8B0900;
+                 background-color: white;
+                     color: black;
         }
      .gray {
             color: #fff;
@@ -160,7 +162,7 @@
         </div>
 
         <!-- Modal ข้อตกลงและเงื่อนไข-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -180,7 +182,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         {{-- end #register --}}
     </div>
     {{-- <script src="/js/app.js" charset="utf-8"></script> --}}

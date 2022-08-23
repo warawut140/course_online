@@ -36,7 +36,13 @@ class ProfileController extends Controller
     public function index()
     {
 
-        return redirect()->to('register_company_detail');
+        $data = Profile::where('user_id',Auth::guard('web')->user()->id)->first();
+        if($data->type_user_id!=null){
+            return redirect()->to('register_user_detail');
+        }
+        if($data->type_user_id_2!=null){
+            return redirect()->to('register_company_detail');
+        }
 
 
         $profile = Profile::join('bit_coins','bit_coins.profile_id','profiles.id')

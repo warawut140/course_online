@@ -21,12 +21,14 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="inputEmail4">คอร์สเรียน</label>
+                        @foreach($course as $c)
                         <div class="input-group mb-3">
-                            <input type="text" value="องค์กรและการพัฒนาองค์กรสมัยใหม่" class="form-control form-control-sm" placeholder="Recipient's username" readonly aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" value="{{$c->name}}" class="form-control form-control-sm" placeholder="Recipient's username" readonly aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <a href="javascript:;"><span class="input-group-text" id="basic-addon2">ตั้งค่าคอร์สเรียน &nbsp;<i class="fa fa-gear"></i></span></a>
+                                <a href="{{url('course_view/'.$c->id)}}"><span class="input-group-text" id="basic-addon2">ตั้งค่าคอร์สเรียน &nbsp;<i class="fa fa-gear"></i></span></a>
                             </div>
                           </div>
+                          @endforeach
                     </div>
                 </div>
 

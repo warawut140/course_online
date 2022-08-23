@@ -21,13 +21,29 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::get('/register_company_detail/{type?}','frontend\RegisterFullController@register_company_detail');
     Route::get('/course_add','frontend\CourseNewController@course_add');
     Route::post('/course_store','frontend\CourseNewController@course_store');
+    Route::get('/course_view/{id}','frontend\CourseNewController@course_view');
+
+    Route::get('/chapter_add/{c_id}','frontend\CourseNewController@chapter_add');
+    Route::post('/chapter_store','frontend\CourseNewController@chapter_store');
+    Route::get('/chapter_view/{id}','frontend\CourseNewController@chapter_view');
+    Route::post('/course_list_store','frontend\CourseNewController@course_list_store');
+
+    Route::get('/workshop_add/{chapter_id}','frontend\CourseNewController@workshop_add');
+    Route::post('/workshop_store','frontend\CourseNewController@workshop_store');
+    Route::get('/workshop_view/{chapter_id}/{workshop_id}','frontend\CourseNewController@workshop_view');
+    Route::post('/question_store','frontend\CourseNewController@question_store');
+
     Route::get('/job_add','frontend\JobNewController@job_add');
     Route::post('/job_store','frontend\JobNewController@job_store');
     Route::get('/job_view/{id}','frontend\JobNewController@job_view');
     Route::get('/job_delete/{id}','frontend\JobNewController@job_delete');
     Route::post('/register_company_detail_basic_store','frontend\RegisterFullController@register_company_detail_basic_store');
+
+    // Route::get('/certificate_dowload/{id}','frontend\CourseNewController@course_view');
+
 });
 Route::post('/register_full','frontend\RegisterFullController@register');
+Route::get('/register_user_detail/{type?}','frontend\RegisterFullController@register_user_detail');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontend\HomeController@index')->name('index');
@@ -87,8 +103,6 @@ Route::get('/profilecompany', function () {
  Route::get('/worklist', function () {
     return view('frontend/worklist');
  });
-
-
 
 Route::post('/search', 'frontend\HomeController@search');
 Route::resource('/mgmtContract', 'frontend\MgmtContractController');

@@ -18,31 +18,57 @@
                 enctype="multipart/form-data">
                 @csrf
 
+                <input type="hidden" name="type" value="web">
+
                 <div class="form-group">
-                    {{-- <label for="exampleInputEmail1"></label> --}}
-                    <input type="text" class="form-control" placeholder="Link 1" id="exampleInputEmail1"
-                        name="tel">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text2" id="basic-addon1"> <img class="left"
+                                    src="{{ asset('images/icon/fb.png') }}" height="35"
+                                    style="margin-right: 0px;"></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Link 1" name="link_1" value="{{@$data->link_1}}"
+                            aria-describedby="basic-addon1">
+                    </div>
                 </div>
                 <div class="form-group">
-                    {{-- <label for="exampleInputEmail1"></label> --}}
-                    <input type="text" class="form-control" placeholder="Link 2" id="exampleInputEmail1"
-                        name="tel">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text2" id="basic-addon1"> <img class="left"
+                                    src="{{ asset('images/icon/gg.png') }}" height="35"
+                                    style="margin-right: 0px;"></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Link 2" name="link_2" value="{{@$data->link_2}}"
+                            aria-describedby="basic-addon1">
+                    </div>
                 </div>
                 <div class="form-group">
-                    {{-- <label for="exampleInputEmail1"></label> --}}
-                    <input type="text" class="form-control" placeholder="Link 3" id="exampleInputEmail1"
-                        name="tel">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text2" id="basic-addon1"> <img class="left"
+                                    src="{{ asset('images/icon/in.png') }}" height="35"
+                                    style="margin-right: 0px;"></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Link 3" name="link_3" value="{{@$data->link_3}}"
+                            aria-describedby="basic-addon1">
+                    </div>
                 </div>
                 <div class="form-group">
-                    {{-- <label for="exampleInputEmail1"></label> --}}
-                    <input type="text" class="form-control" placeholder="Link 4" id="exampleInputEmail1"
-                        name="tel">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text2" id="basic-addon1"> <img class="left"
+                                    src="{{ asset('images/icon/tw.png') }}" height="35"
+                                    style="margin-right: 0px;"></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Link 4" name="link_4" value="{{@$data->link_4}}"
+                            aria-describedby="basic-addon1">
+                    </div>
                 </div>
 
-                <div class="form-group" >
-                    <button type="submit" class="btn btn-outline-success w-100">บันทึก</button>
-                 </div>
-                </form>
-            </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-outline-success w-100" onclick="return confirm('ยืนยันการทำรายการ?')">บันทึก</button>
+                </div>
+            </form>
         </div>
+    </div>
 </div>

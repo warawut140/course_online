@@ -21,7 +21,8 @@ class JobNewController extends Controller
 
     public function job_view($id)
     {
-        $data = JobDescription::where('id',$id)->first();
+        $profile = Profile::where('user_id',Auth::guard('web')->user()->id)->first();
+        $data = JobDescription::where('id',$id)->where('profile_id',$profile->id)->first();
         if($data){
             return view('frontend.job.job_add',[
                 'data' => $data

@@ -115,7 +115,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 {{--                            <a class="dropdown-item" href="{{ url('erp-home') }}"><i class='fas fa-shopping-cart'></i> ผู้จัดชื้อ / ร้านค้า</a>--}}
                             <a class="dropdown-item" href="{{ url('profilecompany') }}"><i class='fas fa-user-alt'></i> ข้อมูลโปรไฟล์</a>
-                            <a class="dropdown-item" href="{{ url('profile') }}"><i class='fas fa-gear'></i> ตั้งค่าข้อมูลบริษัท</a>
+                            <a class="dropdown-item" href="{{ url('profile') }}"><i class='fas fa-gear'></i> ตั้งค่าข้อมูล</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

@@ -141,7 +141,7 @@
                                         <textarea type="text" class="form-control" name="skill_detail">{{ @$data->skill_detail }}</textarea>
                                     </div>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label for="exampleInputEmail1">คอร์สเรียนที่ควรผ่านการเรียนรู้มาก่อน</label>
                                         <br>
                                         <div class="row">
@@ -166,7 +166,7 @@
                                         </div>
                                     </div>
 
-                                    <button class="btn btn-sm btn-outline-primary">+ เพิ่มคอร์สเรียน</button>
+                                    <button class="btn btn-sm btn-outline-primary">+ เพิ่มคอร์สเรียน</button> --}}
 
                                     <div class="form-group">
                                         <br>

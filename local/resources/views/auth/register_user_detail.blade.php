@@ -68,6 +68,24 @@
             border: 1px solid #ced4da;
             border-radius: 0.25rem;
         }
+
+        .input-group-text2 {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 0.375rem 0.75rem;
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #ffffff;
+            text-align: center;
+            white-space: nowrap;
+            background-color: #f8f8f8;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
     </style>
 @endsection
 @section('content')

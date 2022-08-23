@@ -13,6 +13,7 @@ use Auth;
 use App\Models\BitCoin;
 use File;
 use App\Models\JobDescription;
+use App\Models\Course;
 
 class RegisterFullController extends Controller
 {
@@ -25,14 +26,16 @@ class RegisterFullController extends Controller
     {
         $data = Profile::where('user_id',Auth::guard('web')->user()->id)->first();
         $job = JobDescription::where('profile_id',$data->id)->get();
+        $course = Course::where('profile_id',$data->id)->get();
             return view('auth.register_company_detail',[
                 'type'=>$type,
                 'data'=>$data,
                 'job'=>$job,
+                'course'=>$course,
             ]);
     }
 
- 
+
     public function register_user_detail($type='')
     {
             return view('auth.register_user_detail',[
