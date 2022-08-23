@@ -199,7 +199,7 @@ class RegisterFullController extends Controller
     }
 
     if($r->typeAccount1==1){
-        return redirect()->to('/');
+        return redirect()->to('interes_course');
     }
         // $request->session()->flash('success', 'สำเร็จ');
         // return redirect()->to('register_company_detail');

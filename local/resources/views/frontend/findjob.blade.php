@@ -4,15 +4,15 @@
 @endsection
 @section('content')
 
-<style> 
-.bgdd{     
+<style>
+.bgdd{
     background-image: url("{{ asset('images/bgcourse.png') }}");
        background-repeat: no-repeat;
   background-size: 100%;
      height: 2000px;
 }
 .main {
-     
+
     width: 90%;
   margin-right: 20px;
   margin-left: 20px;
@@ -29,18 +29,18 @@ img.center {
 .optop {
    text-align: center;
       padding: 10px;
-       
+
 }
 .left {
    text-align: left;
     margin-left: 80px;
-      margin-Right: 20px;  
+      margin-Right: 20px;
 }
 .right {
    text-align: right;
    margin-top: 10px;
     margin-Right: 80px;
-      margin-left: 20px;   
+      margin-left: 20px;
 }
 .op2center {
    text-align: center;
@@ -56,8 +56,8 @@ img.center {
       padding: 10px;
         margin: auto;
         color:  #8B0900;
-    
-    
+
+
       font-style: normal;
 }
 .circle {
@@ -110,12 +110,12 @@ img.center {
 }
 </style>
         {{-- begin #Profile --}}
-    
-       
+
+
  <div class="bgdd">
 
                <br>
- 
+
   <div class="main opcenter">
 
         <div class="row">
@@ -147,9 +147,9 @@ tr:nth-child(even) {
   border: 1px solid grey;
   font-size: 1.5em;
     padding: 20px 20px;
- 
+
   border-radius: 50px;
- 
+
 }
 #more {display: none;}
 .buttonop {
@@ -179,47 +179,48 @@ tr:nth-child(even) {
      <div class="col-6">
  				<br>
                     <div class="opcenter">
-                  <br>     <br>  <br> 
- 
+                  <br>     <br>  <br>
+
             <h5 class="mb-3 text-left"><font style="color:grey">รายการแนะนำ</font></h5>
                    <br>
-    
-            
-                
-              
-<p> <div class="row"> <a class="nav-link py-1 buttonblack " style="margin-right: 20px;margin-top: 20px;" href="{{ url('register') }}"><font style="color:grey">วิศวะกรรมศาสตร์</font></a>
-                <a class="nav-link py-1 buttonblack"  style="margin-right: 20px;margin-top: 20px;" href="{{ url('register') }}"><font style="color:grey">การจัดการธุรกิจโรงแรม</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">การศึกษา</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">เทคนิคการแพทย์</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">การเงิน</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">เทคโนโลยีสารสนเทศ</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">สังคมและการบริการสังคม</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">ฝ่ายบริการลูกค้า</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">การตลาด</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">นักวิชาการ</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">นักบัญชี</font></a> <span id="dots"></span></div>
-                <span id="more"> <div class="row"> <a class="nav-link py-1 buttonblack " style="margin-right: 20px;margin-top: 20px;" href="{{ url('register') }}"><font style="color:grey">วิศวะกรรมศาสตร์</font></a>
-                <a class="nav-link py-1 buttonblack"  style="margin-right: 20px;margin-top: 20px;" href="{{ url('register') }}"><font style="color:grey">การจัดการธุรกิจโรงแรม</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">การศึกษา</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">เทคนิคการแพทย์</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">การเงิน</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">เทคโนโลยีสารสนเทศ</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">สังคมและการบริการสังคม</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">ฝ่ายบริการลูกค้า</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">การตลาด</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">นักวิชาการ</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">นักบัญชี</font></a> </div></span></p>
+
+
+
+
+<p> <div class="row"> <a class="nav-link py-1 buttonblack " style="margin-right: 20px;margin-top: 20px;" href="javascript:;"><font style="color:grey">วิศวะกรรมศาสตร์</font></a>
+                <a class="nav-link py-1 buttonblack"  style="margin-right: 20px;margin-top: 20px;" href="javascript:;"><font style="color:grey">การจัดการธุรกิจโรงแรม</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">การศึกษา</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">เทคนิคการแพทย์</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">การเงิน</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">เทคโนโลยีสารสนเทศ</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">สังคมและการบริการสังคม</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">ฝ่ายบริการลูกค้า</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">การตลาด</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">นักวิชาการ</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">นักบัญชี</font></a> <span id="dots"></span></div>
+                <span id="more"> <div class="row"> <a class="nav-link py-1 buttonblack " style="margin-right: 20px;margin-top: 20px;" href="javascript:;"><font style="color:grey">วิศวะกรรมศาสตร์</font></a>
+                <a class="nav-link py-1 buttonblack"  style="margin-right: 20px;margin-top: 20px;" href="javascript:;"><font style="color:grey">การจัดการธุรกิจโรงแรม</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">การศึกษา</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">เทคนิคการแพทย์</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">การเงิน</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">เทคโนโลยีสารสนเทศ</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">สังคมและการบริการสังคม</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">ฝ่ายบริการลูกค้า</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">การตลาด</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">นักวิชาการ</font></a>
+                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="javascript:;"><font style="color:grey">นักบัญชี</font></a> </div></span></p>
  <div class="left">
 <a onclick="myFunction()" id="myBtn" class="left">ดูเพิ่มเติม</a>
-      </div>      
-       
+      </div>
+
         </div>
          <div class="right">
-      <button type="submit" style="background-color: #8B0900; color:white;" class="btn ">ถัดไป <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
-                </div> 
+            <a href="{{url('register_user_detail')}}" style="background-color: #8B0900; color:white;" class="btn ">ถัดไป <i class="fa fa-chevron-right" aria-hidden="true"></i> </a>
+      {{-- <button type="submit" style="background-color: #8B0900; color:white;" class="btn ">ถัดไป <i class="fa fa-chevron-right" aria-hidden="true"></i> </button> --}}
+                </div>
     </div>
  </div>
-              </div> {{-- end #main --}}</div> 
+              </div> {{-- end #main --}}</div>
     {{-- end #Profile --}}
     <script src="{{ asset('js/app.js') }}" ></script>
 

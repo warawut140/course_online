@@ -50,10 +50,10 @@ Route::group(['middleware' => ['web','auth']], function () {
     //  });
 
     // Route::get('/certificate_dowload/{id}','frontend\CourseNewController@course_view');
-
+    Route::get('/register_user_detail/{type?}','frontend\RegisterFullController@register_user_detail');
 });
 Route::post('/register_full','frontend\RegisterFullController@register');
-Route::get('/register_user_detail/{type?}','frontend\RegisterFullController@register_user_detail');
+
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontend\HomeController@index')->name('index');

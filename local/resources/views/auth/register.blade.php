@@ -118,7 +118,7 @@
                                  </div>
                                  <div class="form-group">
                                      <label for="exampleInputEmail1">เบอร์โทร</label>
-                                     <input type="text" class="form-control" required id="exampleInputEmail1" name="tel">
+                                     <input type="text" class="form-control" required maxlength="10" id="exampleInputEmail1" name="tel">
                                  </div>
                                  <a href="ref"></a>
                                  <div class="form-group">
@@ -154,7 +154,7 @@
                                  </div>
                                  <div class="form-group">
                                      <label for="exampleFormControlFile1">รูปประจำตัว</label>
-                                     <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imageProfile">
+                                     <input type="file" required class="form-control-file" id="exampleFormControlFile1" name="imageProfile">
                                  </div>
                                  {{-- <div class="form-group">
                                      <label for="exampleFormControlFile1">รูปสำเนาบัตรประชาชน</label>
