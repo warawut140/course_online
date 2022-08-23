@@ -145,6 +145,7 @@ tr:nth-child(even) {
  				<br>
                     <div class="opcenter">
                         <div id="accordion">
+
   <div class="card">
     <div class="card-header" id="headingOne">
       <div class="mb-0 ">
@@ -272,7 +273,7 @@ React ไปใช้งานจริง ในคอร์สนี้นอ�
 
     
   </div>
-
+  
  
   <div class="card">
     <div class="card-header" id="headingTwo">
