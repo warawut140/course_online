@@ -31,6 +31,7 @@ img.center {
 }
 .right {
    text-align: right;
+   margin-top: 10px;
     margin-Right: 80px;
       margin-left: 20px;   
 }
@@ -51,6 +52,20 @@ img.center {
     
     
       font-style: normal;
+}
+.circle {
+ border: 1px solid black;
+   border-radius: 50%;
+
+  padding: 5px;
+}
+
+.circlered {
+ border: 1px solid red;
+   background-color: #8B0900;
+   border-radius: 50%;
+    font-size:2em;
+  padding: 30px;
 }
 .button3:hover {
   background-color: #f44336;
@@ -85,10 +100,10 @@ img.center {
          
                  <img src="{{ asset('images/bannermockup2.png') }}" style="  width: 100%;"  ><br>
  
-  <div class="main">
+  <div class="main opcenter">
 
         <div class="row">
-				<div class="col-lg-3 optop">
+				<div class="col-lg-12 optop">
 					<style>
 .memberlink li{
     list-style:none;
@@ -124,115 +139,317 @@ tr:nth-child(even) {
     border-radius: 15px;}
 </style>
 
-<img src="{{ asset('images/profile/profile_15.jpg') }}" class="rounded-circle mb-2 mw-100" width="200" height="200"><br>
-		<h4 class="center" style="color: #8B0900;" >BIG ABC</h4>
-        <p class="center" style="color: #808080;" >Le Méridien Hotels & Resorts  เชียงใหม่</p><br>
-        <h4 class="left" style="color: #8B0900;" >ABOUT ME</h4>
-            <p class="left" style="color: #808080;" >At Le Méridien, we believe in helping guests 
-unlock the unexpected and engaging experiences 
-each destination has to offer. Our guests are curious 
-and creative, cosmopolitan, culture seekers that 
-appreciate sophisticated, timeless service. 
-We provide original, chic and memorable service 
-and experiences that inspire guests to unlock 
-the destination. We’re looking for curious, 
-creative and well-informed people to join our team. </p>
+<br>
+		<h4 class="left" style="color: black;" >เนื้อหาหลักสูตร</h4>
+   
  				<br>
+                    <div class="opcenter">
+                        <div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <div class="mb-0 ">
+        <div class="row">
+              <div class="col-4 left">
+          <h5>บทเรียนที่ 1 ความรู้พื้นฐาน   
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <i class="fa fa-chevron-down circle" style="color: black;"  aria-hidden="true"></i> </button>  </h5>   </div>
+           <div class="col-6 right">
+         <i class="fa fa-play-circle " style="color: black;"  aria-hidden="true"></i> วิดีโอ 3 &nbsp;&nbsp; <i class="fa fa-clock-o" style="color: black;"  aria-hidden="true"></i> 05:28 นาที
+          </div>
+  </div>
+      </div>
+      
+    </div>
 
- <h5 class="left" style="color: #808080;" ><img src="{{ asset('images/icon/location.png') }}" height="30"></h5>
- <h5 class="left" style="color: #808080;" >Location</h5>
-  <p class="left" style="color: #808080;" >Le Méridien Chiang Mai, 108 Chang Klan Road, 
-Chiang Mai, Chiang Mai, Thailand VIEW ON MAP
-</p>
- 				<br>
-                           <div class="row">
-                    <div class="col-1">
-                        <img class="left" src="{{ asset('images/icon/fb.png') }}" height="35"  style="margin-right: 5px;">
-                       </div>
-                          <div class="col-11">
-                     
-                          <button class=" left buttonop"  style="margin-right: 5px;margin-top: 5px;">BIG ABC</button>
-                       </div>
-                        <div class="col-1">
-                         <img class="left" src="{{ asset('images/icon/gg.png') }}" style="margin-right: 5px;" height="35">
-                       </div>
-                          <div class="col-11">
-                            <button class=" left buttonop"  style="margin-right: 5px;margin-top: 5px;">BIG ABC@gmail.com</button>
-                       </div>
-                        <div class="col-1">
-                         <img class="left" src="{{ asset('images/icon/in.png') }}" style="margin-right: 5px;" height="35">
-                       </div>
-                          <div class="col-11">
-                             <button class=" left buttonop"  style="margin-right: 5px;margin-top: 5px;">BIG ABC</button>
-                       </div>
-                            <div class="col-1">
-                         <img class="left" src="{{ asset('images/icon/tw.png') }}" style="margin-right: 5px;" height="35">
-                       </div>
-                          <div class="col-11">
-                           <button class=" left buttonop"  style="margin-right: 5px;margin-top: 5px;">BIG ABC</button>
-                       </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+       {{-- start #course --}}
+ <div class="row">
+         <div class="col-1">
+          <h5>1</h5>
+        </div>
+      <div class="col-2">
+          <a href="{{ url('course_online_inside') }}">
+                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
+                    </a>
+          </div>
+ <div class="col-7">
+          <div class="row">
+         <div class="col-12 left">
+          <h5>เรียนรู้การใช้งาน React ร่วมกับ API</h5>
+        </div>
+      <div class="col-12 left">
+       <p>  หลักสูตรนี้คุณจะได้เรียนรู้การการประยุกต์ใช้งาน React สำหรับการสร้างเว็บแอพพลิเคชั่น
+ซึ่งมีทั้งหมด 15 แอพพลิเคชั่นด้วยกันรวมอยู่ในคอร์สเดียว สามารถนำไปต่อยอดในการนำ 
+React ไปใช้งานจริง ในคอร์สนี้นอกจากคุณจะได้เรียนเรื่อง React แล้ว </p>
 
-</div>
-<br><br>
-                <div class="row">
-                    <div class="col-6">
-                       <p class="left" style="color: #808080;" >กดถูกใจ</p>
-                       </div>
-                          <div class="col-6">
-                       <p class="right" style="color: #808080;" >30</p>
-                       </div>
-                        <div class="col-6">
-                       <p class="left" style="color: #808080;" >ยื่นสมัครงาน</p>
-                       </div>
-                          <div class="col-6">
-                       <p class="right" style="color: #808080;" >54</p>
-                       </div>
-                        <div class="col-6">
-                       <p class="left" style="color: #808080;" >การเข้าถึง</p>
-                       </div>
-                          <div class="col-6">
-                       <p class="right" style="color: #808080;" >99</p>
-                       </div>
+          </div>
+          </div> </div>
+<div class="col-2">
+    01 : 30 นาที
+       </div>
+      </div> {{-- end #course --}}
+       {{-- start #course --}}
+ <div class="row">
+         <div class="col-1">
+          <h5>2</h5>
+        </div>
+      <div class="col-2">
+          <a href="{{ url('course_online_inside') }}">
+                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
+                    </a>
+          </div>
+ <div class="col-7">
+          <div class="row">
+         <div class="col-12 left">
+          <h5>เรียนรู้การใช้งาน React ร่วมกับ API</h5>
+        </div>
+      <div class="col-12 left">
+       <p>  หลักสูตรนี้คุณจะได้เรียนรู้การการประยุกต์ใช้งาน React สำหรับการสร้างเว็บแอพพลิเคชั่น
+ซึ่งมีทั้งหมด 15 แอพพลิเคชั่นด้วยกันรวมอยู่ในคอร์สเดียว สามารถนำไปต่อยอดในการนำ 
+React ไปใช้งานจริง ในคอร์สนี้นอกจากคุณจะได้เรียนเรื่อง React แล้ว </p>
 
+          </div>
+          </div> </div>
+<div class="col-2">
+    01 : 30 นาที
+       </div>
+      </div> {{-- end #course --}}
+       {{-- start #course --}}
+ <div class="row">
+         <div class="col-1">
+          <h5>3</h5>
+        </div>
+      <div class="col-2">
+          <a href="{{ url('course_online_inside') }}">
+                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
+                    </a>
+          </div>
+ <div class="col-7">
+          <div class="row">
+         <div class="col-12 left">
+          <h5>เรียนรู้การใช้งาน React ร่วมกับ API</h5>
+        </div>
+      <div class="col-12 left">
+       <p>  หลักสูตรนี้คุณจะได้เรียนรู้การการประยุกต์ใช้งาน React สำหรับการสร้างเว็บแอพพลิเคชั่น
+ซึ่งมีทั้งหมด 15 แอพพลิเคชั่นด้วยกันรวมอยู่ในคอร์สเดียว สามารถนำไปต่อยอดในการนำ 
+React ไปใช้งานจริง ในคอร์สนี้นอกจากคุณจะได้เรียนเรื่อง React แล้ว </p>
+
+          </div>
+          </div> </div>
+<div class="col-2">
+    01 : 30 นาที
+       </div>
+      </div> {{-- end #course --}}
+    
+         {{-- start #test --}}     <br>
+ <div class="row">
+
+         <div class="col-1">
+          <h5></h5>
+        </div>
+      <div class="col-2">
+           <h5> <i class="fa fa-file-text circlered" style="color: white;"  aria-hidden="true"></i></h5>
+          </div>
+ <div class="col-7">
+          <div class="row">
+         <div class="col-12 left">
+          <h5>แบบทดสอบความรู้</h5>
+        </div>
+      <div class="col-12 left">
+       <p>  จำนวนทั้งหมด 10 ข้อ </p>
+
+          </div>
+          </div> </div>
+<div class="col-2">
+ 
+<h5> <i class="fa fa-check-circle" style="color: green;"  aria-hidden="true"></i></h5>
+    
+       </div>
+      </div> 
+    <br>{{-- end #test --}}
+    </div>
+
+    
+  </div>
+
+ 
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+     <div class="mb-0 ">
+        <div class="row">
+              <div class="col-4 left">
+           <h5>  บทเรียนที่ 2 ความเข้าใจเกี่ยวกับโค้ด
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <i class="fa fa-chevron-down circle" style="color: black;"  aria-hidden="true"></i></button>  </h5>   </div>
+         <div class="col-6 right">
+         <i class="fa fa-play-circle " style="color: black;"  aria-hidden="true"></i> วิดีโอ 1 &nbsp;&nbsp; <i class="fa fa-clock-o" style="color: black;"  aria-hidden="true"></i> 01:30 นาที
+          </div>
+  </div>
+      </div>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+              {{-- start #course --}}
+ <div class="row">
+         <div class="col-1">
+          <h5>1</h5>
+        </div>
+      <div class="col-2">
+          <a href="{{ url('course_online_inside') }}">
+                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
+                    </a>
+          </div>
+ <div class="col-7">
+          <div class="row">
+         <div class="col-12 left">
+          <h5>เรียนรู้การใช้งาน React ร่วมกับ API</h5>
+        </div>
+      <div class="col-12 left">
+       <p>  หลักสูตรนี้คุณจะได้เรียนรู้การการประยุกต์ใช้งาน React สำหรับการสร้างเว็บแอพพลิเคชั่น
+ซึ่งมีทั้งหมด 15 แอพพลิเคชั่นด้วยกันรวมอยู่ในคอร์สเดียว สามารถนำไปต่อยอดในการนำ 
+React ไปใช้งานจริง ในคอร์สนี้นอกจากคุณจะได้เรียนเรื่อง React แล้ว </p>
+
+          </div>
+          </div> </div>
+<div class="col-2">
+    01 : 30 นาที
+       </div>
+      </div> {{-- end #course --}}
+
+     
+    
+         {{-- start #test --}}     <br>
+ <div class="row">
+
+         <div class="col-1">
+          <h5></h5>
+        </div>
+      <div class="col-2">
+           <h5> <i class="fa fa-file-text circlered" style="color: white;"  aria-hidden="true"></i></h5>
+          </div>
+ <div class="col-7">
+          <div class="row">
+         <div class="col-12 left">
+          <h5>แบบทดสอบความรู้</h5>
+        </div>
+      <div class="col-12 left">
+       <p>  จำนวนทั้งหมด 10 ข้อ </p>
+
+          </div>
+          </div> </div>
+<div class="col-2">
+ 
+<h5> <i class="fa fa-check-circle" style="color: green;"  aria-hidden="true"></i></h5>
+    
+       </div>
+      </div> 
+    <br>{{-- end #test --}}
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+     <div class="mb-0 ">
+        <div class="row">
+              <div class="col-4 left">
+              <h5>   บทเรียนที่ 3 ความเข้าใจเกี่ยวกับโค้ด
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <i class="fa fa-chevron-down circle" style="color: black;"  aria-hidden="true"></i></button>  </h5>   </div>
+     <div class="col-6 right">
+         <i class="fa fa-play-circle " style="color: black;"  aria-hidden="true"></i> วิดีโอ 2 &nbsp;&nbsp; <i class="fa fa-clock-o" style="color: black;"  aria-hidden="true"></i> 03:00 นาที
+          </div>
+  </div>
+      </div>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+              {{-- start #course --}}
+ <div class="row">
+         <div class="col-1">
+          <h5>1</h5>
+        </div>
+      <div class="col-2">
+          <a href="{{ url('course_online_inside') }}">
+                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
+                    </a>
+          </div>
+ <div class="col-7">
+          <div class="row">
+         <div class="col-12 left">
+          <h5>เรียนรู้การใช้งาน React ร่วมกับ API</h5>
+        </div>
+      <div class="col-12 left">
+       <p>  หลักสูตรนี้คุณจะได้เรียนรู้การการประยุกต์ใช้งาน React สำหรับการสร้างเว็บแอพพลิเคชั่น
+ซึ่งมีทั้งหมด 15 แอพพลิเคชั่นด้วยกันรวมอยู่ในคอร์สเดียว สามารถนำไปต่อยอดในการนำ 
+React ไปใช้งานจริง ในคอร์สนี้นอกจากคุณจะได้เรียนเรื่อง React แล้ว </p>
+
+          </div>
+          </div> </div>
+<div class="col-2">
+    01 : 30 นาที
+       </div>
+      </div> {{-- end #course --}}
+       {{-- start #course --}}
+ <div class="row">
+         <div class="col-1">
+          <h5>2</h5>
+        </div>
+      <div class="col-2">
+          <a href="{{ url('course_online_inside') }}">
+                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
+                    </a>
+          </div>
+ <div class="col-7">
+          <div class="row">
+         <div class="col-12 left">
+          <h5>เรียนรู้การใช้งาน React ร่วมกับ API</h5>
+        </div>
+      <div class="col-12 left">
+       <p>  หลักสูตรนี้คุณจะได้เรียนรู้การการประยุกต์ใช้งาน React สำหรับการสร้างเว็บแอพพลิเคชั่น
+ซึ่งมีทั้งหมด 15 แอพพลิเคชั่นด้วยกันรวมอยู่ในคอร์สเดียว สามารถนำไปต่อยอดในการนำ 
+React ไปใช้งานจริง ในคอร์สนี้นอกจากคุณจะได้เรียนเรื่อง React แล้ว </p>
+
+          </div>
+          </div> </div>
+<div class="col-2">
+    01 : 30 นาที
+       </div>
+      </div> {{-- end #course --}}
+      
+    
+         {{-- start #test --}}     <br>
+ <div class="row">
+
+         <div class="col-1">
+          <h5></h5>
+        </div>
+      <div class="col-2">
+           <h5> <i class="fa fa-file-text circlered" style="color: white;"  aria-hidden="true"></i></h5>
+          </div>
+ <div class="col-7">
+          <div class="row">
+         <div class="col-12 left">
+          <h5>แบบทดสอบความรู้</h5>
+        </div>
+      <div class="col-12 left">
+       <p>  จำนวนทั้งหมด 10 ข้อ </p>
+
+          </div>
+          </div> </div>
+<div class="col-2">
+ 
+<h5> <i class="fa fa-check-circle" style="color: green;"  aria-hidden="true"></i></h5>
+    
+       </div>
+      </div> 
+    <br>{{-- end #test --}}
+      </div>
+    </div>
+  </div>
 </div></div>
-				<div class="col-lg-9 opcenter">
-                    		<table>
-                  <th class="op2center">     <button class="blockop button3">WORK</button></th>
-   <th class="op2center">   <button class="blockop button3">APPLICANT</button></th>
-   <th class="op2center">   <button class="blockop button3">COURSE</button></th>
-     <th class="op2center">  <button class="blockop button3">แบบทดสอบ/WORKSHOP</button></th>
-</table>
-					<table>
-
-
-  
-    <tr>
-          <th class="op3center"> </th>
-  <th class="op3center">ชื่อผู้สมัคร</th>
-  <th class="op3center">ตำแหน่งที่สมัคร</th>
-  <th class="op3center">วันที่สมัคร</th>
-   <th class="op3center">เบอร์โทรติดต่อ</th>
-      <th class="op3center">CV/RESUME</th>
-          <th class="op3center">คำถาม/แบบทดสอบ</th>
-                 <th class="op3center">สถานะ</th>
-  </tr>
-
- @for ($i = 0; $i <= 29; $i++)
-  <tr>
-      <td class="opcenter"> {{$i+1}}</td>
-  <td class="opcenter">Peter</td>
-  <td class="opcenter">UX/UI DESIGH{{$i}}</td>
-  <td class="opcenter">19/08/2022</td>
-  <td class="opcenter">00-0000000</td>
-   <td class="opcenter"><i class="fa fa-file-text" aria-hidden="true"></i></td>
-    <td class="opcenter"><i class="fa fa-file-text" aria-hidden="true"> &nbsp&nbsp<i class="fa fa-file-text" aria-hidden="true"></i></i></td>
-     <td class="opcenter">ส่งใบสมัครแล้ว</td>
-  </tr>
-
- @endfor
-
-</table>
-				</div>
+</div>
+			
 			</div>
 
 </div> {{-- end #main --}}

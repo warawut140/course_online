@@ -97,17 +97,17 @@ Route::get('/faq', 'frontend\FaqController@index');
 Route::resource('/profile', 'frontend\ProfileController');
 
 Route::get('/profilecompany', function () {
-<<<<<<< Updated upstream
+
     return view('frontend/profilecompany');
  });
-=======
-   return view('frontend/profilecompany');
-});
+
 
 Route::get('/course_online', function () {
    return view('frontend/course_online');
 });
-
+Route::get('/course_online_inside', function () {
+   return view('frontend/course_online_inside');
+});
 Route::get('/worklist', function () {
    return view('frontend/worklist');
 });
@@ -117,7 +117,7 @@ Route::get('/chat', 'ChatController@index')->name('chat');
 Route::get('/chat/{id}', 'ChatController@chat');
 Route::get('/message/{id}', 'ChatController@getMessage')->name('message');
 Route::post('message', 'ChatController@sendMessage');
->>>>>>> Stashed changes
+
 
  Route::get('/worklist', function () {
     return view('frontend/worklist');
