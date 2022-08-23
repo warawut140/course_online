@@ -15,7 +15,7 @@
     <style>
         .bg-light2 {
             /* background-color: #8B0900;
-                                                    background-image: url("{{ asset('image/bg.png') }}"); */
+                                                        background-image: url("{{ asset('image/bg.png') }}"); */
             /* clear: both; */
         }
 
@@ -57,12 +57,12 @@
     <div id="app">
 
         @if (session('success'))
-        <div class="p-3 mb-2 bg-success text-white success text-center">{{ session('success') }}</div>
-    @endif
+            <div class="p-3 mb-2 bg-success text-white success text-center">{{ session('success') }}</div>
+        @endif
 
-    @if (session('error'))
-        <div class="p-3 mb-2 bg-danger text-white error text-center">{{ session('error') }}</div>
-    @endif
+        @if (session('error'))
+            <div class="p-3 mb-2 bg-danger text-white error text-center">{{ session('error') }}</div>
+        @endif
 
         {{-- begin #register --}}
         <div id="register-section1" class="bg-light2">
@@ -134,6 +134,30 @@
                                         </div>
                                     </div>
 
+                                    <div class="form-group row">
+                                        <div class="col-md-3">
+                                            <label for="status">คอร์สที่ต้องสำเร็จก่อน</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <?php
+                                            @$c_arr = explode(',', @$data->befor_course);
+                                            ?>
+                                            @foreach ($courses as $key => $c)
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" <?php
+                                                    if (in_array($c->id, $c_arr)) {
+                                                        echo 'checked';
+                                                    }
+                                                    ?> type="checkbox"
+                                                        id="inlineCheckbox{{ $key }}" name="befor_course[]"
+                                                        value="{{ $c->id }}">
+                                                    <label class="form-check-label"
+                                                        for="inlineCheckbox{{ $key }}">{{ $c->name }}</label>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+
                                     <div class="form-group ">
                                         <label for="certificate_file">File Certificate</label>
                                         <br>
@@ -149,17 +173,19 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" <?php if (@$data->certificate_status == 1) {
+                                                    <input class="form-check-input" required <?php if (@$data->certificate_status == 1) {
                                                         echo 'checked="checked"';
-                                                    } ?> type="radio"
-                                                        name="certificate_status" id="inlineRadio1" value="1">
+                                                    } ?>
+                                                        type="radio" name="certificate_status" id="inlineRadio1"
+                                                        value="1">
                                                     <label class="form-check-label" for="inlineRadio1">Certificate</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" <?php if (@$data->certificate_status == 2) {
+                                                    <input class="form-check-input" required <?php if (@$data->certificate_status == 2) {
                                                         echo 'checked="checked"';
-                                                    } ?> type="radio"
-                                                        name="certificate_status" id="inlineRadio2" value="2">
+                                                    } ?>
+                                                        type="radio" name="certificate_status" id="inlineRadio2"
+                                                        value="2">
                                                     <label class="form-check-label" for="inlineRadio2">No
                                                         Certificate</label>
                                                 </div>
@@ -170,7 +196,8 @@
                                     <div class="form-group row">
                                         <div class="col-md-6">
                                             <label for="">ภาพหน้าปกคอร์สเรียน</label>
-                                            <input type="file" class="form-control-file" id="image" name="image">
+                                            <input type="file" class="form-control-file" id="image"
+                                                name="image">
                                             @if (@$data->image != '')
                                                 <img src="{{ asset('images/profile/' . @$data->image) }}" width="300px"
                                                     height="250px">
@@ -225,18 +252,19 @@
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">บทเรียน</label>
                                                 @foreach ($chapter as $c)
-                                                <div class="input-group mb-3">
-                                                    <input type="text" value="{{ @$c->name }}"
-                                                        class="form-control form-control-sm"
-                                                        placeholder="Recipient's username" readonly
-                                                        aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                                    <div class="input-group-append">
-                                                        <a href="{{ url('chapter_view/' . @$c->id) }}"><span
-                                                                class="input-group-text"
-                                                                id="basic-addon2">ตั้งค่าบทเรียน &nbsp;<i
-                                                                    class="fa fa-gear"></i></span></a>
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" value="{{ @$c->name }}"
+                                                            class="form-control form-control-sm"
+                                                            placeholder="Recipient's username" readonly
+                                                            aria-label="Recipient's username"
+                                                            aria-describedby="basic-addon2">
+                                                        <div class="input-group-append">
+                                                            <a href="{{ url('chapter_view/' . @$c->id) }}"><span
+                                                                    class="input-group-text"
+                                                                    id="basic-addon2">ตั้งค่าบทเรียน &nbsp;<i
+                                                                        class="fa fa-gear"></i></span></a>
+                                                        </div>
                                                     </div>
-                                                </div>
                                                 @endforeach
                                             </div>
                                         </div>

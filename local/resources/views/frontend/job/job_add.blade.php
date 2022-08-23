@@ -216,7 +216,7 @@
                                         <div class="form-group">
                                             <a href="{{ url('job_delete/' . $data->id) }}"
                                                 class="btn btn-outline-danger w-100"
-                                                onclick="return confirm('ยืนยันการลบรายการ?')">ยกเลิก</a>
+                                                onclick="return confirm('ยืนยันการลบรายการ?')">ลบ</a>
                                         </div>
                                     @endif
                                     <div class="form-group">

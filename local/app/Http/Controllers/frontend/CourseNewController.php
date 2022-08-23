@@ -22,7 +22,10 @@ class CourseNewController extends Controller
 {
     public function course_add()
     {
-        return view('frontend.course.course_add');
+        $courses = Course::where('status',1)->get();
+        return view('frontend.course.course_add',[
+            'courses' => $courses,
+        ]);
     }
 
     public function chapter_add($c_id)
@@ -42,10 +45,12 @@ class CourseNewController extends Controller
         $profile = Profile::where('user_id',Auth::guard('web')->user()->id)->first();
         $data = Course::where('id',$id)->where('profile_id',$profile->id)->first();
         $chapter = CourseChapter::where('course_id',$data->id)->get();
+        $courses = Course::where('status',1)->where('id','!=',$data->id)->get();
         if($data){
             return view('frontend.course.course_add',[
                 'data' => $data,
                 'chapter' => $chapter,
+                'courses' => $courses,
             ]);
         }else{
             return redirect()->back()->with('error','ไม่พบข้อมูล');
@@ -94,7 +99,11 @@ class CourseNewController extends Controller
                     }
                     $course->image = $image;
                 }
-
+                $befor_course = "";
+                if($r->befor_course){
+                    $befor_course = implode(",",$r->befor_course);
+                }
+                $course->befor_course = $befor_course;
                 $course->save();
             }
 
