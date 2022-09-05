@@ -14,28 +14,30 @@
                     </ul>
                 </div>
             @endif
-            <form method="POST" action="{{ url('register_company_detail_basic_store') }}" id="searchForm"
-                enctype="multipart/form-data">
-                @csrf
+            <form method="POST" action="{{ url('register_student_detail_basic_store') }}" id="searchForm"
+            enctype="multipart/form-data">
+            @csrf
+
+            <input type="hidden" name="type" value="job">
 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">หัวข้อ</label>
-                    <input type="text" class="form-control"  id="exampleInputEmail1"
-                        name="tel">
+                    <label for="title_about_me">หัวข้อ</label>
+                    <input type="text" class="form-control" value="{{@$data->title_about_me}}" id="title_about_me"
+                        name="title_about_me">
                 </div>
-             
+
 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">คำบรรยาย</label>
-                    <textarea type="text" class="form-control" name="ssxx"></textarea>
+                    <label for="detail_about_me">คำบรรยาย</label>
+                    <textarea type="text" class="form-control" name="detail_about_me">{{@$data->detail_about_me}}</textarea>
                     </div>
 
-                
+
                             <div class="form-group" >
-                                <button type="submit" class="btn btn-outline-success w-100">บันทึก</button>
+                                <button type="submit" class="btn btn-outline-success w-100" onclick="return confirm('ยืนยันการทำรายการ?')">บันทึก</button>
                              </div>
 
-                        
+
 
 
                     {{-- <div class="form-group" >

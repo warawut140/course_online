@@ -19,10 +19,10 @@
                 @csrf
                   <div class="form-row">
                       <div class="form-group col-md-12">
-                        <label for="inputPassword4">มหาวิทยาลัย</label>
+                        <label for="inputPassword4">สถานศึกษา</label>
                         <input name="lastname" type="text"  class="form-control" >
                     </div>
-                   
+
                 </div>
                 <div class="form-row">
                       <div class="form-group col-md-6">
@@ -51,10 +51,15 @@
                         <input name="firstname" type="text"  class="form-control">
                     </div>
                     <div class="form-group col-md-6">
-                    
+
                     </div>
                 </div><br>
-                            <div class="form-group" >
+
+                <div class="form-group" >
+                    <button type="submit" class="btn btn-outline-success w-100" onclick="return confirm('ยืนยันการทำรายการ?')">บันทึก</button>
+                 </div>
+
+                            {{-- <div class="form-group" >
                                               <div class="form-row">
                                                   <div class="form-group col-md-3">
                                                        </div>
@@ -65,7 +70,7 @@
                                 <button type="cancel" class="btn btn-outline-danger w-100">Cancle</button>
                              </div>
                                 </div>
-                             </div>  
+                             </div>   --}}
                     {{-- <div class="form-group" >
                         <button type="submit" style="background-color: #8B0900; color:white;" class="btn  w-100">Submit</button>
                      </div> --}}
@@ -73,14 +78,17 @@
             </div>
         </div>
         <br>
- <div class="form-group" >
+
+
+
+ {{-- <div class="form-group" >
     <div class="form-row">
         <div class="form-group col-md-1">
-                            
+
                              </div>
 
                                <div class="form-group col-md-4">
                                 <button type="submit" class="btn btn-outline-primary w-100">+ Add Education</button>
                              </div>
-  </div>  </div>
+  </div>  </div> --}}
 </div>

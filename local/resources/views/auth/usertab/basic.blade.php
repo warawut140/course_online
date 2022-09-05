@@ -14,81 +14,86 @@
                     </ul>
                 </div>
             @endif
-            <form method="POST" action="{{ url('register_company_detail_basic_store') }}" id="searchForm"
+            <form method="POST" action="{{ url('register_student_detail_basic_store') }}" id="searchForm"
                 enctype="multipart/form-data">
                 @csrf
    <div class="form-group">
        <div class="form-row">
           <div class="form-group col-md-6">
-                       <img src="{{ asset('images/upload.png') }}" class="circleco mb-2 mw-100" width="200" height="200"><br>
+            @if($data)
+            <img src="{{ asset('images/profile/'.$data->image_profile) }}" class="circleco mb-2 mw-100" width="200" height="200"><br>
+            @else
+            <img src="{{ asset('images/upload.png') }}" class="circleco mb-2 mw-100" width="200" height="200"><br>
+            @endif
+
+            <input type="hidden" name="type" value="basic">
+
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="exampleFormControlFile1">รูปภาพโปรไฟล์</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imageProfile">
+                        <label for="image_profile">รูปภาพโปรไฟล์</label>
+                        <input type="file" class="form-control-file" id="image_profile"  name="image_profile">
                     </div>
 
                      </div>
                    <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">ชื่อ</label>
-                        <input name="firstname" type="text"  class="form-control"
-                            id="inputEmail4">
+                        <label for="firstname">ชื่อ</label>
+                        <input name="firstname" type="text" required value="{{@$data->firstname}}" class="form-control"
+                            id="firstname">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">นามสกุล</label>
-                        <input name="lastname" type="text"  class="form-control"
-                            id="inputPassword4">
+                        <label for="lastname">นามสกุล</label>
+                        <input name="lastname" type="text" required value="{{@$data->lastname}}" class="form-control"
+                            id="lastname">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">ID</label>
-                        <input name="firstname" type="text"  class="form-control"
-                            id="inputEmail4">
+                        <label for="username">username</label>
+                        <input name="username" type="text" required value="{{@$data->username}}" class="form-control"
+                            id="username">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">รหัสผ่าน</label>
-                        <input name="lastname" type="text"  class="form-control"
-                            id="inputPassword4">
+                        <label for="password">รหัสผ่าน</label>
+                        <input name="password" type="text"  placeholder="ระบุหากต้องการแก้ไข" class="form-control"
+                            id="password">
+                    </div>
+                    {{-- <div class="form-group col-md-6">
+                        <label for="con_password">ยืนยันรหัสผ่าน</label>
+                        <input name="con_password" type="text"  class="form-control"
+                            id="con_password">
+                    </div> --}}
+
+                    <div class="form-group col-md-6">
+                        <label for="tel">เบอร์โทรศัพท์</label>
+                        <input name="tel" type="text" required value="{{@$data->tel}}" class="form-control"
+                            id="tel">
                     </div>
                 </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="inputEmail4">เบอร์โทรศัพท์</label>
-                            <input name="firstname" type="text"  class="form-control"
-                                id="inputEmail4">
-                        </div>
-                       
-                    </div>
-
-              
-
-            
-
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="exampleInputEmail1">ตำแหน่งที่ตั้ง</label>
                     <textarea type="text" class="form-control" rows="3" name="ssxx"></textarea>
-                    </div>
+                    </div> --}}
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputEmail4">E-mail</label>
-                            <input name="firstname" type="text"  class="form-control"
-                                id="inputEmail4">
+                            <label for="email">E-mail</label>
+                            <input name="email" type="text" required value="{{@$data->email}}" class="form-control"
+                                id="email">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputPassword4">วัน/เดือน/ปีเกิด </label>
-                            <input name="birthday" type="date" class="form-control">
+                            <label for="date_of_birth">วัน/เดือน/ปีเกิด </label>
+                            <input name="date_of_birth" type="date" required value="{{@$data->date_of_birth}}" class="form-control">
                         </div>
                     </div>
  <div class="form-group">
-                    <label for="exampleInputEmail1">ตำแหน่งปัจจุบัน</label>
-                    <textarea type="text" class="form-control" name="ssxx"></textarea>
+                    <label for="exampleInputEmail1">ที่อยู่</label>
+                    <textarea type="text" class="form-control" name="company_address">{{@$data->company_address}}</textarea>
                     </div>
-                 
+
                     <div class="form-group" >
-                        <button type="submit" class="btn btn-outline-success w-100">บันทึก</button>
+                        <button type="submit" class="btn btn-outline-success w-100" onclick="return confirm('ยืนยันการทำรายการ?')">บันทึก</button>
                      </div>
                 </form>
             </div>

@@ -91,6 +91,14 @@
 @section('content')
     <div id="app" class="main">
 
+        @if(session('success'))
+        <div class="p-3 mb-2 bg-success text-white success text-center">{{session('success')}}</div>
+        @endif
+
+        @if(session('error'))
+        <div class="p-3 mb-2 bg-danger text-white error text-center">{{session('error')}}</div>
+        @endif
+
         {{-- begin #register --}}
         <div id="register-section1" class="bg-light2">
             <div class="container py-5">
@@ -112,10 +120,10 @@
                             } ?>" id="v-pills-messages-tab"
                                 href="{{ url('register_user_detail/job') }}" role="tab"
                                 aria-controls="v-pills-messages" aria-selected="false">ABOUT ME</a>
-                            <a class="nav-link <?php if ($type == 'receive') {
+                            <a class="nav-link <?php if ($type == 'education') {
                                 echo 'active';
                             } ?>" id="v-pills-settings-tab"
-                                href="{{ url('register_user_detail/receive') }}" role="tab"
+                                href="{{ url('register_user_detail/education') }}" role="tab"
                                 aria-controls="v-pills-settings" aria-selected="false">Education
                             </a>
                             <a class="nav-link <?php if ($type == 'course') {
@@ -142,8 +150,8 @@
                     @if ($type == 'job')
                         @include('auth.usertab.job')
                     @endif
-                    @if ($type == 'receive')
-                        @include('auth.usertab.receive')
+                    @if ($type == 'education')
+                        @include('auth.usertab.education')
                     @endif
 
                     @if ($type == 'course')
@@ -178,9 +186,12 @@
         {{-- end #register --}}
     </div>
     {{-- <script src="/js/app.js" charset="utf-8"></script> --}}
-    <script src="{{ asset('js/app.js') }}"></script>
+
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+
 @endsection
 @section('script')
+
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('select2/select2.min.js') }}"></script>
 
@@ -192,7 +203,15 @@
             });
             // CKEDITOR.replace('detail_scope');
 
+                setTimeout(function() {
+                    $('.success').hide()
+                }, 2000);
+                setTimeout(function() {
+                    $('.error').hide()
+                }, 2000);
+
         });
+
 
 
         $(function() {

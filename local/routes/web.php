@@ -39,7 +39,6 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::get('/job_delete/{id}','frontend\JobNewController@job_delete');
     Route::post('/register_company_detail_basic_store','frontend\RegisterFullController@register_company_detail_basic_store');
 
-
     Route::get('/course_online_view/{course_id}','frontend\CourseNewController@course_online_view');
     Route::get('/course_online_inside_view/{course_list_id}','frontend\CourseNewController@course_online_inside_view');
     // Route::get('/course_online', function () {
@@ -51,6 +50,10 @@ Route::group(['middleware' => ['web','auth']], function () {
 
     // Route::get('/certificate_dowload/{id}','frontend\CourseNewController@course_view');
     Route::get('/register_user_detail/{type?}','frontend\RegisterFullController@register_user_detail');
+    Route::post('/register_student_detail_basic_store','frontend\RegisterFullController@register_student_detail_basic_store');
+
+
+
 });
 Route::post('/register_full','frontend\RegisterFullController@register');
 
