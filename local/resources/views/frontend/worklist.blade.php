@@ -305,7 +305,7 @@
 
  <div class="row">{{-- start #work--}}
     <div class="col-3">
-        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
          <h5 class="mb-3 text-left"><font style="color:white">Commis</font></h5>
           <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
            <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
@@ -315,7 +315,7 @@
               <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
  </div>
     <div class="col-3">
-        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
          <h5 class="mb-3 text-left"><font style="color:white">Commis</font></h5>
           <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
            <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
@@ -325,7 +325,7 @@
               <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
  </div>
     <div class="col-3">
-        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
          <h5 class="mb-3 text-left"><font style="color:white">Commis</font></h5>
           <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
            <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
@@ -335,7 +335,7 @@
               <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
  </div>
        <div class="col-3">
-        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
          <h5 class="mb-3 text-left"><font style="color:white">Commis</font></h5>
           <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
            <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
@@ -375,7 +375,7 @@
 
  <div class="row">{{-- start #work--}}
     <div class="col-4">
-        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
          <h5 class="mb-3 text-left"><font style="color:black">Commis</font></h5>
           <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
            <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
@@ -384,7 +384,7 @@
           
  </div>
      <div class="col-4">
-        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
          <h5 class="mb-3 text-left"><font style="color:black">Commis</font></h5>
           <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
            <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
@@ -393,7 +393,7 @@
           
  </div>
      <div class="col-4">
-        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
          <h5 class="mb-3 text-left"><font style="color:black">Commis</font></h5>
           <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
            <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
@@ -556,7 +556,7 @@
                            
                     <a href="{{ url('projectauction') }}">
                      <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number1.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
                     </a>
                      <span class="numberHot"></span>
                     <h4 class="text-orange">โปรแกรมเมอร์</h4>
@@ -565,7 +565,7 @@
                 <div class="item">
                     <a href="{{ url('work') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number2.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
                     </a>
                        <h4 class="text-orange">โปรแกรมเมอร์</h4>
                    <h2 class="text-orange"style="color:#374291;" >34K-25K</h2>
@@ -573,7 +573,7 @@
                 <div class="item">
                     <a href="{{ url('training') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number3.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
                     </a>
                        <h4 class="text-orange">โปรแกรมเมอร์</h4>
                    <h2 class="text-orange"style="color:#374291;" >34K-25K</h2>
@@ -581,7 +581,7 @@
                 <div class="item">
                     <a href="{{ url('#') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number4.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
                     </a>
                        <h4 class="text-orange">โปรแกรมเมอร์</h4>
                    <h2 class="text-orange"style="color:#374291;" >34K-25K</h2>
@@ -590,7 +590,7 @@
                            
                     <a href="{{ url('projectauction') }}">
                      <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number5.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
                     </a>
                      <span class="numberHot"></span>
                        <h4 class="text-orange">โปรแกรมเมอร์</h4>
@@ -605,13 +605,229 @@
          
             </div>
              <br>     <br>
- 
+   <h1 class="mb-3 text-left"><font style="color:black">UX/UI Designer</font></h1>
+            
+             <h5 class=" text-left"><font style="color:black">13 งานใน เชียงใหม่, เชียงใหม่, ประเทศไทย (3 ใหม่)</font></h5>
+                    <br>     <br>  
+ <div class="row">
+   
+ <div class="col-6">{{-- start #แบ่งครึ่ง1--}}
+  <br>     <br>
 
 
+ <div class="row">
+    <div class="col-12">
+        <div class="row">
+                <div class="col-4">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
+        </div>
+            <div class="col-8">
+         <h5 class="mb-3 text-left"><font style="color:black">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' ></i>  <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font></p> 
+          
+              <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
+               </div>
+ </div>
+     </div>{{-- end #work--}}
+        <div class="col-12">{{-- start #work--}}
+        <div class="row">
+                <div class="col-4">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
+        </div>
+            <div class="col-8">
+         <h5 class="mb-3 text-left"><font style="color:black">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' ></i>  <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font></p> 
+          
+              <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
+               </div>
+ </div>
+     </div>{{-- end #work--}}
+             <div class="col-12">{{-- start #work--}}
+        <div class="row">
+                <div class="col-4">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
+        </div>
+            <div class="col-8">
+         <h5 class="mb-3 text-left"><font style="color:black">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' ></i>  <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font></p> 
+          
+              <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
+               </div>
+ </div>
+     </div>{{-- end #work--}}
+             <div class="col-12">{{-- start #work--}}
+        <div class="row">
+                <div class="col-4">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
+        </div>
+            <div class="col-8">
+         <h5 class="mb-3 text-left"><font style="color:black">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' ></i>  <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font></p> 
+          
+              <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
+               </div>
+ </div>
+     </div>{{-- end #work--}}
+                  <div class="col-12">{{-- start #work--}}
+        <div class="row">
+                <div class="col-4">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
+        </div>
+            <div class="col-8">
+         <h5 class="mb-3 text-left"><font style="color:black">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' ></i>  <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font></p> 
+          
+              <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
+               </div>
+ </div>
+     </div>{{-- end #work--}}
+                  <div class="col-12">{{-- start #work--}}
+        <div class="row">
+                <div class="col-4">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
+        </div>
+            <div class="col-8">
+         <h5 class="mb-3 text-left"><font style="color:black">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' ></i>  <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font></p> 
+          
+              <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
+               </div>
+ </div>
+     </div>{{-- end #work--}}
 
-      
-         
+  </div>
 
+  
+ </div>{{-- end #แบ่งครึ่ง1--}}
+<div class="col-6">{{-- start #แบ่งครึ่ง2--}}
+  <br>     <br>
+ <h5 class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' style="color:black" ></i>  <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font></h5> 
+  <br>     
+ <div class="row">
+    <div class="col-6">
+         <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3">
+ </div>
+ <div class="col-6">
+     <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3">
+ </div>
+  </div>
+  <br>  <br>
+ <div class="row">
+    <div class="col-12">{{-- start #work--}}
+        <div class="row">
+                <div class="col-4">
+        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
+            
+        </div>
+            <div class="col-8">
+         <h5 class="mb-3 text-left"><font style="color:black">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+           <p class="mb-3 text-left">  <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a></p>
+          
+           <br> 
+               </div>
+ </div>
+     </div>{{-- end #work--}}
+        <div class="col-12">{{-- start #work--}}
+        <div class="row">
+   <br>        <br>
+            <div class="col-12">
+         <h5 class="mb-3 text-left"><font style="color:black">ข้อมูลบริษัท</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">At Le Méridien, we believe in helping guests unlock the unexpected and engaging experiences each destination has to offer. Our guests are curious and creative, cosmopolitan, culture seekers that appreciate sophisticated, timeless service. We provide original, chic and memorable service and experiences that inspire guests to unlock the destination. We’re looking for curious, creative and well-informed people to join our team. If you appreciate connecting with like-minded .</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> 
+Location Le Méridien Chiang Mai, 108 Chang Klan Road, Chiang Mai, Chiang Mai, Thailand VIEW ON MAP
+
+</font></p>
+          <br>        <br>
+ <p class="mb-3 text-left">   <font style="color:black">ลักษณะการทำงาน - บริหารงาน ประชุม อมรม</font></p> 
+          
+              <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-circle" aria-hidden="true"></i>
+ ขยายการตลาด ประสานงานขาย</font></p>
+<p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-circle" aria-hidden="true"></i>ฝึกอบรม พัฒนาตนเองและบุคคลากร
+</font></p>
+ <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-circle" aria-hidden="true"></i>
+ ออกตลาด พบปะกลุ่มลูกค้า</font></p>
+
+               </div>
+                   <div class="col-6">
+                 <br>        <br>
+ <p class="mb-3 text-left">   <font style="color:black">ระดับประสบการณ์</font></p> 
+          
+              <p class="mb-3 text-left"><font style="color:#374291;"><i class="fa fa-briefcase" aria-hidden="true"></i>
+ประสบการณ์น้อย</font></p>
+
+  </div>
+                     <div class="col-6">
+                 <br>        <br>
+ <p class="mb-3 text-left">   <font style="color:black">ประเภทการจ้างงาน</font></p> 
+          
+              <p class="mb-3 text-left"><font style="color:#374291;"><i class="fa fa-calendar-check" aria-hidden="true"></i>
+ Part-time</font></p>
+
+  </div>
+                  <div class="col-12">
+                 <br>        <br>
+ <p class="mb-3 text-left">   <font style="color:black">เงินเดือน</font></p> 
+          
+              <p class="mb-3 text-left"><font style="color:#374291;"><i class="fa fa-credit-card" aria-hidden="true"></i>
+12,000-15,000 บาท รายเดือน</font></p>
+
+
+                  <div class="col-12">
+                 <br>        <br>
+ <p class="mb-3 text-left">   <font style="color:black">Skill ที่ต้องการ</font></p> 
+          
+              <p class="mb-3 text-left"><font style="color:#374291;"><i class="fa fa-circle" aria-hidden="true"></i>
+ ขยายการตลาด ประสานงานขาย</font></p>
+<p class="mb-3 text-left"><font style="color:#374291;"><i class="fa fa-circle" aria-hidden="true"></i>  ฝึกอบรม พัฒนาตนเองและบุคคลากร
+</font></p>
+ <p class="mb-3 text-left"><font style="color:#374291;"><i class="fa fa-circle" aria-hidden="true"></i>
+ทักษะการพูดชั้นเชิง</font></p>
+  </div>
+                  <div class="col-12">
+                 <br>        <br>
+ <p class="mb-3 text-left">   <font style="color:black">คอร์สเรียนที่ควรผ่านการเรียนรู้มาก่อน</font></p> 
+          
+<p class="mb-3 text-left"><font style="color:#374291;"><i class="fa fa-check" aria-hidden="true"></i>
+ ขยายการตลาด ประสานงานขาย</font>&nbsp; &nbsp;&nbsp; &nbsp;<font style="color:blue;">Certificate</font></p>
+<p class="mb-3 text-left"><font style="color:gray;"><i class="fa fa-times" aria-hidden="true"></i>  ฝึกอบรม พัฒนาตนเองและบุคคลากร
+</font>&nbsp; &nbsp;&nbsp; &nbsp;<font style="color:gray;">Not Certificate</font></p></p>
+ <p class="mb-3 text-left"><font style="color:#374291;"><i class="fa fa-check" aria-hidden="true"></i>
+ ผ่านการเรียนคอร์ส พัฒนาตัวเอง</font>&nbsp; &nbsp;&nbsp; &nbsp;<font style="color:blue;">Certificate</font></p></p>
+  </div>
+ </div>
+     </div>{{-- end #work--}}
+             
+
+  </div>
+
+  
+ </div>{{-- end #แบ่งครึ่ง2--}}
+
+
+     </div>   
+       
+    
 
     {{--<script src="/js/app.js" charset="utf-8"></script>--}}
     <script src="{{ asset('js/app.js') }}" ></script>
