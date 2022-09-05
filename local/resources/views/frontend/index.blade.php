@@ -250,35 +250,47 @@
         }
 
         .row {
-    --bs-gutter-x: 0rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(-1 * var(--bs-gutter-y));
-    margin-right: calc(-.5 * var(--bs-gutter-x));
-    margin-left: calc(-.5 * var(--bs-gutter-x));
-}
+            --bs-gutter-x: 0rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: calc(-1 * var(--bs-gutter-y));
+            margin-right: calc(-.5 * var(--bs-gutter-x));
+            margin-left: calc(-.5 * var(--bs-gutter-x));
+        }
+
+        <style>a:link {
+            text-decoration: underline;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
 
     </style>
 @endsection
 @section('content')
-
+    {{-- ป็อปอัพ --}}
     <a data-fancybox data-src="#hidden-content-b" href="javascript:" class="btnpopup"></a>
     <div style="display: none;max-width:100%" id="hidden-content-b">
         <h1 class="mb-3 text-center">แนะนำหลักสูตร</span></h1>
         <div class="row text-center">
 
-            <div class="col-xl-6 col-md-6">
-                <a href="#">
-                    <div class="card mb-3 card-popup1">
-                        <div class="card-body">
-                            <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                            <h4 class="text-orange"></h4>
+            @foreach ($courses_recom as $c)
+                <div class="col-xl-6 col-md-6">
+                    <a href="{{ url('course_online_view/' . $c->id) }}">
+                        <div class="card mb-3 card-popup1">
+                            <div class="card-body">
+                                <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
+                                <h4 class="text-orange"></h4>
+                                {{-- <h6 class="text-orange text-left">{{ $c->name }}</h6> --}}
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-6 col-md-6">
+                    </a>
+                </div>
+            @endforeach
+            {{-- <div class="col-xl-6 col-md-6">
                 <a href="#">
                     <div class="card  mb-3 card-popup2">
                         <div class="card-body">
@@ -307,7 +319,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> --}}
 
         </div>
     </div>
@@ -322,7 +334,7 @@
         ?>
         <?php
         // เปิดมาครั้งแรกจะไม่มี  ก็เข้าไปทำงานในเงื่อนไข
-        if(!isset($_COOKIE["cookie1"])){ // ทำงานแสดงครั้งแรก ?>
+     if(!isset($_COOKIE["cookie1"])){ // ทำงานแสดงครั้งแรก ?>
         <script>
             $('[data-src="hidden-content-b"]').fancybox({
                 // toolbar : false
@@ -380,11 +392,12 @@
                     <div class="hotclass_slide owl-carousel owl-theme">
                         @foreach ($courses_trending as $c)
                             <div class="item">
-                                <a href="{{ url('course_online_view/'.$c->id) }}">
+                                <h6 class="text-orange text-left">{{ $c->name }}</h6>
+                                <a href="{{ url('course_online_view/' . $c->id) }}">
                                     {{-- <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-2"> --}}
                                     <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
                                 </a>
-                                <h6 class="text-orange text-left">{{ $c->name }}</h6>
+
                             </div>
                         @endforeach
                         {{-- <div class="item">
@@ -521,17 +534,19 @@
             <br> <br>
             <div class="hotclass_slide owl-carousel owl-theme">
 
-                @foreach ($courses_trending as $key=> $c)
-                <div class="item">
-                    <a href="{{ url('course_online_view/'.$c->id) }}">
-                        <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number{{$key+1}}.png"
-                                alt="" class="lazy"></span>
-                        <img src="{{ asset('images/profile/'.$c->image) }}" class="mw-100 mb-2">
-                    </a>
-                    <span class="numberHot"></span>
-                    <h6 class="text-orange text-left">{{ $c->name }}</h6>
+                @foreach ($courses_trending as $key => $c)
+                    <div class="item">
+                        <h6 class="text-orange text-left">{{ $c->name }}</h6>
+                        <a href="{{ url('course_online_view/' . $c->id) }}">
+                            <span class="numberHot"> <img
+                                    data-src="assets/fontend/images/number_hot/number{{ $key + 1 }}.png"
+                                    alt="" class="lazy"></span>
+                            <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
+                        </a>
+                        <span class="numberHot"></span>
 
-                </div>
+
+                    </div>
                 @endforeach
 
 
@@ -624,12 +639,13 @@
             </h5> <br>
             <div class="hotclass_slide owl-carousel owl-theme">
                 @foreach ($courses_trending as $c)
-                <div class="item">
-                    <a href="{{ url('course_online_view/'.$c->id) }}">
-                        <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
-                    </a>
-                    <h6 class="text-orange text-left">{{ $c->name }}</h6>
-                </div>
+                    <div class="item">
+                        <h6 class="text-orange text-left">{{ $c->name }}</h6>
+                        <a href="{{ url('course_online_view/' . $c->id) }}">
+                            <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
+                        </a>
+
+                    </div>
                 @endforeach
                 {{-- <div class="item">
                     <a href="{{ url('work') }}">
@@ -676,12 +692,13 @@
             <div class="hotclass_slide owl-carousel owl-theme">
 
                 @foreach ($courses_trending as $c)
-                <div class="item">
-                    <a href="{{ url('course_online_view/'.$c->id) }}">
-                        <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
-                    </a>
-                    <h6 class="text-orange text-left">{{ $c->name }}</h6>
-                </div>
+                    <div class="item">
+                        <h6 class="text-orange text-left">{{ $c->name }}</h6>
+                        <a href="{{ url('course_online_view/' . $c->id) }}">
+                            <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
+                        </a>
+
+                    </div>
                 @endforeach
 
                 {{-- <div class="item">

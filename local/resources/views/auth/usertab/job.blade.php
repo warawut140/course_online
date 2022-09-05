@@ -32,6 +32,38 @@
                     <textarea type="text" class="form-control" name="detail_about_me">{{@$data->detail_about_me}}</textarea>
                     </div>
 
+                    <div class="form-group col-md-6">
+                        <label for="rasume1">Rasume 1 (รูปภาพ JPG หรือ PNG)</label>
+                        <input type="file" class="form-control-file" id="rasume1"  name="rasume1">
+                    </div>
+
+                    @if($data->rasume1!='')
+                    <div class="form-group col-md-12">
+                        <img src="{{ asset('images/profile/'.$data->rasume1) }}" class="" width="400" height="500">
+                    </div>
+                    @endif
+
+                    {{-- <div class="form-group col-md-6">
+                        <label for="rasume2">Rasume 2 (รูปภาพ JPG หรือ PNG)</label>
+                        <input type="file" class="form-control-file" id="rasume2"  name="rasume2">
+                    </div> --}}
+
+                    {{-- <div class="form-group col-md-12">
+                        <img src="{{ asset('images/profile/'.$data->rasume2) }}" class="" width="400" height="500">
+                    </div> --}}
+
+
+                    <div class="form-group col-md-6">
+                        <label for="portfolio1">Portfolio 1 (รูปภาพ JPG หรือ PNG)</label>
+                        <input type="file" class="form-control-file" id="portfolio1"  name="portfolio1">
+                    </div>
+
+
+                    @if($data->portfolio1!='')
+                    <div class="form-group col-md-12">
+                        <img src="{{ asset('images/profile/'.$data->portfolio1) }}" class="" width="400" height="500">
+                    </div>
+                    @endif
 
                             <div class="form-group" >
                                 <button type="submit" class="btn btn-outline-success w-100" onclick="return confirm('ยืนยันการทำรายการ?')">บันทึก</button>

@@ -248,6 +248,8 @@ class HomeController extends Controller
 
         $courses_trending = Course::where('status',1)->get();
 
+        $courses_recom = Course::where('status',1)->limit(4)->get();
+
 
         return view('frontend.index',[
             'home_gellery' => $home_gellery ,
@@ -262,7 +264,7 @@ class HomeController extends Controller
             'course_list' => $course_list ,
             'review' => $review ,
             'recoommend' => $recoommend_profile ,
-
+            'courses_recom' => $courses_recom ,
             'courses_trending' => $courses_trending,
         ]);
 

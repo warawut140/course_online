@@ -52,7 +52,8 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::get('/register_user_detail/{type?}','frontend\RegisterFullController@register_user_detail');
     Route::post('/register_student_detail_basic_store','frontend\RegisterFullController@register_student_detail_basic_store');
 
-
+    Route::get('/profile_student/{page?}','frontend\ProfileNewController@profile_student');
+    Route::get('/profile_company/{page?}','frontend\ProfileNewController@profile_company');
 
 });
 Route::post('/register_full','frontend\RegisterFullController@register');
@@ -109,10 +110,7 @@ Route::get('/faq', 'frontend\FaqController@index');
 //Route::get('/profile', 'frontend\ProfileController@index');
 Route::resource('/profile', 'frontend\ProfileController');
 
-Route::get('/profilecompany', function () {
 
-    return view('frontend/profilecompany');
- });
 
 
 

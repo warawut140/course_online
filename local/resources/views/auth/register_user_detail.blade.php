@@ -126,10 +126,10 @@
                                 href="{{ url('register_user_detail/education') }}" role="tab"
                                 aria-controls="v-pills-settings" aria-selected="false">Education
                             </a>
-                            <a class="nav-link <?php if ($type == 'course') {
+                            <a class="nav-link <?php if ($type == 'work_exp') {
                                 echo 'active';
                             } ?>" id="v-pills-settings-tab"
-                                href="{{ url('register_user_detail/course') }}" role="tab"
+                                href="{{ url('register_user_detail/work_exp') }}" role="work_exp"
                                 aria-controls="v-pills-settings" aria-selected="false">WORK EXPERIENCE
                             </a>
                         </div>
@@ -154,8 +154,8 @@
                         @include('auth.usertab.education')
                     @endif
 
-                    @if ($type == 'course')
-                        @include('auth.usertab.course')
+                    @if ($type == 'work_exp')
+                        @include('auth.usertab.work_exp')
                     @endif
                 </div>
             </div>
