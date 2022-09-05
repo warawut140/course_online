@@ -17,6 +17,7 @@
             <form method="POST" action="{{ url('register_student_detail_basic_store') }}" id="searchForm"
                 enctype="multipart/form-data">
                 @csrf
+
    <div class="form-group">
        <div class="form-row">
           <div class="form-group col-md-6">
@@ -68,6 +69,11 @@
                         <label for="tel">เบอร์โทรศัพท์</label>
                         <input name="tel" type="text" required value="{{@$data->tel}}" class="form-control"
                             id="tel">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="title_me">แนะนำตัว</label>
+                        <input name="title_me" type="text" required value="{{@$data->title_me}}" class="form-control"
+                            id="title_me">
                     </div>
                 </div>
 

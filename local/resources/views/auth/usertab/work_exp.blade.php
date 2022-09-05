@@ -5,25 +5,25 @@
         }
     </style>
 <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
-    
+
     <br>
     <h4 style="color:#8B0900;">WORK EXPERIENCE</h4>
  <br>
 
-     <div class="card gray" style="background-color: #D3D3D3;">
+     {{-- <div class="card gray" style="background-color: #D3D3D3;">
         <div class="card-body" >
             <div class="form-row">
                       <div class="form-group col-md-11">
              <h5><b>
-               JS Engineering And Mechanical Co.Ltd 
+               JS Engineering And Mechanical Co.Ltd
             </b></h5>
             <p>UX/UI & Graphic Designer | April 2022 - September 2022 | Thailand</p>
-            </div> 
+            </div>
             <div class="form-group col-md-1">
    <button><i class="fa fa-pen"></i></button>
 </div>
                 </div>
-      </div>  </div>  <br>
+      </div>  </div>  <br> --}}
     <div class="card">
         <div class="card-body">
             {{-- <h5 class="card-title text-center">สมัครสมาชิก</h5> --}}
@@ -37,49 +37,51 @@
                     </ul>
                 </div>
             @endif
-            <form method="POST" action="{{ url('register_company_detail_basic_store') }}" id="searchForm"
+            <form method="POST" action="{{ url('register_student_detail_basic_store') }}" id="searchForm"
                 enctype="multipart/form-data">
                 @csrf
-                  
+
+                <input type="hidden" name="type" value="work_exp">
+
                 <div class="form-row">
                       <div class="form-group col-md-6">
-                        <label for="inputPassword4">บริษัท / องค์กร</label>
-                        <input name="lastname" type="text"  class="form-control" >
+                        <label for="name">บริษัท / องค์กร</label>
+                        <input name="name" type="text" value="{{@$work_exp->name}}" class="form-control" >
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">เว็บไซต์</label>
-                        <input name="lastname" type="text"  class="form-control" >
+                        <label for="web">เว็บไซต์</label>
+                        <input name="web" type="text" value="{{@$work_exp->web}}"  class="form-control" >
                     </div>
                 </div>
                  <div class="form-group">
-                    <label for="exampleInputEmail1">ตำแหน่งที่ตั้ง</label>
-                    <textarea type="text" class="form-control" rows="3" name="ssxx"></textarea>
+                    <label for="address">ตำแหน่งที่ตั้ง</label>
+                    <textarea type="text" class="form-control" rows="3"  name="address">{{@$work_exp->address}}</textarea>
                     </div>
                 <div class="form-row">
                       <div class="form-group col-md-12">
-                        <label for="inputPassword4">ตำแหน่งงาน</label>
-                        <input name="lastname" type="text"  class="form-control" >
+                        <label for="position">ตำแหน่งงาน</label>
+                        <input name="position" type="text" value="{{@$work_exp->position}}"  class="form-control" >
                     </div>
-                   
+
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">วันที่เริ่ม</label>
-                        <input name="firstname" type="date"  class="form-control"
+                        <label for="start_date">วันที่เริ่ม</label>
+                        <input name="start_date" type="date"   value="{{@$work_exp->start_date}}" class="form-control"
                             id="inputEmail4">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">วันสิ้นสุด</label>
-                        <input name="lastname" type="date" class="form-control">
+                        <label for="end_date">วันสิ้นสุด</label>
+                        <input name="end_date" type="date"  value="{{@$work_exp->end_date}}" class="form-control">
                     </div>
                 </div>
-             
+
              <div class="form-group">
-                    <label for="exampleInputEmail1">รายละเอียดงาน</label>
-                    <textarea type="text" class="form-control" rows="3" name="ssxx"></textarea>
+                    <label for="detail">รายละเอียดงาน</label>
+                    <textarea type="text" class="form-control" rows="3" name="detail">{{@$work_exp->detail}}</textarea>
                     </div>
                <br>
-                            <div class="form-group" >
+                            {{-- <div class="form-group" >
                                               <div class="form-row">
                                                   <div class="form-group col-md-3">
                                                        </div>
@@ -90,22 +92,27 @@
                                 <button type="cancel" class="btn btn-outline-danger w-100">Cancle</button>
                              </div>
                                 </div>
-                             </div>  
+                             </div> --}}
                     {{-- <div class="form-group" >
                         <button type="submit" style="background-color: #8B0900; color:white;" class="btn  w-100">Submit</button>
                      </div> --}}
+
+                     <div class="form-group" >
+                        <button type="submit" class="btn btn-outline-success w-100" onclick="return confirm('ยืนยันการทำรายการ?')">บันทึก</button>
+                     </div>
+
                 </form>
             </div>
         </div>
         <br>
- <div class="form-group" >
+ {{-- <div class="form-group" >
     <div class="form-row">
         <div class="form-group col-md-1">
-                            
+
                              </div>
 
                                <div class="form-group col-md-4">
                                 <button type="submit" class="btn btn-outline-primary w-100">+ Add Experience</button>
                              </div>
-  </div>  </div>
+  </div>  </div> --}}
 </div>

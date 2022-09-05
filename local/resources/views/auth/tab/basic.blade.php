@@ -20,6 +20,21 @@
 
                 <input type="hidden" name="type" value="basic">
 
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      @if($data)
+                      <img src="{{ asset('images/profile/'.$data->image_profile) }}" class="circleco mb-2 mw-100" width="200" height="200"><br>
+                      @else
+                      <img src="{{ asset('images/upload.png') }}" class="circleco mb-2 mw-100" width="200" height="200"><br>
+                      @endif
+                      </div>
+                              <div class="form-group col-md-6">
+                                  <label for="image_profile">รูปภาพโปรไฟล์</label>
+                                  <input type="file" class="form-control-file" id="image_profile"  name="image_profile">
+                              </div>
+
+                               </div>
+
                 <div class="form-group">
                     <label for="company">ชื่อบริษัท</label>
                     <input type="text" class="form-control" value="{{$data->company}}" required name="company" id="company"
@@ -92,6 +107,19 @@
                             <input name="bank_number" type="text" required value="{{$data->bank_number}}" class="form-control">
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label for="title_about_me">หัวข้อเกี่ยวกับเรา</label>
+                        <input type="text" class="form-control" value="{{@$data->title_about_me}}" id="title_about_me"
+                            name="title_about_me">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="detail_about_me">รายละเอียดเกี่ยวกับเรา</label>
+                        <textarea type="text" class="form-control" name="detail_about_me">{{@$data->detail_about_me}}</textarea>
+                        </div>
+
 
                     <div class="form-group">
                         <label for="exampleFormControlFile1">รูปภาพเกี่ยวกับบริษัทเพิ่มเติม</label>

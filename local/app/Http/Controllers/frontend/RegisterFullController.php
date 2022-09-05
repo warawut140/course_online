@@ -14,6 +14,8 @@ use App\Models\BitCoin;
 use File;
 use App\Models\JobDescription;
 use App\Models\Course;
+use App\Models\Education;
+use App\Models\WorkEXP;
 
 class RegisterFullController extends Controller
 {
@@ -42,9 +44,26 @@ class RegisterFullController extends Controller
         join('users','users.id','profiles.user_id')->
         where('profiles.user_id',Auth::guard('web')->user()->id)->first();
 
+        $education = Education::where('user_id',Auth::guard('web')->user()->id)->first();
+        if(!$education){
+            $education = new Education();
+            $education->user_id = Auth::guard('web')->user()->id;
+            $education->save();
+        }
+
+        $work_exp = WorkEXP::where('user_id',Auth::guard('web')->user()->id)->first();
+
+        if(!$work_exp){
+            $work_exp = new WorkEXP();
+            $work_exp->user_id = Auth::guard('web')->user()->id;
+            $work_exp->save();
+        }
+
             return view('auth.register_user_detail',[
                 'type'=>$type,
                 'data'=>$data,
+                'education'=>$education,
+                'work_exp'=>$work_exp,
             ]);
     }
 
@@ -67,6 +86,19 @@ class RegisterFullController extends Controller
             $profile->company_address = $r->company_address;
             $profile->bank_name = $r->bank_name;
             $profile->bank_number = $r->bank_number;
+
+            $profile->title_about_me = $r->title_about_me;
+            $profile->detail_about_me = $r->detail_about_me;
+
+            if (!empty($r->image_profile)) {
+                if ($r->hasFile('image_profile') != '') {
+                    File::delete(public_path() . '/images/profile/' . $profile->image_profile);
+                    $image_profile = 'profile_'.$profile->id.".".$r->file('image_profile')->getClientOriginalExtension();
+                    $r->file('image_profile')->move(public_path() . '/images/profile/', $image_profile);
+                }
+                $profile->image_profile = $image_profile;
+    }
+
 
             if (!empty($r->company_img1)) {
                 if ($r->hasFile('company_img1') != '') {
@@ -222,17 +254,18 @@ class RegisterFullController extends Controller
         if($r->type=='basic'){
             $profile->firstname = $r->firstname;
             $profile->lastname = $r->lastname;
+            $profile->title_me = $r->title_me;
             $profile->tel = $r->tel;
             $profile->date_of_birth = $r->date_of_birth;
             $profile->company_address = $r->company_address;
 
-            if (!empty($r->imageProfile)) {
-                if ($r->hasFile('imageProfile') != '') {
+            if (!empty($r->image_profile)) {
+                if ($r->hasFile('image_profile') != '') {
                     File::delete(public_path() . '/images/profile/' . $profile->image_profile);
-                    $imageProfile = 'profile_'.$profile->id.".".$r->file('imageProfile')->getClientOriginalExtension();
-                    $r->file('imageProfile')->move(public_path() . '/images/profile/', $imageProfile);
+                    $image_profile = 'profile_'.$profile->id.".".$r->file('image_profile')->getClientOriginalExtension();
+                    $r->file('image_profile')->move(public_path() . '/images/profile/', $image_profile);
                 }
-                $profile->image_profile = $imageProfile;
+                $profile->image_profile = $image_profile;
     }
 
         $user = User::where('id',Auth::guard('web')->user()->id)->first();
@@ -254,12 +287,58 @@ class RegisterFullController extends Controller
         if($r->type=='job'){
             $profile->title_about_me = $r->title_about_me;
             $profile->detail_about_me = $r->detail_about_me;
+
+                        if (!empty($r->rasume1)) {
+                            if ($r->hasFile('rasume1') != '') {
+                                File::delete(public_path() . '/images/profile/' . $profile->rasume1);
+                                $rasume1 = 'rasume1_'.$profile->id.".".$r->file('rasume1')->getClientOriginalExtension();
+                                $r->file('rasume1')->move(public_path() . '/images/profile/', $rasume1);
+                            }
+                            $profile->rasume1 = $rasume1;
+                }
+
+                if (!empty($r->portfolio1)) {
+                    if ($r->hasFile('portfolio1') != '') {
+                        File::delete(public_path() . '/images/profile/' . $profile->portfolio1);
+                        $portfolio1 = 'portfolio1_'.$profile->id.".".$r->file('portfolio1')->getClientOriginalExtension();
+                        $r->file('portfolio1')->move(public_path() . '/images/profile/', $portfolio1);
+                    }
+                    $profile->portfolio1 = $portfolio1;
         }
 
-        // if($r->type=='receive'){
-        //     $profile->applicants = $r->applicants;
-        //     $profile->applicants_email = $r->applicants_email;
-        // }
+            //     if (!empty($r->rasume2)) {
+            //         if ($r->hasFile('rasume2') != '') {
+            //             File::delete(public_path() . '/images/profile/' . $profile->rasume2);
+            //             $rasume2 = 'rasume2_'.$profile->id.".".$r->file('rasume2')->getClientOriginalExtension();
+            //             $r->file('rasume2')->move(public_path() . '/images/profile/', $rasume2);
+            //         }
+            //         $profile->rasume2 = $rasume2;
+            // }
+
+        }
+
+        if($r->type=='education'){
+            $education = Education::where('user_id',Auth::guard('web')->user()->id)->first();
+            $education->academy = $r->academy;
+            $education->level = $r->level;
+            $education->major = $r->major;
+            $education->date_start = $r->date_start;
+            $education->date_end = $r->date_end;
+            $education->grade = $r->grade;
+            $education->save();
+        }
+
+        if($r->type=='work_exp'){
+            $work_exp = WorkEXP::where('user_id',Auth::guard('web')->user()->id)->first();
+            $work_exp->name = $r->name;
+            $work_exp->web = $r->web;
+            $work_exp->address = $r->address;
+            $work_exp->position = $r->position;
+            $work_exp->start_date = $r->start_date;
+            $work_exp->end_date = $r->end_date;
+            $work_exp->detail = $r->detail;
+            $work_exp->save();
+        }
 
         $profile->save();
 

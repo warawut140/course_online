@@ -14,41 +14,44 @@
                     </ul>
                 </div>
             @endif
-            <form method="POST" action="{{ url('register_company_detail_basic_store') }}" id="searchForm"
+            <form method="POST" action="{{ url('register_student_detail_basic_store') }}" id="searchForm"
                 enctype="multipart/form-data">
                 @csrf
+
+                <input type="hidden" name="type" value="education">
+
                   <div class="form-row">
                       <div class="form-group col-md-12">
-                        <label for="inputPassword4">สถานศึกษา</label>
-                        <input name="lastname" type="text"  class="form-control" >
+                        <label for="academy">สถานศึกษา</label>
+                        <input name="academy" type="text" value="{{@$education->academy}}" class="form-control" >
                     </div>
 
                 </div>
                 <div class="form-row">
                       <div class="form-group col-md-6">
-                        <label for="inputPassword4">ระดับการศึกษา</label>
-                        <input name="lastname" type="text"  class="form-control" >
+                        <label for="level">ระดับการศึกษา</label>
+                        <input name="level" type="text"  value="{{@$education->level}}" class="form-control" >
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">สาขา</label>
-                        <input name="lastname" type="text"  class="form-control" >
+                        <label for="major">สาขา</label>
+                        <input name="major" type="text"  value="{{@$education->major}}" class="form-control" >
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">วันที่เริ่ม</label>
-                        <input name="firstname" type="date"  class="form-control"
-                            id="inputEmail4">
+                        <label for="date_start">วันที่เริ่ม</label>
+                        <input name="date_start" type="date"  value="{{@$education->date_start}}" class="form-control"
+                            id="date_start">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">วันสิ้นสุด</label>
-                        <input name="lastname" type="date" class="form-control">
+                        <label for="date_end">วันสิ้นสุด</label>
+                        <input name="date_end" type="date" value="{{@$education->date_end}}" class="form-control">
                     </div>
                 </div>
               <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">เกรดเฉลี่ย</label>
-                        <input name="firstname" type="text"  class="form-control">
+                        <label for="grade">เกรดเฉลี่ย</label>
+                        <input name="grade" type="text"  value="{{@$education->grade}}" class="form-control">
                     </div>
                     <div class="form-group col-md-6">
 

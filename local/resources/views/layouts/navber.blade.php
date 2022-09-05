@@ -114,8 +114,13 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 {{--                            <a class="dropdown-item" href="{{ url('erp-home') }}"><i class='fas fa-shopping-cart'></i> ผู้จัดชื้อ / ร้านค้า</a>--}}
-                            <a class="dropdown-item" href="{{ url('profilecompany') }}"><i class='fas fa-user-alt'></i> ข้อมูลโปรไฟล์</a>
+                            @if(Auth::user()->profile->type_user_id==1)
+                            <a class="dropdown-item" href="{{ url('profile_student') }}"><i class='fas fa-user-alt'></i> ข้อมูลโปรไฟล์</a>
+                            @elseif(Auth::user()->profile->type_user_id_2==2)
+                            <a class="dropdown-item" href="{{ url('profile_company') }}"><i class='fas fa-user-alt'></i> ข้อมูลโปรไฟล์</a>
+                            @endif
                             <a class="dropdown-item" href="{{ url('profile') }}"><i class='fas fa-gear'></i> ตั้งค่าข้อมูล</a>
+
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
