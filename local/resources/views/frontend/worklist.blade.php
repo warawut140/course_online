@@ -54,6 +54,21 @@
 
 
     <style>
+                .circlered {
+  background-color: #8B0900;
+  border-radius: 50%;
+  border: 1px solid #8B0900;
+  padding: 10px;
+}
+
+        .main {
+    background-image: url("{{ asset('images/bgco3.png') }}");
+   background-repeat: no-repeat;
+  background-size: auto;
+  background-color: #8B0900;
+ 
+}
+ 
         .movie-carousel {
             padding: 30px 0px;
         }
@@ -243,102 +258,30 @@
   transform: rotate(90deg);
   transform-origin: right top;
 }
+
 </style>
 @endsection
 @section('content')
 
-    <a data-fancybox data-src="#hidden-content-b" href="javascript:" class="btnpopup"></a>
-    <div style="display: none;max-width:100%" id="hidden-content-b">
-        <h1 class="mb-3 text-center">แนะนำหลักสูตร</span></h1>
-        <div class="row text-center">
-            
-            <div class="col-xl-6 col-md-6">
-                <a href="#">
-                    <div class="card mb-3 card-popup1">
-                        <div class="card-body">
-                            <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                            <h4 class="text-orange"></h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-6 col-md-6">
-                <a href="#">
-                    <div class="card  mb-3 card-popup2">
-                        <div class="card-body">
-                            <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                            <h4 class="text-orange"></h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-6 col-md-6">
-                <a href="#">
-                    <div class="card  mb-3 card-popup3">
-                        <div class="card-body">
-                            <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                            <h4 class="text-orange"></h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-6 col-md-6">
-                <a href="#">
-                    <div class="card  mb-3 card-popup4">
-                        <div class="card-body">
-                            <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                            <h4 class="text-orange"></h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
-        </div>
-    </div>
-
-    @if($search == null)
-        <?php
-        // check cookie ครั้งแรกจะไม่มี ก็ให้แสดง
-        if(!isset($_COOKIE["cookie1"])){ // เช็คว่ามีตัวแปรนี้อยู่ก่อนแล้วหรือไม่
-            setcookie("cookie1", "ทดสอบ",time()+3600,"/");  // กำหนดตัวแปร
-        }
-        ?>
-        <?php
-        // เปิดมาครั้งแรกจะไม่มี  ก็เข้าไปทำงานในเงื่อนไข
-        if(!isset($_COOKIE["cookie1"])){ // ทำงานแสดงครั้งแรก ?>
-        <script>
-            $('[data-src="hidden-content-b"]').fancybox({
-                // toolbar : false
-            });
-            $( ".btnpopup" ).trigger( "click" );
-        </script>
-        <!--โค้ด javascript-->
-        <?php } ?>
-     @endif
+   
 
     {{-- begin #banner--}}
-    
+     <div class="main">
     <div id="index-banner" class="bg-white">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                @if($home_gellery != "")
-                    <?php $active = 'active'; $class = 'class="active"'?>
-                    @for($i = 0 ; $i < count($home_gellery);$i++)
-                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i }}" {{ $class }}></li>
-                    @endfor
-                @endif
+           
+                        <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
+                 
             </ol>
             <div class="carousel-inner">
-                @if($home_gellery != "")
-                    @foreach($home_gellery as $data)
-                        <div class="carousel-item {{ $active }}">
+               
+                        <div class="carousel-item">
                             
                             <img src="{{ asset('images/bannermockup.png') }}" class="d-block w-100" alt="...">
                           
                         </div>
-                        <?php $active = ''?>
-                    @endforeach
-                @endif
+                       
             </div>
         </div>
     </div>
@@ -346,101 +289,73 @@
 
     {{-- begin #content 1--}}
 
- <div class="row">
+ <div class="row" style = "background-color: #white;">
          <div class="col-1">
         </div>
       <div class="col-8">
         <div class="container text-center py-4">
             <br>     <br>
  
-            <h1 class=" text-left"><font style="color:black">หลักสูตรที่กำลังเป็นกระแส</font></h1>
-                 <br>     <br>
-     <div class="col-10">
-            <div class="hotclass_slide owl-carousel owl-theme">
-                <div class="item">
-                    <a href="{{ url('projectauction') }}">
-                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
-                    <a href="{{ url('work') }}">
-                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
-                    <a href="{{ url('training') }}">
-                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
-                    <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                  <div class="item">
-                    <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                  <div class="item">
-                    <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                
-            </div>
-            </div>
+            <h1 class=" text-left"><font style="color:white">งานที่เหมาะกับโปรไฟล์ของคุณ</font></h1>
+                 
+                   <h5 class=" text-left"><font style="color:white">33 งานใน เชียงใหม่, เชียงใหม่, ประเทศไทย (3 ใหม่)</font></h5>
+     <div class="col-12">
+  <br>     <br>
+
+
+ <div class="row">{{-- start #work--}}
+    <div class="col-3">
+        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+         <h5 class="mb-3 text-left"><font style="color:white">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' ></i>  <font style="color:white">โปรไฟล์ของคุณเข้ากับงานนี้</font></p> 
+          
+              <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
+ </div>
+    <div class="col-3">
+        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+         <h5 class="mb-3 text-left"><font style="color:white">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' ></i>  <font style="color:white">โปรไฟล์ของคุณเข้ากับงานนี้</font></p> 
+          
+              <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
+ </div>
+    <div class="col-3">
+        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+         <h5 class="mb-3 text-left"><font style="color:white">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' ></i>  <font style="color:white">โปรไฟล์ของคุณเข้ากับงานนี้</font></p> 
+          
+              <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
+ </div>
+       <div class="col-3">
+        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+         <h5 class="mb-3 text-left"><font style="color:white">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' ></i>  <font style="color:white">โปรไฟล์ของคุณเข้ากับงานนี้</font></p> 
+          
+              <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
+ </div>
+
+  </div>{{-- end #work--}}
+
+
+
+            </div> 
               <br>     <br>
  
-            <h1 class="mb-3 text-left"><font style="color:black">คอร์สเรียนของคุณเรียนต่อเลย :-)</font></h1>
-                 <br>     <br>
-                      <div class="hotclass_slide owl-carousel owl-theme">
-                <div class="item">
-                    <a href="{{ url('projectauction') }}">
-                        <img src="{{ asset('images/2c.png') }}" style=""class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
             
-                
-            </div>
         </div>
     </div>
-    <div class="col-2">
 
- 
-           <div class="container text-center py-4">
-            <br>     <br>  <br> 
- 
-            <h5 class="mb-3 text-left"><font style="color:grey">หัวข้อหลักสูตรน่าสนใจ</font></h5>
-                   <br>
-    
-            <div class="row">
-                
-                <a class="nav-link py-1 buttonblack " style="margin-right: 20px;margin-top: 20px;" href="{{ url('register') }}"><font style="color:grey">Business</font></a>
-                <a class="nav-link py-1 buttonblack"  style="margin-right: 20px;margin-top: 20px;" href="{{ url('register') }}"><font style="color:grey">CRM Software</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Customer Service</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Communication</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Marketing</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Customer Service</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Web Marketing Analytics</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Google Analytics</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Data Analysis</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Leadership and Management</font></a>
-                <a class="nav-link py-1 buttonblack"   style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}"><font style="color:grey">Leadership Skills</font></a>
-        
-            </div>
-        </div>
-    </div>
-           
-  </div>   <div class="col-1">
-        </div>
   </div>
 
        </div> 
@@ -448,14 +363,194 @@
 
     {{-- begin #work 1--}}
 
-         <div class="col-12">
+  
         <div class="container text-center py-4" >
           
               <br>     <br>
  
-            <h1 class="mb-3 text-left"><font style="color:black">10 หลักสูตรที่มีการซื้อสูงสุด</font></h1>
+            <h1 class="mb-3 text-left"><font style="color:black">งานที่ใกล้เคียงกับโปรไฟล์ของคุณ</font></h1>
+            
+             <h5 class=" text-left"><font style="color:black">13 งานใน เชียงใหม่, เชียงใหม่, ประเทศไทย (3 ใหม่)</font></h5>
                     <br>     <br>  
-                      <div class="hotclass_slide owl-carousel owl-theme" >
+
+ <div class="row">{{-- start #work--}}
+    <div class="col-4">
+        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+         <h5 class="mb-3 text-left"><font style="color:black">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg'style="color:black" ></i>  <font style="color:black">โปรไฟล์ของคุณเกือบเข้ากับงานนี้ ขาดอีก 2 คุณสมบัติ</font></p> 
+          
+ </div>
+     <div class="col-4">
+        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+         <h5 class="mb-3 text-left"><font style="color:black">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg'style="color:black" ></i>  <font style="color:black">โปรไฟล์ของคุณเกือบเข้ากับงานนี้ ขาดอีก 2 คุณสมบัติ</font></p> 
+          
+ </div>
+     <div class="col-4">
+        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+         <h5 class="mb-3 text-left"><font style="color:black">Commis</font></h5>
+          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
+           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
+            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
+              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg'style="color:black" ></i>  <font style="color:black">โปรไฟล์ของคุณเกือบเข้ากับงานนี้ ขาดอีก 2 คุณสมบัติ</font></p> 
+          
+ </div>
+    
+
+  </div>{{-- end #work--}}
+    <br>     <br>          <br>     <br>       
+
+
+                      <h1 class="mb-3 text-left"><font style="color:black">สายงานยอดนิยม</font></h1>
+
+                      <div class="row">  {{-- strat #เริ่มแถว--}}    
+                  
+<div class="col-3 ">{{-- strat #กลม--}}
+      <div class="row">
+   <div class="col-5 ">
+   <img src="{{ asset('images/file.png') }}" class="mw-100 mb-3">
+    </div>
+    <div class="col-7 ">
+       <h5 class="mb-3 text-left"><font style="color:black">ธุรการ จัดซื้อ ประสานงานทั่วไป คีย์ข้อมูล</font></h5>
+     </div>
+        </div>
+ </div>{{-- end #กลม--}}
+<div class="col-3 ">{{-- strat #กลม--}}
+      <div class="row">
+   <div class="col-5 ">
+   <img src="{{ asset('images/file2.png') }}" class="mw-100 mb-3">
+    </div>
+    <div class="col-7 ">
+       <h5 class="mb-3 text-left"><font style="color:black">การตลาด marketing</font></h5>
+     </div>
+        </div>
+ </div>{{-- end #กลม--}}
+ <div class="col-3 ">{{-- strat #กลม--}}
+      <div class="row">
+   <div class="col-5 ">
+   <img src="{{ asset('images/file4.png') }}" class="mw-100 mb-3">
+    </div>
+ <div class="col-7 ">
+       <h5 class="mb-3 text-left"><font style="color:black">การโรงแรม ท่องเที่ยว จองตั๋ว มัคคุเทศก์</font></h5>
+     </div>
+        </div>
+ </div>{{-- end #กลม--}}
+ <div class="col-3 ">{{-- strat #กลม--}}
+      <div class="row">
+   <div class="col-5 ">
+   <img src="{{ asset('images/file2.png') }}" class="mw-100 mb-3">
+    </div>
+ <div class="col-7 ">
+       <h5 class="mb-3 text-left"><font style="color:black">การตลาด marketing</font></h5>
+     </div>
+        </div>
+ </div>{{-- end #กลม--}}
+  
+
+                         </div>  {{-- end #จบแถว--}}
+                                               <div class="row">  {{-- strat #เริ่มแถว--}}    
+                  
+<div class="col-3 ">{{-- strat #กลม--}}
+      <div class="row">
+   <div class="col-5 ">
+   <img src="{{ asset('images/file3.png') }}" class="mw-100 mb-3">
+    </div>
+    <div class="col-7 ">
+       <h5 class="mb-3 text-left"><font style="color:black">บริการลูกค้า ประชาสัมพันธ์  พนักงานต้อนรับ</font></h5>
+     </div>
+        </div>
+ </div>{{-- end #กลม--}}
+<div class="col-3 ">{{-- strat #กลม--}}
+      <div class="row">
+   <div class="col-5 ">
+   <img src="{{ asset('images/file5.png') }}" class="mw-100 mb-3">
+    </div>
+    <div class="col-7 ">
+       <h5 class="mb-3 text-left"><font style="color:black">คลังสินค้า โลจิสติกส์</font></h5>
+     </div>
+        </div>
+ </div>{{-- end #กลม--}}
+ <div class="col-3 ">{{-- strat #กลม--}}
+      <div class="row">
+   <div class="col-5 ">
+   <img src="{{ asset('images/file3.png') }}" class="mw-100 mb-3">
+    </div>
+ <div class="col-7 ">
+       <h5 class="mb-3 text-left"><font style="color:black">บริการลูกค้า ประชาสัมพันธ์  พนักงานต้อนรับ</font></h5>
+     </div>
+        </div>
+ </div>{{-- end #กลม--}}
+ <div class="col-3 ">{{-- strat #กลม--}}
+      <div class="row">
+   <div class="col-5 ">
+   <img src="{{ asset('images/file6.png') }}" class="mw-100 mb-3">
+    </div>
+ <div class="col-7 ">
+       <h5 class="mb-3 text-left"><font style="color:black">คอมพิวเตอร์ IT  โปรแกรมเมอร์</font></h5>
+     </div>
+        </div>
+ </div>{{-- end #กลม--}}
+  
+
+                         </div>  {{-- end #จบแถว--}}  
+                          <div class="row">  {{-- strat #เริ่มแถว--}}    
+                  
+<div class="col-3 ">{{-- strat #กลม--}}
+      <div class="row">
+   <div class="col-5 ">
+   <img src="{{ asset('images/file3.png') }}" class="mw-100 mb-3">
+    </div>
+    <div class="col-7 ">
+       <h5 class="mb-3 text-left"><font style="color:black">บริการลูกค้า ประชาสัมพันธ์  พนักงานต้อนรับ</font></h5>
+     </div>
+        </div>
+ </div>{{-- end #กลม--}}
+<div class="col-3 ">{{-- strat #กลม--}}
+      <div class="row">
+   <div class="col-5 ">
+   <img src="{{ asset('images/file5.png') }}" class="mw-100 mb-3">
+    </div>
+    <div class="col-7 ">
+       <h5 class="mb-3 text-left"><font style="color:black">คลังสินค้า โลจิสติกส์</font></h5>
+     </div>
+        </div>
+ </div>{{-- end #กลม--}}
+ <div class="col-3 ">{{-- strat #กลม--}}
+      <div class="row">
+   <div class="col-5 ">
+   <img src="{{ asset('images/file3.png') }}" class="mw-100 mb-3">
+    </div>
+ <div class="col-7 ">
+       <h5 class="mb-3 text-left"><font style="color:black">บริการลูกค้า ประชาสัมพันธ์  พนักงานต้อนรับ</font></h5>
+     </div>
+        </div>
+ </div>{{-- end #กลม--}}
+ <div class="col-3 ">{{-- strat #กลม--}}
+      <div class="row">
+   <div class="col-5 ">
+   <img src="{{ asset('images/file6.png') }}" class="mw-100 mb-3">
+    </div>
+ <div class="col-7 ">
+       <h5 class="mb-3 text-left"><font style="color:black">คอมพิวเตอร์ IT  โปรแกรมเมอร์</font></h5>
+     </div>
+        </div>
+ </div>{{-- end #กลม--}}
+  
+
+                              </div>  {{-- end #จบแถว--}}               
+    <br>     <br>          <br>     <br>       
+
+
+                      <h1 class="mb-3 text-left"><font style="color:black">5 อันดับงานรายได้สูง</font></h1>
+            
+             
+                   <br>     <br>      <div class="hotclass_slide owl-carousel owl-theme" >
                     
                 <div class="item" >
                            
@@ -464,29 +559,32 @@
                         <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
                     </a>
                      <span class="numberHot"></span>
-                    <h4 class="text-orange"></h4>
-                   
+                    <h4 class="text-orange">โปรแกรมเมอร์</h4>
+                   <h2 class="text-orange"style="color:#374291;" >34K-25K</h2>
                 </div>
                 <div class="item">
                     <a href="{{ url('work') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number2.png" alt="" class="lazy"></span>
                         <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
                     </a>
-                    <h4 class="text-orange"></h4>
+                       <h4 class="text-orange">โปรแกรมเมอร์</h4>
+                   <h2 class="text-orange"style="color:#374291;" >34K-25K</h2>
                 </div>
                 <div class="item">
                     <a href="{{ url('training') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number3.png" alt="" class="lazy"></span>
                         <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
                     </a>
-                    <h4 class="text-orange"></h4>
+                       <h4 class="text-orange">โปรแกรมเมอร์</h4>
+                   <h2 class="text-orange"style="color:#374291;" >34K-25K</h2>
                 </div>
                 <div class="item">
                     <a href="{{ url('#') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number4.png" alt="" class="lazy"></span>
                         <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
                     </a>
-                    <h4 class="text-orange"></h4>
+                       <h4 class="text-orange">โปรแกรมเมอร์</h4>
+                   <h2 class="text-orange"style="color:#374291;" >34K-25K</h2>
                 </div>
                       <div class="item" >
                            
@@ -495,144 +593,21 @@
                         <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
                     </a>
                      <span class="numberHot"></span>
-                    <h4 class="text-orange"></h4>
+                       <h4 class="text-orange">โปรแกรมเมอร์</h4>
+                   <h2 class="text-orange"style="color:#374291;" >34K-25K</h2>
                    
                 </div>
-                <div class="item">
-                    <a href="{{ url('work') }}">
-                          <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number6.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
-                    <a href="{{ url('training') }}">
-                          <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number7.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
-                    <a href="{{ url('#') }}">
-                          <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number8.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                      <div class="item" >
-                           
-                    <a href="{{ url('projectauction') }}">
-                     <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number9.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
-                    </a>
-                     <span class="numberHot"></span>
-                    <h4 class="text-orange"></h4>
-                   
-                </div>
-                <div class="item">
-                    <a href="{{ url('work') }}">
-                          <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number10.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
+           
+          
+         
+               
+             
          
             </div>
              <br>     <br>
  
-            <h1 class="mb-3 text-left"><font style="color:black">หลักสูตรแนะนำ</font></h1>
-                 <br>  
-                  <h1 class="mb-3 text-left"><font style="color:black">Leadership and Management</font></h1> 
-                    <h5 class="mb-3 text-left"><font style="color:grey">Leadership is a skill for any role—not just managers. Learn how to become a more successful leader, 
-improve communication, make better decisions, manage conflict, and lead others through times of change.</font></h5>  <br>  
-                   <div class="hotclass_slide owl-carousel owl-theme">
-                <div class="item">
-                    <a href="{{ url('projectauction') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
-                    <a href="{{ url('work') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
-                    <a href="{{ url('training') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
-                    <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                   <div class="item">
-                    <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>   
-                <div class="item">
-                    <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                 <br>  
-                  
-            </div>    <br> 
 
-            <h1 class="mb-3 text-left"><font style="color:black">Data Science</font></h1> 
-                    <h5 class="mb-3 text-left"><font style="color:grey">Data science is one of today's top careers. Get the training you need to get ahead—or stay on top—in fields such as data analysis, 
-mining, visualization, and big data, using tools like Excel, R, Hadoop, and Python.</font></h5>  <br>  
-                 <div class="hotclass_slide owl-carousel owl-theme">
-                <div class="item">
-                    <a href="{{ url('projectauction') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
-                    <a href="{{ url('work') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
-                    <a href="{{ url('training') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                <div class="item">
-                    <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
 
-                   <div class="item">
-                    <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-                   <div class="item">
-                    <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/4c.png') }}" class="mw-100 mb-3">
-                    </a>
-                    <h4 class="text-orange"></h4>
-                </div>
-        </div>
-           
-    </div>
-    </div>
-    
-    {{-- end #work 1--}}
 
       
          
