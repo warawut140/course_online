@@ -123,15 +123,15 @@ Route::get('/interes_course', function () {
  Route::get('/findjob', function () {
     return view('frontend/findjob');
  });
+ Route::get('/workshop', function () {
+   return view('frontend/workshop');
+});
 Route::get('/chat', 'ChatController@index')->name('chat');
 Route::get('/chat/{id}', 'ChatController@chat');
 Route::get('/message/{id}', 'ChatController@getMessage')->name('message');
 Route::post('message', 'ChatController@sendMessage');
 
-
- Route::get('/worklist', function () {
-    return view('frontend/worklist');
- });
+;
 
 Route::post('/search', 'frontend\HomeController@search');
 Route::resource('/mgmtContract', 'frontend\MgmtContractController');
