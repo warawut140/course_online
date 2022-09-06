@@ -17,17 +17,33 @@
                                 <th class="op3center">สถานะ</th>
                             </tr>
 
-                            @for ($i = 0; $i <= 29; $i++)
+                            <?php
+                                 $courses_arr = \App\Models\Course::where('profile_id',Auth::guard('web')->user()->profile->id)
+                                //  ->where('status',1)
+                                 ->orderBy('created_at','desc')
+                                 ->pluck('id')->toArray();
+                                 if(@$courses_arr){
+                                    $course_list_arr = \DB::table('course_lists')->whereIn('course_id',@$courses_arr)->pluck('id')->toArray();
+                                    if(@$course_list_arr){
+                                        $questions_details_arr = \DB::table('questions_details')->whereIn('course_list_id',@$course_list_arr)->pluck('id')->toArray();
+                                        if(@$questions_details_arr){
+                                            $qtd = \App\Models\ProfileQuestionDetail::whereIn('questions_detail_id',$questions_details_arr)->get();
+                                        }
+                                    }
+                                 }
+                            ?>
+
+                           @foreach(@$qtd as $key => $q)
                                 <tr>
-                                    <td class="opcenter"> {{ $i + 1 }}</td>
-                                    <td class="opcenter">Mrs. Malee  meena</td>
+                                    <td class="opcenter"> {{ $key + 1 }}</td>
+                                    <td class="opcenter">{{$q->User->profile->firstname}} {{$q->User->profile->lastname}}</td>
                                     <td class="opcenter">Workshop</td>
-                                    <td class="opcenter">การเขียนโค้ดเบื้องต้น</td>
-                                    <td class="opcenter"><i class="fa fa-file-text" aria-hidden="true"></i></td>
-                                    <td class="opcenter">รอดำเนินการ</td>
+                                    <td class="opcenter">{{$q->QuestionsDetail->name}}</td>
+                                    <td class="opcenter"><a class="btn btn-sm btn-primary" href="{{url('workshop_inside_check/'.$q->id)}}">ตรวจ</a></td>
+                                    <td class="opcenter">{{$q->get_status()}}</td>
 
                                 </tr>
-                            @endfor
+                            @endforeach
 
                         </table>
                     </div>

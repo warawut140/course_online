@@ -41,6 +41,17 @@ Route::group(['middleware' => ['web','auth']], function () {
 
     Route::get('/course_online_view/{course_id}','frontend\CourseNewController@course_online_view');
     Route::get('/course_online_inside_view/{course_list_id}','frontend\CourseNewController@course_online_inside_view');
+
+    Route::get('/workshop_inside_view/{course_id}/{workshop_id}','frontend\CourseNewController@workshop_inside_view');
+    Route::post('/workshop_inside_store','frontend\CourseNewController@workshop_inside_store');
+    Route::get('/workshop_inside_check/{question_detail_id}','frontend\CourseNewController@workshop_inside_check');
+
+    Route::get('/workshop', function () {
+        return view('frontend/workshop');
+     });
+
+
+
     // Route::get('/course_online', function () {
     //     return view('frontend/course_online');
     //  });
@@ -54,6 +65,7 @@ Route::group(['middleware' => ['web','auth']], function () {
 
     Route::get('/profile_student/{page?}','frontend\ProfileNewController@profile_student');
     Route::get('/profile_company/{page?}','frontend\ProfileNewController@profile_company');
+
 
 });
 Route::post('/register_full','frontend\RegisterFullController@register');
@@ -123,9 +135,7 @@ Route::get('/interes_course', function () {
  Route::get('/findjob', function () {
     return view('frontend/findjob');
  });
- Route::get('/workshop', function () {
-   return view('frontend/workshop');
-});
+
 Route::get('/chat', 'ChatController@index')->name('chat');
 Route::get('/chat/{id}', 'ChatController@chat');
 Route::get('/message/{id}', 'ChatController@getMessage')->name('message');

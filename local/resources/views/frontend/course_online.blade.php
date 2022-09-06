@@ -161,106 +161,125 @@
                 <div class="opcenter">
                     <div id="accordion">
 
-                        @foreach($chapter as $key => $chap)
-                        <div class="card">
-                            <div class="card-header" id="headingOne">
-                                <div class="mb-0 ">
-                                    <div class="row">
-                                        <div class="col-4 left">
-                                            <h5>บทเรียนที่ {{$chap->order}} {{$chap->name}}
-                                                <button class="btn btn-link" data-toggle="collapse"
-                                                    data-target="#collapseOne" aria-expanded="true"
-                                                    aria-controls="collapseOne">
-                                                    <i class="fa fa-chevron-down circle" style="color: black;"
-                                                        aria-hidden="true"></i> </button>
-                                            </h5>
-                                        </div>
-                                        <div class="col-6 right">
-                                            <i class="fa fa-play-circle " style="color: black;" aria-hidden="true"></i>
-                                            วิดีโอ {{$chap->video_number}} &nbsp;&nbsp; <i class="fa fa-clock-o" style="color: black;"
-                                                aria-hidden="true"></i> {{$chap->time_number}} ชั่วโมง
+                        @foreach ($chapter as $key => $chap)
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <div class="mb-0 ">
+                                        <div class="row">
+                                            <div class="col-4 left">
+                                                <h5>บทเรียนที่ {{ $chap->order }} {{ $chap->name }}
+                                                    <button class="btn btn-link" data-toggle="collapse"
+                                                        data-target="#collapseOne" aria-expanded="true"
+                                                        aria-controls="collapseOne">
+                                                        <i class="fa fa-chevron-down circle" style="color: black;"
+                                                            aria-hidden="true"></i> </button>
+                                                </h5>
+                                            </div>
+                                            <div class="col-6 right">
+                                                <i class="fa fa-play-circle " style="color: black;" aria-hidden="true"></i>
+                                                วิดีโอ {{ $chap->video_number }} &nbsp;&nbsp; <i class="fa fa-clock-o"
+                                                    style="color: black;" aria-hidden="true"></i> {{ $chap->time_number }}
+                                                ชั่วโมง
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
 
-                            </div>
-
-                            <div id="collapseOne" class="collapse <?php if($key==0){echo 'show';} ?>" aria-labelledby="headingOne"
-                                data-parent="#accordion">
-                                <div class="card-body">
-                                    <?php
-                                           $list = \App\Models\CourseList::where('course_id',$chap->course_id)->where('chapter_id',$chap->id)->get();
-                                           $question_detail = \App\Models\QuestionsDetail::where('chapter_id',$chap->id)->get();
+                                <div id="collapseOne" class="collapse <?php if ($key == 0) {
+                                    echo 'show';
+                                } ?>" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <?php
+                                        $list = \App\Models\CourseList::where('course_id', $chap->course_id)
+                                            ->where('chapter_id', $chap->id)
+                                            ->get();
                                         ?>
-                                    @foreach($list as $key2 => $l)
-                                    {{-- start #course --}}
-                                    <div class="row">
-                                        <div class="col-1">
-                                            <h5>{{$l->course_order}}</h5>
-                                        </div>
-                                        <div class="col-2">
-                                            <a href="{{ url('course_online_inside_view/'.$l->id) }}">
-                                                <img src="{{ asset('images/profile/'.$l->course_image) }}" class="mw-100 mb-3">
-                                            </a>
-                                        </div>
-                                        <div class="col-7">
+                                        @foreach ($list as $key2 => $l)
+                                            {{-- start #course --}}
                                             <div class="row">
-                                                <div class="col-12 left">
-                                                    <h5>{{$l->course_name}}</h5>
+                                                <div class="col-1">
+                                                    <h5>{{ $l->course_order }}</h5>
                                                 </div>
-                                                <div class="col-12 left">
-                                                    <p>
-                                                        {{$l->course_detail}}
-                                                    </p>
+                                                <div class="col-2">
+                                                    <a href="{{ url('course_online_inside_view/' . $l->id) }}">
+                                                        <img src="{{ asset('images/profile/' . $l->course_image) }}"
+                                                            class="mw-100 mb-3">
+                                                    </a>
+                                                </div>
+                                                <div class="col-7">
+                                                    <div class="row">
+                                                        <div class="col-12 left">
+                                                            <h5>{{ $l->course_name }}</h5>
+                                                        </div>
+                                                        <div class="col-12 left">
+                                                            <p>
+                                                                {{ $l->course_detail }}
+                                                            </p>
 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    {{ $l->course_time }} นาที
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-2">
-                                            {{$l->course_time}} นาที
-                                        </div>
-                                    </div>
-                                    {{-- end #course --}}
-                                    @endforeach
+                                            <?php
+                                            $question_detail = \App\Models\QuestionsDetail::where('chapter_id', $chap->id)->where('course_list_id',$l->id)->get();
+                                            ?>
+                                            @foreach ($question_detail as $key3 => $q)
+                                                <?php
+                                                $question_count = \App\Models\Questions::where('question_detail_id', $q->id)->count();
+                                                ?>
+                                                {{-- start #test --}} <br>
+                                                <div class="row">
 
-                                    @foreach($question_detail as $key3 => $q)
-                                    <?php
-                                       $question_count = \App\Models\Questions::where('question_detail_id',$q->id)->count();
-                                    ?>
-                                    {{-- start #test --}} <br>
-                                    <div class="row">
+                                                    <div class="col-1">
+                                                        <h5></h5>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <a href="{{url('workshop_inside_view/'.$course->id.'/'.$q->id)}}">
+                                                            <h5> <i class="fa fa-file-text circlered" style="color: white;"
+                                                                aria-hidden="true"></i></h5>
+                                                        </a>
 
-                                        <div class="col-1">
-                                            <h5></h5>
-                                        </div>
-                                        <div class="col-2">
-                                            <h5> <i class="fa fa-file-text circlered" style="color: white;"
-                                                    aria-hidden="true"></i></h5>
-                                        </div>
-                                        <div class="col-7">
-                                            <div class="row">
-                                                <div class="col-12 left">
-                                                    <h5>{{$q->name}}</h5>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="row">
+                                                            <div class="col-12 left">
+                                                                <h6>Workshop</h6>
+                                                            </div>
+                                                            <div class="col-12 left">
+                                                                <h5>{{ $q->name }}</h5>
+                                                            </div>
+                                                            <div class="col-12 left">
+                                                                <p> จำนวนทั้งหมด {{ $question_count }} ข้อ </p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+
+                                                        <h5>
+                                                            {{-- <i class="fa fa-check-circle" style="color: green;"
+                                                                aria-hidden="true"></i> --}}
+                                                                <i class="fa fa-check-circle" style="color: red;"
+                                                                aria-hidden="true"></i>
+                                                        </h5>
+
+                                                    </div>
                                                 </div>
-                                                <div class="col-12 left">
-                                                    <p> จำนวนทั้งหมด {{$question_count}} ข้อ </p>
+                                                <br>{{-- end #test --}}
+                                            @endforeach
 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-2">
+                                            {{-- end #course --}}
+                                        @endforeach
 
-                                            <h5> <i class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i>
-                                            </h5>
 
-                                        </div>
                                     </div>
-                                    <br>{{-- end #test --}}
-                                    @endforeach
-
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>

@@ -134,6 +134,15 @@
                                             <textarea type="text" class="form-control" name="details">{{ @$data->details }}</textarea>
                                         </div>
                                     </div>
+
+                                    <div class="form-group row">
+                                    <div class="col-md-3">
+                                        <label for="score_success">คะแนนที่ผ่านการทดสอบ</label>
+                                        <input type="number" required class="form-control"
+                                            value="{{ @$data->score_success }}" id="score_success" name="score_success">
+                                    </div>
+                                    </div>
+
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <button type="submit" class="btn btn-outline-success w-100">บันทึก</button>
@@ -209,6 +218,7 @@
                                                             option_type_id="{{ @$c->option_type_id }}"
                                                             course_list_id="{{ @$c->course_list_id }}"
                                                             question_detail_id="{{ @$c->question_detail_id }}"
+                                                            score="{{ @$c->score }}"
                                                             ans="{{ @$c->ans }}"
                                                             op1="{{@$oq1->name}}"
                                                             op2="{{@$oq2->name}}"
@@ -289,6 +299,15 @@
                                                         name="name">
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <label for="score">คะแนน</label>
+                                                    <input type="text" class="form-control score" required
+                                                        name="score">
+                                                </div>
+                                            </div>
+
 
                                             <div class="form-group row">
                                                 <div class="col-md-12">
@@ -440,6 +459,7 @@
             $('#add_course_list_modal .position').val('');
             $('#add_course_list_modal .option_type_id').val('');
             $('#add_course_list_modal .ans').val('');
+            $('#add_course_list_modal .score').val('');
 
             $('#add_course_list_modal .option_name1').val('');
             $('#add_course_list_modal .option_name2').val('');
@@ -475,6 +495,7 @@
             var course_list_id = $(this).attr('course_list_id');
             var question_detail_id = $(this).attr('question_detail_id');
             var ans = $(this).attr('ans');
+            var score = $(this).attr('score');
 
             var op1 = $(this).attr('op1');
             var op2 = $(this).attr('op2');
@@ -489,6 +510,7 @@
             $('#add_course_list_modal .course_list_id').val(course_list_id);
             $('#add_course_list_modal .question_detail_id').val(question_detail_id);
             $('#add_course_list_modal .ans').val(ans);
+            $('#add_course_list_modal .score').val(score);
 
             $('#add_course_list_modal .option_name1').val(op1);
             $('#add_course_list_modal .option_name2').val(op2);

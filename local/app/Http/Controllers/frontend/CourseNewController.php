@@ -17,6 +17,8 @@ use App\Models\CourseList;
 use App\Models\QuestionsDetail;
 use App\Models\Questions;
 use App\Models\Options;
+use App\Models\Answers;
+use App\Models\ProfileQuestionDetail;
 
 class CourseNewController extends Controller
 {
@@ -304,6 +306,7 @@ class CourseNewController extends Controller
                 $question_detail->details = $r->details;
                 $question_detail->name = $r->name;
                 $question_detail->type = $r->type;
+                $question_detail->score_success = $r->score_success;
                 $question_detail->save();
             }
 
@@ -381,6 +384,7 @@ class CourseNewController extends Controller
                 $question->option_type_id = $r->option_type_id;
                 $question->name = $r->name;
                 $question->position = $r->position;
+                $question->score = $r->score;
                 $question->actby = Auth::guard('web')->user()->name;
                 if($r->option_type_id=='1'){
                     $question->ans = $r->ans;
@@ -484,5 +488,165 @@ class CourseNewController extends Controller
                 'list' => $list,
             ]);
     }
+
+    public function workshop_inside_view($course_id,$workshop_id)
+    {
+        $question_detail = QuestionsDetail::where('id',$workshop_id)->first();
+        $course = Course::where('id',$course_id)->first();
+
+        $question_count = \App\Models\Questions::where('question_detail_id', $question_detail->id)->count();
+        $question = \App\Models\Questions::where('question_detail_id', $question_detail->id)->get();
+        $question_score_sum = \App\Models\Questions::where('question_detail_id', $question_detail->id)->sum('score');
+        $pro_quest_detail = ProfileQuestionDetail::where('questions_detail_id',$question_detail->id)->where('user_id',Auth::guard('web')->user()->id)->first();
+
+            return view('frontend.workshop_inside_view',[
+                'question_detail' => $question_detail,
+                'course' => $course,
+                'question_count' => $question_count,
+                'question' => $question,
+                'question_score_sum' => $question_score_sum,
+                'pro_quest_detail' => $pro_quest_detail,
+            ]);
+    }
+
+    public function workshop_inside_check($question_detail_id)
+    {
+        $pro_quest_detail = ProfileQuestionDetail::where('id',$question_detail_id)->first();
+        $question_detail = QuestionsDetail::where('id',$pro_quest_detail->questions_detail_id)->first();
+        $course_list = CourseList::where('id',$question_detail->course_list_id)->first();
+        $course = Course::where('id',$course_list->course_id)->first();
+        $type = 'check';
+        $question_count = \App\Models\Questions::where('question_detail_id', $question_detail->id)->count();
+        $question = \App\Models\Questions::where('question_detail_id', $question_detail->id)->get();
+        $question_score_sum = \App\Models\Questions::where('question_detail_id', $question_detail->id)->sum('score');
+
+            return view('frontend.workshop_inside_view',[
+                'question_detail' => $question_detail,
+                'course' => $course,
+                'question_count' => $question_count,
+                'question' => $question,
+                'question_score_sum' => $question_score_sum,
+                'pro_quest_detail' => $pro_quest_detail,
+                'type' => $type,
+            ]);
+    }
+
+    public function workshop_inside_store(Request $r)
+    {
+        $question_detail = QuestionsDetail::where('id',$r->question_detail_id)->first();
+        $course = Course::where('id',$r->course_id)->first();
+
+            DB::beginTransaction();
+            try
+            {
+
+               $score = 0;
+               $text_score = 0;
+
+               if($r->type == ''){
+
+                if(isset($r->option_ans)){
+                    foreach($r->option_ans as $key => $op){
+
+                        $option_correct = DB::table('options')->select('correct_answer')->where('id',$op)->first();
+                        $question = \App\Models\Questions::where('id', $key)->first();
+
+                        $answers = new Answers();
+                        $answers->question_id = $key;
+                        $answers->option_id = $op;
+                        $answers->user_id = Auth::guard('web')->user()->id;
+                        if($option_correct->correct_answer==1){
+                            $answers->pass = 1;
+                            $score += $question->score;
+                        }else{
+                            $answers->pass = 2;
+                        }
+                        $answers->save();
+
+                    }
+                }
+
+                if(isset($r->text_ans)){
+                    foreach($r->text_ans as $key => $text){
+
+                        $answers = new Answers();
+                        $answers->question_id = $key;
+                        $answers->option_text = $text;
+                        $answers->user_id = Auth::guard('web')->user()->id;
+                        // if($option_correct->correct_answer==1){
+                        //     $answers->pass = 1;
+                        // }else{
+                        //     $answers->pass = 2;
+                        // }
+                        $answers->save();
+                        $text_score++;
+                    }
+                }
+
+
+                $pro_quest_detail = new ProfileQuestionDetail();
+                $pro_quest_detail->user_id = Auth::guard('web')->user()->id;
+                $pro_quest_detail->questions_detail_id = $question_detail->id;
+                $pro_quest_detail->score = $score;
+                if($score>=$question_detail->score_success){
+                    $pro_quest_detail->status = 1;
+                }else{
+                    if($text_score>0){
+                        $pro_quest_detail->status = 0;
+                    }else{
+                        $pro_quest_detail->status = 2;
+                    }
+                }
+                $pro_quest_detail->save();
+
+               }
+
+               if($r->type=='check'){
+                $score = 0;
+                if(isset($r->text_ans_check)){
+                    foreach($r->text_ans_check as $key => $text){
+                            $ans = Answers::where('id',$key)->first();
+                            $question = \App\Models\Questions::where('id',$ans->question_id)->first();
+                            $ans->pass = $text;
+                            if($ans->pass==1){
+                                $score+=$question->score;
+                            }
+                            $ans->save();
+                    }
+
+                    $pro_quest_detail = ProfileQuestionDetail::where('id',$r->pro_quest_detail_id)->first();
+                    $pro_quest_detail->score = $pro_quest_detail->score+$score;
+                    if($pro_quest_detail->score >= $question_detail->score_success){
+                        $pro_quest_detail->status = 1;
+                    }else{
+                        $pro_quest_detail->status = 2;
+                    }
+
+                    $pro_quest_detail->save();
+
+                }
+
+               }
+
+
+
+                DB::commit();
+            }
+            catch (\Exception $e) {
+                DB::rollback();
+            return $e->getMessage();
+            }
+            catch(\FatalThrowableError $fe)
+            {
+                DB::rollback();
+            return $e->getMessage();
+            }
+
+            return redirect()->back()->with('success','บันทึกข้อมูลสำเร็จ');
+        // return redirect()->to('workshop_inside_view/'.$course->id.'/'.$question_detail->id)->with('success','บันทึกข้อมูลสำเร็จ');
+
+    }
+
+
 
 }
