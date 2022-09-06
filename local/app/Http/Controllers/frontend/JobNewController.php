@@ -86,4 +86,18 @@ class JobNewController extends Controller
 
         return redirect()->back()->with('success','บันทึกข้อมูลสำเร็จ');
     }
+
+    public function worklist_detail($id)
+    {
+        $profile = Profile::where('user_id',Auth::guard('web')->user()->id)->first();
+        if($profile){
+            $job = JobDescription::where('id',$id)->first();
+            $jobs = JobDescription::get();
+            return view('frontend/worklist_detail',[
+                'job'=>$job,
+                'jobs'=>$jobs,
+            ]);
+        }
+
+    }
 }

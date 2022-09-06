@@ -20,6 +20,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use App\Models\JobDescription;
 
 class HomeController extends Controller
 {
@@ -478,4 +479,14 @@ class HomeController extends Controller
             ]);
         }
     }
+
+    public function worklist(Request $request)
+    {
+
+        $jobs = JobDescription::get();
+        return view('frontend/worklist',[
+            'jobs'=>$jobs,
+        ]);
+    }
+
 }

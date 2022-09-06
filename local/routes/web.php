@@ -51,6 +51,8 @@ Route::group(['middleware' => ['web','auth']], function () {
      });
 
 
+     Route::get('worklist_detail/{job_id}', 'frontend\JobNewController@worklist_detail')->name('index');
+
 
     // Route::get('/course_online', function () {
     //     return view('frontend/course_online');
@@ -70,7 +72,7 @@ Route::group(['middleware' => ['web','auth']], function () {
 });
 Route::post('/register_full','frontend\RegisterFullController@register');
 
-
+ Route::get('/worklist', 'frontend\HomeController@worklist')->name('index');
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontend\HomeController@index')->name('index');
 Route::get('/index', 'frontend\HomeController@index')->name('index');
@@ -122,13 +124,6 @@ Route::get('/faq', 'frontend\FaqController@index');
 //Route::get('/profile', 'frontend\ProfileController@index');
 Route::resource('/profile', 'frontend\ProfileController');
 
-
-
-
-
-Route::get('/worklist', function () {
-   return view('frontend/worklist');
-});
 Route::get('/interes_course', function () {
    return view('frontend/interes_course');
 });

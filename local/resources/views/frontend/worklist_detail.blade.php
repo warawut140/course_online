@@ -290,413 +290,243 @@
 
         {{-- begin #content 1 --}}
 
-        <div class="row" style="background-color: #white;">
-            <div class="col-1">
-            </div>
-            <div class="col-8">
-                <div class="container text-center py-4">
-                    <br> <br>
 
-                    <h1 class=" text-left">
-                        <font style="color:white">งานที่เหมาะกับโปรไฟล์ของคุณ</font>
-                    </h1>
+    </div>
+    {{-- end #content 1 --}}
+    <div class="container text-center py-4">
+    <h1 class="mb-3 text-left">
+        <font style="color:black">UX/UI Designer</font>
+    </h1>
 
-                    <h5 class=" text-left">
-                        <font style="color:white">33 งานใน เชียงใหม่, เชียงใหม่, ประเทศไทย (3 ใหม่)</font>
-                    </h5>
-                    <div class="col-12">
-                        <br> <br>
+    <h5 class=" text-left">
+        <font style="color:black">13 งานใน เชียงใหม่, เชียงใหม่, ประเทศไทย (3 ใหม่)</font>
+    </h5>
+    <br> <br>
+    <div class="row">
 
-
-                        <div class="row">{{-- start #work --}}
-
-                            @foreach($jobs as $j)
-                            <div class="col-3">
-                                <img src="{{ asset('images/profile/'.$j->Profile->image_profile) }}" class="mw-100 mb-3" width="150px" height="150px">
-                                <h5 class="mb-3 text-left">
-                                    <font style="color:white">{{$j->position}}</font>
-                                </h5>
-                                <p class="mb-3 text-left">
-                                    <font style="color:gray">{{$j->location}}</font>
-                                </p>
-                                <p class="mb-3 text-left">
-                                    <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
-                                </p>
-                                <p class="mb-3 text-left">
-                                    <font style="color:gray"><i class="fa fa-clock" aria-hidden="true"
-                                            style="color:green;"></i> {{$j->created_at}} </font>
-                                </p>
-                                <p class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg'></i>
-                                    <font style="color:white">โปรไฟล์ของคุณเข้ากับงานนี้</font>
-                                </p>
-
-                                <a href="{{url('worklist_detail/'.$j->id)}}" style="background-color:#374291; color:white;" class="btn "> สมัครเลย
-                                </a>
-                            </div>
-                            @endforeach
-
-                            {{-- <div class="col-3">
-        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
-         <h5 class="mb-3 text-left"><font style="color:white">Commis</font></h5>
-          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
-           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
-            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
-              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' ></i>  <font style="color:white">โปรไฟล์ของคุณเข้ากับงานนี้</font></p>
-
-              <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
- </div>
-    <div class="col-3">
-        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
-         <h5 class="mb-3 text-left"><font style="color:white">Commis</font></h5>
-          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
-           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
-            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
-              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' ></i>  <font style="color:white">โปรไฟล์ของคุณเข้ากับงานนี้</font></p>
-
-              <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
- </div>
-       <div class="col-3">
-        <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
-         <h5 class="mb-3 text-left"><font style="color:white">Commis</font></h5>
-          <p class="mb-3 text-left"><font style="color:gray">Le Méridien Hotels & Resorts  เชียงใหม่</font></p>
-           <p class="mb-3 text-left"><font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font></p>
-            <p class="mb-3 text-left"><font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน </font></p>
-              <p class="mb-3 text-left">   <i class='fas fa-user-circle fa-lg' ></i>  <font style="color:white">โปรไฟล์ของคุณเข้ากับงานนี้</font></p>
-
-              <a href="" style="background-color:#374291; color:white;" class="btn "> สมัครเลย  </a>
- </div> --}}
-
-                        </div>{{-- end #work --}}
+        <div class="col-6">{{-- start #แบ่งครึ่ง1 --}}
+            <br> <br>
 
 
 
+            <div class="row">
+
+                @foreach($jobs as $j)
+
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="{{ asset('images/profile/'.$j->Profile->image_profile) }}" class="mw-100 mb-3" width="150px" height="150px">
+                        </div>
+                        <div class="col-8">
+                            <h5 class="mb-3 text-left">
+                                <font style="color:black">{{$j->position}}</font>
+                            </h5>
+                            <p class="mb-3 text-left">
+                                <font style="color:gray">{{$j->location}}</font>
+                            </p>
+                            <p class="mb-3 text-left">
+                                <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
+                            </p>
+                            <p class="mb-3 text-left">
+                                <font style="color:gray"><i class="fa fa-clock" aria-hidden="true"
+                                        style="color:green;"></i> {{$j->created_at}} </font>
+                            </p>
+                            <p class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg'></i>
+                                <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font>
+                            </p>
+
+                            <a href="{{url('worklist_detail/'.$j->id)}}" style="background-color:#374291; color:white;" class="btn "> สมัครเลย
+                            </a>
+                        </div>
                     </div>
-                    <br> <br>
+                </div>{{-- end #work --}}
+
+                @endforeach
+
+            </div>
+
+
+        </div>{{-- end #แบ่งครึ่ง1 --}}
+        <div class="col-6">{{-- start #แบ่งครึ่ง2 --}}
+            <br> <br>
+            <h5 class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg' style="color:black"></i>
+                <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font>
+            </h5>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <img src="{{asset('images/profile/'.$job->Profile->company_img1)}}" width="300px" height="250px" class="mw-100 mb-3">
+                    {{-- <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3"> --}}
+                </div>
+                <div class="col-6">
+                    {{-- <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3"> --}}
+                    <img src="{{asset('images/profile/'.$job->Profile->company_img2)}}" width="300px" height="250px" class="mw-100 mb-3">
+                </div>
+            </div>
+            <br> <br>
+            <div class="row">
+                <div class="col-12">{{-- start #work --}}
+                    <div class="row">
+                        <div class="col-4">
+                            {{-- <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3"> --}}
+                            <img src="{{ asset('images/profile/'.$j->Profile->image_profile) }}" class="mw-100 mb-3" width="150px" height="150px">
+                        </div>
+                        <div class="col-8">
+                            <h5 class="mb-3 text-left">
+                                <font style="color:black">{{$job->position}}</font>
+                            </h5>
+                            <p class="mb-3 text-left">
+                                <font style="color:gray">{{$job->location}}</font>
+                            </p>
+                            <p class="mb-3 text-left">
+                                <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
+                            </p>
+                            <p class="mb-3 text-left">
+                                <font style="color:gray"><i class="fa fa-clock" aria-hidden="true"
+                                        style="color:green;"></i> {{$j->created_at}} </font>
+                            </p>
+                            <p class="mb-3 text-left"> <a href=""
+                                    style="background-color:#374291; color:white;" class="btn "> สมัครเลย </a></p>
+
+                            <br>
+                        </div>
+                    </div>
+                </div>{{-- end #work --}}
+                <div class="col-12">{{-- start #work --}}
+                    <div class="row">
+                        <br> <br>
+                        <div class="col-12">
+                            <h5 class="mb-3 text-left">
+                                <font style="color:black">ข้อมูลบริษัท</font>
+                            </h5>
+                            <p class="mb-3 text-left">
+                                <font style="color:gray">{{$job->Profile->detail_about_me}}</font>
+                            </p>
+                            <p class="mb-3 text-left">
+                                <font style="color:gray">
+                                    {{$job->Profile->company_address}}
+
+                                </font>
+                            </p>
+                            <br> <br>
+                            <p class="mb-3 text-left">
+                                <font style="color:black">ลักษณะการทำงาน - บริหารงาน ประชุม อมรม</font>
+                            </p>
+
+                            <p class="mb-3 text-left">
+                                <font style="color:gray"><i class="fa fa-circle" aria-hidden="true"></i>
+                                    ขยายการตลาด ประสานงานขาย</font>
+                            </p>
+                            <p class="mb-3 text-left">
+                                <font style="color:gray"><i class="fa fa-circle" aria-hidden="true"></i>ฝึกอบรม
+                                    พัฒนาตนเองและบุคคลากร
+                                </font>
+                            </p>
+                            <p class="mb-3 text-left">
+                                <font style="color:gray"><i class="fa fa-circle" aria-hidden="true"></i>
+                                    ออกตลาด พบปะกลุ่มลูกค้า</font>
+                            </p>
+
+                        </div>
+                        <div class="col-6">
+                            <br> <br>
+                            <p class="mb-3 text-left">
+                                <font style="color:black">ระดับประสบการณ์</font>
+                            </p>
+
+                            <p class="mb-3 text-left">
+                                <font style="color:#374291;"><i class="fa fa-briefcase" aria-hidden="true"></i>
+                                    ประสบการณ์น้อย</font>
+                            </p>
+
+                        </div>
+                        <div class="col-6">
+                            <br> <br>
+                            <p class="mb-3 text-left">
+                                <font style="color:black">ประเภทการจ้างงาน</font>
+                            </p>
+
+                            <p class="mb-3 text-left">
+                                <font style="color:#374291;"><i class="fa fa-calendar-check" aria-hidden="true"></i>
+                                    Part-time</font>
+                            </p>
+
+                        </div>
+                        <div class="col-12">
+                            <br> <br>
+                            <p class="mb-3 text-left">
+                                <font style="color:black">เงินเดือน</font>
+                            </p>
+
+                            <p class="mb-3 text-left">
+                                <font style="color:#374291;"><i class="fa fa-credit-card" aria-hidden="true"></i>
+                                    {{$j->salary}} บาท รายเดือน</font>
+                            </p>
+
+
+                            <div class="col-12">
+                                <br> <br>
+                                <p class="mb-3 text-left">
+                                    <font style="color:black">Skill ที่ต้องการ</font>
+                                </p>
+
+                                <p class="mb-3 text-left">
+                                    <font style="color:#374291;"><i class="fa fa-circle" aria-hidden="true"></i>
+                                        ขยายการตลาด ประสานงานขาย</font>
+                                </p>
+                                <p class="mb-3 text-left">
+                                    <font style="color:#374291;"><i class="fa fa-circle" aria-hidden="true"></i>
+                                        ฝึกอบรม พัฒนาตนเองและบุคคลากร
+                                    </font>
+                                </p>
+                                <p class="mb-3 text-left">
+                                    <font style="color:#374291;"><i class="fa fa-circle" aria-hidden="true"></i>
+                                        ทักษะการพูดชั้นเชิง</font>
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <br> <br>
+                                <p class="mb-3 text-left">
+                                    <font style="color:black">คอร์สเรียนที่ควรผ่านการเรียนรู้มาก่อน</font>
+                                </p>
+
+                                <p class="mb-3 text-left">
+                                    <font style="color:#374291;"><i class="fa fa-check" aria-hidden="true"></i>
+                                        ขยายการตลาด ประสานงานขาย</font>&nbsp; &nbsp;&nbsp; &nbsp;<font
+                                        style="color:blue;">Certificate</font>
+                                </p>
+                                <p class="mb-3 text-left">
+                                    <font style="color:gray;"><i class="fa fa-times" aria-hidden="true"></i> ฝึกอบรม
+                                        พัฒนาตนเองและบุคคลากร
+                                    </font>&nbsp; &nbsp;&nbsp; &nbsp;<font style="color:gray;">Not Certificate</font>
+                                </p>
+                                </p>
+                                <p class="mb-3 text-left">
+                                    <font style="color:#374291;"><i class="fa fa-check" aria-hidden="true"></i>
+                                        ผ่านการเรียนคอร์ส พัฒนาตัวเอง</font>&nbsp; &nbsp;&nbsp; &nbsp;<font
+                                        style="color:blue;">Certificate</font>
+                                </p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>{{-- end #work --}}
 
 
                 </div>
-            </div>
+
+
+            </div>{{-- end #แบ่งครึ่ง2 --}}
+
 
         </div>
 
     </div>
-    {{-- end #content 1 --}}
+    </div>
 
     {{-- begin #work 1 --}}
 
 
-    <div class="container text-center py-4">
-
-        <br> <br>
-
-        <h1 class="mb-3 text-left">
-            <font style="color:black">งานที่ใกล้เคียงกับโปรไฟล์ของคุณ</font>
-        </h1>
-
-        <h5 class=" text-left">
-            <font style="color:black">13 งานใน เชียงใหม่, เชียงใหม่, ประเทศไทย (3 ใหม่)</font>
-        </h5>
-        <br> <br>
-
-        <div class="row">{{-- start #work --}}
-            <div class="col-4">
-                <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
-                <h5 class="mb-3 text-left">
-                    <font style="color:black">Commis</font>
-                </h5>
-                <p class="mb-3 text-left">
-                    <font style="color:gray">Le Méridien Hotels & Resorts เชียงใหม่</font>
-                </p>
-                <p class="mb-3 text-left">
-                    <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
-                </p>
-                <p class="mb-3 text-left">
-                    <font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน
-                    </font>
-                </p>
-                <p class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg'style="color:black"></i>
-                    <font style="color:black">โปรไฟล์ของคุณเกือบเข้ากับงานนี้ ขาดอีก 2 คุณสมบัติ</font>
-                </p>
-
-            </div>
-            <div class="col-4">
-                <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
-                <h5 class="mb-3 text-left">
-                    <font style="color:black">Commis</font>
-                </h5>
-                <p class="mb-3 text-left">
-                    <font style="color:gray">Le Méridien Hotels & Resorts เชียงใหม่</font>
-                </p>
-                <p class="mb-3 text-left">
-                    <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
-                </p>
-                <p class="mb-3 text-left">
-                    <font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6
-                        วันก่อน </font>
-                </p>
-                <p class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg'style="color:black"></i>
-                    <font style="color:black">โปรไฟล์ของคุณเกือบเข้ากับงานนี้ ขาดอีก 2 คุณสมบัติ</font>
-                </p>
-
-            </div>
-            <div class="col-4">
-                <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
-                <h5 class="mb-3 text-left">
-                    <font style="color:black">Commis</font>
-                </h5>
-                <p class="mb-3 text-left">
-                    <font style="color:gray">Le Méridien Hotels & Resorts เชียงใหม่</font>
-                </p>
-                <p class="mb-3 text-left">
-                    <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
-                </p>
-                <p class="mb-3 text-left">
-                    <font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6
-                        วันก่อน </font>
-                </p>
-                <p class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg'style="color:black"></i>
-                    <font style="color:black">โปรไฟล์ของคุณเกือบเข้ากับงานนี้ ขาดอีก 2 คุณสมบัติ</font>
-                </p>
-
-            </div>
-
-
-        </div>{{-- end #work --}}
-        <br> <br> <br> <br>
-
-
-        <h1 class="mb-3 text-left">
-            <font style="color:black">สายงานยอดนิยม</font>
-        </h1>
-
-        <div class="row"> {{-- strat #เริ่มแถว --}}
-
-            <div class="col-3 ">{{-- strat #กลม --}}
-                <div class="row">
-                    <div class="col-5 ">
-                        <img src="{{ asset('images/file.png') }}" class="mw-100 mb-3">
-                    </div>
-                    <div class="col-7 ">
-                        <h5 class="mb-3 text-left">
-                            <font style="color:black">ธุรการ จัดซื้อ ประสานงานทั่วไป คีย์ข้อมูล</font>
-                        </h5>
-                    </div>
-                </div>
-            </div>{{-- end #กลม --}}
-            <div class="col-3 ">{{-- strat #กลม --}}
-                <div class="row">
-                    <div class="col-5 ">
-                        <img src="{{ asset('images/file2.png') }}" class="mw-100 mb-3">
-                    </div>
-                    <div class="col-7 ">
-                        <h5 class="mb-3 text-left">
-                            <font style="color:black">การตลาด marketing</font>
-                        </h5>
-                    </div>
-                </div>
-            </div>{{-- end #กลม --}}
-            <div class="col-3 ">{{-- strat #กลม --}}
-                <div class="row">
-                    <div class="col-5 ">
-                        <img src="{{ asset('images/file4.png') }}" class="mw-100 mb-3">
-                    </div>
-                    <div class="col-7 ">
-                        <h5 class="mb-3 text-left">
-                            <font style="color:black">การโรงแรม ท่องเที่ยว จองตั๋ว มัคคุเทศก์</font>
-                        </h5>
-                    </div>
-                </div>
-            </div>{{-- end #กลม --}}
-            <div class="col-3 ">{{-- strat #กลม --}}
-                <div class="row">
-                    <div class="col-5 ">
-                        <img src="{{ asset('images/file2.png') }}" class="mw-100 mb-3">
-                    </div>
-                    <div class="col-7 ">
-                        <h5 class="mb-3 text-left">
-                            <font style="color:black">การตลาด marketing</font>
-                        </h5>
-                    </div>
-                </div>
-            </div>{{-- end #กลม --}}
-
-
-        </div> {{-- end #จบแถว --}}
-        <div class="row"> {{-- strat #เริ่มแถว --}}
-
-            <div class="col-3 ">{{-- strat #กลม --}}
-                <div class="row">
-                    <div class="col-5 ">
-                        <img src="{{ asset('images/file3.png') }}" class="mw-100 mb-3">
-                    </div>
-                    <div class="col-7 ">
-                        <h5 class="mb-3 text-left">
-                            <font style="color:black">บริการลูกค้า ประชาสัมพันธ์ พนักงานต้อนรับ</font>
-                        </h5>
-                    </div>
-                </div>
-            </div>{{-- end #กลม --}}
-            <div class="col-3 ">{{-- strat #กลม --}}
-                <div class="row">
-                    <div class="col-5 ">
-                        <img src="{{ asset('images/file5.png') }}" class="mw-100 mb-3">
-                    </div>
-                    <div class="col-7 ">
-                        <h5 class="mb-3 text-left">
-                            <font style="color:black">คลังสินค้า โลจิสติกส์</font>
-                        </h5>
-                    </div>
-                </div>
-            </div>{{-- end #กลม --}}
-            <div class="col-3 ">{{-- strat #กลม --}}
-                <div class="row">
-                    <div class="col-5 ">
-                        <img src="{{ asset('images/file3.png') }}" class="mw-100 mb-3">
-                    </div>
-                    <div class="col-7 ">
-                        <h5 class="mb-3 text-left">
-                            <font style="color:black">บริการลูกค้า ประชาสัมพันธ์ พนักงานต้อนรับ</font>
-                        </h5>
-                    </div>
-                </div>
-            </div>{{-- end #กลม --}}
-            <div class="col-3 ">{{-- strat #กลม --}}
-                <div class="row">
-                    <div class="col-5 ">
-                        <img src="{{ asset('images/file6.png') }}" class="mw-100 mb-3">
-                    </div>
-                    <div class="col-7 ">
-                        <h5 class="mb-3 text-left">
-                            <font style="color:black">คอมพิวเตอร์ IT โปรแกรมเมอร์</font>
-                        </h5>
-                    </div>
-                </div>
-            </div>{{-- end #กลม --}}
-
-
-        </div> {{-- end #จบแถว --}}
-        <div class="row"> {{-- strat #เริ่มแถว --}}
-
-            <div class="col-3 ">{{-- strat #กลม --}}
-                <div class="row">
-                    <div class="col-5 ">
-                        <img src="{{ asset('images/file3.png') }}" class="mw-100 mb-3">
-                    </div>
-                    <div class="col-7 ">
-                        <h5 class="mb-3 text-left">
-                            <font style="color:black">บริการลูกค้า ประชาสัมพันธ์ พนักงานต้อนรับ</font>
-                        </h5>
-                    </div>
-                </div>
-            </div>{{-- end #กลม --}}
-            <div class="col-3 ">{{-- strat #กลม --}}
-                <div class="row">
-                    <div class="col-5 ">
-                        <img src="{{ asset('images/file5.png') }}" class="mw-100 mb-3">
-                    </div>
-                    <div class="col-7 ">
-                        <h5 class="mb-3 text-left">
-                            <font style="color:black">คลังสินค้า โลจิสติกส์</font>
-                        </h5>
-                    </div>
-                </div>
-            </div>{{-- end #กลม --}}
-            <div class="col-3 ">{{-- strat #กลม --}}
-                <div class="row">
-                    <div class="col-5 ">
-                        <img src="{{ asset('images/file3.png') }}" class="mw-100 mb-3">
-                    </div>
-                    <div class="col-7 ">
-                        <h5 class="mb-3 text-left">
-                            <font style="color:black">บริการลูกค้า ประชาสัมพันธ์ พนักงานต้อนรับ</font>
-                        </h5>
-                    </div>
-                </div>
-            </div>{{-- end #กลม --}}
-            <div class="col-3 ">{{-- strat #กลม --}}
-                <div class="row">
-                    <div class="col-5 ">
-                        <img src="{{ asset('images/file6.png') }}" class="mw-100 mb-3">
-                    </div>
-                    <div class="col-7 ">
-                        <h5 class="mb-3 text-left">
-                            <font style="color:black">คอมพิวเตอร์ IT โปรแกรมเมอร์</font>
-                        </h5>
-                    </div>
-                </div>
-            </div>{{-- end #กลม --}}
-
-
-        </div> {{-- end #จบแถว --}}
-        <br> <br> <br> <br>
-
-
-        <h1 class="mb-3 text-left">
-            <font style="color:black">5 อันดับงานรายได้สูง</font>
-        </h1>
-
-
-        <br> <br>
-        <div class="hotclass_slide owl-carousel owl-theme">
-
-            <div class="item">
-
-                <a href="{{ url('projectauction') }}">
-                    <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number1.png" alt=""
-                            class="lazy"></span>
-                    <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
-                </a>
-                <span class="numberHot"></span>
-                <h4 class="text-orange">โปรแกรมเมอร์</h4>
-                <h2 class="text-orange"style="color:#374291;">34K-25K</h2>
-            </div>
-            <div class="item">
-                <a href="{{ url('work') }}">
-                    <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number2.png" alt=""
-                            class="lazy"></span>
-                    <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
-                </a>
-                <h4 class="text-orange">โปรแกรมเมอร์</h4>
-                <h2 class="text-orange"style="color:#374291;">34K-25K</h2>
-            </div>
-            <div class="item">
-                <a href="{{ url('training') }}">
-                    <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number3.png" alt=""
-                            class="lazy"></span>
-                    <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
-                </a>
-                <h4 class="text-orange">โปรแกรมเมอร์</h4>
-                <h2 class="text-orange"style="color:#374291;">34K-25K</h2>
-            </div>
-            <div class="item">
-                <a href="{{ url('#') }}">
-                    <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number4.png" alt=""
-                            class="lazy"></span>
-                    <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
-                </a>
-                <h4 class="text-orange">โปรแกรมเมอร์</h4>
-                <h2 class="text-orange"style="color:#374291;">34K-25K</h2>
-            </div>
-            <div class="item">
-
-                <a href="{{ url('projectauction') }}">
-                    <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number5.png" alt=""
-                            class="lazy"></span>
-                    <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
-                </a>
-                <span class="numberHot"></span>
-                <h4 class="text-orange">โปรแกรมเมอร์</h4>
-                <h2 class="text-orange"style="color:#374291;">34K-25K</h2>
-
-            </div>
-
-
-
-
-
-
-        </div>
-        <br> <br>
 
             {{-- <script src="/js/app.js" charset="utf-8"></script> --}}
             <script src="{{ asset('js/app.js') }}"></script>

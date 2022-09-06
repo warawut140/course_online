@@ -65,7 +65,7 @@
 
                     <a class="nav-link py-1" href="{{ url('index') }}"><font style="color:black"> คอร์สการเรียนรู้</font></a>
 
-                    <a class="nav-link py-1" href="#"><font style="color:black">การรับสมัครงาน</font></a>
+                    <a class="nav-link py-1" href="{{ url('worklist') }}"><font style="color:black">การรับสมัครงาน</font></a>
                      <!-- <a class="nav-link py-1" href="{{ url('work') }}"><font style="color:black">การรับสมัครงาน</font></a> -->
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">

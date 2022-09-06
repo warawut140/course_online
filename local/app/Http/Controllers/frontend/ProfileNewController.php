@@ -34,11 +34,15 @@ class ProfileNewController extends Controller
     {
         $profile = Profile::where('user_id',Auth::guard('web')->user()->id)->first();
         $courses = Course::where('profile_id',$profile->id)->where('status',1)->orderBy('created_at','desc')->get();
+        $jobs = JobDescription::where('profile_id',$profile->id)->get();
+        $job = JobDescription::where('profile_id',$profile->id)->first();
 
         return view('auth.profile.profile_company',[
             'profile' => $profile,
             'page' => $page,
             'courses' => $courses,
+            'jobs'=>$jobs,
+            'job'=>$job,
         ]);
     }
 

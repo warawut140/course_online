@@ -232,6 +232,10 @@
                 @include('auth.profile.tab.company.workshop')
                 @endif
 
+                @if(@$page=='work')
+                @include('auth.profile.tab.company.work')
+                @endif
+
             </div>
         </div>
 
