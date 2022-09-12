@@ -17,7 +17,10 @@ class JobNewController extends Controller
 {
     public function job_add()
     {
-        return view('frontend.job.job_add');
+        $courses = Course::where('status',1)->orderBy('name','asc')->get();
+        return view('frontend.job.job_add',[
+            'courses' => $courses
+        ]);
     }
 
     public function job_view($id)

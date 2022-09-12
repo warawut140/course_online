@@ -154,12 +154,15 @@
                                                     @foreach($courses as $c)
                                                     <?php
                                                         $arr_c = [];
-                                                        foreach(@$data->course_id_for_job as $course_id_for_job){
-                                                            
+                                                        $arr_course_id_for_job = [];
+                                                        if(@$data->course_id_for_job){
+                                                            $arr_course_id_for_job = explode(',',@$data->course_id_for_job);
                                                         }
-
+                                                        foreach($arr_course_id_for_job as $arr){
+                                                            $arr_c[$arr] = $arr;
+                                                        }
                                                     ?>
-                                                    <option <?php if($c->id==){} ?> value="{{$c->id}}">{{$c->name}}</option>
+                                                    <option <?php if(isset($arr_c[$c->id])){echo 'selected'; } ?> value="{{$c->id}}">{{$c->name}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
