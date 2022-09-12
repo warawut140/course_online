@@ -111,7 +111,7 @@
     {{-- begin z#navber --}}
     <nav class="navbar navbar-expand-md navbar-light bg-white">
         <h3 class="my-auto"><a class="navbar-brand" href="{{ url('index') }}">
-                <img src="{{ asset('images/logowutco.png') }}" style="  width: 20%;" class="img-fluid" alt="Responsive image"></a>
+                <img src="{{ asset('images/logowutco2.png') }}"  class="img-fluid" alt="Responsive image"></a>
         </h3>
 
         <a class="nav-link py-1" href="{{ url('index') }}">

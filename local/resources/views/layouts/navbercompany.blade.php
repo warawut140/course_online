@@ -70,9 +70,7 @@
         
    
 
-                  <!--     <a class="nav-link py-1" href="#"><font style="color:black">การรับสมัครงาน</font></a> -->
-                     <!-- <a class="nav-link py-1" href="{{ url('work') }}"><font style="color:black">การรับสมัครงาน</font></a> -->
-             <!-- <a class="nav-link py-1 center" href="{{ url('index') }}"><font style="color:#D3D3D3;">  <i class="fa fa-bell" style="color: #D3D3D3;"></i> Search transactions, invoices or help</font></a> -->
+                  
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
             
