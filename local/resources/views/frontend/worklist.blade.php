@@ -302,7 +302,7 @@
                     </h1>
 
                     <h5 class=" text-left">
-                        <font style="color:white">33 งานใน เชียงใหม่, เชียงใหม่, ประเทศไทย (3 ใหม่)</font>
+                        <font style="color:white"> ประเทศไทย (3 ใหม่)</font>
                     </h5>
                     <div class="col-12">
                         <br> <br>
@@ -310,29 +310,31 @@
 
                         <div class="row">{{-- start #work --}}
 
-                            @foreach($jobs as $j)
-                            <div class="col-3">
-                                <img src="{{ asset('images/profile/'.$j->Profile->image_profile) }}" class="mw-100 mb-3" width="150px" height="150px">
-                                <h5 class="mb-3 text-left">
-                                    <font style="color:white">{{$j->position}}</font>
-                                </h5>
-                                <p class="mb-3 text-left">
-                                    <font style="color:gray">{{$j->location}}</font>
-                                </p>
-                                <p class="mb-3 text-left">
-                                    <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
-                                </p>
-                                <p class="mb-3 text-left">
-                                    <font style="color:gray"><i class="fa fa-clock" aria-hidden="true"
-                                            style="color:green;"></i> {{$j->created_at}} </font>
-                                </p>
-                                <p class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg'></i>
-                                    <font style="color:white">โปรไฟล์ของคุณเข้ากับงานนี้</font>
-                                </p>
+                            @foreach ($jobs3 as $j)
+                                <div class="col-3">
+                                    <img src="{{ asset('images/profile/' . $j->Profile->image_profile) }}" class="mw-100 mb-3"
+                                        width="150px" height="150px">
+                                    <h5 class="mb-3 text-left">
+                                        <font style="color:white">{{ $j->position }}</font>
+                                    </h5>
+                                    <p class="mb-3 text-left">
+                                        <font style="color:gray">{{ $j->location }}</font>
+                                    </p>
+                                    <p class="mb-3 text-left">
+                                        <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
+                                    </p>
+                                    <p class="mb-3 text-left">
+                                        <font style="color:gray"><i class="fa fa-clock" aria-hidden="true"
+                                                style="color:green;"></i> {{ $j->created_at }} </font>
+                                    </p>
+                                    <p class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg'></i>
+                                        <font style="color:white">โปรไฟล์ของคุณเข้ากับงานนี้</font>
+                                    </p>
 
-                                <a href="{{url('worklist_detail/'.$j->id)}}" style="background-color:#374291; color:white;" class="btn "> สมัครเลย
-                                </a>
-                            </div>
+                                    <a href="{{ url('worklist_detail/' . $j->id) }}"
+                                        style="background-color:#374291; color:white;" class="btn "> สมัครเลย
+                                    </a>
+                                </div>
                             @endforeach
 
                             {{-- <div class="col-3">
@@ -399,27 +401,37 @@
         <br> <br>
 
         <div class="row">{{-- start #work --}}
-            <div class="col-4">
-                <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
-                <h5 class="mb-3 text-left">
-                    <font style="color:black">Commis</font>
-                </h5>
-                <p class="mb-3 text-left">
-                    <font style="color:gray">Le Méridien Hotels & Resorts เชียงใหม่</font>
-                </p>
-                <p class="mb-3 text-left">
-                    <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
-                </p>
-                <p class="mb-3 text-left">
-                    <font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6 วันก่อน
-                    </font>
-                </p>
-                <p class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg'style="color:black"></i>
-                    <font style="color:black">โปรไฟล์ของคุณเกือบเข้ากับงานนี้ ขาดอีก 2 คุณสมบัติ</font>
-                </p>
+            @foreach ($jobs3 as $j)
+                <div class="col-4">
+                    <img src="{{ asset('images/profile/' . $j->Profile->image_profile) }}" width="150px" height="150px"
+                        class="mw-100 mb-3">
+                    <h5 class="mb-3 text-left">
+                        <font style="color:black">{{ $j->position }}</font>
+                    </h5>
+                    <p class="mb-3 text-left">
+                        <font style="color:gray">{{ $j->location }}</font>
+                    </p>
+                    <p class="mb-3 text-left">
+                        <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
+                    </p>
+                    <p class="mb-3 text-left">
+                        <font style="color:gray"><i class="fa fa-clock" aria-hidden="true" style="color:green;"></i> 6
+                            วันก่อน
+                        </font>
+                    </p>
+                    <p class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg'style="color:black"></i>
+                        <font style="color:black">โปรไฟล์ของคุณเกือบเข้ากับงานนี้ ขาดอีก 2 คุณสมบัติ</font>
+                    </p>
+                    <p class="mb-3 text-left">
+                        <a href="{{ url('worklist_detail/' . $j->id) }}" style="background-color:#374291; color:white;"
+                            class="btn "> สมัครเลย
+                        </a>
+                    </p>
 
-            </div>
-            <div class="col-4">
+
+                </div>
+            @endforeach
+            {{-- <div class="col-4">
                 <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
                 <h5 class="mb-3 text-left">
                     <font style="color:black">Commis</font>
@@ -458,7 +470,7 @@
                     <font style="color:black">โปรไฟล์ของคุณเกือบเข้ากับงานนี้ ขาดอีก 2 คุณสมบัติ</font>
                 </p>
 
-            </div>
+            </div> --}}
 
 
         </div>{{-- end #work --}}
@@ -638,19 +650,19 @@
 
         <br> <br>
         <div class="hotclass_slide owl-carousel owl-theme">
-
+            @foreach ($jobs5 as $j)
             <div class="item">
-
-                <a href="{{ url('projectauction') }}">
+                <a href="{{ url('worklist_detail/' . $j->id) }}">
                     <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number1.png" alt=""
                             class="lazy"></span>
-                    <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3">
+                    <img src="{{ asset('images/profile/' . $j->Profile->image_profile) }}" class="mw-100 mb-3">
                 </a>
                 <span class="numberHot"></span>
-                <h4 class="text-orange">โปรแกรมเมอร์</h4>
-                <h2 class="text-orange"style="color:#374291;">34K-25K</h2>
+                <h4 class="text-orange">{{ $j->position }}</h4>
+                <h2 class="text-orange"style="color:#374291;">{{ $j->salary }}</h2>
             </div>
-            <div class="item">
+            @endforeach
+            {{-- <div class="item">
                 <a href="{{ url('work') }}">
                     <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number2.png" alt=""
                             class="lazy"></span>
@@ -688,7 +700,7 @@
                 <h4 class="text-orange">โปรแกรมเมอร์</h4>
                 <h2 class="text-orange"style="color:#374291;">34K-25K</h2>
 
-            </div>
+            </div> --}}
 
 
 
@@ -698,415 +710,415 @@
         </div>
         <br> <br>
 
-            {{-- <script src="/js/app.js" charset="utf-8"></script> --}}
-            <script src="{{ asset('js/app.js') }}"></script>
-        @endsection
-        @section('script')
-            <script>
-                $('.owl-carousel2').owlCarousel({
-                    nav: false,
+        {{-- <script src="/js/app.js" charset="utf-8"></script> --}}
+        <script src="{{ asset('js/app.js') }}"></script>
+    @endsection
+    @section('script')
+        <script>
+            $('.owl-carousel2').owlCarousel({
+                nav: false,
+                loop: false,
+
+                margin: 10,
+                arrows: false,
+                infinite: false,
+                dots: false,
+                autoHeight: true,
+
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            })
+            $('.owl-carousel').owlCarousel({
+                loop: false,
+
+                margin: 10,
+                nav: true,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items:
+                    }
+                }
+            })
+            $('.owl-carousel3').owlCarousel({
+                loop: false,
+                margin: 10,
+                nav: true,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            })
+        </script>
+        <script>
+            FontAwesomeConfig = {
+                searchPseudoElements: true
+            };
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+
+                $("body").on("mouseover", ".hotclass_slide .owl-item,.movie-carousel .owl-item", function() {
+                    $(this).parent().find(".owl-item.active").addClass("hov");
+                    $(this).removeClass("hov");
+                });
+
+                $("body").on("mouseleave", ".hotclass_slide .owl-item,.movie-carousel .owl-item", function() {
+                    $(this).parent().find(".owl-item.hov").removeClass("hov");
+                });
+
+                $(".movie-carousel").owlCarousel({
                     loop: false,
-
+                    rewind: true,
                     margin: 10,
-                    arrows: false,
-                    infinite: false,
+                    nav: true,
+                    lazyLoad: true,
+                    navText: ['<img src="assets/fontend/images/arrow_left.png">',
+                        '<img src="assets/fontend/images/arrow_right.png">'
+                    ],
+                    autoplayHoverPause: false,
                     dots: false,
-                    autoHeight: true,
-
+                    autoplay: false,
+                    autoplayTimeout: 7000,
+                    smartSpeed: 1000,
+                    stagePadding: 0,
+                    slideBy: 1,
                     responsive: {
                         0: {
-                            items: 1
+                            items: 2,
+                            center: true,
+                            loop: false,
+                            margin: 30,
+                            startPosition: 1
                         },
-                        600: {
+                        500: {
+                            items: 2,
+                            center: true,
+                            loop: true,
+                            margin: 40
+                        },
+                        768: {
+                            margin: 50,
+                            items: 3,
+                            center: true,
+                            loop: true
+                        },
+                        992: {
+                            margin: 20,
                             items: 3
                         },
-                        1000: {
+                        1201: {
+                            margin: 25,
                             items: 4
                         }
-                    }
-                })
-                $('.owl-carousel').owlCarousel({
-                    loop: false,
+                    },
+                });
 
+                $(".introLearnm ").owlCarousel({
+                    loop: false,
+                    rewind: true,
                     margin: 10,
                     nav: true,
+                    lazyLoad: true,
+                    navText: ['<img src="assets/fontend/images/arrow_left.png">',
+                        '<img src="assets/fontend/images/arrow_right.png">'
+                    ],
+                    autoplayHoverPause: false,
                     dots: false,
+                    autoplay: false,
+                    autoplayTimeout: 7000,
+                    smartSpeed: 1000,
+                    stagePadding: 0,
+                    slideBy: 1,
                     responsive: {
                         0: {
                             items: 1
                         },
-                        600: {
-                            items: 3
+                        500: {
+                            items: 1
                         },
-                        1000: {
-                            items:
+                        768: {
+                            margin: 20,
+                            items: 1
+                        },
+                        992: {
+                            margin: 20,
+                            items: 1
+                        },
+                        1201: {
+                            margin: 25,
+                            items: 1
                         }
                     }
-                })
-                $('.owl-carousel3').owlCarousel({
+                });
+
+                $(".hotclass_slide").owlCarousel({
                     loop: false,
+                    rewind: true,
                     margin: 10,
                     nav: true,
+                    lazyLoad: true,
+                    navText: ['<img src="assets/fontend/images/arrow_left.png">',
+                        '<img src="assets/fontend/images/arrow_right.png">'
+                    ],
+                    autoplayHoverPause: false,
                     dots: false,
+                    autoplay: false,
+                    autoplayTimeout: 7000,
+                    smartSpeed: 1000,
+                    stagePadding: 0,
+                    slideBy: 1,
                     responsive: {
                         0: {
-                            items: 1
+                            items: 2,
+                            center: true,
+                            loop: true,
+                            nav: true,
+                            margin: 30
                         },
-                        600: {
+                        500: {
+                            items: 2,
+                            center: true,
+                            loop: true,
+                            nav: true,
+                            margin: 40
+                        },
+                        768: {
+                            margin: 50,
+                            items: 3,
+                            center: true,
+                            loop: true,
+                            nav: true
+                        },
+                        992: {
+                            margin: 20,
                             items: 3
                         },
-                        1000: {
+                        1201: {
+                            margin: 25,
                             items: 5
                         }
                     }
-                })
-            </script>
-            <script>
-                FontAwesomeConfig = {
-                    searchPseudoElements: true
-                };
-            </script>
-            <script type="text/javascript">
-                $(document).ready(function() {
-
-
-                    $("body").on("mouseover", ".hotclass_slide .owl-item,.movie-carousel .owl-item", function() {
-                        $(this).parent().find(".owl-item.active").addClass("hov");
-                        $(this).removeClass("hov");
-                    });
-
-                    $("body").on("mouseleave", ".hotclass_slide .owl-item,.movie-carousel .owl-item", function() {
-                        $(this).parent().find(".owl-item.hov").removeClass("hov");
-                    });
-
-                    $(".movie-carousel").owlCarousel({
-                        loop: false,
-                        rewind: true,
-                        margin: 10,
-                        nav: true,
-                        lazyLoad: true,
-                        navText: ['<img src="assets/fontend/images/arrow_left.png">',
-                            '<img src="assets/fontend/images/arrow_right.png">'
-                        ],
-                        autoplayHoverPause: false,
-                        dots: false,
-                        autoplay: false,
-                        autoplayTimeout: 7000,
-                        smartSpeed: 1000,
-                        stagePadding: 0,
-                        slideBy: 1,
-                        responsive: {
-                            0: {
-                                items: 2,
-                                center: true,
-                                loop: false,
-                                margin: 30,
-                                startPosition: 1
-                            },
-                            500: {
-                                items: 2,
-                                center: true,
-                                loop: true,
-                                margin: 40
-                            },
-                            768: {
-                                margin: 50,
-                                items: 3,
-                                center: true,
-                                loop: true
-                            },
-                            992: {
-                                margin: 20,
-                                items: 3
-                            },
-                            1201: {
-                                margin: 25,
-                                items: 4
-                            }
-                        },
-                    });
-
-                    $(".introLearnm ").owlCarousel({
-                        loop: false,
-                        rewind: true,
-                        margin: 10,
-                        nav: true,
-                        lazyLoad: true,
-                        navText: ['<img src="assets/fontend/images/arrow_left.png">',
-                            '<img src="assets/fontend/images/arrow_right.png">'
-                        ],
-                        autoplayHoverPause: false,
-                        dots: false,
-                        autoplay: false,
-                        autoplayTimeout: 7000,
-                        smartSpeed: 1000,
-                        stagePadding: 0,
-                        slideBy: 1,
-                        responsive: {
-                            0: {
-                                items: 1
-                            },
-                            500: {
-                                items: 1
-                            },
-                            768: {
-                                margin: 20,
-                                items: 1
-                            },
-                            992: {
-                                margin: 20,
-                                items: 1
-                            },
-                            1201: {
-                                margin: 25,
-                                items: 1
-                            }
-                        }
-                    });
-
-                    $(".hotclass_slide").owlCarousel({
-                        loop: false,
-                        rewind: true,
-                        margin: 10,
-                        nav: true,
-                        lazyLoad: true,
-                        navText: ['<img src="assets/fontend/images/arrow_left.png">',
-                            '<img src="assets/fontend/images/arrow_right.png">'
-                        ],
-                        autoplayHoverPause: false,
-                        dots: false,
-                        autoplay: false,
-                        autoplayTimeout: 7000,
-                        smartSpeed: 1000,
-                        stagePadding: 0,
-                        slideBy: 1,
-                        responsive: {
-                            0: {
-                                items: 2,
-                                center: true,
-                                loop: true,
-                                nav: true,
-                                margin: 30
-                            },
-                            500: {
-                                items: 2,
-                                center: true,
-                                loop: true,
-                                nav: true,
-                                margin: 40
-                            },
-                            768: {
-                                margin: 50,
-                                items: 3,
-                                center: true,
-                                loop: true,
-                                nav: true
-                            },
-                            992: {
-                                margin: 20,
-                                items: 3
-                            },
-                            1201: {
-                                margin: 25,
-                                items: 5
-                            }
-                        }
-                    });
-
-                    $('.myslider').owlCarousel({
-                        items: 1,
-                        nav: true,
-                        dots: true,
-                        autoplay: true,
-                        autoplayTimeout: 10000,
-                        smartSpeed: 1000,
-                        lazyLoad: true,
-                        navText: ['<img src="assets/fontend/images/BN_left.png">',
-                            '<img src="assets/fontend/images/BN_right.png">'
-                        ],
-                        dotsSpeed: 500,
-                        dotsData: true,
-                        responsive: {
-                            0: {
-                                items: 1,
-                                slideBy: 1,
-                                autoplay: true,
-                                margin: 10,
-                                nav: true,
-                                // dotsData: false,
-                                dots: false,
-                            },
-                            600: {
-                                items: 1,
-                                slideBy: 1,
-                                nav: true,
-                                autoplay: true,
-                                // dotsData: false,
-                                dots: false,
-                            },
-                            1024: {
-                                items: 1,
-                                slideBy: 1
-                            },
-                            1200: {
-                                items: 1,
-                                slideBy: 1
-                            }
-                        },
-                    });
-
-                    $('.myslider').on('changed.owl.carousel', function(e) {
-                        let index = e.relatedTarget.relative(e.relatedTarget.current());
-                        if (index == 0) {
-                            if (mobilesize.matches) {
-                                //if (isIphone) { player2.currentTime = 0; }else{ player2.currentTime(0); }
-                                player2.play();
-                                player.pause();
-                            } else {
-                                //if (isIphone) { player.currentTime = 0; }else{ player.currentTime(0); }
-                                //if (mobilesize.matches) { player2.pause(); }
-                                player2.pause();
-                                player.play();
-                            }
-                        } else {
-                            if (mobilesize.matches) {
-                                // $('#mypromotevideo2').get(0).pause();
-                                /* if (!player2.paused) {
-                                    player2.paused = false;
-                                    //player2.pause();
-                                } */
-                                player2.pause();
-                            } else {
-                                player.pause();
-                            }
-                            // player.pause();
-                        }
-                    })
-
-                    function moved() {
-                        var owl = $(".movie-carousel").data('owlCarousel');
-                        //alert(owl.currentItem );
-                        /* if (owl.currentItem + 1 === owl.itemsAmount) {
-                            alert('THE END');
-                        } */
-                    }
                 });
-            </script>
-            <script type="text/javascript">
-                $(".tovideo").on("click", function() {
-                    var value = $(this).attr("data-id");
-                    window.location.href = "learn/" + value;
+
+                $('.myslider').owlCarousel({
+                    items: 1,
+                    nav: true,
+                    dots: true,
+                    autoplay: true,
+                    autoplayTimeout: 10000,
+                    smartSpeed: 1000,
+                    lazyLoad: true,
+                    navText: ['<img src="assets/fontend/images/BN_left.png">',
+                        '<img src="assets/fontend/images/BN_right.png">'
+                    ],
+                    dotsSpeed: 500,
+                    dotsData: true,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            slideBy: 1,
+                            autoplay: true,
+                            margin: 10,
+                            nav: true,
+                            // dotsData: false,
+                            dots: false,
+                        },
+                        600: {
+                            items: 1,
+                            slideBy: 1,
+                            nav: true,
+                            autoplay: true,
+                            // dotsData: false,
+                            dots: false,
+                        },
+                        1024: {
+                            items: 1,
+                            slideBy: 1
+                        },
+                        1200: {
+                            items: 1,
+                            slideBy: 1
+                        }
+                    },
+                });
+
+                $('.myslider').on('changed.owl.carousel', function(e) {
+                    let index = e.relatedTarget.relative(e.relatedTarget.current());
+                    if (index == 0) {
+                        if (mobilesize.matches) {
+                            //if (isIphone) { player2.currentTime = 0; }else{ player2.currentTime(0); }
+                            player2.play();
+                            player.pause();
+                        } else {
+                            //if (isIphone) { player.currentTime = 0; }else{ player.currentTime(0); }
+                            //if (mobilesize.matches) { player2.pause(); }
+                            player2.pause();
+                            player.play();
+                        }
+                    } else {
+                        if (mobilesize.matches) {
+                            // $('#mypromotevideo2').get(0).pause();
+                            /* if (!player2.paused) {
+                                player2.paused = false;
+                                //player2.pause();
+                            } */
+                            player2.pause();
+                        } else {
+                            player.pause();
+                        }
+                        // player.pause();
+                    }
                 })
-            </script>
-            <!-- lazy for IOS -->
-            <script type="text/javascript">
-                let images = document.querySelectorAll('source, img');
 
-                if ('IntersectionObserver' in window) {
-                    // IntersectionObserver Supported
-                    let config = {
-                        root: null,
-                        rootMargin: '0px',
-                        threshold: 0.5
-                    };
+                function moved() {
+                    var owl = $(".movie-carousel").data('owlCarousel');
+                    //alert(owl.currentItem );
+                    /* if (owl.currentItem + 1 === owl.itemsAmount) {
+                        alert('THE END');
+                    } */
+                }
+            });
+        </script>
+        <script type="text/javascript">
+            $(".tovideo").on("click", function() {
+                var value = $(this).attr("data-id");
+                window.location.href = "learn/" + value;
+            })
+        </script>
+        <!-- lazy for IOS -->
+        <script type="text/javascript">
+            let images = document.querySelectorAll('source, img');
 
-                    let observer = new IntersectionObserver(onChange, config);
-                    images.forEach(function(img) {
-                        observer.observe(img)
+            if ('IntersectionObserver' in window) {
+                // IntersectionObserver Supported
+                let config = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.5
+                };
+
+                let observer = new IntersectionObserver(onChange, config);
+                images.forEach(function(img) {
+                    observer.observe(img)
+                });
+
+                function onChange(changes, observer) {
+                    changes.forEach(function(change) {
+                        if (change.intersectionRatio > 0) {
+                            // Stop watching and load the image
+                            loadImage(change.target);
+                            observer.unobserve(change.target);
+                        }
                     });
+                }
 
-                    function onChange(changes, observer) {
-                        changes.forEach(function(change) {
-                            if (change.intersectionRatio > 0) {
-                                // Stop watching and load the image
-                                loadImage(change.target);
-                                observer.unobserve(change.target);
+            } else {
+                // IntersectionObserver NOT Supported
+                images.forEach(function(image) {
+                    loadImage(image)
+                });
+            }
+
+            function loadImage(image) {
+                image.classList.add('fade-in');
+                if (image.dataset && image.dataset.src) {
+                    image.src = image.dataset.src;
+                }
+
+                if (image.dataset && image.dataset.srcset) {
+                    image.srcset = image.dataset.srcset;
+                }
+            }
+        </script>
+
+
+        <!-- Lazy Load -->
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function() {
+                var lazyloadImages = document.querySelectorAll("img.lazy");
+                var lazyloadThrottleTimeout;
+
+                function lazyload() {
+                    if (lazyloadThrottleTimeout) {
+                        clearTimeout(lazyloadThrottleTimeout);
+                    }
+
+                    lazyloadThrottleTimeout = setTimeout(function() {
+                        var scrollTop = window.pageYOffset;
+                        lazyloadImages.forEach(function(img) {
+                            if (img.offsetTop < (window.innerHeight + scrollTop)) {
+                                img.src = img.dataset.src;
+                                img.classList.remove('lazy');
                             }
                         });
-                    }
-
-                } else {
-                    // IntersectionObserver NOT Supported
-                    images.forEach(function(image) {
-                        loadImage(image)
-                    });
-                }
-
-                function loadImage(image) {
-                    image.classList.add('fade-in');
-                    if (image.dataset && image.dataset.src) {
-                        image.src = image.dataset.src;
-                    }
-
-                    if (image.dataset && image.dataset.srcset) {
-                        image.srcset = image.dataset.srcset;
-                    }
-                }
-            </script>
-
-
-            <!-- Lazy Load -->
-            <script type="text/javascript">
-                document.addEventListener("DOMContentLoaded", function() {
-                    var lazyloadImages = document.querySelectorAll("img.lazy");
-                    var lazyloadThrottleTimeout;
-
-                    function lazyload() {
-                        if (lazyloadThrottleTimeout) {
-                            clearTimeout(lazyloadThrottleTimeout);
+                        if (lazyloadImages.length == 0) {
+                            document.removeEventListener("scroll", lazyload);
+                            window.removeEventListener("resize", lazyload);
+                            window.removeEventListener("orientationChange", lazyload);
                         }
-
-                        lazyloadThrottleTimeout = setTimeout(function() {
-                            var scrollTop = window.pageYOffset;
-                            lazyloadImages.forEach(function(img) {
-                                if (img.offsetTop < (window.innerHeight + scrollTop)) {
-                                    img.src = img.dataset.src;
-                                    img.classList.remove('lazy');
-                                }
-                            });
-                            if (lazyloadImages.length == 0) {
-                                document.removeEventListener("scroll", lazyload);
-                                window.removeEventListener("resize", lazyload);
-                                window.removeEventListener("orientationChange", lazyload);
-                            }
-                        }, 20);
-                    }
-
-                    document.addEventListener("scroll", lazyload);
-                    window.addEventListener("resize", lazyload);
-                    window.addEventListener("orientationChange", lazyload);
-                });
-            </script>
-            <style>
-                .card-popup1:hover,
-                .card-popup2:hover,
-                .card-popup3:hover,
-                .card-popup4:hover {
-                    background-color: #8B0900;
-                    color: #fff;
+                    }, 20);
                 }
 
-                .card-popup1:hover h4,
-                .card-popup2:hover h4,
-                .card-popup3:hover h4,
-                .card-popup4:hover h4 {
-                    color: #fff;
-                }
+                document.addEventListener("scroll", lazyload);
+                window.addEventListener("resize", lazyload);
+                window.addEventListener("orientationChange", lazyload);
+            });
+        </script>
+        <style>
+            .card-popup1:hover,
+            .card-popup2:hover,
+            .card-popup3:hover,
+            .card-popup4:hover {
+                background-color: #8B0900;
+                color: #fff;
+            }
 
-                .card-popup1:hover img {
-                    content: url({{ asset('image/index-auction - Copy.png') }});
-                }
+            .card-popup1:hover h4,
+            .card-popup2:hover h4,
+            .card-popup3:hover h4,
+            .card-popup4:hover h4 {
+                color: #fff;
+            }
 
-                .card-popup2:hover img {
-                    content: url({{ asset('image/index-findjob - Copy.png') }});
-                }
+            .card-popup1:hover img {
+                content: url({{ asset('image/index-auction - Copy.png') }});
+            }
 
-                .card-popup3:hover img {
-                    content: url({{ asset('image/index-knowledge - Copy.png') }});
-                }
+            .card-popup2:hover img {
+                content: url({{ asset('image/index-findjob - Copy.png') }});
+            }
 
-                .card-popup4:hover img {
-                    content: url({{ asset('image/index-store - Copy.png') }});
-                }
-            </style>
-        @endsection
+            .card-popup3:hover img {
+                content: url({{ asset('image/index-knowledge - Copy.png') }});
+            }
+
+            .card-popup4:hover img {
+                content: url({{ asset('image/index-store - Copy.png') }});
+            }
+        </style>
+    @endsection

@@ -220,6 +220,11 @@
                 @include('auth.profile.tab.company.work')
                 @endif --}}
 
+                @if(@$page=='work')
+                @include('auth.profile.tab.company.work')
+                @endif
+
+
                 @if(@$page=='applicant')
                 @include('auth.profile.tab.company.applicant')
                 @endif
@@ -232,9 +237,6 @@
                 @include('auth.profile.tab.company.workshop')
                 @endif
 
-                @if(@$page=='work')
-                @include('auth.profile.tab.company.work')
-                @endif
 
             </div>
         </div>

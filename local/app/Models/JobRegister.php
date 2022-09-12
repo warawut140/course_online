@@ -14,5 +14,8 @@ class JobRegister extends Model
         return $this->hasOne('\App\Models\Profile','id','profile_id');
     }
 
-
+    public function JobDescription()
+    {
+        return $this->hasOne('\App\Models\JobDescription','id','job_description_id');
+    }
 }

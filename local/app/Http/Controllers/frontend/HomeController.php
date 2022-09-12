@@ -483,9 +483,13 @@ class HomeController extends Controller
     public function worklist(Request $request)
     {
 
-        $jobs = JobDescription::get();
+        $jobs = JobDescription::orderBy('created_at','desc')->get();
+        $jobs3 = JobDescription::orderBy('created_at','desc')->limit(3)->get();
+        $jobs5 = JobDescription::orderBy('created_at','desc')->limit(5)->get();
         return view('frontend/worklist',[
             'jobs'=>$jobs,
+            'jobs3'=>$jobs3,
+            'jobs5'=>$jobs5,
         ]);
     }
 

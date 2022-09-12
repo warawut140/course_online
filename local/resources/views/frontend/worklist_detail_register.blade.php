@@ -304,7 +304,7 @@
         <br> <br>
         <div class="row">
 
-            <div class="col-6">{{-- start #แบ่งครึ่ง1 --}}
+            <div class="col-6" >{{-- start #แบ่งครึ่ง1 --}}
                 <br> <br>
 
 
@@ -348,7 +348,7 @@
 
 
             </div>{{-- end #แบ่งครึ่ง1 --}}
-            <div class="col-6">{{-- start #แบ่งครึ่ง2 --}}
+            <div class="col-6" style= " width: 100%; border: 1px solid #ccc!important;    border-radius: 16px; border-radius: 16px;">{{-- start #แบ่งครึ่ง2 --}}
                 <br> <br>
                 <h5 class="mb-3 text-center">
                     <font style="color:black">สมัคร {{ $job->position }}</font>
@@ -423,8 +423,10 @@
                                         class="btn " onclick="return confirm('ยืนยันการทำรายการ?')"> ส่ง </button>
                                         &nbsp;&nbsp;<a href="{{ url('worklist_detail/'.$j->id  ) }}" style="background-color: #d8d5d5; color:#8B0900;"
                                         class="btn "> ยกเลิก </a>
+                                        <br>  <br>
                                 </div>
                             </div>
+
                         </div>{{-- end #work --}}
                     </div>
 

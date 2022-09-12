@@ -348,6 +348,7 @@
 
 
             </div>{{-- end #แบ่งครึ่ง1 --}}
+
             <div class="col-7" style= " width: 100%; border: 1px solid #ccc!important;    border-radius: 16px; border-radius: 16px;">{{-- start #แบ่งครึ่ง2 --}}
                 <br> <br>
                 <h5 class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg' style="color:black"></i>
