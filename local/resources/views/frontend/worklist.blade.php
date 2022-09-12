@@ -650,12 +650,12 @@
 
         <br> <br>
         <div class="hotclass_slide owl-carousel owl-theme">
-            @foreach ($jobs5 as $j)
+            @foreach ($jobs5 as $key => $j)
             <div class="item">
                 <a href="{{ url('worklist_detail/' . $j->id) }}">
-                    <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number1.png" alt=""
+                    <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number{{($key+1)}}.png" alt=""
                             class="lazy"></span>
-                    <img src="{{ asset('images/profile/' . $j->Profile->image_profile) }}" class="mw-100 mb-3">
+                    <img src="{{ asset('images/profile/' . $j->Profile->image_profile) }}" class="mw-100 mb-3" width="150px" height="150px">
                 </a>
                 <span class="numberHot"></span>
                 <h4 class="text-orange">{{ $j->position }}</h4>
