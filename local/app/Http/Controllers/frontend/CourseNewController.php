@@ -254,7 +254,8 @@ class CourseNewController extends Controller
         return $e->getMessage();
         }
 
-        return redirect()->to('chapter_view/'.$r->chapter_id)->with('success','บันทึกข้อมูลสำเร็จ');
+        return response()->json(['success'=>'You have successfully upload file.']);
+        // return redirect()->to('chapter_view/'.$r->chapter_id)->with('success','บันทึกข้อมูลสำเร็จ');
     }
 
     public function workshop_add($chapter_id)
@@ -274,6 +275,37 @@ class CourseNewController extends Controller
             'chapter' => $chapter,
             'list' => $list,
         ]);
+    }
+
+    public function course_list_remove_video(Request $r)
+    {
+        DB::beginTransaction();
+        try
+        {
+            $profile = Profile::where('user_id',Auth::guard('web')->user()->id)->first();
+            $list = CourseList::where('id',$r->list_id)->first();
+            $course = Course::where('id',$list->course_id)->where('profile_id',$profile->id)->first();
+
+            if($course){
+                File::delete(public_path() . '/images/profile/' . $list->course_video);
+                $list->course_video = '';
+                $list->save();
+            }
+
+            DB::commit();
+        }
+        catch (\Exception $e) {
+            DB::rollback();
+        return $e->getMessage();
+        }
+        catch(\FatalThrowableError $fe)
+        {
+            DB::rollback();
+        return $e->getMessage();
+        }
+
+        return response()->json(['success'=>'วีดิโอถูกลบแล้ว.']);
+        // return redirect()->to('workshop_view/'.$r->chapter_id.'/'.$question_detail->id)->with('success','บันทึกข้อมูลสำเร็จ');
     }
 
     public function workshop_store(Request $r)

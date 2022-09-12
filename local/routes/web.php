@@ -27,6 +27,7 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::post('/chapter_store','frontend\CourseNewController@chapter_store');
     Route::get('/chapter_view/{id}','frontend\CourseNewController@chapter_view');
     Route::post('/course_list_store','frontend\CourseNewController@course_list_store');
+    Route::post('/course_list_remove_video','frontend\CourseNewController@course_list_remove_video');
 
     Route::get('/workshop_add/{chapter_id}','frontend\CourseNewController@workshop_add');
     Route::post('/workshop_store','frontend\CourseNewController@workshop_store');

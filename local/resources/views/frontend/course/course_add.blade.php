@@ -15,7 +15,7 @@
     <style>
         .bg-light2 {
             /* background-color: #8B0900;
-                                                        background-image: url("{{ asset('image/bg.png') }}"); */
+                                                                        background-image: url("{{ asset('image/bg.png') }}"); */
             /* clear: both; */
         }
 
@@ -69,6 +69,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
+                        <br>
+                        <div class="left">
+                            <a href="{{ url('register_company_detail/course') }}" style="background-color: #8B0900; color:white;"
+                                class="btn "><i class="fa fa-chevron-left" aria-hidden="true"></i> ย้อนกลับ </a>
+                        </div>
                         <br>
                         <h4 style="color:#8B0900;">ADD NEW COURSE</h4>
                         <div class="card">
@@ -212,10 +217,10 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <a href="{{ url('register_company_detail/course') }}"
                                             class="btn btn-outline-secondary w-100">ย้อนกลับ</a>
-                                    </div>
+                                    </div> --}}
                                 </form>
                             </div>
                         </div>
