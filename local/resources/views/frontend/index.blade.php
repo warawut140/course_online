@@ -266,6 +266,104 @@
         a:hover {
             text-decoration: none;
         }
+        .containerbanner {
+  position: relative;
+  width: 100%;
+}
+
+/* Make the image responsive */
+.containerbanner img {
+  width: 100%;
+
+}
+
+/* Style the button and place it in the middle of the containerbanner/image */
+.containerbanner .btn {
+  position: absolute;
+  top: 75%;
+  left: 10%;
+  transform: translate(-10%, -10%);
+  -ms-transform: translate(-10%, -10%);
+  background-color: white;
+  color: black;
+  font-size: 26px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.containerbanner .buttontop {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translate(-10%, -10%);
+  -ms-transform: translate(-10%, -10%);
+  
+  color: black;
+  font-size: 24px;
+  
+}
+.containerbanner .text0 {
+  position: absolute;
+  top: 33%;
+  left: 10%;
+  transform: translate(-10%, -10%);
+  -ms-transform: translate(-10%, -10%);
+  
+  color: white;
+  font-size: 36px;
+  
+}
+.containerbanner .text1 {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  transform: translate(-10%, -10%);
+  -ms-transform: translate(-10%, -10%);
+  
+  color: white;
+  font-size: 26px;
+  
+}
+.containerbanner .text2 {
+  position: absolute;
+  top: 65%;
+  left: 10%;
+  transform: translate(-10%, -10%);
+  -ms-transform: translate(-10%, -10%);
+  
+  color: white;
+  font-size: 26px;
+  
+}
+.containerbanner .btnterm {
+  position: absolute;
+  top: 75%;
+  left: 20%;
+  transform: translate(-10%, -10%);
+  -ms-transform: translate(-10%, -10%);
+  background-color: grey;
+  color: white;
+  font-size: 26px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.containerbanner .cer {
+  position: absolute;
+  top: 85%;
+  left: 10%;
+  transform: translate(-10%, -10%);
+  -ms-transform: translate(-10%, -10%);
+
+ 
+  font-size: 26px;
+  padding: 12px 24px;
+
+}
+
+
     </style>
 
     </style>
@@ -347,32 +445,75 @@
 
     {{-- begin #banner --}}
 
-    <div id="index-banner" class="bg-white">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                @if ($home_gellery != '')
-                    <?php $active = 'active';
-                    $class = 'class="active"'; ?>
-                    @for ($i = 0; $i < count($home_gellery); $i++)
-                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i }}"
-                            {{ $class }}></li>
-                    @endfor
-                @endif
-            </ol>
-            <div class="carousel-inner">
-                @if ($home_gellery != '')
-                    @foreach ($home_gellery as $data)
-                        <div class="carousel-item {{ $active }}">
+    <div id="index-banner" class="bg-white bg-banner containerbanner">
+      <img src="{{ asset('images/bannermockup.png') }}" class="d-block w-100">
+       <div class="buttontop">
+  <select style="background-color:whtie;
+  color: black;
+    border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 26px;
+  padding: 14px 35px;">
+    <option value="0">Course / Program</option>
+    <option value="1">Program1</option>
+    <option value="2">Program2</option>
+    <option value="3">Program3</option>
+    <option value="4">Program4</option>
+    
+  </select> &nbsp;&nbsp;&nbsp;
+  <select style="background-color:whtie;
+  color: black;
+    border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 26px;
+  padding: 14px 35px;">
+    <option value="0">Level</option>
+    <option value="1">Level1</option>
+    <option value="2">Level2</option>
+    <option value="3">Level3</option>
+    <option value="4">Level4</option>
+    
+  </select> &nbsp;&nbsp;&nbsp;
+  <select style="background-color:whtie;
+  color: black;
+    border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 26px;
+  padding: 14px 35px;">
+    <option value="0">Type</option>
+    <option value="1">Type1</option>
+    <option value="2">Type2</option>
+    <option value="3">Type3</option>
+    <option value="4">Type4</option>
+    
+  </select>&nbsp;&nbsp;&nbsp;
 
-                            <img src="{{ asset('images/bannermockup.png') }}" class="d-block w-100" alt="...">
+  <input type="text" placeholder="Search transactions,invoices or help" style="background-color:whtie;
+  color: black;
+    border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 26px;
+  padding: 14px 35px;">
+</div>
 
-                        </div>
-                        <?php $active = ''; ?>
-                    @endforeach
-                @endif
-            </div>
-        </div>
+       <b class="text0">Leadership and Management</b>
+        <div class="text1">Leadership is a skill for any role-not <br>a more successful leader, improve <br>manage conflict, and lead others through</div>
+          <div class="text2"><i class="fa fa-play-circle "> </i>   วิดีโอ 30  &nbsp;&nbsp;&nbsp;<i class="fa fa-clock"> </i>  05:28 นาที  &nbsp;&nbsp;&nbsp;<i class="fa fa-calendar"> </i>  ระยะเวลาทั้งหมด 6 เดือน</div>
+  <button class="btn"><i class="fa fa-play"> </i>   เริ่มเรียน</button>
+ <button class="btnterm"><i class="fa fa-exclamation-circle"> </i>   รายละเอียดเพิ่มเติม</button>
+<div class="cer"><img src="{{ asset('images/cer1.png') }}" style="width:10%;" > <button style="background-color: #FD6464;
+  color: black;
+    border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 26px;
+  padding: 5px 14px;">  ได้รับใบรับรอง Certificate</button>   </div>
     </div>
+    
     {{-- end #banner --}}
 
     {{-- begin #content 1 --}}
@@ -394,7 +535,7 @@
                             <div class="item">
                                 <h6 class="text-orange text-left">{{ $c->name }}</h6>
                                 <a href="{{ url('course_online_view/' . $c->id) }}">
-                                    {{-- <img src="{{ asset('images/1c.png') }}" class="mw-100 mb-2"> --}}
+                                    {{-- <img src="{{ asset('images/1c.png') }}"  style="width:220px;hight:210;" class="mw-100 mb-2"> --}}
                                     <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
                                 </a>
 
@@ -442,7 +583,7 @@
                 <div class="hotclass_slide owl-carousel owl-theme">
                     <div class="item">
                         <a href="javascript:;">
-                            <img src="{{ asset('images/2c.png') }}" style=""class="mw-100 mb-3">
+                            <img src="{{ asset('images/2c.png') }}"  style="width:220px;hight:210;" class="mw-100 mb-3">
                         </a>
                         <h4 class="text-orange"></h4>
                     </div>
@@ -471,7 +612,7 @@
                     <a class="nav-link py-1 buttonblack" style="margin-right: 20px;margin-top: 20px;"
                         href="{{ url('register') }}">
                         <font style="color:grey">CRM Software</font>
-                    </a>
+                    </a
                     <a class="nav-link py-1 buttonblack"
                         style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
                         <font style="color:grey">Customer Service</font>
@@ -541,7 +682,7 @@
                             <span class="numberHot"> <img
                                     data-src="assets/fontend/images/number_hot/number{{ $key + 1 }}.png"
                                     alt="" class="lazy"></span>
-                            <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
+                            <img src="{{ asset('images/profile/' . $c->image) }}"  style="width:220px;hight:210;" class="mw-100 mb-2">
                         </a>
                         <span class="numberHot"></span>
 
@@ -554,21 +695,21 @@
                     <a href="{{ url('work') }}">
                         <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number2.png"
                                 alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}"  style="width:220px;hight:210;"class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div> --}}
                 {{-- <div class="item">
                     <a href="{{ url('training') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number3.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}" style="width:220px;hight:210;" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
                 <div class="item">
                     <a href="{{ url('#') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number4.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}"style="width:220px;hight:210;"  class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
@@ -576,7 +717,7 @@
 
                     <a href="{{ url('projectauction') }}">
                      <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number5.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}" style="width:220px;hight:210;" class="mw-100 mb-3">
                     </a>
                      <span class="numberHot"></span>
                     <h4 class="text-orange"></h4>
@@ -585,21 +726,21 @@
                 <div class="item">
                     <a href="{{ url('work') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number6.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}" style="width:220px;hight:210;" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
                 <div class="item">
                     <a href="{{ url('training') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number7.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}"  style="width:220px;hight:210;" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
                 <div class="item">
                     <a href="{{ url('#') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number8.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}"  style="width:220px;hight:210;" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
@@ -607,7 +748,7 @@
 
                     <a href="{{ url('projectauction') }}">
                      <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number9.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}" style="width:220px;hight:210;" class="mw-100 mb-3">
                     </a>
                      <span class="numberHot"></span>
                     <h4 class="text-orange"></h4>
@@ -616,7 +757,7 @@
                 <div class="item">
                     <a href="{{ url('work') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number10.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}" style="width:220px;hight:210;" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div> --}}

@@ -4,6 +4,7 @@
 .vl {
   border-left: 2px solid gray;
   height: 30px;
+
 }
 .buttonred {
   background-color: while;
@@ -60,7 +61,7 @@
 {{-- begin z#navber--}}
     <nav class="navbar navbar-expand-md navbar-light bg-white">
         <h3 class="my-auto"><a class="navbar-brand" href="{{ url('index') }}">
-                <img src="{{ asset('images/logowutco.png') }}" class="img-fluid" alt="Responsive image"></a>
+                <img src="{{ asset('images/logowutco.png') }}" style="  width: 20%;" class="img-fluid" alt="Responsive image"></a>
         </h3>
 
                     <a class="nav-link py-1" href="{{ url('index') }}"><font style="color:black"> คอร์สการเรียนรู้</font></a>
