@@ -348,7 +348,7 @@
 
 
             </div>{{-- end #แบ่งครึ่ง1 --}}
-            <div class="col-6">{{-- start #แบ่งครึ่ง2 --}}
+            <div class="col-6" style= "border: 1px solid #ccc!important;    border-radius: 16px; border-radius: 16px;">{{-- start #แบ่งครึ่ง2 --}}
                 <br> <br>
                 <h5 class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg' style="color:black"></i>
                     <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font>
