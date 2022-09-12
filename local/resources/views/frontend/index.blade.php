@@ -519,9 +519,8 @@
     {{-- begin #content 1 --}}
 
     <div class="row">
-        <div class="col-1">
-        </div>
-        <div class="col-8">
+        
+        <div class="col-9">
             <div class="container text-center py-4">
                 <br> <br>
 
@@ -529,13 +528,13 @@
                     <font style="color:black">หลักสูตรที่กำลังเป็นกระแส</font>
                 </h1>
                 <br> <br>
-                <div class="col-10">
+                <div class="col-12">
                     <div class="hotclass_slide owl-carousel owl-theme">
                         @foreach ($courses_trending as $c)
                             <div class="item">
                                 <h6 class="text-orange text-left">{{ $c->name }}</h6>
                                 <a href="{{ url('course_online_view/' . $c->id) }}">
-                                    {{-- <img src="{{ asset('images/1c.png') }}"  width="220px" hight="210px" class="mw-100 mb-2"> --}}
+                                    {{-- <img src="{{ asset('images/1c.png') }}"  width="220px" hight="22px" class="mw-100 mb-2"> --}}
                                     <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
                                 </a>
 
@@ -580,12 +579,12 @@
                     <font style="color:black">คอร์สเรียนของคุณเรียนต่อเลย :-)</font>
                 </h1>
                 <br> <br>
-                   <div class="col-10">
+                   <div class="col-12">
 
                 <div class="hotclass_slide owl-carousel owl-theme">
                     <div class="item">
                         <a href="javascript:;">
-                            <img src="{{ asset('images/2c.png') }}"  width="220px" hight="210px" class="mw-100 mb-3">
+                            <img src="http://localhost/course_online/images/profile/profile_2520220913000134cover.png"  width="220px" hight="210px" class="mw-100 mb-3">
                         </a>
                         <h4 class="text-orange"></h4>
                     </div>
@@ -634,9 +633,8 @@
                     <a class="nav-link py-1 buttonblack" style="margin-right: 20px;margin-top: 20px;"
                         href="{{ url('register') }}">
                         <font style="color:grey">CRM Software</font>
-                    </a
-                    <a class="nav-link py-1 buttonblack"
-                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                    </a>
+                    <a class="nav-link py-1 buttonblack"style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
                         <font style="color:grey">Customer Service</font>
                     </a>
                     <a class="nav-link py-1 buttonblack"
@@ -675,10 +673,10 @@
                 </div>
             </div>
         </div>
-
-    </div>
     <div class="col-1">
+     </div>   
     </div>
+  
     </div>
 
     </div>
@@ -1078,7 +1076,54 @@
                     }
                 }
             });
-
+ $(".hotclass_slide").owlCarousel({
+                loop: false,
+                rewind: true,
+                margin: 10,
+                nav: true,
+                lazyLoad: true,
+                navText: ['<img src="assets/fontend/images/arrow_left.png">',
+                    '<img src="assets/fontend/images/arrow_right.png">'
+                ],
+                autoplayHoverPause: false,
+                dots: false,
+                autoplay: false,
+                autoplayTimeout: 7000,
+                smartSpeed: 1000,
+                stagePadding: 0,
+                slideBy: 1,
+                responsive: {
+                    0: {
+                        items: 2,
+                        center: true,
+                        loop: true,
+                        nav: true,
+                        margin: 30
+                    },
+                    500: {
+                        items: 2,
+                        center: true,
+                        loop: true,
+                        nav: true,
+                        margin: 40
+                    },
+                    768: {
+                        margin: 50,
+                        items: 3,
+                        center: true,
+                        loop: true,
+                        nav: true
+                    },
+                    992: {
+                        margin: 20,
+                        items: 3
+                    },
+                    1201: {
+                        margin: 25,
+                        items: 4
+                    }
+                }
+            });
             $(".hotclass_slide").owlCarousel({
                 loop: false,
                 rewind: true,
