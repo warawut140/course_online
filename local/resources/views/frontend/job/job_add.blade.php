@@ -144,16 +144,26 @@
                                         <textarea type="text" class="form-control" name="skill_detail">{{ @$data->skill_detail }}</textarea>
                                     </div>
 
-                                    {{-- <div class="form-group">
+                                    <div class="form-group">
                                         <label for="exampleInputEmail1">คอร์สเรียนที่ควรผ่านการเรียนรู้มาก่อน</label>
                                         <br>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <select name="" class="form-control select2">
+                                                <select name="course_id_for_job[]" multiple="multiple" class="form-control select2">
                                                     <option value="">กรุณาเลือกคอร์สเรียน</option>
+                                                    @foreach($courses as $c)
+                                                    <?php
+                                                        $arr_c = [];
+                                                        foreach(@$data->course_id_for_job as $course_id_for_job){
+                                                            
+                                                        }
+
+                                                    ?>
+                                                    <option <?php if($c->id==){} ?> value="{{$c->id}}">{{$c->name}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
-                                            <div class="col-md-6">
+                                            {{-- <div class="col-md-6">
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                                         id="inlineRadio1" value="option1">
@@ -165,11 +175,11 @@
                                                     <label class="form-check-label" for="inlineRadio2">No
                                                         Certificate</label>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
 
-                                    <button class="btn btn-sm btn-outline-primary">+ เพิ่มคอร์สเรียน</button> --}}
+                                    {{-- <button class="btn btn-sm btn-outline-primary">+ เพิ่มคอร์สเรียน</button> --}}
 
                                     <div class="form-group">
                                         <br>
