@@ -315,8 +315,8 @@
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-4">
-                                    <img src="{{ asset('images/profile/' . $j->Profile->image_profile) }}" class="mw-100 mb-3"
-                                        width="150px" height="150px">
+                                    <img src="{{ asset('images/profile/' . $j->Profile->image_profile) }}"
+                                        class="mw-100 mb-3" width="150px" height="150px">
                                 </div>
                                 <div class="col-8">
                                     <h5 class="mb-3 text-left">
@@ -356,14 +356,14 @@
                 <br>
                 <div class="row">
                     <div class="col-6">
-                        <img src="{{ asset('images/profile/' . $job->Profile->company_img1) }}" width="300px" height="250px"
-                            class="mw-100 mb-3">
+                        <img src="{{ asset('images/profile/' . $job->Profile->company_img1) }}" width="300px"
+                            height="250px" class="mw-100 mb-3">
                         {{-- <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3"> --}}
                     </div>
                     <div class="col-6">
                         {{-- <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3"> --}}
-                        <img src="{{ asset('images/profile/' . $job->Profile->company_img2) }}" width="300px" height="250px"
-                            class="mw-100 mb-3">
+                        <img src="{{ asset('images/profile/' . $job->Profile->company_img2) }}" width="300px"
+                            height="250px" class="mw-100 mb-3">
                     </div>
                 </div>
                 <br> <br>
@@ -468,8 +468,7 @@
                                         {{ $j->salary }} รายเดือน</font>
                                 </p>
 
-{{--
-                                <div class="col-12">
+                                {{-- <div class="col-12">
                                     <br> <br>
                                     <p class="mb-3 text-left">
                                         <font style="color:black">Skill ที่ต้องการ</font>
@@ -495,12 +494,26 @@
                                         <font style="color:black">คอร์สเรียนที่ควรผ่านการเรียนรู้มาก่อน</font>
                                     </p>
 
+                                    <?php
+                                    if($j->course_id_for_job!=''){
+                                        $arr_course_id_for_job = explode(',',$j->course_id_for_job);
+                                    }else{
+                                        $arr_course_id_for_job = [];
+                                    }
+
+                                    ?>
+                                    @foreach($arr_course_id_for_job as $arr)
+                                    <?php
+                                        $c_data = \DB::table('courses')->where('id',$arr)->first();
+                                    ?>
+
                                     <p class="mb-3 text-left">
                                         <font style="color:#374291;"><i class="fa fa-check" aria-hidden="true"></i>
-                                            ขยายการตลาด ประสานงานขาย</font>&nbsp; &nbsp;&nbsp; &nbsp;<font
-                                            style="color:blue;">Certificate</font>
+                                            <a href="{{url('course_online_view/'.@$c_data->id)}}">{{@$c_data->name}}</a></font>&nbsp; &nbsp;&nbsp; &nbsp;
+                                        {{-- <font style="color:blue;">Certificate</font> --}}
                                     </p>
-                                    <p class="mb-3 text-left">
+                                    @endforeach
+                                    {{-- <p class="mb-3 text-left">
                                         <font style="color:gray;"><i class="fa fa-times" aria-hidden="true"></i> ฝึกอบรม
                                             พัฒนาตนเองและบุคคลากร
                                         </font>&nbsp; &nbsp;&nbsp; &nbsp;<font style="color:gray;">Not Certificate</font>
@@ -511,7 +524,7 @@
                                             ผ่านการเรียนคอร์ส พัฒนาตัวเอง</font>&nbsp; &nbsp;&nbsp; &nbsp;<font
                                             style="color:blue;">Certificate</font>
                                     </p>
-                                    </p>
+                                    </p> --}}
                                 </div>
                             </div>
                         </div>{{-- end #work --}}
