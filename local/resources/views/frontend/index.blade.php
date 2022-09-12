@@ -535,7 +535,7 @@
                             <div class="item">
                                 <h6 class="text-orange text-left">{{ $c->name }}</h6>
                                 <a href="{{ url('course_online_view/' . $c->id) }}">
-                                    {{-- <img src="{{ asset('images/1c.png') }}"  style="width:220px;hight:210;" class="mw-100 mb-2"> --}}
+                                    {{-- <img src="{{ asset('images/1c.png') }}"  width="220px" hight="210px" class="mw-100 mb-2"> --}}
                                     <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2">
                                 </a>
 
@@ -543,31 +543,31 @@
                         @endforeach
                         {{-- <div class="item">
                     <a href="{{ url('work') }}">
-                        <img src="{{ asset('images/1c.png') }}"style="width:220px;hight:210;" class="mw-100 mb-3">
+                        <img src="{{ asset('images/1c.png') }}"width="220px" hight="210px" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
                 <div class="item">
                     <a href="{{ url('training') }}">
-                        <img src="{{ asset('images/1c.png') }}"style="width:220px;hight:210;" class="mw-100 mb-3">
+                        <img src="{{ asset('images/1c.png') }}"width="220px" hight="210px" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
                 <div class="item">
                     <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/1c.png') }}"style="width:220px;hight:210;" class="mw-100 mb-3">
+                        <img src="{{ asset('images/1c.png') }}"width="220px" hight="210px" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
                   <div class="item">
                     <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/1c.png') }}"style="width:220px;hight:210;" class="mw-100 mb-3">
+                        <img src="{{ asset('images/1c.png') }}"width="220px" hight="210px" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
                   <div class="item">
                     <a href="{{ url('#') }}">
-                        <img src="{{ asset('images/1c.png') }}" style="width:220px;hight:210;"class="mw-100 mb-3">
+                        <img src="{{ asset('images/1c.png') }}" width="220px" hight="210px"class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div> --}}
@@ -585,7 +585,7 @@
                 <div class="hotclass_slide owl-carousel owl-theme">
                     <div class="item">
                         <a href="javascript:;">
-                            <img src="{{ asset('images/2c.png') }}"  style="width:220px;hight:210;" class="mw-100 mb-3">
+                            <img src="{{ asset('images/2c.png') }}"  width="220px" hight="210px" class="mw-100 mb-3">
                         </a>
                         <h4 class="text-orange"></h4>
                     </div>
@@ -593,7 +593,7 @@
                     
                      <div class="item">
                         <a href="javascript:;">
-                            <img src="{{ asset('images/2c.png') }}"  style="width:220px;hight:210;" class="mw-100 mb-3">
+                            <img src="{{ asset('images/2c.png') }}"  width="220px" hight="210px" class="mw-100 mb-3">
                         </a>
                         <h4 class="text-orange"></h4>
                     </div>
@@ -601,7 +601,7 @@
 
                      <div class="item">
                         <a href="javascript:;">
-                            <img src="{{ asset('images/2c.png') }}"  style="width:220px;hight:210;" class="mw-100 mb-3">
+                            <img src="{{ asset('images/2c.png') }}"  width="220px" hight="210px" class="mw-100 mb-3">
                         </a>
                         <h4 class="text-orange"></h4>
                     </div>
@@ -704,7 +704,7 @@
                             <span class="numberHot"> <img
                                     data-src="assets/fontend/images/number_hot/number{{ $key + 1 }}.png"
                                     alt="" class="lazy"></span>
-                            <img src="{{ asset('images/profile/' . $c->image) }}"  style="width:220px;hight:210;" class="mw-100 mb-2">
+                            <img src="{{ asset('images/profile/' . $c->image) }}"  width="220px" hight="210px" class="mw-100 mb-2">
                         </a>
                         <span class="numberHot"></span>
                     </div>
@@ -716,21 +716,21 @@
                     <a href="{{ url('work') }}">
                         <span class="numberHot"> <img data-src="assets/fontend/images/number_hot/number2.png"
                                 alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}"  style="width:220px;hight:210;"class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}"  width="220px" hight="210px"class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div> --}}
                 {{-- <div class="item">
                     <a href="{{ url('training') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number3.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" style="width:220px;hight:210;" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}" width="220px" hight="210px" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
                 <div class="item">
                     <a href="{{ url('#') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number4.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}"style="width:220px;hight:210;"  class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}"width="220px" hight="210px"  class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
@@ -738,7 +738,7 @@
 
                     <a href="{{ url('projectauction') }}">
                      <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number5.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" style="width:220px;hight:210;" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}" width="220px" hight="210px" class="mw-100 mb-3">
                     </a>
                      <span class="numberHot"></span>
                     <h4 class="text-orange"></h4>
@@ -747,21 +747,21 @@
                 <div class="item">
                     <a href="{{ url('work') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number6.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" style="width:220px;hight:210;" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}" width="220px" hight="210px" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
                 <div class="item">
                     <a href="{{ url('training') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number7.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}"  style="width:220px;hight:210;" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}"  width="220px" hight="210px" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
                 <div class="item">
                     <a href="{{ url('#') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number8.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}"  style="width:220px;hight:210;" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}"  width="220px" hight="210px" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div>
@@ -769,7 +769,7 @@
 
                     <a href="{{ url('projectauction') }}">
                      <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number9.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" style="width:220px;hight:210;" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}" width="220px" hight="210px" class="mw-100 mb-3">
                     </a>
                      <span class="numberHot"></span>
                     <h4 class="text-orange"></h4>
@@ -778,7 +778,7 @@
                 <div class="item">
                     <a href="{{ url('work') }}">
                           <span class="numberHot">   <img data-src="assets/fontend/images/number_hot/number10.png" alt="" class="lazy"></span>
-                        <img src="{{ asset('images/3c.png') }}" style="width:220px;hight:210;" class="mw-100 mb-3">
+                        <img src="{{ asset('images/3c.png') }}" width="220px" hight="210px" class="mw-100 mb-3">
                     </a>
                     <h4 class="text-orange"></h4>
                 </div> --}}
@@ -804,7 +804,7 @@
                     <div class="item">
                         <h6 class="text-orange text-left">{{ $c->name }}</h6>
                         <a href="{{ url('course_online_view/' . $c->id) }}">
-                            <img src="{{ asset('images/profile/' . $c->image) }}"style="width:220px;hight:210;" class="mw-100 mb-2">
+                            <img src="{{ asset('images/profile/' . $c->image) }}"width="220px" hight="210px" class="mw-100 mb-2">
                         </a>
 
                     </div>
@@ -857,7 +857,7 @@
                     <div class="item">
                         <h6 class="text-orange text-left">{{ $c->name }}</h6>
                         <a href="{{ url('course_online_view/' . $c->id) }}">
-                            <img src="{{ asset('images/profile/' . $c->image) }}"style="width:220px;hight:210;"  class="mw-100 mb-2">
+                            <img src="{{ asset('images/profile/' . $c->image) }}"width="220px" hight="210px"  class="mw-100 mb-2">
                         </a>
 
                     </div>
