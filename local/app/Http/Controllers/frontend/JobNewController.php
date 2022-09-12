@@ -113,4 +113,19 @@ class JobNewController extends Controller
         }
 
     }
+
+    public function worklist_detail_register($id)
+    {
+        $profile = Profile::where('user_id',Auth::guard('web')->user()->id)->first();
+        if($profile){
+            $job = JobDescription::where('id',$id)->first();
+            $jobs = JobDescription::get();
+            return view('frontend/worklist_detail_register',[
+                'job'=>$job,
+                'jobs'=>$jobs,
+                'profile'=>$profile,
+            ]);
+        }
+
+    }
 }
