@@ -385,6 +385,13 @@
                             </div>
                         </div>
                     </div>{{-- end #work --}}
+
+                    <form method="POST" action="{{ url('worklist_detail_register_store') }}" id="searchForm"
+                    enctype="multipart/form-data">
+                    @csrf
+
+                    <input type="hidden" name="job_description_id" value="{{$j->id}}">
+
                     <div class="col-12">{{-- start #work --}}
                         <div class="row">
                             <div class="col-12">
@@ -413,16 +420,15 @@
                             <div class="col-md-12">
                                 <div class="left">
                                     <button href="{{ url('course_view/'  ) }}" style="background-color: #8B0900; color:white;"
-                                        class="btn "> ส่ง </button>
+                                        class="btn " onclick="return confirm('ยืนยันการทำรายการ?')"> ส่ง </button>
                                         &nbsp;&nbsp;<a href="{{ url('worklist_detail/'.$j->id  ) }}" style="background-color: #d8d5d5; color:#8B0900;"
                                         class="btn "> ยกเลิก </a>
                                 </div>
                             </div>
-
                         </div>{{-- end #work --}}
-
-
                     </div>
+
+                    </form>
 
 
                 </div>{{-- end #แบ่งครึ่ง2 --}}

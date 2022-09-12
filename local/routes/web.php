@@ -51,10 +51,9 @@ Route::group(['middleware' => ['web','auth']], function () {
         return view('frontend/workshop');
      });
 
-
      Route::get('worklist_detail/{job_id}', 'frontend\JobNewController@worklist_detail');
      Route::get('worklist_detail_register/{job_id}', 'frontend\JobNewController@worklist_detail_register');
-
+     Route::post('worklist_detail_register_store', 'frontend\JobNewController@worklist_detail_register_store');
 
     // Route::get('/course_online', function () {
     //     return view('frontend/course_online');

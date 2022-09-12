@@ -12,6 +12,8 @@ use App\Models\Profile;
 use Auth;
 use App\Models\JobDescription;
 use App\Models\Course;
+use App\Models\JobRegister;
+use File;
 
 class JobNewController extends Controller
 {
@@ -109,6 +111,7 @@ class JobNewController extends Controller
             return view('frontend/worklist_detail',[
                 'job'=>$job,
                 'jobs'=>$jobs,
+                'profile'=>$profile,
             ]);
         }
 
@@ -128,4 +131,46 @@ class JobNewController extends Controller
         }
 
     }
+
+    public function worklist_detail_register_store(Request $r)
+    {
+        DB::beginTransaction();
+        try
+        {
+            $profile = Profile::where('user_id',Auth::guard('web')->user()->id)->first();
+            if($profile){
+                $job_register = new JobRegister();
+                $job_register->profile_id = $profile->id;
+                $job_register->job_description_id = $r->job_description_id;
+                $job_register->email = $r->email;
+                $job_register->tel = $r->tel;
+
+                if (!empty($r->resume)) {
+                    if ($r->hasFile('resume') != '') {
+                        File::delete(public_path() . '/images/profile/' . $job_register->resume);
+                        $resume = 'profile_'.$job_register->id.date('YmdHis')."resume.".$r->file('resume')->getClientOriginalExtension();
+                        $r->file('resume')->move(public_path() . '/images/profile/', $resume);
+                    }
+                    $job_register->resume = $resume;
+                }
+
+                $job_register->save();
+
+            }
+
+            DB::commit();
+        }
+        catch (\Exception $e) {
+            DB::rollback();
+        return $e->getMessage();
+        }
+        catch(\FatalThrowableError $fe)
+        {
+            DB::rollback();
+        return $e->getMessage();
+        }
+
+        return redirect()->to('worklist_detail/'.$r->job_description_id)->with('success','บันทึกข้อมูลสำเร็จ');
+    }
+
 }

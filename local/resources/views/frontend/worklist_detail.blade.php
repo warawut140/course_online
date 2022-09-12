@@ -389,10 +389,17 @@
                                     <font style="color:gray"><i class="fa fa-clock" aria-hidden="true"
                                             style="color:green;"></i> {{ $j->created_at }} </font>
                                 </p>
+                                <?php
+                                    $job_re = \App\Models\JobRegister::where('profile_id',$profile->id)->where('job_description_id',$j->id)->first();
+                                    $text = "";
+                                    if($job_re){
+                                        $text = "คุณได้ทำการสมัครงานนี้แล้ว";
+                                    }
+                                ?>
+                                <P class="mb-3 text-left" style="color:red;">{{$text}}</P>
                                 <p class="mb-3 text-left"> <a href="{{url('worklist_detail_register/'.$j->id)}}"
                                         style="background-color:#374291; color:white;" class="btn">สมัครงาน &nbsp;<i
                                             class="fa fa-briefcase"></i></a></p>
-
                                 <br>
                             </div>
                         </div>
