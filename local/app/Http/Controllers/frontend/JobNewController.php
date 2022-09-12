@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Profile;
 use Auth;
 use App\Models\JobDescription;
+use App\Models\Course;
 
 class JobNewController extends Controller
 {
@@ -23,9 +24,11 @@ class JobNewController extends Controller
     {
         $profile = Profile::where('user_id',Auth::guard('web')->user()->id)->first();
         $data = JobDescription::where('id',$id)->where('profile_id',$profile->id)->first();
+        $courses = Course::where('status',1)->orderBy('name','asc')->get();
         if($data){
             return view('frontend.job.job_add',[
-                'data' => $data
+                'data' => $data,
+                'courses' => $courses
             ]);
         }else{
             return redirect()->back()->with('error','ไม่พบข้อมูล');
@@ -59,6 +62,12 @@ class JobNewController extends Controller
                 }else{
                     $job = new JobDescription();
                 }
+
+                $course_id_for_job = "";
+                if($r->course_id_for_job){
+                    $course_id_for_job = implode(',',$r->course_id_for_job);
+                }
+
                 $job->profile_id = $profile->id;
                 $job->position = $r->position;
                 $job->level = $r->level;
@@ -69,6 +78,7 @@ class JobNewController extends Controller
                 $job->salary_type = $r->salary_type;
                 $job->salary = $r->salary;
                 $job->payment_period = $r->payment_period;
+                $job->course_id_for_job = $course_id_for_job;
                 $job->save();
             }
 
