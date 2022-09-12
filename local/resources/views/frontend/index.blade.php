@@ -444,9 +444,26 @@
     @endif
 
     {{-- begin #banner --}}
-
     <div id="index-banner" class="bg-white bg-banner containerbanner">
-      <img src="{{ asset('images/bannermockup.png') }}" class="d-block w-100">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                @if ($home_gellery != '')
+                    <?php $active = 'active';
+                    $class = 'class="active"'; ?>
+                    @for ($i = 0; $i < count($home_gellery); $i++)
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i }}"
+                            {{ $class }}></li>
+                    @endfor
+                @endif
+            </ol>
+            <div class="carousel-inner">
+                <?php $d=1; ?>      
+          @if ($home_gellery != '')
+                    @foreach ($home_gellery as $data)
+                        <div class="carousel-item {{ $active }}">
+
+                          <img src="{{ asset('images/bannermockup'.$d.'1.png') }}" class="d-block w-100">
+                           
        <div class="buttontop">
   <select style="background-color:whtie;
   color: black;
@@ -512,7 +529,16 @@
   border-radius: 5px;
   font-size: 26px;
   padding: 5px 14px;">  ได้รับใบรับรอง Certificate</button>   </div>
-    </div>
+
+                        </div>
+                        <?php $active = ''; $d++ ?>
+                                        
+                    @endforeach
+                @endif
+            </div>
+        </div>
+        
+
     
     {{-- end #banner --}}
 
