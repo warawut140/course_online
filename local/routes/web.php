@@ -52,7 +52,8 @@ Route::group(['middleware' => ['web','auth']], function () {
      });
 
 
-     Route::get('worklist_detail/{job_id}', 'frontend\JobNewController@worklist_detail')->name('index');
+     Route::get('worklist_detail/{job_id}', 'frontend\JobNewController@worklist_detail');
+     Route::get('worklist_detail_register/{job_id}', 'frontend\JobNewController@worklist_detail_register');
 
 
     // Route::get('/course_online', function () {
@@ -73,7 +74,7 @@ Route::group(['middleware' => ['web','auth']], function () {
 });
 Route::post('/register_full','frontend\RegisterFullController@register');
 
- Route::get('/worklist', 'frontend\HomeController@worklist')->name('index');
+ Route::get('/worklist', 'frontend\HomeController@worklist');
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontend\HomeController@index')->name('index');
 Route::get('/index', 'frontend\HomeController@index')->name('index');
