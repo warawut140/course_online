@@ -294,649 +294,653 @@
     </div>
     {{-- end #content 1 --}}
     <div class="container text-center py-4">
-    <h1 class="mb-3 text-left">
-        <font style="color:black">UX/UI Designer</font>
-    </h1>
+        <h1 class="mb-3 text-left">
+            <font style="color:black">UX/UI Designer</font>
+        </h1>
 
-    <h5 class=" text-left">
-        <font style="color:black">13 งานใน เชียงใหม่, เชียงใหม่, ประเทศไทย (3 ใหม่)</font>
-    </h5>
-    <br> <br>
-    <div class="row">
+        <h5 class=" text-left">
+            <font style="color:black">13 งานใน เชียงใหม่, เชียงใหม่, ประเทศไทย (3 ใหม่)</font>
+        </h5>
+        <br> <br>
+        <div class="row">
 
-        <div class="col-6">{{-- start #แบ่งครึ่ง1 --}}
-            <br> <br>
-
-
-
-            <div class="row">
-
-                @foreach($jobs as $j)
-
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="{{ asset('images/profile/'.$j->Profile->image_profile) }}" class="mw-100 mb-3" width="150px" height="150px">
-                        </div>
-                        <div class="col-8">
-                            <h5 class="mb-3 text-left">
-                                <font style="color:black">{{$j->position}}</font>
-                            </h5>
-                            <p class="mb-3 text-left">
-                                <font style="color:gray">{{$j->location}}</font>
-                            </p>
-                            <p class="mb-3 text-left">
-                                <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
-                            </p>
-                            <p class="mb-3 text-left">
-                                <font style="color:gray"><i class="fa fa-clock" aria-hidden="true"
-                                        style="color:green;"></i> {{$j->created_at}} </font>
-                            </p>
-                            <p class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg'></i>
-                                <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font>
-                            </p>
-
-                            <a href="{{url('worklist_detail/'.$j->id)}}" style="background-color:#374291; color:white;" class="btn "> สมัครเลย
-                            </a>
-                        </div>
-                    </div>
-                </div>{{-- end #work --}}
-
-                @endforeach
-
-            </div>
+            <div class="col-6">{{-- start #แบ่งครึ่ง1 --}}
+                <br> <br>
 
 
-        </div>{{-- end #แบ่งครึ่ง1 --}}
-        <div class="col-6">{{-- start #แบ่งครึ่ง2 --}}
-            <br> <br>
-            <h5 class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg' style="color:black"></i>
-                <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font>
-            </h5>
-            <br>
-            <div class="row">
-                <div class="col-6">
-                    <img src="{{asset('images/profile/'.$job->Profile->company_img1)}}" width="300px" height="250px" class="mw-100 mb-3">
-                    {{-- <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3"> --}}
-                </div>
-                <div class="col-6">
-                    {{-- <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3"> --}}
-                    <img src="{{asset('images/profile/'.$job->Profile->company_img2)}}" width="300px" height="250px" class="mw-100 mb-3">
-                </div>
-            </div>
-            <br> <br>
-            <div class="row">
-                <div class="col-12">{{-- start #work --}}
-                    <div class="row">
-                        <div class="col-4">
-                            {{-- <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3"> --}}
-                            <img src="{{ asset('images/profile/'.$j->Profile->image_profile) }}" class="mw-100 mb-3" width="150px" height="150px">
-                        </div>
-                        <div class="col-8">
-                            <h5 class="mb-3 text-left">
-                                <font style="color:black">{{$job->position}}</font>
-                            </h5>
-                            <p class="mb-3 text-left">
-                                <font style="color:gray">{{$job->location}}</font>
-                            </p>
-                            <p class="mb-3 text-left">
-                                <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
-                            </p>
-                            <p class="mb-3 text-left">
-                                <font style="color:gray"><i class="fa fa-clock" aria-hidden="true"
-                                        style="color:green;"></i> {{$j->created_at}} </font>
-                            </p>
-                            <p class="mb-3 text-left"> <a href=""
-                                    style="background-color:#374291; color:white;" class="btn "> สมัครเลย </a></p>
 
-                            <br>
-                        </div>
-                    </div>
-                </div>{{-- end #work --}}
-                <div class="col-12">{{-- start #work --}}
-                    <div class="row">
-                        <br> <br>
+                <div class="row">
+
+                    @foreach ($jobs as $j)
                         <div class="col-12">
-                            <h5 class="mb-3 text-left">
-                                <font style="color:black">ข้อมูลบริษัท</font>
-                            </h5>
-                            <p class="mb-3 text-left">
-                                <font style="color:gray">{{$job->Profile->detail_about_me}}</font>
-                            </p>
-                            <p class="mb-3 text-left">
-                                <font style="color:gray">
-                                    {{$job->Profile->company_address}}
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="{{ asset('images/profile/' . $j->Profile->image_profile) }}" class="mw-100 mb-3"
+                                        width="150px" height="150px">
+                                </div>
+                                <div class="col-8">
+                                    <h5 class="mb-3 text-left">
+                                        <font style="color:black">{{ $j->position }}</font>
+                                    </h5>
+                                    <p class="mb-3 text-left">
+                                        <font style="color:gray">{{ $j->location }}</font>
+                                    </p>
+                                    <p class="mb-3 text-left">
+                                        <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
+                                    </p>
+                                    <p class="mb-3 text-left">
+                                        <font style="color:gray"><i class="fa fa-clock" aria-hidden="true"
+                                                style="color:green;"></i> {{ $j->created_at }} </font>
+                                    </p>
+                                    <p class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg'></i>
+                                        <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font>
+                                    </p>
 
-                                </font>
-                            </p>
-                            <br> <br>
-                            <p class="mb-3 text-left">
-                                <font style="color:black">ลักษณะการทำงาน - บริหารงาน ประชุม อมรม</font>
-                            </p>
-
-                            <p class="mb-3 text-left">
-                                <font style="color:gray"><i class="fa fa-circle" aria-hidden="true"></i>
-                                    ขยายการตลาด ประสานงานขาย</font>
-                            </p>
-                            <p class="mb-3 text-left">
-                                <font style="color:gray"><i class="fa fa-circle" aria-hidden="true"></i>ฝึกอบรม
-                                    พัฒนาตนเองและบุคคลากร
-                                </font>
-                            </p>
-                            <p class="mb-3 text-left">
-                                <font style="color:gray"><i class="fa fa-circle" aria-hidden="true"></i>
-                                    ออกตลาด พบปะกลุ่มลูกค้า</font>
-                            </p>
-
-                        </div>
-                        <div class="col-6">
-                            <br> <br>
-                            <p class="mb-3 text-left">
-                                <font style="color:black">ระดับประสบการณ์</font>
-                            </p>
-
-                            <p class="mb-3 text-left">
-                                <font style="color:#374291;"><i class="fa fa-briefcase" aria-hidden="true"></i>
-                                    ประสบการณ์น้อย</font>
-                            </p>
-
-                        </div>
-                        <div class="col-6">
-                            <br> <br>
-                            <p class="mb-3 text-left">
-                                <font style="color:black">ประเภทการจ้างงาน</font>
-                            </p>
-
-                            <p class="mb-3 text-left">
-                                <font style="color:#374291;"><i class="fa fa-calendar-check" aria-hidden="true"></i>
-                                    Part-time</font>
-                            </p>
-
-                        </div>
-                        <div class="col-12">
-                            <br> <br>
-                            <p class="mb-3 text-left">
-                                <font style="color:black">เงินเดือน</font>
-                            </p>
-
-                            <p class="mb-3 text-left">
-                                <font style="color:#374291;"><i class="fa fa-credit-card" aria-hidden="true"></i>
-                                    {{$j->salary}} บาท รายเดือน</font>
-                            </p>
-
-
-                            <div class="col-12">
-                                <br> <br>
-                                <p class="mb-3 text-left">
-                                    <font style="color:black">Skill ที่ต้องการ</font>
-                                </p>
-
-                                <p class="mb-3 text-left">
-                                    <font style="color:#374291;"><i class="fa fa-circle" aria-hidden="true"></i>
-                                        ขยายการตลาด ประสานงานขาย</font>
-                                </p>
-                                <p class="mb-3 text-left">
-                                    <font style="color:#374291;"><i class="fa fa-circle" aria-hidden="true"></i>
-                                        ฝึกอบรม พัฒนาตนเองและบุคคลากร
-                                    </font>
-                                </p>
-                                <p class="mb-3 text-left">
-                                    <font style="color:#374291;"><i class="fa fa-circle" aria-hidden="true"></i>
-                                        ทักษะการพูดชั้นเชิง</font>
-                                </p>
+                                    <a href="{{ url('worklist_detail/' . $j->id) }}"
+                                        style="background-color:#374291; color:white;" class="btn "> ดูข้อมูล
+                                    </a>
+                                </div>
                             </div>
-                            <div class="col-12">
-                                <br> <br>
-                                <p class="mb-3 text-left">
-                                    <font style="color:black">คอร์สเรียนที่ควรผ่านการเรียนรู้มาก่อน</font>
-                                </p>
+                        </div>{{-- end #work --}}
+                    @endforeach
 
+                </div>
+
+
+            </div>{{-- end #แบ่งครึ่ง1 --}}
+            <div class="col-6">{{-- start #แบ่งครึ่ง2 --}}
+                <br> <br>
+                <h5 class="mb-3 text-left"> <i class='fas fa-user-circle fa-lg' style="color:black"></i>
+                    <font style="color:black">โปรไฟล์ของคุณเข้ากับงานนี้</font>
+                </h5>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="{{ asset('images/profile/' . $job->Profile->company_img1) }}" width="300px" height="250px"
+                            class="mw-100 mb-3">
+                        {{-- <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3"> --}}
+                    </div>
+                    <div class="col-6">
+                        {{-- <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3"> --}}
+                        <img src="{{ asset('images/profile/' . $job->Profile->company_img2) }}" width="300px" height="250px"
+                            class="mw-100 mb-3">
+                    </div>
+                </div>
+                <br> <br>
+                <div class="row">
+                    <div class="col-12">{{-- start #work --}}
+                        <div class="row">
+                            <div class="col-4">
+                                {{-- <img src="{{ asset('images/logoup.png') }}" class="mw-100 mb-3"> --}}
+                                <img src="{{ asset('images/profile/' . $j->Profile->image_profile) }}" class="mw-100 mb-3"
+                                    width="150px" height="150px">
+                            </div>
+                            <div class="col-8">
+                                <h5 class="mb-3 text-left">
+                                    <font style="color:black">{{ $job->position }}</font>
+                                </h5>
                                 <p class="mb-3 text-left">
-                                    <font style="color:#374291;"><i class="fa fa-check" aria-hidden="true"></i>
-                                        ขยายการตลาด ประสานงานขาย</font>&nbsp; &nbsp;&nbsp; &nbsp;<font
-                                        style="color:blue;">Certificate</font>
+                                    <font style="color:gray">{{ $job->location }}</font>
                                 </p>
                                 <p class="mb-3 text-left">
-                                    <font style="color:gray;"><i class="fa fa-times" aria-hidden="true"></i> ฝึกอบรม
-                                        พัฒนาตนเองและบุคคลากร
-                                    </font>&nbsp; &nbsp;&nbsp; &nbsp;<font style="color:gray;">Not Certificate</font>
-                                </p>
+                                    <font style="color:gray"> มาเป็นหนึ่งในผู้สมัคร 25 คนแรก</font>
                                 </p>
                                 <p class="mb-3 text-left">
-                                    <font style="color:#374291;"><i class="fa fa-check" aria-hidden="true"></i>
-                                        ผ่านการเรียนคอร์ส พัฒนาตัวเอง</font>&nbsp; &nbsp;&nbsp; &nbsp;<font
-                                        style="color:blue;">Certificate</font>
+                                    <font style="color:gray"><i class="fa fa-clock" aria-hidden="true"
+                                            style="color:green;"></i> {{ $j->created_at }} </font>
                                 </p>
-                                </p>
+                                <p class="mb-3 text-left"> <a href=""
+                                        style="background-color:#374291; color:white;" class="btn">สมัครงาน &nbsp;<i
+                                            class="fa fa-briefcase"></i></a></p>
+
+                                <br>
                             </div>
                         </div>
                     </div>{{-- end #work --}}
+                    <div class="col-12">{{-- start #work --}}
+                        <div class="row">
+                            <br> <br>
+                            <div class="col-12">
+                                <h5 class="mb-3 text-left">
+                                    <font style="color:black">ข้อมูลบริษัท</font>
+                                </h5>
+                                <p class="mb-3 text-left">
+                                    <font style="color:gray">{{ $job->Profile->detail_about_me }}</font>
+                                </p>
+                                <p class="mb-3 text-left">
+                                    <font style="color:gray">
+                                        {{ $job->Profile->company_address }}
+
+                                    </font>
+                                </p>
+                                <br> <br>
+                                <p class="mb-3 text-left">
+                                    <font style="color:black">ลักษณะการทำงาน - บริหารงาน ประชุม อมรม</font>
+                                </p>
+
+                                <p class="mb-3 text-left">
+                                    <font style="color:gray"><i class="fa fa-circle" aria-hidden="true"></i>
+                                        ขยายการตลาด ประสานงานขาย</font>
+                                </p>
+                                <p class="mb-3 text-left">
+                                    <font style="color:gray"><i class="fa fa-circle" aria-hidden="true"></i>ฝึกอบรม
+                                        พัฒนาตนเองและบุคคลากร
+                                    </font>
+                                </p>
+                                <p class="mb-3 text-left">
+                                    <font style="color:gray"><i class="fa fa-circle" aria-hidden="true"></i>
+                                        ออกตลาด พบปะกลุ่มลูกค้า</font>
+                                </p>
+
+                            </div>
+                            <div class="col-6">
+                                <br> <br>
+                                <p class="mb-3 text-left">
+                                    <font style="color:black">ระดับประสบการณ์</font>
+                                </p>
+
+                                <p class="mb-3 text-left">
+                                    <font style="color:#374291;"><i class="fa fa-briefcase" aria-hidden="true"></i>
+                                        {{ $j->level }}</font>
+                                </p>
+
+                            </div>
+                            <div class="col-6">
+                                <br> <br>
+                                <p class="mb-3 text-left">
+                                    <font style="color:black">ประเภทการจ้างงาน</font>
+                                </p>
+
+                                <p class="mb-3 text-left">
+                                    <font style="color:#374291;"><i class="fa fa-calendar-check" aria-hidden="true"></i>
+                                        {{ $j->get_employment_type() }}</font>
+                                </p>
+
+                            </div>
+                            <div class="col-12">
+                                <br> <br>
+                                <p class="mb-3 text-left">
+                                    <font style="color:black">เงินเดือน</font>
+                                </p>
+
+                                <p class="mb-3 text-left">
+                                    <font style="color:#374291;"><i class="fa fa-credit-card" aria-hidden="true"></i>
+                                        {{ $j->salary }} รายเดือน</font>
+                                </p>
+
+{{--
+                                <div class="col-12">
+                                    <br> <br>
+                                    <p class="mb-3 text-left">
+                                        <font style="color:black">Skill ที่ต้องการ</font>
+                                    </p>
+
+                                    <p class="mb-3 text-left">
+                                        <font style="color:#374291;"><i class="fa fa-circle" aria-hidden="true"></i>
+                                            ขยายการตลาด ประสานงานขาย</font>
+                                    </p>
+                                    <p class="mb-3 text-left">
+                                        <font style="color:#374291;"><i class="fa fa-circle" aria-hidden="true"></i>
+                                            ฝึกอบรม พัฒนาตนเองและบุคคลากร
+                                        </font>
+                                    </p>
+                                    <p class="mb-3 text-left">
+                                        <font style="color:#374291;"><i class="fa fa-circle" aria-hidden="true"></i>
+                                            ทักษะการพูดชั้นเชิง</font>
+                                    </p>
+                                </div> --}}
+                                <div class="col-12">
+                                    <br> <br>
+                                    <p class="mb-3 text-left">
+                                        <font style="color:black">คอร์สเรียนที่ควรผ่านการเรียนรู้มาก่อน</font>
+                                    </p>
+
+                                    <p class="mb-3 text-left">
+                                        <font style="color:#374291;"><i class="fa fa-check" aria-hidden="true"></i>
+                                            ขยายการตลาด ประสานงานขาย</font>&nbsp; &nbsp;&nbsp; &nbsp;<font
+                                            style="color:blue;">Certificate</font>
+                                    </p>
+                                    <p class="mb-3 text-left">
+                                        <font style="color:gray;"><i class="fa fa-times" aria-hidden="true"></i> ฝึกอบรม
+                                            พัฒนาตนเองและบุคคลากร
+                                        </font>&nbsp; &nbsp;&nbsp; &nbsp;<font style="color:gray;">Not Certificate</font>
+                                    </p>
+                                    </p>
+                                    <p class="mb-3 text-left">
+                                        <font style="color:#374291;"><i class="fa fa-check" aria-hidden="true"></i>
+                                            ผ่านการเรียนคอร์ส พัฒนาตัวเอง</font>&nbsp; &nbsp;&nbsp; &nbsp;<font
+                                            style="color:blue;">Certificate</font>
+                                    </p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>{{-- end #work --}}
 
 
-                </div>
+                    </div>
 
 
-            </div>{{-- end #แบ่งครึ่ง2 --}}
+                </div>{{-- end #แบ่งครึ่ง2 --}}
 
+
+            </div>
 
         </div>
-
-    </div>
     </div>
 
     {{-- begin #work 1 --}}
 
 
 
-            {{-- <script src="/js/app.js" charset="utf-8"></script> --}}
-            <script src="{{ asset('js/app.js') }}"></script>
-        @endsection
-        @section('script')
-            <script>
-                $('.owl-carousel2').owlCarousel({
-                    nav: false,
-                    loop: false,
+    {{-- <script src="/js/app.js" charset="utf-8"></script> --}}
+    <script src="{{ asset('js/app.js') }}"></script>
+@endsection
+@section('script')
+    <script>
+        $('.owl-carousel2').owlCarousel({
+            nav: false,
+            loop: false,
 
-                    margin: 10,
-                    arrows: false,
-                    infinite: false,
-                    dots: false,
-                    autoHeight: true,
+            margin: 10,
+            arrows: false,
+            infinite: false,
+            dots: false,
+            autoHeight: true,
 
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        600: {
-                            items: 3
-                        },
-                        1000: {
-                            items: 4
-                        }
-                    }
-                })
-                $('.owl-carousel').owlCarousel({
-                    loop: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        })
+        $('.owl-carousel').owlCarousel({
+            loop: false,
 
-                    margin: 10,
-                    nav: true,
-                    dots: false,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        600: {
-                            items: 3
-                        },
-                        1000: {
-                            items:
-                        }
-                    }
-                })
-                $('.owl-carousel3').owlCarousel({
-                    loop: false,
-                    margin: 10,
-                    nav: true,
-                    dots: false,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        600: {
-                            items: 3
-                        },
-                        1000: {
-                            items: 5
-                        }
-                    }
-                })
-            </script>
-            <script>
-                FontAwesomeConfig = {
-                    searchPseudoElements: true
-                };
-            </script>
-            <script type="text/javascript">
-                $(document).ready(function() {
+            margin: 10,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items:
+                }
+            }
+        })
+        $('.owl-carousel3').owlCarousel({
+            loop: false,
+            margin: 10,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        })
+    </script>
+    <script>
+        FontAwesomeConfig = {
+            searchPseudoElements: true
+        };
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
 
 
-                    $("body").on("mouseover", ".hotclass_slide .owl-item,.movie-carousel .owl-item", function() {
-                        $(this).parent().find(".owl-item.active").addClass("hov");
-                        $(this).removeClass("hov");
-                    });
+            $("body").on("mouseover", ".hotclass_slide .owl-item,.movie-carousel .owl-item", function() {
+                $(this).parent().find(".owl-item.active").addClass("hov");
+                $(this).removeClass("hov");
+            });
 
-                    $("body").on("mouseleave", ".hotclass_slide .owl-item,.movie-carousel .owl-item", function() {
-                        $(this).parent().find(".owl-item.hov").removeClass("hov");
-                    });
+            $("body").on("mouseleave", ".hotclass_slide .owl-item,.movie-carousel .owl-item", function() {
+                $(this).parent().find(".owl-item.hov").removeClass("hov");
+            });
 
-                    $(".movie-carousel").owlCarousel({
+            $(".movie-carousel").owlCarousel({
+                loop: false,
+                rewind: true,
+                margin: 10,
+                nav: true,
+                lazyLoad: true,
+                navText: ['<img src="assets/fontend/images/arrow_left.png">',
+                    '<img src="assets/fontend/images/arrow_right.png">'
+                ],
+                autoplayHoverPause: false,
+                dots: false,
+                autoplay: false,
+                autoplayTimeout: 7000,
+                smartSpeed: 1000,
+                stagePadding: 0,
+                slideBy: 1,
+                responsive: {
+                    0: {
+                        items: 2,
+                        center: true,
                         loop: false,
-                        rewind: true,
-                        margin: 10,
-                        nav: true,
-                        lazyLoad: true,
-                        navText: ['<img src="assets/fontend/images/arrow_left.png">',
-                            '<img src="assets/fontend/images/arrow_right.png">'
-                        ],
-                        autoplayHoverPause: false,
-                        dots: false,
-                        autoplay: false,
-                        autoplayTimeout: 7000,
-                        smartSpeed: 1000,
-                        stagePadding: 0,
-                        slideBy: 1,
-                        responsive: {
-                            0: {
-                                items: 2,
-                                center: true,
-                                loop: false,
-                                margin: 30,
-                                startPosition: 1
-                            },
-                            500: {
-                                items: 2,
-                                center: true,
-                                loop: true,
-                                margin: 40
-                            },
-                            768: {
-                                margin: 50,
-                                items: 3,
-                                center: true,
-                                loop: true
-                            },
-                            992: {
-                                margin: 20,
-                                items: 3
-                            },
-                            1201: {
-                                margin: 25,
-                                items: 4
-                            }
-                        },
-                    });
+                        margin: 30,
+                        startPosition: 1
+                    },
+                    500: {
+                        items: 2,
+                        center: true,
+                        loop: true,
+                        margin: 40
+                    },
+                    768: {
+                        margin: 50,
+                        items: 3,
+                        center: true,
+                        loop: true
+                    },
+                    992: {
+                        margin: 20,
+                        items: 3
+                    },
+                    1201: {
+                        margin: 25,
+                        items: 4
+                    }
+                },
+            });
 
-                    $(".introLearnm ").owlCarousel({
-                        loop: false,
-                        rewind: true,
-                        margin: 10,
-                        nav: true,
-                        lazyLoad: true,
-                        navText: ['<img src="assets/fontend/images/arrow_left.png">',
-                            '<img src="assets/fontend/images/arrow_right.png">'
-                        ],
-                        autoplayHoverPause: false,
-                        dots: false,
-                        autoplay: false,
-                        autoplayTimeout: 7000,
-                        smartSpeed: 1000,
-                        stagePadding: 0,
-                        slideBy: 1,
-                        responsive: {
-                            0: {
-                                items: 1
-                            },
-                            500: {
-                                items: 1
-                            },
-                            768: {
-                                margin: 20,
-                                items: 1
-                            },
-                            992: {
-                                margin: 20,
-                                items: 1
-                            },
-                            1201: {
-                                margin: 25,
-                                items: 1
-                            }
-                        }
-                    });
+            $(".introLearnm ").owlCarousel({
+                loop: false,
+                rewind: true,
+                margin: 10,
+                nav: true,
+                lazyLoad: true,
+                navText: ['<img src="assets/fontend/images/arrow_left.png">',
+                    '<img src="assets/fontend/images/arrow_right.png">'
+                ],
+                autoplayHoverPause: false,
+                dots: false,
+                autoplay: false,
+                autoplayTimeout: 7000,
+                smartSpeed: 1000,
+                stagePadding: 0,
+                slideBy: 1,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    500: {
+                        items: 1
+                    },
+                    768: {
+                        margin: 20,
+                        items: 1
+                    },
+                    992: {
+                        margin: 20,
+                        items: 1
+                    },
+                    1201: {
+                        margin: 25,
+                        items: 1
+                    }
+                }
+            });
 
-                    $(".hotclass_slide").owlCarousel({
-                        loop: false,
-                        rewind: true,
-                        margin: 10,
+            $(".hotclass_slide").owlCarousel({
+                loop: false,
+                rewind: true,
+                margin: 10,
+                nav: true,
+                lazyLoad: true,
+                navText: ['<img src="assets/fontend/images/arrow_left.png">',
+                    '<img src="assets/fontend/images/arrow_right.png">'
+                ],
+                autoplayHoverPause: false,
+                dots: false,
+                autoplay: false,
+                autoplayTimeout: 7000,
+                smartSpeed: 1000,
+                stagePadding: 0,
+                slideBy: 1,
+                responsive: {
+                    0: {
+                        items: 2,
+                        center: true,
+                        loop: true,
                         nav: true,
-                        lazyLoad: true,
-                        navText: ['<img src="assets/fontend/images/arrow_left.png">',
-                            '<img src="assets/fontend/images/arrow_right.png">'
-                        ],
-                        autoplayHoverPause: false,
-                        dots: false,
-                        autoplay: false,
-                        autoplayTimeout: 7000,
-                        smartSpeed: 1000,
-                        stagePadding: 0,
-                        slideBy: 1,
-                        responsive: {
-                            0: {
-                                items: 2,
-                                center: true,
-                                loop: true,
-                                nav: true,
-                                margin: 30
-                            },
-                            500: {
-                                items: 2,
-                                center: true,
-                                loop: true,
-                                nav: true,
-                                margin: 40
-                            },
-                            768: {
-                                margin: 50,
-                                items: 3,
-                                center: true,
-                                loop: true,
-                                nav: true
-                            },
-                            992: {
-                                margin: 20,
-                                items: 3
-                            },
-                            1201: {
-                                margin: 25,
-                                items: 5
-                            }
-                        }
-                    });
+                        margin: 30
+                    },
+                    500: {
+                        items: 2,
+                        center: true,
+                        loop: true,
+                        nav: true,
+                        margin: 40
+                    },
+                    768: {
+                        margin: 50,
+                        items: 3,
+                        center: true,
+                        loop: true,
+                        nav: true
+                    },
+                    992: {
+                        margin: 20,
+                        items: 3
+                    },
+                    1201: {
+                        margin: 25,
+                        items: 5
+                    }
+                }
+            });
 
-                    $('.myslider').owlCarousel({
+            $('.myslider').owlCarousel({
+                items: 1,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 10000,
+                smartSpeed: 1000,
+                lazyLoad: true,
+                navText: ['<img src="assets/fontend/images/BN_left.png">',
+                    '<img src="assets/fontend/images/BN_right.png">'
+                ],
+                dotsSpeed: 500,
+                dotsData: true,
+                responsive: {
+                    0: {
                         items: 1,
-                        nav: true,
-                        dots: true,
+                        slideBy: 1,
                         autoplay: true,
-                        autoplayTimeout: 10000,
-                        smartSpeed: 1000,
-                        lazyLoad: true,
-                        navText: ['<img src="assets/fontend/images/BN_left.png">',
-                            '<img src="assets/fontend/images/BN_right.png">'
-                        ],
-                        dotsSpeed: 500,
-                        dotsData: true,
-                        responsive: {
-                            0: {
-                                items: 1,
-                                slideBy: 1,
-                                autoplay: true,
-                                margin: 10,
-                                nav: true,
-                                // dotsData: false,
-                                dots: false,
-                            },
-                            600: {
-                                items: 1,
-                                slideBy: 1,
-                                nav: true,
-                                autoplay: true,
-                                // dotsData: false,
-                                dots: false,
-                            },
-                            1024: {
-                                items: 1,
-                                slideBy: 1
-                            },
-                            1200: {
-                                items: 1,
-                                slideBy: 1
-                            }
-                        },
-                    });
-
-                    $('.myslider').on('changed.owl.carousel', function(e) {
-                        let index = e.relatedTarget.relative(e.relatedTarget.current());
-                        if (index == 0) {
-                            if (mobilesize.matches) {
-                                //if (isIphone) { player2.currentTime = 0; }else{ player2.currentTime(0); }
-                                player2.play();
-                                player.pause();
-                            } else {
-                                //if (isIphone) { player.currentTime = 0; }else{ player.currentTime(0); }
-                                //if (mobilesize.matches) { player2.pause(); }
-                                player2.pause();
-                                player.play();
-                            }
-                        } else {
-                            if (mobilesize.matches) {
-                                // $('#mypromotevideo2').get(0).pause();
-                                /* if (!player2.paused) {
-                                    player2.paused = false;
-                                    //player2.pause();
-                                } */
-                                player2.pause();
-                            } else {
-                                player.pause();
-                            }
-                            // player.pause();
-                        }
-                    })
-
-                    function moved() {
-                        var owl = $(".movie-carousel").data('owlCarousel');
-                        //alert(owl.currentItem );
-                        /* if (owl.currentItem + 1 === owl.itemsAmount) {
-                            alert('THE END');
-                        } */
+                        margin: 10,
+                        nav: true,
+                        // dotsData: false,
+                        dots: false,
+                    },
+                    600: {
+                        items: 1,
+                        slideBy: 1,
+                        nav: true,
+                        autoplay: true,
+                        // dotsData: false,
+                        dots: false,
+                    },
+                    1024: {
+                        items: 1,
+                        slideBy: 1
+                    },
+                    1200: {
+                        items: 1,
+                        slideBy: 1
                     }
-                });
-            </script>
-            <script type="text/javascript">
-                $(".tovideo").on("click", function() {
-                    var value = $(this).attr("data-id");
-                    window.location.href = "learn/" + value;
-                })
-            </script>
-            <!-- lazy for IOS -->
-            <script type="text/javascript">
-                let images = document.querySelectorAll('source, img');
+                },
+            });
 
-                if ('IntersectionObserver' in window) {
-                    // IntersectionObserver Supported
-                    let config = {
-                        root: null,
-                        rootMargin: '0px',
-                        threshold: 0.5
-                    };
-
-                    let observer = new IntersectionObserver(onChange, config);
-                    images.forEach(function(img) {
-                        observer.observe(img)
-                    });
-
-                    function onChange(changes, observer) {
-                        changes.forEach(function(change) {
-                            if (change.intersectionRatio > 0) {
-                                // Stop watching and load the image
-                                loadImage(change.target);
-                                observer.unobserve(change.target);
-                            }
-                        });
+            $('.myslider').on('changed.owl.carousel', function(e) {
+                let index = e.relatedTarget.relative(e.relatedTarget.current());
+                if (index == 0) {
+                    if (mobilesize.matches) {
+                        //if (isIphone) { player2.currentTime = 0; }else{ player2.currentTime(0); }
+                        player2.play();
+                        player.pause();
+                    } else {
+                        //if (isIphone) { player.currentTime = 0; }else{ player.currentTime(0); }
+                        //if (mobilesize.matches) { player2.pause(); }
+                        player2.pause();
+                        player.play();
                     }
-
                 } else {
-                    // IntersectionObserver NOT Supported
-                    images.forEach(function(image) {
-                        loadImage(image)
-                    });
+                    if (mobilesize.matches) {
+                        // $('#mypromotevideo2').get(0).pause();
+                        /* if (!player2.paused) {
+                            player2.paused = false;
+                            //player2.pause();
+                        } */
+                        player2.pause();
+                    } else {
+                        player.pause();
+                    }
+                    // player.pause();
                 }
+            })
 
-                function loadImage(image) {
-                    image.classList.add('fade-in');
-                    if (image.dataset && image.dataset.src) {
-                        image.src = image.dataset.src;
+            function moved() {
+                var owl = $(".movie-carousel").data('owlCarousel');
+                //alert(owl.currentItem );
+                /* if (owl.currentItem + 1 === owl.itemsAmount) {
+                    alert('THE END');
+                } */
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(".tovideo").on("click", function() {
+            var value = $(this).attr("data-id");
+            window.location.href = "learn/" + value;
+        })
+    </script>
+    <!-- lazy for IOS -->
+    <script type="text/javascript">
+        let images = document.querySelectorAll('source, img');
+
+        if ('IntersectionObserver' in window) {
+            // IntersectionObserver Supported
+            let config = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            let observer = new IntersectionObserver(onChange, config);
+            images.forEach(function(img) {
+                observer.observe(img)
+            });
+
+            function onChange(changes, observer) {
+                changes.forEach(function(change) {
+                    if (change.intersectionRatio > 0) {
+                        // Stop watching and load the image
+                        loadImage(change.target);
+                        observer.unobserve(change.target);
                     }
-
-                    if (image.dataset && image.dataset.srcset) {
-                        image.srcset = image.dataset.srcset;
-                    }
-                }
-            </script>
-
-
-            <!-- Lazy Load -->
-            <script type="text/javascript">
-                document.addEventListener("DOMContentLoaded", function() {
-                    var lazyloadImages = document.querySelectorAll("img.lazy");
-                    var lazyloadThrottleTimeout;
-
-                    function lazyload() {
-                        if (lazyloadThrottleTimeout) {
-                            clearTimeout(lazyloadThrottleTimeout);
-                        }
-
-                        lazyloadThrottleTimeout = setTimeout(function() {
-                            var scrollTop = window.pageYOffset;
-                            lazyloadImages.forEach(function(img) {
-                                if (img.offsetTop < (window.innerHeight + scrollTop)) {
-                                    img.src = img.dataset.src;
-                                    img.classList.remove('lazy');
-                                }
-                            });
-                            if (lazyloadImages.length == 0) {
-                                document.removeEventListener("scroll", lazyload);
-                                window.removeEventListener("resize", lazyload);
-                                window.removeEventListener("orientationChange", lazyload);
-                            }
-                        }, 20);
-                    }
-
-                    document.addEventListener("scroll", lazyload);
-                    window.addEventListener("resize", lazyload);
-                    window.addEventListener("orientationChange", lazyload);
                 });
-            </script>
-            <style>
-                .card-popup1:hover,
-                .card-popup2:hover,
-                .card-popup3:hover,
-                .card-popup4:hover {
-                    background-color: #8B0900;
-                    color: #fff;
+            }
+
+        } else {
+            // IntersectionObserver NOT Supported
+            images.forEach(function(image) {
+                loadImage(image)
+            });
+        }
+
+        function loadImage(image) {
+            image.classList.add('fade-in');
+            if (image.dataset && image.dataset.src) {
+                image.src = image.dataset.src;
+            }
+
+            if (image.dataset && image.dataset.srcset) {
+                image.srcset = image.dataset.srcset;
+            }
+        }
+    </script>
+
+
+    <!-- Lazy Load -->
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyloadImages = document.querySelectorAll("img.lazy");
+            var lazyloadThrottleTimeout;
+
+            function lazyload() {
+                if (lazyloadThrottleTimeout) {
+                    clearTimeout(lazyloadThrottleTimeout);
                 }
 
-                .card-popup1:hover h4,
-                .card-popup2:hover h4,
-                .card-popup3:hover h4,
-                .card-popup4:hover h4 {
-                    color: #fff;
-                }
+                lazyloadThrottleTimeout = setTimeout(function() {
+                    var scrollTop = window.pageYOffset;
+                    lazyloadImages.forEach(function(img) {
+                        if (img.offsetTop < (window.innerHeight + scrollTop)) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy');
+                        }
+                    });
+                    if (lazyloadImages.length == 0) {
+                        document.removeEventListener("scroll", lazyload);
+                        window.removeEventListener("resize", lazyload);
+                        window.removeEventListener("orientationChange", lazyload);
+                    }
+                }, 20);
+            }
 
-                .card-popup1:hover img {
-                    content: url({{ asset('image/index-auction - Copy.png') }});
-                }
+            document.addEventListener("scroll", lazyload);
+            window.addEventListener("resize", lazyload);
+            window.addEventListener("orientationChange", lazyload);
+        });
+    </script>
+    <style>
+        .card-popup1:hover,
+        .card-popup2:hover,
+        .card-popup3:hover,
+        .card-popup4:hover {
+            background-color: #8B0900;
+            color: #fff;
+        }
 
-                .card-popup2:hover img {
-                    content: url({{ asset('image/index-findjob - Copy.png') }});
-                }
+        .card-popup1:hover h4,
+        .card-popup2:hover h4,
+        .card-popup3:hover h4,
+        .card-popup4:hover h4 {
+            color: #fff;
+        }
 
-                .card-popup3:hover img {
-                    content: url({{ asset('image/index-knowledge - Copy.png') }});
-                }
+        .card-popup1:hover img {
+            content: url({{ asset('image/index-auction - Copy.png') }});
+        }
 
-                .card-popup4:hover img {
-                    content: url({{ asset('image/index-store - Copy.png') }});
-                }
-            </style>
-        @endsection
+        .card-popup2:hover img {
+            content: url({{ asset('image/index-findjob - Copy.png') }});
+        }
+
+        .card-popup3:hover img {
+            content: url({{ asset('image/index-knowledge - Copy.png') }});
+        }
+
+        .card-popup4:hover img {
+            content: url({{ asset('image/index-store - Copy.png') }});
+        }
+    </style>
+@endsection

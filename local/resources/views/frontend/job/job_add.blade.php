@@ -127,6 +127,9 @@
                                                 <option <?php if (@$data->employment_type == 1) {
                                                     echo 'selected';
                                                 } ?> value="1">เต็มเวลา</option>
+                                                   <option <?php if (@$data->employment_type == 2) {
+                                                    echo 'selected';
+                                                } ?> value="2">Part-time</option>
                                             </select>
                                         </div>
                                     </div>

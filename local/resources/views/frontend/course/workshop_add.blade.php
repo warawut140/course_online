@@ -15,7 +15,7 @@
     <style>
         .bg-light2 {
             /* background-color: #8B0900;
-                              background-image: url("{{ asset('image/bg.png') }}"); */
+                                  background-image: url("{{ asset('image/bg.png') }}"); */
             /* clear: both; */
         }
 
@@ -68,7 +68,14 @@
         <div id="register-section1" class="bg-light2">
             <div class="container">
                 <div class="row">
+
                     <div class="col-md-12">
+                        <br>
+                        <div class="left">
+                            <a href="{{ url('chapter_view/' . $chapter->id) }}"
+                                style="background-color: #8B0900; color:white;" class="btn "><i class="fa fa-chevron-left"
+                                    aria-hidden="true"></i> ย้อนกลับ </a>
+                        </div>
                         <br>
                         <h4 style="color:#8B0900;">เพิ่มแบบทดสอบ/Workshop ของ {{ @$course->name }}</h4>
                         <div class="card">
@@ -136,11 +143,12 @@
                                     </div>
 
                                     <div class="form-group row">
-                                    <div class="col-md-3">
-                                        <label for="score_success">คะแนนที่ผ่านการทดสอบ</label>
-                                        <input type="number" required class="form-control"
-                                            value="{{ @$data->score_success }}" id="score_success" name="score_success">
-                                    </div>
+                                        <div class="col-md-3">
+                                            <label for="score_success">คะแนนที่ผ่านการทดสอบ</label>
+                                            <input type="number" required class="form-control"
+                                                value="{{ @$data->score_success }}" id="score_success"
+                                                name="score_success">
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
@@ -149,10 +157,10 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <a href="{{ url('chapter_view/' . $chapter->id) }}"
                                             class="btn btn-outline-secondary w-100">ย้อนกลับ</a>
-                                    </div>
+                                    </div> --}}
                                 </form>
                             </div>
                         </div>
@@ -185,25 +193,41 @@
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">คำถาม</label>
                                             @foreach ($question as $c)
-                                            <?php
-                                                $oq1 = DB::table('options')->select('name','id','correct_answer')->where('question_id',$c->id)->where('position',1)->first();
-                                                $oq2 = DB::table('options')->select('name','id','correct_answer')->where('question_id',$c->id)->where('position',2)->first();
-                                                $oq3 = DB::table('options')->select('name','id','correct_answer')->where('question_id',$c->id)->where('position',3)->first();
-                                                $oq4 = DB::table('options')->select('name','id','correct_answer')->where('question_id',$c->id)->where('position',4)->first();
+                                                <?php
+                                                $oq1 = DB::table('options')
+                                                    ->select('name', 'id', 'correct_answer')
+                                                    ->where('question_id', $c->id)
+                                                    ->where('position', 1)
+                                                    ->first();
+                                                $oq2 = DB::table('options')
+                                                    ->select('name', 'id', 'correct_answer')
+                                                    ->where('question_id', $c->id)
+                                                    ->where('position', 2)
+                                                    ->first();
+                                                $oq3 = DB::table('options')
+                                                    ->select('name', 'id', 'correct_answer')
+                                                    ->where('question_id', $c->id)
+                                                    ->where('position', 3)
+                                                    ->first();
+                                                $oq4 = DB::table('options')
+                                                    ->select('name', 'id', 'correct_answer')
+                                                    ->where('question_id', $c->id)
+                                                    ->where('position', 4)
+                                                    ->first();
                                                 $corr = 0;
-                                                if(@$oq1->correct_answer==1){
+                                                if (@$oq1->correct_answer == 1) {
                                                     $corr = 1;
                                                 }
-                                                if(@$oq2->correct_answer==1){
+                                                if (@$oq2->correct_answer == 1) {
                                                     $corr = 2;
                                                 }
-                                                if(@$oq3->correct_answer==1){
+                                                if (@$oq3->correct_answer == 1) {
                                                     $corr = 3;
                                                 }
-                                                if(@$oq4->correct_answer==1){
+                                                if (@$oq4->correct_answer == 1) {
                                                     $corr = 4;
                                                 }
-                                            ?>
+                                                ?>
                                                 <div class="input-group mb-3">
                                                     <input type="text"
                                                         value="ข้อที่ {{ @$c->position }} . {{ @$c->name }}"
@@ -212,21 +236,16 @@
                                                         aria-label="Recipient's username" aria-describedby="basic-addon2">
                                                     <div class="input-group-append">
                                                         <a href="javascript:;" class="question_view"
-                                                            q_id="{{ @$c->id }}"
-                                                            q_name="{{ @$c->name }}"
+                                                            q_id="{{ @$c->id }}" q_name="{{ @$c->name }}"
                                                             position="{{ @$c->position }}"
                                                             option_type_id="{{ @$c->option_type_id }}"
                                                             course_list_id="{{ @$c->course_list_id }}"
                                                             question_detail_id="{{ @$c->question_detail_id }}"
-                                                            score="{{ @$c->score }}"
-                                                            ans="{{ @$c->ans }}"
-                                                            op1="{{@$oq1->name}}"
-                                                            op2="{{@$oq2->name}}"
-                                                            op3="{{@$oq3->name}}"
-                                                            op4="{{@$oq4->name}}"
-                                                            corr="{{@$corr}}"
-                                                            ><span
-                                                                class="input-group-text" id="basic-addon2">ตั้งค่า
+                                                            score="{{ @$c->score }}" ans="{{ @$c->ans }}"
+                                                            op1="{{ @$oq1->name }}" op2="{{ @$oq2->name }}"
+                                                            op3="{{ @$oq3->name }}" op4="{{ @$oq4->name }}"
+                                                            corr="{{ @$corr }}"><span class="input-group-text"
+                                                                id="basic-addon2">ตั้งค่า
                                                                 &nbsp;<i class="fa fa-gear"></i></span></a>
                                                     </div>
                                                 </div>
@@ -264,8 +283,7 @@
                         <input type="hidden" name="chapter_id" value="{{ @$chapter->id }}" class="chapter_id">
                         <input type="hidden" name="question_detail_id" value="{{ @$data->id }}"
                             class="question_detail_id">
-                            <input type="hidden" name="question_id" value=""
-                            class="question_id">
+                        <input type="hidden" name="question_id" value="" class="question_id">
 
                         <div class="modal-dialog modal-md" role="document">
                             <div class="modal-content">
@@ -361,33 +379,33 @@
                                                         <label for="">คำตอบที่ถูกต้อง</label>
                                                         <div class="col-md-12">
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input option_correct" type="radio"
-                                                                    name="option_correct" id="inlineRadio1"
-                                                                    value="1">
+                                                                <input class="form-check-input option_correct"
+                                                                    type="radio" name="option_correct"
+                                                                    id="inlineRadio1" value="1">
                                                                 <label class="form-check-label"
                                                                     for="inlineRadio1">ตัวเลือกที่
                                                                     1</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input option_correct" type="radio"
-                                                                    name="option_correct" id="inlineRadio2"
-                                                                    value="2">
+                                                                <input class="form-check-input option_correct"
+                                                                    type="radio" name="option_correct"
+                                                                    id="inlineRadio2" value="2">
                                                                 <label class="form-check-label"
                                                                     for="inlineRadio2">ตัวเลือกที่
                                                                     2</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input option_correct" type="radio"
-                                                                    name="option_correct" id="inlineRadio3"
-                                                                    value="3">
+                                                                <input class="form-check-input option_correct"
+                                                                    type="radio" name="option_correct"
+                                                                    id="inlineRadio3" value="3">
                                                                 <label class="form-check-label"
                                                                     for="inlineRadio3">ตัวเลือกที่
                                                                     3</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input option_correct" type="radio"
-                                                                    name="option_correct" id="inlineRadio4"
-                                                                    value="4">
+                                                                <input class="form-check-input option_correct"
+                                                                    type="radio" name="option_correct"
+                                                                    id="inlineRadio4" value="4">
                                                                 <label class="form-check-label"
                                                                     for="inlineRadio4">ตัวเลือกที่
                                                                     4</label>
@@ -518,17 +536,17 @@
             $('#add_course_list_modal .option_name4').val(op4);
             var $radios = $('input:radio[name=option_correct]');
 
-            if(corr==1){
-                 $radios.filter('[value=1]').prop('checked', true);
+            if (corr == 1) {
+                $radios.filter('[value=1]').prop('checked', true);
             }
-            if(corr==2){
-                 $radios.filter('[value=2]').prop('checked', true);
+            if (corr == 2) {
+                $radios.filter('[value=2]').prop('checked', true);
             }
-            if(corr==3){
-                 $radios.filter('[value=3]').prop('checked', true);
+            if (corr == 3) {
+                $radios.filter('[value=3]').prop('checked', true);
             }
-            if(corr==4){
-                 $radios.filter('[value=4]').prop('checked', true);
+            if (corr == 4) {
+                $radios.filter('[value=4]').prop('checked', true);
             }
 
             if (option_type_id == '1') {

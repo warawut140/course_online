@@ -14,4 +14,16 @@ class JobDescription extends Model
         return $this->hasOne('\App\Models\Profile','id','profile_id');
     }
 
+    public function get_employment_type()
+    {
+        $data = "";
+        if($this->employment_type==1){
+            $data = "เต็มเวลา";
+        }
+        if($this->employment_type==2){
+            $data = "Part-time";
+        }
+        return $data;
+    }
+
 }

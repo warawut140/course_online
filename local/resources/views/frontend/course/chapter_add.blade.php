@@ -15,7 +15,7 @@
     <style>
         .bg-light2 {
             /* background-color: #8B0900;
-                                                                            background-image: url("{{ asset('image/bg.png') }}"); */
+                                                                                        background-image: url("{{ asset('image/bg.png') }}"); */
             /* clear: both; */
         }
 
@@ -51,10 +51,19 @@
             border: 1px solid #ced4da;
             border-radius: 0.25rem;
         }
+
+
     </style>
 @endsection
 @section('content')
     <div id="app">
+
+        <?php
+        // ini_set("upload_max_filesize","9999999M");
+        // ini_set('post_max_size', '9999999M');
+        set_time_limit(9999999);
+        // phpinfo();
+        ?>
 
         @if (session('success'))
             <div class="p-3 mb-2 bg-success text-white success text-center">{{ session('success') }}</div>
@@ -64,11 +73,18 @@
             <div class="p-3 mb-2 bg-danger text-white error text-center">{{ session('error') }}</div>
         @endif
 
+
+
         {{-- begin #register --}}
         <div id="register-section1" class="bg-light2">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
+                        <br>
+                        <div class="left">
+                            <a href="{{ url('course_view/' . $course->id) }}" style="background-color: #8B0900; color:white;"
+                                class="btn "><i class="fa fa-chevron-left" aria-hidden="true"></i> ย้อนกลับ </a>
+                        </div>
                         <br>
                         <h4 style="color:#8B0900;">เพิ่มบทเรียน ของ {{ @$course->name }}</h4>
                         <div class="card">
@@ -161,10 +177,10 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <a href="{{ url('course_view/' . $course->id) }}"
                                             class="btn btn-outline-secondary w-100">ย้อนกลับ</a>
-                                    </div>
+                                    </div> --}}
                                 </form>
                             </div>
                         </div>
@@ -267,7 +283,8 @@
                                                         placeholder="Recipient's username" readonly
                                                         aria-label="Recipient's username" aria-describedby="basic-addon2">
                                                     <div class="input-group-append">
-                                                        <a href="{{ url('workshop_view/' . @$data->id . '/' . @$c->id) }}"><span
+                                                        <a
+                                                            href="{{ url('workshop_view/' . @$data->id . '/' . @$c->id) }}"><span
                                                                 class="input-group-text" id="basic-addon2">ตั้งค่า
                                                                 &nbsp;<i class="fa fa-gear"></i></span></a>
                                                     </div>
@@ -294,7 +311,7 @@
                 </div>
 
                 <!-- Modal ข้อตกลงและเงื่อนไข-->
-                <form method="POST" action="{{ url('course_list_store') }}" id="searchForm"
+                <form method="POST" action="{{ url('course_list_store') }}" id="fileUploadForm"
                     enctype="multipart/form-data">
                     @csrf
 
@@ -341,12 +358,23 @@
                                                     <label for="">อัพโหลดไฟล์วิดิโอ</label>
                                                     <input type="file" class="form-control-file course_video"
                                                         name="course_video">
+                                                    <br>
+                                                    <div class="form-group">
+                                                        <div class="progress">
+                                                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                                                                role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                                                                aria-valuemax="100" style="width: 0%"></div>
+                                                        </div>
+                                                    </div>
                                                     <video width="320" height="240" controls>
                                                         <source class="course_video_play" src=""
                                                             type="video/mp4">
                                                         {{-- <source src="{{asset('images/profile/'.$c->course_video)}}" type="video/mp4"> --}}
                                                         {{-- <source src="movie.ogg" type="video/ogg"> --}}
                                                     </video>
+                                                    <button class="btn btn-sm btn-danger remove_video" type="button"
+                                                        title="ลบวิดิโอ" onclick="return confirm('ยืนยันการลบวิดิโอ?')">
+                                                        <i class="fa fa-trash"></i> </button>
 
                                                 </div>
                                             </div>
@@ -356,7 +384,7 @@
                                                     <label for="">ภาพหน้าปกวิดิโอ</label>
                                                     <input type="file" class="form-control-file course_image"
                                                         id="course_image" name="course_image">
-                                                        <br>
+                                                    <br>
                                                     <img class="course_image_img" src="" width="300px"
                                                         height="250px">
                                                 </div>
@@ -406,13 +434,64 @@
     </div>
 
 
+    {{-- <div class="container mt-5" style="max-width: 900px">
+
+        <div class="alert alert-primary mb-4 text-center">
+           <h2 class="display-6">Laravel File Upload with Ajax Progress Bar Example - ItSolutionStuff.com</h2>
+        </div>
+        <form id="fileUploadForm" method="POST" action="" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group mb-3">
+                <input name="file" type="file" class="form-control">
+            </div>
+            <div class="form-group">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="d-grid mt-4">
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </div>
+        </form>
+    </div> --}}
+
+
+
 
     {{-- <script src="/js/app.js" charset="utf-8"></script> --}}
+
     <script src="{{ asset('js/app.js') }}"></script>
 @endsection
 @section('script')
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('select2/select2.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"
+        integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn" crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(function() {
+            $(document).ready(function() {
+                $('#fileUploadForm').ajaxForm({
+                    beforeSend: function() {
+                        var percentage = '0';
+                        $('.loader').show();
+                    },
+                    uploadProgress: function(event, position, total, percentComplete) {
+                        var percentage = percentComplete;
+                        $('.progress .progress-bar').css("width", percentage + '%', function() {
+                            return $(this).attr("aria-valuenow", percentage) + "%";
+                        })
+                    },
+                    complete: function(xhr) {
+                        console.log('File has uploaded');
+                        $('.loader').hide();
+                        location.reload();
+                    }
+                });
+            });
+        });
+    </script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -431,6 +510,21 @@
 
         });
 
+        $(document).on('click', '.remove_video', function() {
+            var list_id = $('#add_course_list_modal .list_id').val();
+            $.ajax({
+                url: " {{ url('course_list_remove_video') }} ",
+                method: "post",
+                data: {
+                    list_id: list_id,
+                    "_token": "{{ csrf_token() }}",
+                },
+                success: function(data) {
+                    location.reload();
+                }
+            })
+        });
+
         $(document).on('click', '.add_course_list', function() {
             $('#add_course_list_modal .list_id').val('');
             $('#add_course_list_modal .course_name').val('');
@@ -441,6 +535,7 @@
             $('#add_course_list_modal .course_video_play').attr('src', "");
             $("#add_course_list_modal video")[0].load();
             $("#add_course_list_modal video").hide();
+            $("#add_course_list_modal .course_image_img").hide();
 
             $('#add_course_list_modal').modal('show');
         });
@@ -470,6 +565,7 @@
                 course_image);
             $("#add_course_list_modal video")[0].load();
             $("#add_course_list_modal video").show();
+            $("#add_course_list_modal .course_image_img").show();
             $('#add_course_list_modal').modal('show');
         });
 
