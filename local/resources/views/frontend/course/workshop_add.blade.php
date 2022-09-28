@@ -130,7 +130,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <label for="time_test">เวลาที่ใช้สอบ</label>
-                                            <input type="time" class="form-control time_test" required name="time_test"
+                                            <input type="text" class="form-control time_test" required name="time_test"
                                                 value="{{ @$data->time_test }}">
                                         </div>
                                     </div>

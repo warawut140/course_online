@@ -101,10 +101,11 @@ img.center {
     line-height: 40px;
     text-align: center;
 }
+
 </style>
         {{-- begin #Profile --}}
 
-         <video style="  width: 100%;" controls src="{{ asset('images/profile/'.$list->course_video) }}" >
+         <video style="width: 100%;" id="myvideo" controls controlsList="nodownload" src="{{ asset('images/profile/'.$list->course_video) }}" autoplay="autoplay">
 </video>
                <br>
 
@@ -180,7 +181,7 @@ tr:nth-child(even) {
        </div>
       </div>  </div> {{-- end #course --}}
 @endforeach
-
+{{-- <p onclick="toggleControls();">Toggle</p> --}}
 </div> </div> {{-- end #main --}}
 
 
@@ -189,6 +190,29 @@ tr:nth-child(even) {
 
 @endsection
 @section('script')
+
+<script>
+
+    $(document).ready(function(){
+
+        var elem = document.querySelector("video");
+        let previousTime = 0;
+
+        elem.ontimeupdate = function() {
+        setTimeout(() => {
+            previousTime = elem.currentTime;
+        }, 1000)
+        }
+
+        elem.onseeking = function() {
+        if (elem.currentTime > previousTime) {
+            elem.currentTime = previousTime;
+        }
+        }
+
+    });
+    </script>
+
     <script type="text/javascript">
         function showHideDiv() {
             var srcElement = document.getElementById('divBoxComment');

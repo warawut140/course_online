@@ -107,8 +107,9 @@
     </style>
     {{-- begin #Profile --}}
 
-
-    <img src="{{ asset('images/bannermockup2.png') }}" style="  width: 100%;"><br>
+    <img src="{{ asset('images/profile/' . $course->image) }}" style="  width: 100%;"><br>
+    {{-- <img src="{{ asset('images/bannermockup2.png') }}" style="  width: 100%;"><br> --}}
+    {{--  <img src="{{ asset('images/profile/' . $c->image) }}" class="mw-100 mb-2"> --}}
 
     <div class="main opcenter">
 
@@ -226,7 +227,9 @@
                                                 </div>
                                             </div>
                                             <?php
-                                            $question_detail = \App\Models\QuestionsDetail::where('chapter_id', $chap->id)->where('course_list_id',$l->id)->get();
+                                            $question_detail = \App\Models\QuestionsDetail::where('chapter_id', $chap->id)
+                                                ->where('course_list_id', $l->id)
+                                                ->get();
                                             ?>
                                             @foreach ($question_detail as $key3 => $q)
                                                 <?php
@@ -239,9 +242,10 @@
                                                         <h5></h5>
                                                     </div>
                                                     <div class="col-2">
-                                                        <a href="{{url('workshop_inside_view/'.$course->id.'/'.$q->id)}}">
+                                                        <a
+                                                            href="{{ url('workshop_inside_view/' . $course->id . '/' . $q->id) }}">
                                                             <h5> <i class="fa fa-file-text circlered" style="color: white;"
-                                                                aria-hidden="true"></i></h5>
+                                                                    aria-hidden="true"></i></h5>
                                                         </a>
 
                                                     </div>
@@ -264,7 +268,7 @@
                                                         <h5>
                                                             {{-- <i class="fa fa-check-circle" style="color: green;"
                                                                 aria-hidden="true"></i> --}}
-                                                                <i class="fa fa-check-circle" style="color: red;"
+                                                            <i class="fa fa-check-circle" style="color: red;"
                                                                 aria-hidden="true"></i>
                                                         </h5>
 

@@ -298,10 +298,10 @@
   left: 10%;
   transform: translate(-10%, -10%);
   -ms-transform: translate(-10%, -10%);
-  
+
   color: black;
   font-size: 24px;
-  
+
 }
 .containerbanner .text0 {
   position: absolute;
@@ -309,10 +309,10 @@
   left: 10%;
   transform: translate(-10%, -10%);
   -ms-transform: translate(-10%, -10%);
-  
+
   color: white;
   font-size: 36px;
-  
+
 }
 .containerbanner .text1 {
   position: absolute;
@@ -320,10 +320,10 @@
   left: 10%;
   transform: translate(-10%, -10%);
   -ms-transform: translate(-10%, -10%);
-  
+
   color: white;
   font-size: 26px;
-  
+
 }
 .containerbanner .text2 {
   position: absolute;
@@ -331,10 +331,10 @@
   left: 10%;
   transform: translate(-10%, -10%);
   -ms-transform: translate(-10%, -10%);
-  
+
   color: white;
   font-size: 26px;
-  
+
 }
 .containerbanner .btnterm {
   position: absolute;
@@ -357,7 +357,7 @@
   transform: translate(-10%, -10%);
   -ms-transform: translate(-10%, -10%);
 
- 
+
   font-size: 26px;
   padding: 12px 24px;
 
@@ -457,13 +457,13 @@
                 @endif
             </ol>
             <div class="carousel-inner">
-                <?php $d=1; ?>      
+                <?php $d=1; ?>
           @if ($home_gellery != '')
                     @foreach ($home_gellery as $data)
                         <div class="carousel-item {{ $active }}">
 
                           <img src="{{ asset('images/bannermockup'.$d.'1.png') }}" class="d-block w-100">
-                           
+
        <div class="buttontop">
   <select style="background-color:whtie;
   color: black;
@@ -477,7 +477,7 @@
     <option value="2">Program2</option>
     <option value="3">Program3</option>
     <option value="4">Program4</option>
-    
+
   </select> &nbsp;&nbsp;&nbsp;
   <select style="background-color:whtie;
   color: black;
@@ -491,7 +491,7 @@
     <option value="2">Level2</option>
     <option value="3">Level3</option>
     <option value="4">Level4</option>
-    
+
   </select> &nbsp;&nbsp;&nbsp;
   <select style="background-color:whtie;
   color: black;
@@ -505,7 +505,7 @@
     <option value="2">Type2</option>
     <option value="3">Type3</option>
     <option value="4">Type4</option>
-    
+
   </select>&nbsp;&nbsp;&nbsp;
 
   <input type="text" placeholder="Search transactions,invoices or help" style="background-color:whtie;
@@ -532,20 +532,20 @@
 
                         </div>
                         <?php $active = ''; $d++ ?>
-                                        
+
                     @endforeach
                 @endif
             </div>
         </div>
-        
 
-    
+
+
     {{-- end #banner --}}
 
     {{-- begin #content 1 --}}
 
     <div class="row">
-        
+
         <div class="col-9">
             <div class="container text-center py-4">
                 <br> <br>
@@ -599,7 +599,7 @@
 
                     </div>
                 </div>
-                <br> <br>
+                {{-- <br> <br>
 
                 <h1 class="mb-3 text-left">
                     <font style="color:black">คอร์สเรียนของคุณเรียนต่อเลย :-)</font>
@@ -615,7 +615,7 @@
                         <h4 class="text-orange"></h4>
                     </div>
 
-                    
+
                      <div class="item">
                         <a href="javascript:;">
                             <img src="{{ asset('images/2c.png') }}"  width="220px" hight="210px" class="mw-100 mb-3">
@@ -630,13 +630,13 @@
                         </a>
                         <h4 class="text-orange"></h4>
                     </div>
-                    
+
                 </div>
 
 
 
-                
-                  </div>
+
+                  </div> --}}
             </div>
         </div>
         <div class="col-2">
@@ -653,46 +653,46 @@
                 <div class="row">
 
                     <a class="nav-link py-1 buttonblack " style="margin-right: 20px;margin-top: 20px;"
-                        href="{{ url('register') }}">
+                        href="javacsript:;">
                         <font style="color:grey">Business</font>
                     </a>
                     <a class="nav-link py-1 buttonblack" style="margin-right: 20px;margin-top: 20px;"
-                        href="{{ url('register') }}">
+                        href="javacsript:;">
                         <font style="color:grey">CRM Software</font>
                     </a>
-                    <a class="nav-link py-1 buttonblack"style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                    <a class="nav-link py-1 buttonblack"style="margin-right: 20px;margin-top: 20px;"href="javacsript:;">
                         <font style="color:grey">Customer Service</font>
                     </a>
                     <a class="nav-link py-1 buttonblack"
-                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        style="margin-right: 20px;margin-top: 20px;"href="javacsript:;">
                         <font style="color:grey">Communication</font>
                     </a>
                     <a class="nav-link py-1 buttonblack"
-                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        style="margin-right: 20px;margin-top: 20px;"href="javacsript:;">
                         <font style="color:grey">Marketing</font>
                     </a>
                     <a class="nav-link py-1 buttonblack"
-                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        style="margin-right: 20px;margin-top: 20px;"href="javacsript:;">
                         <font style="color:grey">Customer Service</font>
                     </a>
                     <a class="nav-link py-1 buttonblack"
-                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        style="margin-right: 20px;margin-top: 20px;"href="javacsript:;">
                         <font style="color:grey">Web Marketing Analytics</font>
                     </a>
                     <a class="nav-link py-1 buttonblack"
-                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        style="margin-right: 20px;margin-top: 20px;"href="javacsript:;">
                         <font style="color:grey">Google Analytics</font>
                     </a>
                     <a class="nav-link py-1 buttonblack"
-                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        style="margin-right: 20px;margin-top: 20px;"href="javacsript:;">
                         <font style="color:grey">Data Analysis</font>
                     </a>
                     <a class="nav-link py-1 buttonblack"
-                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        style="margin-right: 20px;margin-top: 20px;"href="{javacsript:;">
                         <font style="color:grey">Leadership and Management</font>
                     </a>
                     <a class="nav-link py-1 buttonblack"
-                        style="margin-right: 20px;margin-top: 20px;"href="{{ url('register') }}">
+                        style="margin-right: 20px;margin-top: 20px;"href="javacsript:;">
                         <font style="color:grey">Leadership Skills</font>
                     </a>
 
@@ -700,9 +700,9 @@
             </div>
         </div>
     <div class="col-1">
-     </div>   
+     </div>
     </div>
-  
+
     </div>
 
     </div>
@@ -732,7 +732,7 @@
                         </a>
                         <span class="numberHot"></span>
                     </div>
-                    
+
                 @endforeach
 
 

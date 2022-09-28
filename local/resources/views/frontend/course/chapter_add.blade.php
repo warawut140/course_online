@@ -404,7 +404,7 @@
                                             <div class="form-group row">
                                                 <div class="col-md-6">
                                                     <label for="course_time">ความยาววิดีโอ</label>
-                                                    <input type="time" class="form-control course_time" required
+                                                    <input type="text" class="form-control course_time" required
                                                         name="course_time">
                                                 </div>
                                             </div>
