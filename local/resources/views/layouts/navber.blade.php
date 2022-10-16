@@ -62,7 +62,7 @@
 <head>
 
     <link rel="icon" href="">
-    <title>{{ config('app.title', 'Course Online') }}</title>
+    <title>{{ config('app.title', 'ครอบครัวเพื่อไทย') }}</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">

@@ -184,10 +184,12 @@ Route::post('/registerProfile', 'frontend\ProfileController@registerProfile');
 
 
 Route::prefix('admin')->group(function() {
+    Route::get('/student', 'backend\StudentController@index');
+    Route::get('/company', 'backend\CompanyController@index');
+    Route::get('/', 'backend\AdminController@index')->name('admin.home');
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::post('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout.submit');
-    Route::get('/', 'backend\AdminController@index')->name('admin.home');
     Route::get('/home', 'backend\AdminController@index');
 //    Route::get('/admin', 'backend\AdminController@index');
 

@@ -9,6 +9,11 @@ class Profile extends Model
     protected $table = 'profiles';
     public $incrementing=true;
 
+    public function User()
+    {
+        return $this->hasOne('\App\User','id','user_id');
+    }
+
     // protected $fillable = [
     //     'firstname',
     //     'lastname',

@@ -8,6 +8,7 @@ use Auth;
 
 class AdminLoginController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('guest:admin')->except('logout');
@@ -15,12 +16,12 @@ class AdminLoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('auth.login-admin');
+        return view('auth.login-admin2');
     }
 
     public function login(Request $request)
     {
-//        dd($request);
+    //    dd($request);
         // Validate the forn data
         $this->validate($request , [
             'email' => 'required|string',

@@ -35,9 +35,6 @@ class AdminController extends Controller
         $count_profile1 = Profile::count('type_user_id');
         $count_profile2 = Profile::count('type_user_id_2');
         $count_profile3 = Profile::count('type_user_id_3');
-
-
-
         $year = date('Y');
         $month = [];
         for ($i = 1 ; $i <= 12 ; $i++){
@@ -46,9 +43,7 @@ class AdminController extends Controller
                 ->get();
             $month[$i] = count($data);
         }
-
-
-        return view('backend.index',[
+        return view('backend.index2',[
             'count_work' => $count_work ,
             'count_suggest' => $count_suggest ,
             'count_project_auctions' => $count_project_auctions ,
