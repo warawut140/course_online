@@ -186,6 +186,21 @@ Route::post('/registerProfile', 'frontend\ProfileController@registerProfile');
 Route::prefix('admin')->group(function() {
     Route::get('/student', 'backend\StudentController@index');
     Route::get('/company', 'backend\CompanyController@index');
+
+    Route::get('/course_type', 'backend\DataTypeController@course_type');
+    Route::get('/course_type/add', 'backend\DataTypeController@course_type_add');
+    Route::post('/course_type/store', 'backend\DataTypeController@course_type_store');
+    Route::get('/course_type/{id}/delete', 'backend\DataTypeController@course_type_delete');
+    Route::get('/course_type/{id}/view', 'backend\DataTypeController@course_type_view');
+
+    Route::get('/work_type', 'backend\DataTypeController@work_type');
+    Route::get('/work_type/add', 'backend\DataTypeController@work_type_add');
+    Route::post('/work_type/store', 'backend\DataTypeController@work_type_store');
+    Route::get('/work_type/{id}/delete', 'backend\DataTypeController@work_type_delete');
+    Route::get('/work_type/{id}/view', 'backend\DataTypeController@work_type_view');
+
+    Route::get('/work','backend\WorkListController@work');
+
     Route::get('/', 'backend\AdminController@index')->name('admin.home');
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
@@ -193,14 +208,13 @@ Route::prefix('admin')->group(function() {
     Route::get('/home', 'backend\AdminController@index');
 //    Route::get('/admin', 'backend\AdminController@index');
 
-
-    //จัดการข้อมูลของ phungngancourse
     Route::resource('/air-conditioning','backend\AdminAirController');
     Route::get('/approve-air','backend\AdminAirController@approve');
     Route::get('/contract/{id}','backend\AdminAirController@contract');
     Route::get('/planner/{id}','backend\AdminAirController@planner');
 
-    Route::resource('/work','backend\AdminWorkController');
+
+
     Route::resource('/training','backend\AdminTrainingController');
     Route::get('/training_edit/{id}','backend\AdminTrainingController@training_edit');
     Route::get('/training_delete/{id}','backend\AdminTrainingController@training_delete');

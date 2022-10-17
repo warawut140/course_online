@@ -167,35 +167,52 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                         </li>
                     </ul>
-                    <li>
-                        <a href="{{ url('admin') }}"
-                            class="side-menu {{ Request::segment(2) === 'a' || Request::segment(2) == 'b' ? 'side-menu--active' : null }} ">
-                            <div class="side-menu__icon"> <i data-lucide="settings"></i> </div>
-                            <div class="side-menu__title"> จัดการคอร์สเรียน </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('admin') }}"
-                            class="side-menu {{ Request::segment(2) === 'a' || Request::segment(2) == 'b' ? 'side-menu--active' : null }} ">
-                            <div class="side-menu__icon"> <i data-lucide="settings"></i> </div>
-                            <div class="side-menu__title"> จัดการงาน </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('admin') }}"
-                            class="side-menu {{ Request::segment(2) === 'a' || Request::segment(2) == 'b' ? 'side-menu--active' : null }} ">
-                            <div class="side-menu__icon"> <i data-lucide="settings"></i> </div>
-                            <div class="side-menu__title"> จัดการประเภทคอร์ส </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('admin') }}"
-                            class="side-menu {{ Request::segment(2) === 'a' || Request::segment(2) == 'b' ? 'side-menu--active' : null }} ">
-                            <div class="side-menu__icon"> <i data-lucide="settings"></i> </div>
-                            <div class="side-menu__title"> จัดการประเภทงาน </div>
-                        </a>
-                    </li>
                 </li>
+                <li>
+                    <a href="javascript:;"
+                        class="side-menu {{ Request::segment(2) === 'a' || Request::segment(2) == 'b' ? 'side-menu--active' : null }}">
+                        <div class="side-menu__icon"> <i data-lucide="hash"></i> </div>
+                        <div class="side-menu__title">
+                            ข้อมูลประเภท
+                            <div
+                                class="side-menu__sub-icon {{ Request::segment(2) === 'a' || Request::segment(2) == 'b' ? 'transform rotate-180' : null }}">
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <ul
+                        class="side-menu__sub{{ Request::segment(2) === 'course_type' || Request::segment(2) == 'work_type' ? '-open' : null }}">
+                        <li>
+                            <a href="{{ url('admin/course_type') }}"
+                                class="side-menu {{ Request::segment(2) === 'course_type' ? 'side-menu--active' : null }}">
+                                <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
+                                <div class="side-menu__title"> จัดการประเภทคอร์ส </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/work_type') }}"
+                                class="side-menu {{ Request::segment(2) === 'work_type' ? 'side-menu--active' : null }}">
+                                <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
+                                <div class="side-menu__title"> จัดการประเภทงาน </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{{ url('admin') }}"
+                        class="side-menu {{ Request::segment(2) === 'a' || Request::segment(2) == 'b' ? 'side-menu--active' : null }} ">
+                        <div class="side-menu__icon"> <i data-lucide="settings"></i> </div>
+                        <div class="side-menu__title"> จัดการคอร์สเรียน </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('admin') }}"
+                        class="side-menu {{ Request::segment(2) === 'a' || Request::segment(2) == 'b' ? 'side-menu--active' : null }} ">
+                        <div class="side-menu__icon"> <i data-lucide="settings"></i> </div>
+                        <div class="side-menu__title"> จัดการงาน </div>
+                    </a>
+                </li>
+
             </ul>
         </nav>
         <!-- END: Side Menu -->
@@ -330,6 +347,15 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
     <script src="{{ asset('dist/js/app.js') }}"></script>
     <!-- END: JS Assets-->
+
+    <script>
+        setTimeout(function() {
+            $('.success').hide()
+        }, 2000);
+        setTimeout(function() {
+            $('.error').hide()
+        }, 2000);
+    </script>
 
     @yield('script')
 </body>
