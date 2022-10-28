@@ -31,8 +31,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-
         $home_gellery = Gallery::where('type','=',1)
             ->where('isActive','=',1)
             ->get();
@@ -251,6 +249,9 @@ class HomeController extends Controller
 
         $courses_recom = Course::where('status',1)->limit(4)->get();
 
+        $banner_index = DB::table('banner_index')->where('status',1)->orderBy('id','desc')->get();
+        $data_type_course = DB::table('data_type')->where('type',1)->orderBy('id','asc')->get();
+        $data_type_course_recom = DB::table('data_type')->where('type',1)->where('recom_status',1)->orderBy('id','asc')->get();
 
         return view('frontend.index',[
             'home_gellery' => $home_gellery ,
@@ -267,6 +268,9 @@ class HomeController extends Controller
             'recoommend' => $recoommend_profile ,
             'courses_recom' => $courses_recom ,
             'courses_trending' => $courses_trending,
+            'banner_index' => $banner_index,
+            'data_type_course' => $data_type_course,
+            'data_type_course_recom' => $data_type_course_recom,
         ]);
 
     }
@@ -483,9 +487,9 @@ class HomeController extends Controller
     public function worklist(Request $request)
     {
 
-        $jobs = JobDescription::orderBy('created_at','desc')->get();
-        $jobs3 = JobDescription::orderBy('created_at','desc')->limit(3)->get();
-        $jobs5 = JobDescription::orderBy('created_at','desc')->limit(5)->get();
+        $jobs = JobDescription::where('status',1)->orderBy('created_at','desc')->get();
+        $jobs3 = JobDescription::where('status',1)->orderBy('created_at','desc')->limit(3)->get();
+        $jobs5 = JobDescription::where('status',1)->orderBy('created_at','desc')->limit(5)->get();
         return view('frontend/worklist',[
             'jobs'=>$jobs,
             'jobs3'=>$jobs3,

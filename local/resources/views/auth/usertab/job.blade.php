@@ -39,7 +39,7 @@
 
                     @if($data->rasume1!='')
                     <div class="form-group col-md-12">
-                        <img src="{{ asset('images/profile/'.$data->rasume1) }}" class="" width="400" height="500">
+                        <img src="{{ asset('images/profile/'.@$data->rasume1) }}" class="" width="400" height="500">
                     </div>
                     @endif
 
@@ -61,7 +61,7 @@
 
                     @if($data->portfolio1!='')
                     <div class="form-group col-md-12">
-                        <img src="{{ asset('images/profile/'.$data->portfolio1) }}" class="" width="400" height="500">
+                        <img src="{{ asset('images/profile/'.@$data->portfolio1) }}" class="" width="400" height="500">
                     </div>
                     @endif
 

@@ -9,8 +9,8 @@
                 จัดการข้อมูลนักเรียน
             </h2>
             <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
-                <button class="btn btn-primary shadow-md mr-2"><span class="w-5 h-5 flex items-center justify-center"> <i
-                            class="w-4 h-4" data-lucide="plus"></i> </span>เพิ่มข้อมูล</button>
+                {{-- <button class="btn btn-primary shadow-md mr-2"><span class="w-5 h-5 flex items-center justify-center"> <i
+                            class="w-4 h-4" data-lucide="plus"></i> </span>เพิ่มข้อมูล</button> --}}
                 {{-- <div class="dropdown ml-auto sm:ml-0">
                 <button class="dropdown-toggle btn px-2 box" aria-expanded="false" data-tw-toggle="dropdown">
                     <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-lucide="plus"></i> </span>
@@ -63,7 +63,7 @@
                                         <td>{{@$st->user->name}}</td>
                                         <td>{{@$st->user->email}}</td>
                                         <td>{{@$st->created_at}}</td>
-                                        <td><a class="btn btn-sm btn-primary">จัดการ</a></td>
+                                        <td><a href="{{url('admin/student/'.$st->id.'/view')}}" class="btn btn-sm btn-primary">จัดการ</a></td>
                                     </tr>
                                     @endforeach
                             </tbody>

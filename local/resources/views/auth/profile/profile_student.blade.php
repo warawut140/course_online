@@ -139,22 +139,22 @@
 
                 <img src="{{ asset('images/profile/' . $profile->image_profile) }}" class="rounded-circle mb-2 mw-100"
                     width="200" height="200"><br>
-                <h4 class="center" style="color: #8B0900;">{{Auth::user()->name}}</h4>
-                <p class="center" style="color: #808080;">{{$profile->title_me}}</p><br>
+                <h4 class="center" style="color: #8B0900;">{{ Auth::user()->name }}</h4>
+                <p class="center" style="color: #808080;">{{ $profile->title_me }}</p><br>
 
                 <h4 class="left" style="color: #8B0900;">WORK EXPERIENCE</h4>
-                <p class="left" style="color: #808080;">{{$work_exp->position}} </p>
-                <p class="left" style="color: #808080;">{{$work_exp->name}}</p>
+                <p class="left" style="color: #808080;">{{ $work_exp->position }} </p>
+                <p class="left" style="color: #808080;">{{ $work_exp->name }}</p>
 
                 <h4 class="left" style="color: #8B0900;">ABOUT ME</h4>
-                <p class="left" style="color: #808080;"><b>{{$profile->title_about_me}}</b></p>
-                <p class="left" style="color: #808080;">{{$profile->detail_about_me}} </p>
+                <p class="left" style="color: #808080;"><b>{{ $profile->title_about_me }}</b></p>
+                <p class="left" style="color: #808080;">{{ $profile->detail_about_me }} </p>
                 <br>
 
                 <h5 class="left" style="color: #808080;"><img src="{{ asset('images/icon/location.png') }}"
                         height="30"></h5>
                 <h5 class="left" style="color: #808080;">Location</h5>
-                <p class="left" style="color: #808080;">{{$profile->company_address}}
+                <p class="left" style="color: #808080;">{{ $profile->company_address }}
                 </p>
                 <br>
                 <div class="row">
@@ -164,28 +164,32 @@
                     </div>
                     <div class="col-11">
 
-                        <button class=" left buttonop" style="margin-right: 5px;margin-top: 5px;">{{$profile->link_1}}</button>
+                        <button class=" left buttonop"
+                            style="margin-right: 5px;margin-top: 5px;">{{ $profile->link_1 }}</button>
                     </div>
                     <div class="col-1">
                         <img class="left" src="{{ asset('images/icon/gg.png') }}" style="margin-right: 5px;"
                             height="35">
                     </div>
                     <div class="col-11">
-                        <button class=" left buttonop" style="margin-right: 5px;margin-top: 5px;">{{$profile->link_2}}</button>
+                        <button class=" left buttonop"
+                            style="margin-right: 5px;margin-top: 5px;">{{ $profile->link_2 }}</button>
                     </div>
                     <div class="col-1">
                         <img class="left" src="{{ asset('images/icon/in.png') }}" style="margin-right: 5px;"
                             height="35">
                     </div>
                     <div class="col-11">
-                        <button class=" left buttonop" style="margin-right: 5px;margin-top: 5px;">{{$profile->link_3}}</button>
+                        <button class=" left buttonop"
+                            style="margin-right: 5px;margin-top: 5px;">{{ $profile->link_3 }}</button>
                     </div>
                     <div class="col-1">
                         <img class="left" src="{{ asset('images/icon/tw.png') }}" style="margin-right: 5px;"
                             height="35">
                     </div>
                     <div class="col-11">
-                        <button class=" left buttonop" style="margin-right: 5px;margin-top: 5px;">{{$profile->link_4}}</button>
+                        <button class=" left buttonop"
+                            style="margin-right: 5px;margin-top: 5px;">{{ $profile->link_4 }}</button>
                     </div>
 
                 </div>
@@ -212,21 +216,32 @@
 
                 </div>
             </div>
-            <div class="col-lg-9" >
+            <div class="col-lg-9">
                 <table>
-                    <th class="op2center"> <a href="{{url('profile_student/rasume')}}" class="blockop button3">CV/RASUME</a></th>
-                    <th class="op2center"> <a href="{{url('profile_student/portfolio')}}" class="blockop button3">PORTFOLIO</a></th>
-                    <th class="op2center"> <a class="blockop button3">WORK</a></th>
-                    <th class="op2center"> <a class="blockop button3">COURSE</a></th>
+                    <th class="op2center"> <a href="{{ url('profile_student/rasume') }}"
+                            class="blockop button3">CV/RASUME</a></th>
+                    <th class="op2center"> <a href="{{ url('profile_student/portfolio') }}"
+                            class="blockop button3">PORTFOLIO</a></th>
+                    <th class="op2center"> <a href="{{ url('profile_student/work') }}" class="blockop button3">WORK</a>
+                    </th>
+                    <th class="op2center"> <a href="{{ url('profile_student/course') }}"
+                            class="blockop button3">COURSE</a></th>
                     <th class="op2center"> <a class="blockop button3">CERTIFICATE</a></th>
                 </table>
 
-                @if(@$page=='rasume')
-                @include('auth.profile.tab.student.rasume')
+                @if (@$page == 'rasume')
+                    @include('auth.profile.tab.student.rasume')
                 @endif
 
-                @if(@$page=='portfolio')
-                @include('auth.profile.tab.student.portfolio')
+                @if (@$page == 'portfolio')
+                    @include('auth.profile.tab.student.portfolio')
+                @endif
+
+                @if (@$page == 'work')
+                    @include('auth.profile.tab.student.work')
+                @endif
+                @if (@$page == 'course')
+                    @include('auth.profile.tab.student.course')
                 @endif
 
                 {{-- <table>

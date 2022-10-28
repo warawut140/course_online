@@ -86,6 +86,8 @@ class DataTypeController extends Controller
         $data_type->name = $r->name;
         $data_type->type = 1;
         $data_type->admin_id = Auth::user()->id;
+        $data_type->detail = $r->detail;
+        $data_type->recom_status = $r->recom_status;
         $data_type->save();
         return redirect()->to('admin/course_type')->with('success','บันทึกข้อมูลสำเร็จ');
     }

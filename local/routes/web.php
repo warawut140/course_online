@@ -125,12 +125,16 @@ Route::get('/faq', 'frontend\FaqController@index');
 //Route::get('/profile', 'frontend\ProfileController@index');
 Route::resource('/profile', 'frontend\ProfileController');
 
-Route::get('/interes_course', function () {
-   return view('frontend/interes_course');
-});
- Route::get('/findjob', function () {
-    return view('frontend/findjob');
- });
+// Route::get('/interes_course', function () {
+//    return view('frontend/interes_course');
+// });
+
+Route::get('/interes_course/','frontend\RegisterFullController@interes_course');
+Route::get('/findjob/','frontend\RegisterFullController@findjob');
+
+//  Route::get('/findjob', function () {
+//     return view('frontend/findjob');
+//  });
 
 Route::get('/chat', 'ChatController@index')->name('chat');
 Route::get('/chat/{id}', 'ChatController@chat');
@@ -184,8 +188,30 @@ Route::post('/registerProfile', 'frontend\ProfileController@registerProfile');
 
 
 Route::prefix('admin')->group(function() {
+    // Route::get('/', 'backend\AdminController@index')->name('admin.home');
+    // Route::get('/home', 'backend\AdminController@index');
+    Route::get('/', 'backend\StudentController@index')->name('admin.home');
+    Route::get('/home', 'backend\StudentController@index');
+
     Route::get('/student', 'backend\StudentController@index');
+    Route::get('/student/{id}/view', 'backend\StudentController@show');
+    Route::post('/student_store', 'backend\StudentController@store');
     Route::get('/company', 'backend\CompanyController@index');
+    Route::get('/company/{id}/view', 'backend\CompanyController@show');
+    Route::post('/company_store', 'backend\CompanyController@store');
+
+    Route::get('/banner', 'backend\WebSettingController@banner');
+    Route::get('/banner/add', 'backend\WebSettingController@banner_add');
+    Route::post('/banner/store', 'backend\WebSettingController@banner_store');
+    Route::get('/banner/view/{id}', 'backend\WebSettingController@banner_view');
+
+    Route::get('/display_course', 'backend\WebSettingController@display_course');
+    Route::get('/display_course/view/{id}', 'backend\WebSettingController@display_course_view');
+    Route::post('/display_course/store', 'backend\WebSettingController@display_course_store');
+
+    Route::get('/display_work', 'backend\WebSettingController@display_work');
+    Route::get('/display_work/view/{id}', 'backend\WebSettingController@display_work_view');
+    Route::post('/display_work/store', 'backend\WebSettingController@display_work_store');
 
     Route::get('/course_type', 'backend\DataTypeController@course_type');
     Route::get('/course_type/add', 'backend\DataTypeController@course_type_add');
@@ -201,11 +227,11 @@ Route::prefix('admin')->group(function() {
 
     Route::get('/work','backend\WorkListController@work');
 
-    Route::get('/', 'backend\AdminController@index')->name('admin.home');
+
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::post('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout.submit');
-    Route::get('/home', 'backend\AdminController@index');
+
 //    Route::get('/admin', 'backend\AdminController@index');
 
     Route::resource('/air-conditioning','backend\AdminAirController');

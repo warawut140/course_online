@@ -21,8 +21,8 @@
    <div class="form-group">
        <div class="form-row">
           <div class="form-group col-md-6">
-            @if($data)
-            <img src="{{ asset('images/profile/'.$data->image_profile) }}" class="circleco mb-2 mw-100" width="200" height="200"><br>
+            @if(@$data)
+            <img src="{{ asset('images/profile/'.@$data->image_profile) }}" class="circleco mb-2 mw-100" width="200" height="200"><br>
             @else
             <img src="{{ asset('images/upload.png') }}" class="circleco mb-2 mw-100" width="200" height="200"><br>
             @endif
@@ -101,6 +101,7 @@
                     <div class="form-group" >
                         <button type="submit" class="btn btn-outline-success w-100" onclick="return confirm('ยืนยันการทำรายการ?')">บันทึก</button>
                      </div>
+                    </div>
                 </form>
             </div>
         </div>

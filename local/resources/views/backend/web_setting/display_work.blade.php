@@ -4,32 +4,14 @@
 @section('content')
     <!-- BEGIN: Content -->
     <div class="content">
-
-        @if (session('success'))
-            <div id="icon-alert" class="p-5">
-                <div class="preview">
-                    <div class="alert alert-success show flex items-center mb-2 success" style="color:white;" role="alert">
-                        <i data-lucide="alert-triangle" class="w-6 h-6 mr-2"></i> {{ @session('success') }} </div>
-                </div>
-            </div>
-        @endif
-        @if (session('error'))
-            <div id="icon-alert" class="p-5">
-                <div class="preview">
-                    <div class="alert alert-danger show flex items-center mb-2 error" style="color:white;" role="alert">
-                        <i data-lucide="alert-triangle" class="w-6 h-6 mr-2"></i> {{ @session('error') }} </div>
-                </div>
-            </div>
-        @endif
-
         <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
             <h2 class="text-lg font-medium mr-auto">
-                จัดการประเภทคอร์ส
+                จัดการข้อมูลหลักสูตร
             </h2>
             <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
-                <a href="{{ url('admin/course_type/add') }}" class="btn btn-primary shadow-md mr-2"><span
+                {{-- <a class="btn btn-primary shadow-md mr-2" href="{{ url('admin/banner/add') }}"><span
                         class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-lucide="plus"></i>
-                    </span>เพิ่มข้อมูล</a>
+                    </span>เพิ่มข้อมูล</a> --}}
                 {{-- <div class="dropdown ml-auto sm:ml-0">
                 <button class="dropdown-toggle btn px-2 box" aria-expanded="false" data-tw-toggle="dropdown">
                     <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-lucide="plus"></i> </span>
@@ -51,7 +33,7 @@
         <div class="intro-y box mt-5">
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-slate-200/60">
                 <h2 class="font-medium text-base mr-auto">
-                    ตารางรายการประเภทคอร์ส
+                    ตารางรายการหลักสูตร
                 </h2>
                 <div class="form-check form-switch w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0">
                     {{-- <label class="form-check-label ml-0" for="show-example-8">Show example code</label>
@@ -65,35 +47,34 @@
                             <thead>
                                 <tr>
                                     <th class="whitespace-nowrap">#</th>
-                                    <th class="whitespace-nowrap">รายการ</th>
-                                    <th class="whitespace-nowrap">หลักสูตรแนะนำ</th>
-                                    <th class="whitespace-nowrap">ผู้สร้าง</th>
+                                    <th class="whitespace-nowrap">บริษัท</th>
+                                    <th class="whitespace-nowrap">ตำแหน่ง</th>
+                                    <th class="whitespace-nowrap">รูปภาพ</th>
+                                    {{-- <th class="whitespace-nowrap">ผู้สร้าง</th> --}}
                                     <th class="whitespace-nowrap">วันที่สร้าง</th>
+                                    <th class="whitespace-nowrap">สถานะ</th>
                                     <th class="whitespace-nowrap"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($data_type as $key => $st)
+                                @foreach ($job as $key => $st)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td>{{ @$st->name }}</td>
-                                        <td>
-                                            @if (@$st->recom_status == 1)
-                                                ใช่
-                                            @else
-                                                ไม่ใช่
-                                            @endif
-                                        </td>
-                                        <td>{{ @$st->Admin->name }}</td>
-
+                                        <td>{{ @$st->Profile->company }}</td>
+                                        <td>{{ @$st->position }}</td>
+                                        <td> <img src="{{ asset('images/profile/' . @$st->Profile->image_profile) }}"
+                                                class="circleco mb-2 mw-100" width="100" height="100"></td>
+                                        {{-- <td>{{ @$st->actby }}</td> --}}
                                         <td>{{ @$st->created_at }}</td>
                                         <td>
-                                            <a href="{{ url('admin/course_type/' . $st->id . '/view') }}"
-                                                class="btn btn-sm btn-primary">จัดการ</a>
-                                            <a href="{{ url('admin/course_type/' . $st->id . '/delete') }}"
-                                                class="btn btn-sm btn-danger"
-                                                onclick="return confirm('ยืนยันการลบ?')">ลบข้อมูล</a>
+                                           @if(@$st->status == 1)
+                                                แสดง
+                                           @else
+                                                ปิด
+                                           @endif
                                         </td>
+                                        <td><a href="{{ url('admin/display_work/view/' . $st->id) }}"
+                                                class="btn btn-sm btn-primary">จัดการ</a></td>
                                     </tr>
                                 @endforeach
                             </tbody>

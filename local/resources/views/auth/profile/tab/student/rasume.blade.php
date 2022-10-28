@@ -4,12 +4,14 @@
     <h4 style="color:#8B0900;">CV/RASUME</h4>
     <div class="card">
         <div class="card-body">
+            @if($profile->rasume1)
             <div class="form-group col-md-12">
                 <img src="{{ asset('images/profile/'.$profile->rasume1) }}" class="" width="60%" height="60%">
                 <br>
                 {{-- <br>
                 <img src="{{ asset('images/profile/'.$profile->rasume2) }}" class="" width="60%" height="60%"> --}}
             </div>
+            @endif
             </div>
         </div>
 {{-- </div> --}}

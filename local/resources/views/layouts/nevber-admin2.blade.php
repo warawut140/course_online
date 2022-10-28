@@ -68,13 +68,13 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN: Side Menu -->
         <nav class="side-nav">
             <ul>
-                <li>
+                {{-- <li>
                     <a href="{{ url('admin') }}"
                         class="side-menu {{ Request::segment(2) === 'index' || Request::segment(2) == '' ? 'side-menu--active' : null }} ">
                         <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
                         <div class="side-menu__title"> Dashboard </div>
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="javascript:;"
                         class="side-menu {{ Request::segment(2) === 'student' || Request::segment(2) == 'company' ? 'side-menu--active' : null }}">
@@ -144,24 +144,24 @@ License: You must have a valid license purchased only from themeforest(the above
                         </div>
                     </a>
                     <ul
-                        class="side-menu__sub{{ Request::segment(2) === 'a' || Request::segment(2) == 'b' ? '-open' : null }}">
+                        class="side-menu__sub{{ Request::segment(2) === 'banner' || Request::segment(2) == 'display_course' || Request::segment(2) == 'display_work' ? '-open' : null }}">
                         <li>
-                            <a href="{{ url('admin/student') }}"
-                                class="side-menu {{ Request::segment(2) === 'a' ? 'side-menu--active' : null }}">
+                            <a href="{{ url('admin/banner') }}"
+                                class="side-menu {{ Request::segment(2) === 'banner' ? 'side-menu--active' : null }}">
                                 <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="side-menu__title"> ตั้งค่าแบรนเนอร์ </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('admin/company') }}"
-                                class="side-menu {{ Request::segment(2) === 'a' ? 'side-menu--active' : null }}">
+                            <a href="{{ url('admin/display_course') }}"
+                                class="side-menu {{ Request::segment(2) === 'display_course' ? 'side-menu--active' : null }}">
                                 <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="side-menu__title"> ตั้งค่าแสดงหลักสูตร </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('admin/company') }}"
-                                class="side-menu {{ Request::segment(2) === 'a' ? 'side-menu--active' : null }}">
+                            <a href="{{ url('admin/display_work') }}"
+                                class="side-menu {{ Request::segment(2) === 'display_work' ? 'side-menu--active' : null }}">
                                 <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="side-menu__title"> ตั้งค่าแสดงงาน </div>
                             </a>
@@ -198,7 +198,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         </li>
                     </ul>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ url('admin') }}"
                         class="side-menu {{ Request::segment(2) === 'a' || Request::segment(2) == 'b' ? 'side-menu--active' : null }} ">
                         <div class="side-menu__icon"> <i data-lucide="settings"></i> </div>
@@ -211,7 +211,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="side-menu__icon"> <i data-lucide="settings"></i> </div>
                         <div class="side-menu__title"> จัดการงาน </div>
                     </a>
-                </li>
+                </li> --}}
 
             </ul>
         </nav>

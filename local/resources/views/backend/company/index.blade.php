@@ -63,7 +63,7 @@
                                         <td>{{@$st->user->name}}</td>
                                         <td>{{@$st->user->email}}</td>
                                         <td>{{@$st->created_at}}</td>
-                                        <td><a class="btn btn-sm btn-primary">จัดการ</a></td>
+                                        <td><a href="{{url('admin/company/'.$st->id.'/view')}}" class="btn btn-sm btn-primary">จัดการ</a></td>
                                     </tr>
                                     @endforeach
                             </tbody>

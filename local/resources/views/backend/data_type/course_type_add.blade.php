@@ -32,10 +32,20 @@
                         <label for="input-wizard-1" class="form-label">ชื่อประเภทคอร์ส</label>
                         <input id="input-wizard-1" name="name" type="text" class="form-control" value="{{@$data->name}}" required placeholder="กรุณาระบุข้อมูล">
                     </div>
-                    {{-- <div class="intro-y col-span-12 sm:col-span-6">
-                        <label for="input-wizard-2" class="form-label">To</label>
-                        <input id="input-wizard-2" type="text" class="form-control" placeholder="example@gmail.com">
-                    </div> --}}
+
+                    <div class="intro-y col-span-12 sm:col-span-12">
+                        <label for="input-wizard-1" class="form-label">รายละเอียด</label>
+                        <textarea type="text" class="form-control" name="detail">{{ @$data->detail }}</textarea>
+                    </div>
+
+                    <div class="intro-y col-span-12 sm:col-span-12">
+                        <label for="input-wizard-1" class="form-label">หลักสูตรแนะนำ &nbsp;</label>
+                       <select class="form-caontrol" id="input-wizard-1" name="recom_status">
+                        <option value="1" <?php if(@$data->recom_status==1){echo 'selected';} ?>>ใช่</option>
+                        <option value="0" <?php if(@$data->recom_status==0){echo 'selected';} ?>>ไม่ใช่</option>
+                       </select>
+                    </div>
+
                     <div class="intro-y col-span-12 flex items-center justify-center sm:justify-end mt-5">
                         <a href="{{ url('admin/course_type') }}" class="btn btn-secondary w-24">ย้อนกลับ</a>
                         <button type="submit" onclick="return confirm('ยืนยันการทำรายการ?')" class="btn btn-primary w-24 ml-2">บันทึกข้อมูล</button>

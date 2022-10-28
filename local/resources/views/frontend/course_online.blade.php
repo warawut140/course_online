@@ -164,20 +164,20 @@
 
                         @foreach ($chapter as $key => $chap)
                             <div class="card">
-                                <div class="card-header" id="headingOne">
+                                <div class="card-header" id="headingOne{{$key}}">
                                     <div class="mb-0 ">
                                         <div class="row">
-                                            <div class="col-4 left">
+                                            <div class="col-8 left">
                                                 <h5>บทเรียนที่ {{ $chap->order }} {{ $chap->name }}
                                                     <button class="btn btn-link" data-toggle="collapse"
-                                                        data-target="#collapseOne" aria-expanded="true"
-                                                        aria-controls="collapseOne">
+                                                        data-target="#collapseOne{{$key}}" aria-expanded="true"
+                                                        aria-controls="collapseOne{{$key}}">
                                                         <i class="fa fa-chevron-down circle" style="color: black;"
                                                             aria-hidden="true"></i> </button>
                                                 </h5>
                                             </div>
-                                            <div class="col-6 right">
-                                                <i class="fa fa-play-circle " style="color: black;" aria-hidden="true"></i>
+                                            <div class="col-2 left">
+                                                <i class="fa fa-play-circle " style="color: black;  margin: 15px 0 20px; " aria-hidden="true"></i>
                                                 วิดีโอ {{ $chap->video_number }} &nbsp;&nbsp; <i class="fa fa-clock-o"
                                                     style="color: black;" aria-hidden="true"></i> {{ $chap->time_number }}
                                                 ชั่วโมง
@@ -187,9 +187,9 @@
 
                                 </div>
 
-                                <div id="collapseOne" class="collapse <?php if ($key == 0) {
+                                <div id="collapseOne{{$key}}" class="collapse <?php if ($key == 0) {
                                     echo 'show';
-                                } ?>" aria-labelledby="headingOne"
+                                } ?>" aria-labelledby="headingOne{{$key}}"
                                     data-parent="#accordion">
                                     <div class="card-body">
                                         <?php

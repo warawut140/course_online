@@ -38,6 +38,26 @@ class RegisterFullController extends Controller
     }
 
 
+    public function interes_course()
+    {
+        $data_type_course = DB::table('data_type')->where('type',1)->where('recom_status',0)->orderBy('id','asc')->get();
+        $data_type_course_recom = DB::table('data_type')->where('type',1)->where('recom_status',1)->orderBy('id','asc')->get();
+       return view('frontend.interes_course',[
+        'data_type_course' => $data_type_course,
+        'data_type_course_recom' => $data_type_course_recom,
+       ]);
+    }
+
+    public function findjob()
+    {
+        $data_type_course = DB::table('data_type')->where('type',2)->where('recom_status',0)->orderBy('id','asc')->get();
+        $data_type_course_recom = DB::table('data_type')->where('type',2)->where('recom_status',1)->orderBy('id','asc')->get();
+       return view('frontend.findjob',[
+        'data_type_course' => $data_type_course,
+        'data_type_course_recom' => $data_type_course_recom,
+       ]);
+    }
+
     public function register_user_detail($type='')
     {
         $data = Profile::select('profiles.*','users.email','users.name as username')->

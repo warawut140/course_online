@@ -37,9 +37,9 @@
                         @foreach(@$qtd as $key => $q)
                         <tr>
                             <td class="opcenter"> {{ $key + 1 }}</td>
-                            <td class="opcenter">{{$q->User->profile->firstname}} {{$q->User->profile->lastname}}</td>
+                            <td class="text-left">{{$q->User->profile->firstname}} {{$q->User->profile->lastname}}</td>
                             <td class="opcenter">Workshop</td>
-                            <td class="opcenter">{{$q->QuestionsDetail->name}}</td>
+                            <td class="text-left">{{$q->QuestionsDetail->name}}</td>
                             <td class="opcenter"><a class="btn btn-sm btn-primary" href="{{url('workshop_inside_check/'.$q->id)}}">ตรวจ</a></td>
                             <td class="opcenter">{{$q->get_status()}}</td>
 
