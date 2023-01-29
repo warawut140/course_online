@@ -148,7 +148,7 @@ class JobNewController extends Controller
                 if (!empty($r->resume)) {
                     if ($r->hasFile('resume') != '') {
                         File::delete(public_path() . '/images/profile/' . $job_register->resume);
-                        $resume = 'profile_'.$job_register->id.date('YmdHis')."resume.".$r->file('resume')->getClientOriginalExtension();
+                        $resume = 'profile_'.date('YmdHis').$r->file('resume')->getClientOriginalName()."resume.".$r->file('resume')->getClientOriginalExtension();
                         $r->file('resume')->move(public_path() . '/images/profile/', $resume);
                     }
                     $job_register->resume = $resume;

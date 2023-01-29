@@ -211,8 +211,8 @@ class RegisterFullController extends Controller
 
        if (!empty($r->imageProfile)) {
                 if ($r->hasFile('imageProfile') != '') {
-                    File::delete(public_path() . '/images/profile/' . $profile->image_profile);
-                    $imageProfile = 'profile_'.$profile->id.".".$r->file('imageProfile')->getClientOriginalExtension();
+                    // File::delete(public_path() . '/images/profile/' . $profile->image_profile);
+                    $imageProfile = 'profile_'.date('YmdHis').$r->file('imageProfile')->getClientOriginalName().".".$r->file('imageProfile')->getClientOriginalExtension();
                     $r->file('imageProfile')->move(public_path() . '/images/profile/', $imageProfile);
                 }
                 $profile->image_profile = $imageProfile;

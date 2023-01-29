@@ -87,7 +87,7 @@ class CourseNewController extends Controller
                 if (!empty($r->certificate_file)) {
                     if ($r->hasFile('certificate_file') != '') {
                         File::delete(public_path() . '/images/profile/' . $course->certificate_file);
-                        $certificate_file = 'profile_'.$course->id.date('YmdHis')."certificate.".$r->file('certificate_file')->getClientOriginalExtension();
+                        $certificate_file = 'profile_'.date('YmdHis').$r->file('certificate_file')->getClientOriginalName()."certificate.".$r->file('certificate_file')->getClientOriginalExtension();
                         $r->file('certificate_file')->move(public_path() . '/images/profile/', $certificate_file);
                     }
                     $course->certificate_file = $certificate_file;
@@ -96,7 +96,7 @@ class CourseNewController extends Controller
                 if (!empty($r->image)) {
                     if ($r->hasFile('image') != '') {
                         File::delete(public_path() . '/images/profile/' . $course->image);
-                        $image = 'profile_'.$course->id.date('YmdHis')."cover.".$r->file('image')->getClientOriginalExtension();
+                        $image = 'profile_'.date('YmdHis').$r->file('image')->getClientOriginalName()."cover.".$r->file('image')->getClientOriginalExtension();
                         $r->file('image')->move(public_path() . '/images/profile/', $image);
                     }
                     $course->image = $image;
@@ -224,7 +224,7 @@ class CourseNewController extends Controller
                 if (!empty($r->course_video)) {
                     if ($r->hasFile('course_video') != '') {
                         File::delete(public_path() . '/images/profile/' . $list->course_video);
-                        $course_video = 'profile_'.$list->id.date('YmdHis')."video.".$r->file('course_video')->getClientOriginalExtension();
+                        $course_video = 'profile_'.date('YmdHis').$r->file('course_video')->getClientOriginalName()."video.".$r->file('course_video')->getClientOriginalExtension();
                         $r->file('course_video')->move(public_path() . '/images/profile/', $course_video);
                     }
                     $list->course_video = $course_video;
@@ -233,7 +233,7 @@ class CourseNewController extends Controller
                 if (!empty($r->course_image)) {
                     if ($r->hasFile('course_image') != '') {
                         File::delete(public_path() . '/images/profile/' . $course->course_image);
-                        $course_image = 'profile_'.$course->id.date('YmdHis')."cover.".$r->file('course_image')->getClientOriginalExtension();
+                        $course_image = 'profile_'.date('YmdHis').$r->file('course_image')->getClientOriginalName()."cover.".$r->file('course_image')->getClientOriginalExtension();
                         $r->file('course_image')->move(public_path() . '/images/profile/', $course_image);
                     }
                     $list->course_image = $course_image;
