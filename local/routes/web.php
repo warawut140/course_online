@@ -392,7 +392,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/safetySwitch','backend\AdminMainController@safetySwitch');
     Route::get('/isolateSwitch','backend\AdminMainController@isolateSwitch');
 
-    //จัดการข้อมูลของ สมาชิกระบบ
+    //จัดการข้อมูลของ สมาชิกระบบ ss
     Route::resource('/user-member','backend\AdminMemberController');
 
 });
