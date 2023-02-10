@@ -143,8 +143,8 @@
                 <p class="center" style="color: #808080;">{{ $profile->title_me }}</p><br>
 
                 <h4 class="left" style="color: #8B0900;">WORK EXPERIENCE</h4>
-                <p class="left" style="color: #808080;">{{ $work_exp->position }} </p>
-                <p class="left" style="color: #808080;">{{ $work_exp->name }}</p>
+                <p class="left" style="color: #808080;">{{ @$work_exp->position }} </p>
+                <p class="left" style="color: #808080;">{{ @$work_exp->name }}</p>
 
                 <h4 class="left" style="color: #8B0900;">ABOUT ME</h4>
                 <p class="left" style="color: #808080;"><b>{{ $profile->title_about_me }}</b></p>

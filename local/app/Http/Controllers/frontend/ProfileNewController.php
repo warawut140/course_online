@@ -22,7 +22,9 @@ class ProfileNewController extends Controller
     public function profile_student($page="rasume")
     {
         $profile = Profile::where('user_id',Auth::guard('web')->user()->id)->first();
+
         $work_exp = WorkEXP::where('user_id',Auth::guard('web')->user()->id)->first();
+        // dd($work_exp);
         $jobs_register = DB::table('job_register')->where('profile_id',$profile->id)->pluck('job_description_id')->toArray();
         $jobs = JobDescription::whereIn('id', $jobs_register)->get();
         $courses = Course::where('status',1)->orderBy('created_at','desc')->get();

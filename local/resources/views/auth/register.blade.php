@@ -331,15 +331,15 @@
                         ผู้ควบคุมข้อมูลส่วนบุคคล <br>
                         บริษัท ..... จำกัด <br>
                         255 ชั้น 5 The Racquet Club ตึก 2 คลองตันเหนือ วัฒนา กรุงเทพมหานคร 10110 <br>
-                        อีเมล thecloud@cloudandground.com <br>
-                        เว็บไซต์ https://readthecloud.co/ <br>
+                        อีเมล dev.edufilx@gmail.com <br>
+                        {{-- เว็บไซต์ https://readthecloud.co/ <br>
                         หมายเลขโทรศัพท์ 06-6115-1344 <br>
 
                         เจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล <br>
                         บริษัท ..... จำกัด <br>
                         255 ชั้น 5 The Racquet Club ตึก 2 คลองตันเหนือ วัฒนา กรุงเทพมหานคร 10110 <br>
                         อีเมล thecloud@cloudandground.com <br>
-                        หมายเลขโทรศัพท์ 06-6115-1344 <br>
+                        หมายเลขโทรศัพท์ 06-6115-1344 <br> --}}
 
 
                     </div>
