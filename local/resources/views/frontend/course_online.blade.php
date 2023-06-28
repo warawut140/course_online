@@ -261,6 +261,12 @@
                                                                 <p> จำนวนทั้งหมด {{ $question_count }} ข้อ </p>
 
                                                             </div>
+                                                            @if($q->unlock_certificate==1)
+                                                            <div class="col-12 left">
+                                                                <p style="color:red;"> จะได้รับ Certificate หลังทำแบบทดสอบผ่าน</p>
+
+                                                            </div>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                     <div class="col-2">

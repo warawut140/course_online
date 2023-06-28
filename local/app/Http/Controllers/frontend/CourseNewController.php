@@ -339,6 +339,7 @@ class CourseNewController extends Controller
                 $question_detail->name = $r->name;
                 $question_detail->type = $r->type;
                 $question_detail->score_success = $r->score_success;
+                $question_detail->unlock_certificate = $r->unlock_certificate;
                 $question_detail->save();
             }
 

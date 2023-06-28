@@ -92,7 +92,7 @@ class RegisterFullController extends Controller
         DB::beginTransaction();
         try
         {
-
+// dd($r->all());
         $profile = Profile::where('user_id',Auth::guard('web')->user()->id)->first();
 
         if($r->type=='basic'){
@@ -113,7 +113,7 @@ class RegisterFullController extends Controller
             if (!empty($r->image_profile)) {
                 if ($r->hasFile('image_profile') != '') {
                     File::delete(public_path() . '/images/profile/' . $profile->image_profile);
-                    $image_profile = 'profile_'.$profile->id.".".$r->file('image_profile')->getClientOriginalExtension();
+                    $image_profile = 'profile_'.$profile->id.date('YmdHis').".".$r->file('image_profile')->getClientOriginalExtension();
                     $r->file('image_profile')->move(public_path() . '/images/profile/', $image_profile);
                 }
                 $profile->image_profile = $image_profile;

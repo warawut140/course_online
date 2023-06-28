@@ -149,6 +149,17 @@
                                                 value="{{ @$data->score_success }}" id="score_success"
                                                 name="score_success">
                                         </div>
+                                        <div class="col-md-4">
+                                            <label for="score_success">ปลดล็อคใบ Certificate หลังผ่านการทดสอบ *</label>
+                                            <select class="form-control" required name="unlock_certificate">
+                                                <option value="0" <?php if (@$data->unlock_certificate == 0) {
+                                                        echo 'selected';
+                                                    } ?>>ยังไม่ได้รับ</option>
+                                                <option value="1" <?php if (@$data->unlock_certificate == 1) {
+                                                        echo 'selected';
+                                                    } ?>>ได้รับ</option>
+                                            </select>
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">

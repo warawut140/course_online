@@ -357,14 +357,21 @@
                 <br>
                 <div class="row">
                     <div class="col-6">
+                        @if($job->Profile->company_img1!='')
                         <img src="{{ asset('images/profile/' . $job->Profile->company_img1) }}" width="300px"
                             height="250px" class="mw-100 mb-3">
-                        {{-- <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3"> --}}
+                            @else
+                        <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3">
+                        @endif
                     </div>
                     <div class="col-6">
-                        {{-- <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3"> --}}
-                        <img src="{{ asset('images/profile/' . $job->Profile->company_img2) }}" width="300px"
-                            height="250px" class="mw-100 mb-3">
+
+                            @if($job->Profile->company_img2!='')
+                            <img src="{{ asset('images/profile/' . $job->Profile->company_img2) }}" width="300px"
+                                height="250px" class="mw-100 mb-3">
+                                @else
+                            <img src="{{ asset('images/imgup.png') }}" class="mw-100 mb-3">
+                            @endif
                     </div>
                 </div>
                 <br> <br>
