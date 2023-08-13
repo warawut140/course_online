@@ -19,6 +19,7 @@ use App\Models\Questions;
 use App\Models\Options;
 use App\Models\Answers;
 use App\Models\ProfileQuestionDetail;
+use Response;
 
 class CourseNewController extends Controller
 {
@@ -339,6 +340,7 @@ class CourseNewController extends Controller
                 $question_detail->name = $r->name;
                 $question_detail->type = $r->type;
                 $question_detail->score_success = $r->score_success;
+                $question_detail->question_limit = $r->question_limit;
                 $question_detail->unlock_certificate = $r->unlock_certificate;
                 $question_detail->save();
             }
@@ -528,9 +530,15 @@ class CourseNewController extends Controller
         $course = Course::where('id',$course_id)->first();
 
         $question_count = \App\Models\Questions::where('question_detail_id', $question_detail->id)->count();
-        $question = \App\Models\Questions::where('question_detail_id', $question_detail->id)->get();
         $question_score_sum = \App\Models\Questions::where('question_detail_id', $question_detail->id)->sum('score');
-        $pro_quest_detail = ProfileQuestionDetail::where('questions_detail_id',$question_detail->id)->where('user_id',Auth::guard('web')->user()->id)->first();
+        $pro_quest_detail = ProfileQuestionDetail::where('questions_detail_id',$question_detail->id)->where('user_id',Auth::guard('web')->user()->id)->where('status','!=',2)->orderBy('id','desc')->first();
+       if(!$pro_quest_detail){
+        $question = \App\Models\Questions::where('question_detail_id', $question_detail->id)->inRandomOrder()->limit($question_detail->question_limit)->get();
+       }else{
+        $arr_questions = DB::table('questions')->select('id')->where('question_detail_id',$question_detail->id)->pluck('id')->toArray();
+        $arr_answers = DB::table('answers')->select('question_id')->where('user_id',Auth::guard('web')->user()->id)->whereIn('question_id',$arr_questions)->pluck('question_id')->toArray();
+        $question = \App\Models\Questions::where('question_detail_id', $question_detail->id)->whereIn('id',$arr_answers)->get();
+       }
 
             return view('frontend.workshop_inside_view',[
                 'question_detail' => $question_detail,
@@ -550,8 +558,11 @@ class CourseNewController extends Controller
         $course = Course::where('id',$course_list->course_id)->first();
         $type = 'check';
         $question_count = \App\Models\Questions::where('question_detail_id', $question_detail->id)->count();
-        $question = \App\Models\Questions::where('question_detail_id', $question_detail->id)->get();
         $question_score_sum = \App\Models\Questions::where('question_detail_id', $question_detail->id)->sum('score');
+
+        $arr_questions = DB::table('questions')->select('id')->where('question_detail_id',$question_detail->id)->pluck('id')->toArray();
+        $arr_answers = DB::table('answers')->select('question_id')->where('user_id',$pro_quest_detail->user_id)->whereIn('question_id',$arr_questions)->pluck('question_id')->toArray();
+        $question = \App\Models\Questions::where('question_detail_id', $question_detail->id)->whereIn('id',$arr_answers)->get();
 
             return view('frontend.workshop_inside_view',[
                 'question_detail' => $question_detail,
@@ -562,6 +573,19 @@ class CourseNewController extends Controller
                 'pro_quest_detail' => $pro_quest_detail,
                 'type' => $type,
             ]);
+    }
+
+    public function getDownload($type,$name)
+    {
+        $file = "";
+        if($type == 'ans'){
+            $file= public_path(). "/images/answers/".$name;
+        }
+
+        $headers = array(
+                'Content-Type: application/pdf',
+                );
+        return Response::download($file, $name, $headers);
     }
 
     public function workshop_inside_store(Request $r)
@@ -577,6 +601,9 @@ class CourseNewController extends Controller
                $text_score = 0;
 
                if($r->type == ''){
+                $arr_q = \App\Models\Questions::select('id')->where('question_detail_id', $question_detail->id)->pluck('id')->toArray();
+                Answers::whereIn('question_id',$arr_q)->where('user_id',Auth::guard('web')->user()->id)->delete();
+                ProfileQuestionDetail::where('questions_detail_id',$question_detail->id)->where('user_id',Auth::guard('web')->user()->id)->delete();
 
                 if(isset($r->option_ans)){
                     foreach($r->option_ans as $key => $op){
@@ -611,6 +638,13 @@ class CourseNewController extends Controller
                         // }else{
                         //     $answers->pass = 2;
                         // }
+                        if (isset($r->ans_file[$key])) {
+                            // dd($r->file('ans_file')[$key]);
+                            // File::delete(public_path() . '/images/answers/' . $course->certificate_file);
+                            $ans_file = 'profile_'.date('YmdHis').$r->file('ans_file')[$key]->getClientOriginalName()."ans.".$r->file('ans_file')[$key]->getClientOriginalExtension();
+                            $r->file('ans_file')[$key]->move(public_path() . '/images/answers/', $ans_file);
+                        $answers->ans_file = $ans_file;
+                        }
                         $answers->save();
                         $text_score++;
                     }
@@ -660,8 +694,6 @@ class CourseNewController extends Controller
                 }
 
                }
-
-
 
                 DB::commit();
             }

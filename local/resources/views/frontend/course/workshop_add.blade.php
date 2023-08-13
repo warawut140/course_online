@@ -144,6 +144,12 @@
 
                                     <div class="form-group row">
                                         <div class="col-md-3">
+                                            <label for="question_limit">จำนวนข้อสูงสุดในแต่ละครั้ง</label>
+                                            <input type="number" required class="form-control"
+                                                value="{{ @$data->question_limit }}" id="question_limit"
+                                                name="question_limit">
+                                        </div>
+                                        <div class="col-md-3">
                                             <label for="score_success">คะแนนที่ผ่านการทดสอบ</label>
                                             <input type="number" required class="form-control"
                                                 value="{{ @$data->score_success }}" id="score_success"

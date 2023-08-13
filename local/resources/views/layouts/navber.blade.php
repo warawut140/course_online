@@ -158,12 +158,12 @@
                 @if (Auth::guest())
                     <li class="nav-item {{ Request::segment(1) === 'register' ? 'active' : null }}">
                         <a class="nav-link py-1 buttonred redd" href="{{ url('register') }}">
-                            <font style="color:red">ลงชื่อเข้าใช้</font>
+                            <font style="color:red">สมัครสมาชิก</font>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link py-1 btn-danger" href="{{ url('login') }}">
-                            <font style="color:white"> ผู้ประกอบการเข้าสู่ระบบ</font>
+                            <font style="color:white"> เข้าสู่ระบบ</font>
                         </a>
                     </li>
                 @else

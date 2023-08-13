@@ -164,20 +164,21 @@
 
                         @foreach ($chapter as $key => $chap)
                             <div class="card">
-                                <div class="card-header" id="headingOne{{$key}}">
+                                <div class="card-header" id="headingOne{{ $key }}">
                                     <div class="mb-0 ">
                                         <div class="row">
                                             <div class="col-8 left">
                                                 <h5>บทเรียนที่ {{ $chap->order }} {{ $chap->name }}
                                                     <button class="btn btn-link" data-toggle="collapse"
-                                                        data-target="#collapseOne{{$key}}" aria-expanded="true"
-                                                        aria-controls="collapseOne{{$key}}">
+                                                        data-target="#collapseOne{{ $key }}" aria-expanded="true"
+                                                        aria-controls="collapseOne{{ $key }}">
                                                         <i class="fa fa-chevron-down circle" style="color: black;"
                                                             aria-hidden="true"></i> </button>
                                                 </h5>
                                             </div>
                                             <div class="col-2 left">
-                                                <i class="fa fa-play-circle " style="color: black;  margin: 15px 0 20px; " aria-hidden="true"></i>
+                                                <i class="fa fa-play-circle " style="color: black;  margin: 15px 0 20px; "
+                                                    aria-hidden="true"></i>
                                                 วิดีโอ {{ $chap->video_number }} &nbsp;&nbsp; <i class="fa fa-clock-o"
                                                     style="color: black;" aria-hidden="true"></i> {{ $chap->time_number }}
                                                 ชั่วโมง
@@ -187,10 +188,10 @@
 
                                 </div>
 
-                                <div id="collapseOne{{$key}}" class="collapse <?php if ($key == 0) {
+                                <div id="collapseOne{{ $key }}" class="collapse <?php if ($key == 0) {
                                     echo 'show';
-                                } ?>" aria-labelledby="headingOne{{$key}}"
-                                    data-parent="#accordion">
+                                } ?>"
+                                    aria-labelledby="headingOne{{ $key }}" data-parent="#accordion">
                                     <div class="card-body">
                                         <?php
                                         $list = \App\Models\CourseList::where('course_id', $chap->course_id)
@@ -212,7 +213,10 @@
                                                 <div class="col-7">
                                                     <div class="row">
                                                         <div class="col-12 left">
-                                                            <h5>{{ $l->course_name }}</h5>
+                                                            <a style="color: #8B0900;"
+                                                                href="{{ url('course_online_inside_view/' . $l->id) }}">
+                                                                <h5>{{ $l->course_name }}</h5>
+                                                            </a>
                                                         </div>
                                                         <div class="col-12 left">
                                                             <p>
@@ -234,6 +238,9 @@
                                             @foreach ($question_detail as $key3 => $q)
                                                 <?php
                                                 $question_count = \App\Models\Questions::where('question_detail_id', $q->id)->count();
+                                                $pro_quest_detail = \App\Models\ProfileQuestionDetail::where('questions_detail_id', $q->id)
+                                                    ->where('user_id', Auth::guard('web')->user()->id)
+                                                    ->first();
                                                 ?>
                                                 {{-- start #test --}} <br>
                                                 <div class="row">
@@ -255,29 +262,44 @@
                                                                 <h6>Workshop</h6>
                                                             </div>
                                                             <div class="col-12 left">
-                                                                <h5>{{ $q->name }}</h5>
+                                                                <a style="color: #8B0900;"
+                                                                    href="{{ url('workshop_inside_view/' . $course->id . '/' . $q->id) }}">
+                                                                    <h5>{{ $q->name }}</h5>
+                                                                </a>
                                                             </div>
                                                             <div class="col-12 left">
                                                                 <p> จำนวนทั้งหมด {{ $question_count }} ข้อ </p>
 
                                                             </div>
-                                                            @if($q->unlock_certificate==1)
-                                                            <div class="col-12 left">
-                                                                <p style="color:red;"> จะได้รับ Certificate หลังทำแบบทดสอบผ่าน</p>
+                                                            @if ($q->unlock_certificate == 1)
+                                                                <div class="col-12 left">
+                                                                    <p style="color:red;"> จะได้รับ Certificate
+                                                                        หลังทำแบบทดสอบผ่าน</p>
 
-                                                            </div>
+                                                                </div>
                                                             @endif
                                                         </div>
                                                     </div>
                                                     <div class="col-2">
-
-                                                        <h5>
-                                                            {{-- <i class="fa fa-check-circle" style="color: green;"
-                                                                aria-hidden="true"></i> --}}
-                                                            <i class="fa fa-check-circle" style="color: red;"
-                                                                aria-hidden="true"></i>
-                                                        </h5>
-
+                                                        @if ($pro_quest_detail)
+                                                            @if ($pro_quest_detail->status == 0)
+                                                                <h5 style="color: orange;">
+                                                                    รอผลตรวจ
+                                                                </h5>
+                                                            @elseif($pro_quest_detail->status == 1)
+                                                                <h5 style="color: green;">
+                                                                    <i class="fa fa-check-circle" style="color: green;"
+                                                                        aria-hidden="true"></i>
+                                                                    ผ่าน
+                                                                </h5>
+                                                            @elseif($pro_quest_detail->status == 2)
+                                                                <h5 style="color: red;">
+                                                                    <i class="fa fa-check-circle" style="color: red;"
+                                                                        aria-hidden="true"></i>
+                                                                    ไม่ผ่าน
+                                                                </h5>
+                                                            @endif
+                                                        @endif
                                                     </div>
                                                 </div>
                                                 <br>{{-- end #test --}}

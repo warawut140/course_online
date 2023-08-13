@@ -45,6 +45,8 @@ Route::group(['middleware' => ['web','auth']], function () {
 
     Route::get('/workshop_inside_view/{course_id}/{workshop_id}','frontend\CourseNewController@workshop_inside_view');
     Route::post('/workshop_inside_store','frontend\CourseNewController@workshop_inside_store');
+    Route::get('/getDownload/{type}/{name}','frontend\CourseNewController@getDownload');
+
     Route::get('/workshop_inside_check/{question_detail_id}','frontend\CourseNewController@workshop_inside_check');
 
     Route::get('/workshop', function () {

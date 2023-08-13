@@ -15,4 +15,10 @@ class QuestionsDetail extends Model
     //     'created_at',
     //     'updated_at',
     // ];
+
+    public function CourseList()
+    {
+        return $this->hasOne('\App\Models\CourseList','id','course_list_id');
+    }
+
 }

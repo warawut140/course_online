@@ -26,7 +26,7 @@
 
         .bg-light2 {
             /* background-color: #8B0900;
-                                                                        background-image: url("{{ asset('image/bg.png') }}"); */
+                                                                                                        background-image: url("{{ asset('image/bg.png') }}"); */
             /* clear: both; */
         }
 
@@ -109,7 +109,7 @@
             margin-Right: 20px;
         }
 
-        .left2 {
+        . {
             text-align: left;
 
             margin-left: 20px;
@@ -129,36 +129,37 @@
 
 
         <br>
-        <div class="left">
-            @if(@$type=='check')
-            <a href="{{ url('profile_company/workshop') }}" style="background-color: #8B0900; color:white;"
-                class="btn "><i class="fa fa-chevron-left" aria-hidden="true"></i> ย้อนกลับ </a>
+        <div class="">
+            @if (@$type == 'check')
+                <a href="{{ url('profile_company/workshop') }}" style="background-color: #8B0900; color:white;"
+                    class="btn "><i class="fa fa-chevron-left" aria-hidden="true"></i> ย้อนกลับ </a>
             @else
-            <a href="{{ url('course_online_view/' . $course->id) }}" style="background-color: #8B0900; color:white;"
-                class="btn "><i class="fa fa-chevron-left" aria-hidden="true"></i> ย้อนกลับ </a>
-                @endif
+                <a href="{{ url('course_online_view/' . $course->id) }}" style="background-color: #8B0900; color:white;"
+                    class="btn "><i class="fa fa-chevron-left" aria-hidden="true"></i> ย้อนกลับ </a>
+            @endif
         </div>
+        <br>
         @if (!$pro_quest_detail)
             <form method="POST" action="{{ url('workshop_inside_store') }}" id="searchForm" enctype="multipart/form-data">
                 @csrf
         @endif
 
-        @if(@$type=='check')
-        <form method="POST" action="{{ url('workshop_inside_store') }}" id="searchForm" enctype="multipart/form-data">
-            @csrf
+        @if (@$type == 'check')
+            <form method="POST" action="{{ url('workshop_inside_store') }}" id="searchForm" enctype="multipart/form-data">
+                @csrf
         @endif
 
         <input type="hidden" name="question_detail_id" value="{{ $question_detail->id }}">
         <input type="hidden" name="course_id" value="{{ $course->id }}">
         <input type="hidden" name="type" value="{{ @$type }}">
 
-        @if(@$type=='check')
-        <input type="hidden" name="user_id" value="{{ @$pro_quest_detail->user_id }}">
-        <input type="hidden" name="pro_quest_detail_id" value="{{ @$pro_quest_detail->id }}">
+        @if (@$type == 'check')
+            <input type="hidden" name="user_id" value="{{ @$pro_quest_detail->user_id }}">
+            <input type="hidden" name="pro_quest_detail_id" value="{{ @$pro_quest_detail->id }}">
         @endif
 
 
-        <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
+        <div class="col-xl-12 offset-xl-12 col-lg-12 offset-lg-12 col-md-12 offset-md-12">
 
 
             <h4 style="color:#8B0900;"><i class="fa fa-file-text circlered " aria-hidden="true" style="color:white;"></i>
@@ -168,7 +169,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-12">
                             <h3>{{ $question_detail->name }} </h3>
                         </div>
                         <div class="form-group col-md-12">
@@ -207,7 +208,8 @@
                                     class="fa fa-check-circle circlegreed " aria-hidden="true"
                                     style="color:{{ $color }};"></i></h4>
                             <div class="form-group col-md-12">
-                                <h4 style="color:green;"> {{ $pro_quest_detail->score }} / {{ $question_detail->score_success }} คะแนน
+                                <h4 style="color:green;"> {{ $pro_quest_detail->score }} /
+                                    {{ $question_detail->score_success }} คะแนน
                                 </h4>
                             </div>
                         </div>
@@ -219,7 +221,11 @@
             <?php
             $disable = '';
             if ($pro_quest_detail) {
-                $disable = 'disabled';
+                if ($pro_quest_detail->status == 2) {
+                    $disable = '';
+                } else {
+                    $disable = 'disabled';
+                }
             }
             ?>
 
@@ -229,10 +235,23 @@
                 {{-- begin #ข้อกา --}}
 
                 <?php
-
-                $ans_data = DB::table('answers')
-                    ->where('question_id', $quest->id)
-                    ->first();
+                if ($pro_quest_detail) {
+                    if ($pro_quest_detail->status != 2) {
+                        $ans_data = DB::table('answers')
+                            ->where('question_id', $quest->id)
+                            ->first();
+                    } else {
+                        if (@$type == 'check') {
+                            $ans_data = DB::table('answers')
+                                ->where('question_id', $quest->id)
+                                ->first();
+                        } else {
+                            $ans_data = '';
+                        }
+                    }
+                } else {
+                    $ans_data = '';
+                }
 
                 ?>
 
@@ -274,7 +293,7 @@
                                     <h5 style="color:gray;">{{ $quest->name }} </h5>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-12 left2">
+                                    <div class="form-group col-md-12 ">
                                         <h5 style="color:gray;"> <input {{ $disable }} type="radio" id="html"
                                                 <?php if (@$ans_data->option_id == $oq1->id) {
                                                     echo 'checked';
@@ -284,7 +303,7 @@
                                         </h5>
                                     </div>
 
-                                    <div class="form-group col-md-12 left2">
+                                    <div class="form-group col-md-12 ">
                                         <h5 style="color:gray;"> <input {{ $disable }} type="radio" id="html"
                                                 required <?php if (@$ans_data->option_id == $oq2->id) {
                                                     echo 'checked';
@@ -294,7 +313,7 @@
                                         </h5>
                                     </div>
 
-                                    <div class="form-group col-md-12 left2">
+                                    <div class="form-group col-md-12 ">
                                         <h5 style="color:gray;"> <input {{ $disable }} type="radio" id="html"
                                                 required <?php if (@$ans_data->option_id == $oq3->id) {
                                                     echo 'checked';
@@ -303,7 +322,7 @@
                                             <label for="html">{{ $oq3->name }}</label><br>
                                         </h5>
                                     </div>
-                                    <div class="form-group col-md-12 left2">
+                                    <div class="form-group col-md-12 ">
                                         <h5 style="color:gray;"> <input {{ $disable }} type="radio" id="html"
                                                 required <?php if (@$ans_data->option_id == $oq4->id) {
                                                     echo 'checked';
@@ -329,12 +348,28 @@
                                     <h5 style="color:gray;">{{ $quest->name }} </h5>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-12 left2">
+                                    <div class="form-group col-md-12 ">
                                         <textarea class="form-control" {{ $disable }} name="text_ans[{{ $quest->id }}]" required rows="5"> {{ @$ans_data->option_text }} </textarea>
-                                        </h5>
                                     </div>
 
-                                    <div class="form-group col-md-3 left2">
+                                    @if ($ans_data)
+                                        @if ($ans_data->ans_file != '')
+                                            <div class="form-group col-md-12">
+                                                <a href="{{ url('getDownload/ans/' . $ans_data->ans_file) }}">
+                                                    <h5> <i class="fa fa-file"></i> มีไฟล์คำตอบ ดาวโหลดคลิก</h5>
+                                                </a>
+                                            </div>
+                                            <br>
+                                        @endif
+                                    @endif
+
+                                    <div class="form-group col-md-12">
+                                        <input type="file" name="ans_file[{{ $quest->id }}]" class="form-control">
+                                    </div>
+
+
+
+                                    <div class="form-group col-md-3">
                                         <div class="card">
                                             <div class="card-body">
 
@@ -345,14 +380,15 @@
                                         </div>
                                     </div>
 
-                                    @if(@$type=='check')
-                                    <div class="form-group col-md-6 left2">
-                                            <select class="form-control" required name="text_ans_check[{{ @$ans_data->id }}]">
+                                    @if (@$type == 'check')
+                                        <div class="form-group col-md-6 ">
+                                            <select class="form-control" required
+                                                name="text_ans_check[{{ @$ans_data->id }}]">
                                                 <option value="">กรุณาเลือกผลตรวจ</option>
-                                                <option value="1">ผ่าน</option>
-                                                <option value="2">ไม่ผ่าน</option>
+                                                <option @if(@$ans_data->pass == 1) selected @endif value="1">ถูก</option>
+                                                <option @if(@$ans_data->pass == 2) selected @endif value="2">ผิด</option>
                                             </select>
-                                    </div>
+                                        </div>
                                     @endif
 
 
@@ -366,16 +402,31 @@
 
             <br><br>
 
-          <?php
-          if(@$type=='check'){
-            $disable = '';
-          }
-          ?>
-
-            <div class="form-group">
-                <button type="submit" {{$disable}} class="btn btn-outline-success w-100"
-                    onclick="return confirm('ยืนยันการทำรายการ?')">ส่งคำตอบ</button>
-            </div>
+            <?php
+            if (@$type == 'check') {
+                $disable = '';
+            }
+            ?>
+            @if (@$type == 'check')
+                <div class="form-group">
+                    <button type="submit" {{ $disable }} class="btn btn-outline-success w-100"
+                        onclick="return confirm('ยืนยันการทำรายการ?')">ยืนยันผล</button>
+                </div>
+            @else
+                @if (!$pro_quest_detail)
+                    <div class="form-group">
+                        <button type="submit" {{ $disable }} class="btn btn-outline-success w-100"
+                            onclick="return confirm('ยืนยันการทำรายการ?')">ส่งคำตอบ</button>
+                    </div>
+                @else
+                    @if ($pro_quest_detail->status == 2)
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-outline-success w-100"
+                                onclick="return confirm('ยืนยันการทำรายการ?')">แก้ไขคำตอบ</button>
+                        </div>
+                    @endif
+                @endif
+            @endif
 
             <br><br>
 
