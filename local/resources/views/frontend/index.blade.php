@@ -1,6 +1,6 @@
 @extends('layouts.navber')
 @section('head')
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
     <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}" />
 

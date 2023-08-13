@@ -10,6 +10,7 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 {{--    <link type="image/ico" rel="shortcut icon" href="{{ asset('image/logo-color.svg') }}" sizes="32x32">--}}
     <link type="image/ico" rel="shortcut icon" href="{{ asset('image/favicon.ico') }}" sizes="32x32">
 

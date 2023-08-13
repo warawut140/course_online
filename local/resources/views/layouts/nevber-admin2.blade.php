@@ -17,6 +17,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <link href="{{ asset('image/faviconx.ico') }}" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
