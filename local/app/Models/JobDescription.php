@@ -26,4 +26,9 @@ class JobDescription extends Model
         return $data;
     }
 
+    public function CategoryWork()
+    {
+        return $this->hasOne('\App\Models\CategoryWork','id','category_work_id');
+    }
+
 }

@@ -1,226 +1,126 @@
-@extends('layouts.navber')
-@section('head')
-    <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}" />
-    <style>
-        /* Shared */
-        .loginBtn {
-            box-sizing: border-box;
-            position: relative;
-            /* width: 13em;  - apply for fixed size */
-            margin: 0.2em;
-            padding: 0 15px 0 46px;
-            border: none;
-            text-align: left;
-            line-height: 34px;
-            white-space: nowrap;
-            border-radius: 0.2em;
-            font-size: 16px;
-            color: #FFF;
-        }
+<!doctype html>
+<html lang="th">
 
-        .loginBtn:before {
-            content: "";
-            box-sizing: border-box;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 34px;
-            height: 100%;
-        }
+<head>
+    @include('frontend_new.header')
+</head>
 
-        .loginBtn:focus {
-            outline: none;
-        }
-
-        .loginBtn:active {
-            box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);
-        }
+<body>
 
 
-        /* Facebook */
-        .loginBtn--facebook {
-            background-color: #4C69BA;
-            background-image: linear-gradient(#4C69BA, #3B55A0);
-            /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
-            text-shadow: 0 -1px 0 #354C8C;
-        }
+    @include('frontend_new.menu')
 
-        .loginBtn--facebook:before {
-            border-right: #364e92 1px solid;
-            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
-        }
-
-        .loginBtn--facebook:hover,
-        .loginBtn--facebook:focus {
-            background-color: #5B7BD5;
-            background-image: linear-gradient(#5B7BD5, #4864B1);
-        }
-
-
-        /* Google */
-        .loginBtn--google {
-            /*font-family: "Roboto", Roboto, arial, sans-serif;*/
-            background: #DD4B39;
-        }
-
-        .loginBtn--google:before {
-            border-right: #BB3F30 1px solid;
-            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
-        }
-
-        .loginBtn--google:hover,
-        .loginBtn--google:focus {
-            background: #E74B37;
-        }
-
-        .card-body {
-            -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-            padding: 1.25rem;
-            background-color: #B05852;
-            border-radius: 30px;
-        }
-
-        .card2 {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            min-width: 0;
-            word-wrap: break-word;
-            /* background-color: #fff; */
-            /* background-clip: border-box;
-      border: 1px solid rgba(0, 0, 0, 0.125); */
-            border-radius: 0.25rem;
-            width: 450px;
-            top: 40%;
-        }
-
-        .center_text {
-            position: absolute;
-            top: 50%;
-            left: 40%;
-        }
-    </style>
-@endsection
-@section('content')
-    <style>
-        .bg-light2 {
-            /* background-color: #8B0900; */
-            background-image: url("{{ asset('image/bg.png') }}");
-        }
-
-        body {
-            font-family: 'Kanit', sans-serif;
-            font-size: 14px;
-            background-color: #8B0900;
-            /* background-image: url("{{ asset('image/bg.png') }}"); */
-        }
-
-        .row_new {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    /* margin-right: -15px; */
-    /* margin-left: -15px; */
-}
-    </style>
-    <div class="row_new bg-light2">
-        <div class="col-md-5">
-            <h1 class="center_text" style="color:white;">Welcome to <br>Online education & job</h1>
+    <!-- PAGE TITLE
+    ================================================== -->
+    <header class="py-8 py-md-11" style="background-image: none;">
+        <div class="container text-center py-xl-2">
+            <h1 class="display-4 fw-semi-bold mb-0">เข้าสู่ระบบ</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-scroll justify-content-center">
+                    {{-- <li class="breadcrumb-item">
+                        <a class="text-gray-800" href="#">
+                            Home
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item text-gray-800 active" aria-current="page">
+                        Login
+                    </li> --}}
+                </ol>
+            </nav>
         </div>
-        <div id="login-section1" class="col-md-7">
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <div class="card2">
-                            <div class="card-body">
-                                <h5 class="card-title text-center" style="color:#8B0900;">เข้าสู่ระบบ</h5>
-                                <form method="POST" action="{{ route('login') }}">
-                                    @csrf
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-addon1"><i
-                                                    class='fas fa-user-alt'></i></span>
-                                        </div>
-                                        {{-- <input type="text" class="form-control" placeholder="อีเมล์" aria-label="Email" aria-describedby="basic-addon1"> --}}
-                                        <input type="text"
-                                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                            name="email" value="{{ old('email') }}" id="text" placeholder="อีเมล์"
-                                            aria-label="Email" aria-describedby="basic-addon1" required autofocus>
-                                        @if ($errors->has('email'))
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $errors->first('email') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-addon1"><i
-                                                    class='fas fa-key'></i></span>
-                                        </div>
-                                        {{-- <input type="password" class="form-control" placeholder="รหัสผ่าน" aria-label="Password" aria-describedby="basic-addon1"> --}}
-                                        <input type="password" id="password" name="password" placeholder="รหัสผ่าน"
-                                            aria-label="Password" aria-describedby="basic-addon1"
-                                            class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                            required>
-                                        @if ($errors->has('password'))
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $errors->first('password') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                    <div class="form-group text-right">
-                                        <button type="button" class="btn btn-link" data-toggle="modal"
-                                            data-target="#exampleModal"><label style="color:white;">ลืมรหัสผ่าน?</label>
-                                        </button>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn w-100"
-                                            style="background-color: #8B0900; color:white;">เข้าสู่ระบบ</button>
-                                    </div>
-                                    {{-- <div class="form-group loginBtn loginBtn--google w-100">
-                                        <a href="{{ url('/auth/redirect') }}" style="color: #f8f9fa;">
-                                            <center>Login with Google</center>
-                                        </a>
-                                    </div> --}}
-                                    {{-- <div class="form-group"> --}}
-                                    {{-- <button type="button" class="loginBtn loginBtn--facebook w-100"> --}}
-                                    {{-- <center>Login with Facebook</center> --}}
-                                    {{-- </button> --}}
-                                    {{-- </div> --}}
-                                    <div class="form-group text-center">
-                                        <p style="color:#8B0900;">ยังไม่มีบัญชี? <a href="{{ route('register') }}"
-                                                style="color:white;">สมัครสมาชิก</a></p>
-                                    </div>
-                                </form>
-                            </div>
+        <!-- Img -->
+        <img class="d-none img-fluid" src="..." alt="...">
+    </header>
+
+
+    <!-- LOGIN
+    ================================================== -->
+    <div class="container mb-11">
+        <div class="row gx-0">
+            <div class="col-md-7 col-xl-4 mx-auto">
+                <!-- Login -->
+                <h3 class="mb-6">Welcome to
+                    Online education & job</h3>
+
+                <!-- Form Login -->
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <!-- Email -->
+                    <div class="form-group mb-5">
+                        <label for="modalSigninEmail1">
+                            Email
+                        </label>
+                        <input type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                            name="email" value="{{ old('email') }}" id="text" placeholder="อีเมล์"
+                            aria-label="Email" aria-describedby="basic-addon1" required autofocus>
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group mb-5">
+                        <label for="modalSigninPassword1">
+                            Password
+                        </label>
+                        <input type="password" id="password" name="password" placeholder="**********"
+                            aria-label="Password" aria-describedby="basic-addon1"
+                            class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required>
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
+                    <div class="d-flex align-items-center mb-5 font-size-sm">
+                        <div class="form-check">
+                            <input class="form-check-input text-gray-800" type="checkbox" id="autoSizingCheck1">
+                            <label class="form-check-label text-gray-800" for="autoSizingCheck1">
+                                Remember me
+                            </label>
+                        </div>
+
+                        <div class="ms-auto">
+                            <button class="btn btn-link" type="button" data-bs-toggle="modal"
+                                data-bs-target="#modalExample2">
+                                ลืมรหัสผ่าน?
+                            </button>
                         </div>
                     </div>
-                </div>
+
+                    <!-- Submit -->
+                    <button class="btn btn-block btn-primary" type="submit">
+                        เข้าสู่ระบบ
+                    </button>
+                </form>
+
+                <!-- Text -->
+                <p class="mb-0 font-size-sm text-center">
+                    ยังไม่มีบัญชี? <a class="text-underline" href="{{ route('register') }}">สมัครสมาชิก</a>
+                </p>
             </div>
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
+
+
+    <div class="modal fade" id="modalExample2" tabindex="-1" aria-labelledby="modalExampleTitle" aria-hidden="true"
+        style="display: none;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">ลืมรหัสผ่าน</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="material-icons">&#xe5cd;</i></span>
-                    </button>
                 </div>
                 <form method="POST" action="{{ route('password.email') }}">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">กรอกอีเมล์</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                placeholder="อีเมล์ที่ใช้สมัคร">
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="อีเมล์ที่ใช้สมัคร">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -230,97 +130,10 @@
             </div>
         </div>
     </div>
-@endsection
-@section('script')
-    {{-- <script>
-        $('.bg-light').css({
-            'min-height': $(window).height() - $('.navbar').height() - $('#section-footer').height()
-        });
-    </script>
-    <script>
-         $('.bg-light2').css({
-            'min-height': $(window).height() - $('.navbar').height() - $('#section-footer').height()
-        });
-    </script> --}}
-@endsection
 
 
-{{-- @extends('layouts.app') --}}
-{{-- @section('content') --}}
-{{-- <div class="container"> --}}
-{{-- <div class="row justify-content-center"> --}}
-{{-- <div class="col-md-8"> --}}
-{{-- <div class="card"> --}}
-{{-- <div class="card-header">{{ __('Login') }}</div> --}}
+    @include('frontend_new.footer')
 
-{{-- <div class="card-body"> --}}
-{{-- <form method="POST" action="{{ route('login') }}"> --}}
-{{-- @csrf --}}
+</body>
 
-{{-- <div class="form-group row"> --}}
-{{-- <label for="email" --}}
-{{-- class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label> --}}
-
-{{-- <div class="col-md-6"> --}}
-{{-- <input id="email" type="email" --}}
-{{-- class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" --}}
-{{-- name="email" value="{{ old('email') }}" required autofocus> --}}
-
-{{-- @if ($errors->has('email')) --}}
-{{-- <span class="invalid-feedback" role="alert"> --}}
-{{-- <strong>{{ $errors->first('email') }}</strong> --}}
-{{-- </span> --}}
-{{-- @endif --}}
-{{-- </div> --}}
-{{-- </div> --}}
-
-{{-- <div class="form-group row"> --}}
-{{-- <label for="password" --}}
-{{-- class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label> --}}
-
-{{-- <div class="col-md-6"> --}}
-{{-- <input id="password" type="password" --}}
-{{-- class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" --}}
-{{-- name="password" required> --}}
-
-{{-- @if ($errors->has('password')) --}}
-{{-- <span class="invalid-feedback" role="alert"> --}}
-{{-- <strong>{{ $errors->first('password') }}</strong> --}}
-{{-- </span> --}}
-{{-- @endif --}}
-{{-- </div> --}}
-{{-- </div> --}}
-
-{{-- <div class="form-group row"> --}}
-{{-- <div class="col-md-6 offset-md-4"> --}}
-{{-- <div class="form-check"> --}}
-{{-- <input class="form-check-input" type="checkbox" name="remember" --}}
-{{-- id="remember" {{ old('remember') ? 'checked' : '' }}> --}}
-
-{{-- <label class="form-check-label" for="remember"> --}}
-{{-- {{ __('Remember Me') }} --}}
-{{-- </label> --}}
-{{-- </div> --}}
-{{-- </div> --}}
-{{-- </div> --}}
-
-{{-- <div class="form-group row mb-0"> --}}
-{{-- <div class="col-md-8 offset-md-4"> --}}
-{{-- <button type="submit" class="btn btn-primary"> --}}
-{{-- {{ __('Login') }} --}}
-{{-- </button> --}}
-
-{{-- @if (Route::has('password.request')) --}}
-{{-- <a class="btn btn-link" href="{{ route('password.request') }}"> --}}
-{{-- {{ __('Forgot Your Password?') }} --}}
-{{-- </a> --}}
-{{-- @endif --}}
-{{-- </div> --}}
-{{-- </div> --}}
-{{-- </form> --}}
-{{-- </div> --}}
-{{-- </div> --}}
-{{-- </div> --}}
-{{-- </div> --}}
-{{-- </div> --}}
-{{-- @endsection --}}
+</html>

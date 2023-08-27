@@ -29,7 +29,14 @@ class RegisterFullController extends Controller
         $data = Profile::where('user_id',Auth::guard('web')->user()->id)->first();
         $job = JobDescription::where('profile_id',$data->id)->get();
         $course = Course::where('profile_id',$data->id)->get();
-            return view('auth.register_company_detail',[
+            // return view('auth.register_company_detail',[
+            //     'type'=>$type,
+            //     'data'=>$data,
+            //     'job'=>$job,
+            //     'course'=>$course,
+            // ]);
+
+            return view('frontend_new.register_company_detail',[
                 'type'=>$type,
                 'data'=>$data,
                 'job'=>$job,
@@ -79,7 +86,14 @@ class RegisterFullController extends Controller
             $work_exp->save();
         }
 
-            return view('auth.register_user_detail',[
+            // return view('auth.register_user_detail',[
+            //     'type'=>$type,
+            //     'data'=>$data,
+            //     'education'=>$education,
+            //     'work_exp'=>$work_exp,
+            // ]);
+
+            return view('frontend_new.register_user_detail',[
                 'type'=>$type,
                 'data'=>$data,
                 'education'=>$education,
@@ -256,7 +270,8 @@ class RegisterFullController extends Controller
     }
 
     if($r->typeAccount1==1){
-        return redirect()->to('interes_course');
+        // return redirect()->to('interes_course');
+        return redirect()->to('register_user_detail');
     }
         // $request->session()->flash('success', 'สำเร็จ');
         // return redirect()->to('register_company_detail');

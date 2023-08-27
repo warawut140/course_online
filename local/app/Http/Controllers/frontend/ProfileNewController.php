@@ -28,7 +28,14 @@ class ProfileNewController extends Controller
         $jobs_register = DB::table('job_register')->where('profile_id',$profile->id)->pluck('job_description_id')->toArray();
         $jobs = JobDescription::whereIn('id', $jobs_register)->get();
         $courses = Course::where('status',1)->orderBy('created_at','desc')->get();
-        return view('auth.profile.profile_student',[
+        // return view('auth.profile.profile_student',[
+        //     'profile' => $profile,
+        //     'page' => $page,
+        //     'work_exp' => $work_exp,
+        //     'jobs' => $jobs,
+        //     'courses' => $courses,
+        // ]);
+        return view('frontend_new.profile_student',[
             'profile' => $profile,
             'page' => $page,
             'work_exp' => $work_exp,
@@ -44,7 +51,14 @@ class ProfileNewController extends Controller
         $jobs = JobDescription::where('profile_id',$profile->id)->get();
         $job = JobDescription::where('profile_id',$profile->id)->first();
 
-        return view('auth.profile.profile_company',[
+        // return view('auth.profile.profile_company',[
+        //     'profile' => $profile,
+        //     'page' => $page,
+        //     'courses' => $courses,
+        //     'jobs'=>$jobs,
+        //     'job'=>$job,
+        // ]);
+        return view('frontend_new.profile_company',[
             'profile' => $profile,
             'page' => $page,
             'courses' => $courses,
@@ -52,6 +66,5 @@ class ProfileNewController extends Controller
             'job'=>$job,
         ]);
     }
-
 
 }

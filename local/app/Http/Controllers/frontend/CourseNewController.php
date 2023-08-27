@@ -499,7 +499,11 @@ class CourseNewController extends Controller
         }
         $chapter = CourseChapter::where('course_id',$course_id)->orderBy('order','asc')->get();
 
-            return view('frontend.course_online',[
+            // return view('frontend.course_online',[
+            //     'course' => $course,
+            //     'chapter' => $chapter,
+            // ]);
+            return view('frontend_new.course_online',[
                 'course' => $course,
                 'chapter' => $chapter,
             ]);
@@ -517,7 +521,13 @@ class CourseNewController extends Controller
         }
         $course_list = CourseList::where('course_id',$course->id)->where('chapter_id',$list->chapter_id)->get();
 
-            return view('frontend.course_online_inside',[
+            // return view('frontend.course_online_inside',[
+            //     'course' => $course,
+            //     'course_list' => $course_list,
+            //     'list' => $list,
+            // ]);
+
+            return view('frontend_new.course_online_inside',[
                 'course' => $course,
                 'course_list' => $course_list,
                 'list' => $list,
@@ -580,6 +590,10 @@ class CourseNewController extends Controller
         $file = "";
         if($type == 'ans'){
             $file= public_path(). "/images/answers/".$name;
+        }
+
+        if($type == 'resume'){
+            $file= public_path(). "/images/profile/".$name;
         }
 
         $headers = array(

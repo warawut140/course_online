@@ -4,22 +4,22 @@
 <h4 style="color:#8B0900;">APPLICANT</h4>
 <div class="card">
     <div class="card-body">
-
-        <div class="row">
-            <div class="col-md-12">
-                <table>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
                     <tr>
-                        <th class="op3center"> </th>
-                        <th class="op3center">ชื่อผู้สมัคร</th>
-                        <th class="op3center">ตำแหน่งที่สมัคร</th>
-                        <th class="op3center">วันที่สมัคร</th>
-                        <th class="op3center">เบอร์โทรติดต่อ</th>
-                        <th class="op3center">Email</th>
-                        <th class="op3center">CV/RESUME</th>
-                        {{-- <th class="op3center">คำถาม/แบบทดสอบ</th> --}}
+                        <th class="text-center"></th>
+                        <th class="text-center">ชื่อผู้สมัคร</th>
+                        <th class="text-center">ตำแหน่งที่สมัคร</th>
+                        <th class="text-center">วันที่สมัคร</th>
+                        <th class="text-center">เบอร์โทรติดต่อ</th>
+                        <th class="text-center">Email</th>
+                        <th class="text-center">CV/RESUME</th>
 
                     </tr>
 
+                </thead>
+                <tbody>
                     <?php
                     $job_dis = \App\Models\JobDescription::where('profile_id', $profile->id)
                         ->pluck('id')
@@ -29,28 +29,25 @@
                         ->get();
                     ?>
 
-                    @foreach($job_re as $key => $job)
+                    @foreach ($job_re as $key => $job)
                         <tr>
-                            <td class="opcenter">{{ $key + 1 }}</td>
-                            <td class="opcenter">{{$job->Profile->firstname}} {{$job->Profile->lastname}}</td>
-                            <td class="opcenter">{{$job->JobDescription->position}}</td>
-                            <td class="opcenter">{{$job->created_at}}</td>
-                            <td class="opcenter">{{$job->tel}}</td>
-                            <td class="opcenter">{{$job->email}}</td>
-                            <td class="opcenter">
-                                <img src="{{ asset('images/profile/' . $job->resume) }}" class="mw-100 mb-3"
-                                width="50px" height="50px">
+                            <td class="text-center">{{ $key + 1 }}</td>
+                            <td class="text-left">{{ $job->Profile->firstname }}
+                                {{ $job->Profile->lastname }}</td>
+                            <td class="text-left">{{ $job->JobDescription->position }}</td>
+                            <td class="text-center">{{ $job->created_at }}</td>
+                            <td class="text-left">{{ $job->tel }}</td>
+                            <td class="text-left">{{ $job->email }}</td>
+                            <td class="text-center">
+                                {{-- <img src="{{ asset('images/profile/' . $job->resume) }}" class="mw-100 mb-3"
+                                                    width="50px" height="50px"> --}}
+                                <a href="{{ url('getDownload/resume/' . $job->resume) }}">โหลดไฟล์</a>
                             </td>
-                            {{-- <td class="opcenter"><i class="fa fa-file-text" aria-hidden="true"> &nbsp&nbsp<i
-                                        class="fa fa-file-text" aria-hidden="true"></i></i></td> --}}
-
                         </tr>
                     @endforeach
-
-                </table>
-            </div>
+                </tbody>
+            </table>
         </div>
-
 
     </div>
 </div>

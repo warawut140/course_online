@@ -29,4 +29,16 @@ class Course extends Model
         }
         return $data;
     }
+
+    public function Profile()
+    {
+        return $this->hasOne('\App\Models\Profile','id','profile_id');
+    }
+
+
+    public function CategoryCourse()
+    {
+        return $this->hasOne('\App\Models\CategoryCourse','id','category_course_id');
+    }
+
 }

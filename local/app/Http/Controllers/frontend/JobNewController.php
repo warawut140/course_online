@@ -108,7 +108,12 @@ class JobNewController extends Controller
         if($profile){
             $job = JobDescription::where('id',$id)->first();
             $jobs = JobDescription::get();
-            return view('frontend/worklist_detail',[
+            // return view('frontend/worklist_detail',[
+            //     'job'=>$job,
+            //     'jobs'=>$jobs,
+            //     'profile'=>$profile,
+            // ]);
+            return view('frontend_new/worklist_detail',[
                 'job'=>$job,
                 'jobs'=>$jobs,
                 'profile'=>$profile,
