@@ -253,27 +253,7 @@ class HomeController extends Controller
         $data_type_course = DB::table('data_type')->where('type',1)->orderBy('id','asc')->get();
         $data_type_course_recom = DB::table('data_type')->where('type',1)->where('recom_status',1)->orderBy('id','asc')->get();
 
-        // return view('frontend.index',[
-        //     'home_gellery' => $home_gellery ,
-        //     'works1' => $works1 ,
-        //     'works2' => $works2 ,
-        //     'works3' => $works3 ,
-        //     'user_count_1' =>  ($user_count_1 != "")?$user_count_1:0,
-        //     'user_count_2' =>  ($user_count_2 != "")?$user_count_2:0,
-        //     'user_count_3' =>  ($user_count_3 != "")?$user_count_3:0,
-        //     'search' =>  null,
-        //     'training' =>  $training,
-        //     'course_list' => $course_list ,
-        //     'review' => $review ,
-        //     'recoommend' => $recoommend_profile ,
-        //     'courses_recom' => $courses_recom ,
-        //     'courses_trending' => $courses_trending,
-        //     'banner_index' => $banner_index,
-        //     'data_type_course' => $data_type_course,
-        //     'data_type_course_recom' => $data_type_course_recom,
-        // ]);
-
-        return view('frontend_new.index',[
+        return view('frontend.index',[
             'home_gellery' => $home_gellery ,
             'works1' => $works1 ,
             'works2' => $works2 ,
@@ -292,6 +272,26 @@ class HomeController extends Controller
             'data_type_course' => $data_type_course,
             'data_type_course_recom' => $data_type_course_recom,
         ]);
+
+        // return view('frontend_new.index',[
+        //     'home_gellery' => $home_gellery ,
+        //     'works1' => $works1 ,
+        //     'works2' => $works2 ,
+        //     'works3' => $works3 ,
+        //     'user_count_1' =>  ($user_count_1 != "")?$user_count_1:0,
+        //     'user_count_2' =>  ($user_count_2 != "")?$user_count_2:0,
+        //     'user_count_3' =>  ($user_count_3 != "")?$user_count_3:0,
+        //     'search' =>  null,
+        //     'training' =>  $training,
+        //     'course_list' => $course_list ,
+        //     'review' => $review ,
+        //     'recoommend' => $recoommend_profile ,
+        //     'courses_recom' => $courses_recom ,
+        //     'courses_trending' => $courses_trending,
+        //     'banner_index' => $banner_index,
+        //     'data_type_course' => $data_type_course,
+        //     'data_type_course_recom' => $data_type_course_recom,
+        // ]);
 
     }
 
