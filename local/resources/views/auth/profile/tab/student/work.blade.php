@@ -75,7 +75,7 @@
                             <!-- Heading -->
                             <div class="position-relative">
                                 <a href="./course-single-v1.html" class="d-block stretched-link">
-                                    <h4 class="line-clamp-2 h-md-48 h-lg-58 me-md-6 me-lg-10 me-xl-4 mb-2">Fashion
+                                    <h4 class="line-clamp-2 h-md-48 h-lg-58 me-md-6 me-lg-10 me-xl-4 mb-2">
                                         {{ $j->position }}</h4>
                                 </a>
 
