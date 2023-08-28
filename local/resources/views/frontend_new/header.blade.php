@@ -46,7 +46,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
+<link href="{{ asset('select2/select2.min.css') }}" rel="stylesheet">
 
 <title>Skola Home v9</title>
 

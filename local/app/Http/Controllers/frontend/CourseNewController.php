@@ -25,8 +25,12 @@ class CourseNewController extends Controller
 {
     public function course_add()
     {
+        // $courses = Course::where('status',1)->get();
+        // return view('frontend.course.course_add',[
+        //     'courses' => $courses,
+        // ]);
         $courses = Course::where('status',1)->get();
-        return view('frontend.course.course_add',[
+        return view('frontend_new.course_add',[
             'courses' => $courses,
         ]);
     }
@@ -38,7 +42,10 @@ class CourseNewController extends Controller
         if(!$course){
             return redirect()->back()->with('error','ไม่พบข้อมูล');
         }
-        return view('frontend.course.chapter_add',[
+        // return view('frontend.course.chapter_add',[
+        //     'course' => $course,
+        // ]);
+        return view('frontend_new.chapter_add',[
             'course' => $course,
         ]);
     }
@@ -50,7 +57,12 @@ class CourseNewController extends Controller
         $chapter = CourseChapter::where('course_id',$data->id)->get();
         $courses = Course::where('status',1)->where('id','!=',$data->id)->get();
         if($data){
-            return view('frontend.course.course_add',[
+            // return view('frontend.course.course_add',[
+            //     'data' => $data,
+            //     'chapter' => $chapter,
+            //     'courses' => $courses,
+            // ]);
+            return view('frontend_new.course_add',[
                 'data' => $data,
                 'chapter' => $chapter,
                 'courses' => $courses,
@@ -136,7 +148,13 @@ class CourseNewController extends Controller
             if(!$course){
                 return redirect()->back()->with('error','ไม่พบข้อมูล');
             }
-            return view('frontend.course.chapter_add',[
+            // return view('frontend.course.chapter_add',[
+            //     'data' => $data,
+            //     'course' => $course,
+            //     'list' => $list,
+            //     'workshop' => $workshop,
+            // ]);
+            return view('frontend_new.chapter_add',[
                 'data' => $data,
                 'course' => $course,
                 'list' => $list,
@@ -271,7 +289,12 @@ class CourseNewController extends Controller
             return redirect()->back()->with('error','ไม่พบข้อมูล');
         }
         $list = CourseList::where('course_id',$course->id)->where('chapter_id',$chapter->id)->get();
-        return view('frontend.course.workshop_add',[
+        // return view('frontend.course.workshop_add',[
+        //     'course' => $course,
+        //     'chapter' => $chapter,
+        //     'list' => $list,
+        // ]);
+        return view('frontend_new.workshop_add',[
             'course' => $course,
             'chapter' => $chapter,
             'list' => $list,
@@ -378,7 +401,14 @@ class CourseNewController extends Controller
                 return redirect()->back()->with('error','ไม่พบข้อมูล');
             }
             $question = Questions::where('question_detail_id',$data->id)->orderBy('position','asc')->get();
-            return view('frontend.course.workshop_add',[
+            // return view('frontend.course.workshop_add',[
+            //     'chapter' => $chapter,
+            //     'course' => $course,
+            //     'list' => $list,
+            //     'data' => $data,
+            //     'question' => $question,
+            // ]);
+            return view('frontend_new.workshop_add',[
                 'chapter' => $chapter,
                 'course' => $course,
                 'list' => $list,
@@ -550,7 +580,16 @@ class CourseNewController extends Controller
         $question = \App\Models\Questions::where('question_detail_id', $question_detail->id)->whereIn('id',$arr_answers)->get();
        }
 
-            return view('frontend.workshop_inside_view',[
+            // return view('frontend.workshop_inside_view',[
+            //     'question_detail' => $question_detail,
+            //     'course' => $course,
+            //     'question_count' => $question_count,
+            //     'question' => $question,
+            //     'question_score_sum' => $question_score_sum,
+            //     'pro_quest_detail' => $pro_quest_detail,
+            // ]);
+
+            return view('frontend_new.workshop_inside_view',[
                 'question_detail' => $question_detail,
                 'course' => $course,
                 'question_count' => $question_count,
@@ -574,7 +613,17 @@ class CourseNewController extends Controller
         $arr_answers = DB::table('answers')->select('question_id')->where('user_id',$pro_quest_detail->user_id)->whereIn('question_id',$arr_questions)->pluck('question_id')->toArray();
         $question = \App\Models\Questions::where('question_detail_id', $question_detail->id)->whereIn('id',$arr_answers)->get();
 
-            return view('frontend.workshop_inside_view',[
+            // return view('frontend.workshop_inside_view',[
+            //     'question_detail' => $question_detail,
+            //     'course' => $course,
+            //     'question_count' => $question_count,
+            //     'question' => $question,
+            //     'question_score_sum' => $question_score_sum,
+            //     'pro_quest_detail' => $pro_quest_detail,
+            //     'type' => $type,
+            // ]);
+
+            return view('frontend_new.workshop_inside_view',[
                 'question_detail' => $question_detail,
                 'course' => $course,
                 'question_count' => $question_count,

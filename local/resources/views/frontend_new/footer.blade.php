@@ -437,8 +437,10 @@
     <!-- Theme JS -->
     <script src="./assets/js/theme.min.js"></script> --}}
 
-<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+{{-- <script src="{{ asset('ckeditor/ckeditor.js') }}"></script> --}}
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 <script src="{{ asset('select2/select2.min.js') }}"></script>
+
 
 <script>
     $(document).ready(function() {
@@ -446,7 +448,8 @@
         $('.select2').select2({
             width: '100%',
         });
-        // CKEDITOR.replace('detail_scope');
+
+        // CKEDITOR.replace('.detail_ck');
 
         setTimeout(function() {
             $('.success').hide()

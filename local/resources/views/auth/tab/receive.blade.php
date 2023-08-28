@@ -22,26 +22,30 @@
                 <input type="hidden" name="type" value="receive">
 
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-12">
                         <label for="applicants">ส่งใบสมัครได้ทาง</label>
-                        <select class="form-control" name="applicants">
-                            <option <?php if(@$data->applicants==1){echo 'selected';} ?> value="1">Email</option>
+                        <select class="form-control placeholder-1" name="applicants">
+                            <option <?php if (@$data->applicants == 1) {
+                                echo 'selected';
+                            } ?> value="1">Email</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-12">
                         <label for="applicants_email">Email <span style="color:red;">*</span></label>
-                        <input name="applicants_email" type="text" value="{{@$data->applicants_email}}" class="form-control"
-                            id="applicants_email">
+                        <input name="applicants_email" type="text" value="{{ @$data->applicants_email }}"
+                            class="form-control placeholder-1" id="applicants_email">
                     </div>
                 </div>
-                            <div class="form-group" >
-                                <button type="submit" class="btn btn-outline-success w-100" onclick="return confirm('ยืนยันการทำรายการ?')">บันทึก</button>
-                             </div>
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-outline-primary w-100"
+                        onclick="return confirm('ยืนยันการทำรายการ?')">บันทึก</button>
+                </div>
 
-                    {{-- <div class="form-group" >
+                {{-- <div class="form-group" >
                         <button type="submit" style="background-color: #8B0900; color:white;" class="btn  w-100">Submit</button>
                      </div> --}}
-                </form>
-            </div>
+            </form>
         </div>
+    </div>
 </div>

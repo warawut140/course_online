@@ -20,7 +20,10 @@ class JobNewController extends Controller
     public function job_add()
     {
         $courses = Course::where('status',1)->orderBy('name','asc')->get();
-        return view('frontend.job.job_add',[
+        // return view('frontend.job.job_add',[
+        //     'courses' => $courses
+        // ]);
+        return view('frontend_new.job_add',[
             'courses' => $courses
         ]);
     }
@@ -31,7 +34,11 @@ class JobNewController extends Controller
         $data = JobDescription::where('id',$id)->where('profile_id',$profile->id)->first();
         $courses = Course::where('status',1)->orderBy('name','asc')->get();
         if($data){
-            return view('frontend.job.job_add',[
+            // return view('frontend.job.job_add',[
+            //     'data' => $data,
+            //     'courses' => $courses
+            // ]);
+            return view('frontend_new.job_add',[
                 'data' => $data,
                 'courses' => $courses
             ]);
