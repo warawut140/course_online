@@ -102,7 +102,7 @@
 
                  <div class="form-group">
                      <label for="company_address">สถานที่ตั้ง</label>
-                     <textarea type="text" class="form-control placeholder-1" required name="company_address">{{ $data->company_address }}</textarea>
+                     <textarea type="text" class="form-control placeholder-1 detail_ck2" required name="company_address">{{ $data->company_address }}</textarea>
                  </div>
 
                  <div class="form-row">
@@ -128,7 +128,7 @@
 
                  <div class="form-group">
                      <label for="detail_about_me">รายละเอียดเกี่ยวกับเรา</label>
-                     <textarea type="text" class="form-control placeholder-1" name="detail_about_me">{{ @$data->detail_about_me }}</textarea>
+                     <textarea type="text" class="form-control placeholder-1 detail_ck" name="detail_about_me">{{ @$data->detail_about_me }}</textarea>
                  </div>
 
 

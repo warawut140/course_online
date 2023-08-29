@@ -103,6 +103,22 @@
 
     @include('frontend_new.footer')
 
+    <script>
+        ClassicEditor
+            .create(document.querySelector('.detail_ck'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('.detail_ck2'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
 </body>
 
 </html>

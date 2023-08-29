@@ -35,7 +35,7 @@
 
             <div class="container">
                 <h3 class="">{{ $course->name }}</h3>
-                <p class="mb-6 line-height-md">{{ $course->detail }}</p>
+                <p class="mb-6 line-height-md">{!! $course->detail !!}</p>
             </div>
 
             <div id="accordionCurriculum">

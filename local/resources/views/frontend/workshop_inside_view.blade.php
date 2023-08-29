@@ -486,8 +486,6 @@
 
         });
 
-
-
         $(function() {
             $(":checkbox[name=i_accept]").on("click", function() {
                 var i_check = $(this).prop("checked");

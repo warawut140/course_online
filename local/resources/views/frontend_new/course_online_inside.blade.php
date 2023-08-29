@@ -173,7 +173,7 @@
             ?>
             <div class="container">
                 <h3 class="">{{ $list->course_name }}</h3>
-                <p class="mb-6 line-height-md">{{ $list->course_detail }}</p>
+                <p class="mb-6 line-height-md">{!! $list->course_detail !!}</p>
             </div>
 
             <div class="d-flex align-items-center" id="curriculumheadingOne">

@@ -46,26 +46,41 @@
         <div class="row mb-8 mb-md-12">
             <div class="col-xl-8 mx-auto">
 
+                @if ($job->Profile->company_img1 != '')
+                    <img src="{{ asset('images/profile/' . $job->Profile->company_img1) }}" alt="..."
+                        class="img-fluid rounded mb-8">
+                @endif
+
                 <h3 class="">
                     <font style="color:black">ข้อมูลบริษัท</font>
                 </h3>
                 <p class="">
-                    <font style="color:gray">{{ $job->Profile->detail_about_me }}</font>
+                    <font style="color:gray">{!! $job->Profile->detail_about_me !!}</font>
                 </p>
                 <p class="">
                     <font style="color:gray">
-                        {{ $job->Profile->company_address }}
+                        {!! $job->Profile->company_address !!}
 
                     </font>
                 </p>
 
+                @if ($job->Profile->company_img2 != '')
+                    <img src="{{ asset('images/profile/' . $job->Profile->company_img2) }}" alt="..."
+                        class="img-fluid rounded mb-8">
+                @endif
+
+                @if ($job->Profile->company_img3 != '')
+                    <img src="{{ asset('images/profile/' . $job->Profile->company_img3) }}" alt="..."
+                        class="img-fluid rounded mb-8">
+                @endif
+
+
                 <h3 class="">รายละเอียดงาน</h3>
                 <p class="mb-6 line-height-md">
 
-                    {{ $job->job_detail }}
+                    {!! $job->job_detail !!}
 
                 </p>
-
 
                 {{-- <blockquote>
                     <p>Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue.
@@ -75,13 +90,13 @@
 
                 <h3 class="mb-5">ทักษะที่ต้องการ</h3>
                 <div class="row row-cols-lg-2 mb-8">
-                    <div class="col-md">
+
+                    {!! $job->skill_detail !!}
+                    {{-- <div class="col-md">
                         <ul class="list-style-v1 list-unstyled">
                             <li>Become a UI/UX designer.</li>
                             <li>You will be able to start earning money skills.</li>
-                            <li>Build a UI project from beginning to end.</li>
-                            {{-- <li>Work with colors & fonts.</li>
-                            <li>You will create your own UI Kit.</li> --}}
+                            <li>    </li>
                         </ul>
                     </div>
 
@@ -89,11 +104,11 @@
                         <ul class="list-style-v1 list-unstyled ms-xl-6">
                             <li>Build & test a complete mobile app.</li>
                             <li>Learn to design mobile apps & websites.</li>
-                            {{-- <li>Design 3 different logos.</li>
-                            <li>Create low-fidelity wireframe.</li>
-                            <li>Downloadable exercise files.</li> --}}
                         </ul>
-                    </div>
+                    </div> --}}
+
+
+
                 </div>
 
                 <div class="row row-cols-lg-2 mb-8">
@@ -131,7 +146,6 @@
                     </div>
                 </div>
 
-                <img src="{{ asset('images/profile/' . $job->Profile->company_img1) }}" alt="..." class="img-fluid rounded mb-8">
                 {{-- <img src="{{ asset('assets/img/covers/cover-21.jpg') }}" alt="..." class="img-fluid rounded mb-8"> --}}
 
                 <h3 class="mb-5">คอร์สเรียนที่ควรผ่านการเรียนรู้มาก่อน</h3>
@@ -237,25 +251,25 @@
                     <h3 class="mb-2">สมัครงาน {{ $job->position }}</h3>
                     <div class=""></div>
                     <form method="POST" action="{{ url('worklist_detail_register_store') }}" id="searchForm"
-                    enctype="multipart/form-data">
-                    @csrf
+                        enctype="multipart/form-data">
+                        @csrf
 
-                    <input type="hidden" name="job_description_id" value="{{$job->id}}">
+                        <input type="hidden" name="job_description_id" value="{{ $job->id }}">
 
                         <div class="form-group mb-6">
                             <label for="exampleInputTitle1">E-mail</label>
-                            <input type="text" class="form-control placeholder-1" name="email" required id="exampleInputTitle1"
-                                placeholder="กรุณาระบุ">
+                            <input type="text" class="form-control placeholder-1" name="email" required
+                                id="exampleInputTitle1" placeholder="กรุณาระบุ">
                         </div>
                         <div class="form-group mb-6">
                             <label for="exampleInputTitle1">โทรศัพท์</label>
-                            <input type="text" class="form-control placeholder-1" name="tel" required id="exampleInputTitle1"
-                                placeholder="กรุณาระบุ">
+                            <input type="text" class="form-control placeholder-1" name="tel" required
+                                id="exampleInputTitle1" placeholder="กรุณาระบุ">
                         </div>
                         <div class="form-group mb-6">
                             <label for="exampleInputTitle1">Resume</label>
-                            <input type="file" class="form-control placeholder-1" name="resume" required id="exampleInputTitle1"
-                                placeholder="กรุณาระบุ">
+                            <input type="file" class="form-control placeholder-1" name="resume" required
+                                id="exampleInputTitle1" placeholder="กรุณาระบุ">
                         </div>
 
 
@@ -264,7 +278,8 @@
                             <textarea class="form-control placeholder-1" id="exampleFormControlTextarea1" rows="6" placeholder="Content"></textarea>
                         </div> --}}
 
-                        <button type="submit" class="btn btn-primary btn-block mw-md-300p"  onclick="return confirm('ยืนยันการทำรายการ?')">ส่งใบสมัคร</button>
+                        <button type="submit" class="btn btn-primary btn-block mw-md-300p"
+                            onclick="return confirm('ยืนยันการทำรายการ?')">ส่งใบสมัคร</button>
                     </form>
                 </div>
             </div>
