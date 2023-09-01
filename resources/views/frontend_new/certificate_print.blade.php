@@ -163,10 +163,10 @@
                 <td class="p_t" style="text-align: center; vertical-align: middle;" align="center">
                     <br>
                     <div class="image-cropper" style="text-align: center; vertical-align: middle;">
-                        {{-- <img src="{{ asset('assets/images/logo_pthai.png') }}" width="120px" height="120px"
+                        <img src="{{ asset('assets/images/logo_pthai.png') }}" width="120px" height="120px"
                             class="rounded" />
                         <img src="{{ asset('assets/images/logo_care.png') }}" width="120px" height="120px"
-                            class="rounded" /> --}}
+                            class="rounded" />
                     </div>
                 </td>
             </tr>
