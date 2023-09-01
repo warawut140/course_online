@@ -33,37 +33,12 @@
         } */
 
         @font-face {
-            font-family: 'THSarabunNew';
+            font-family: 'THSarabunNew2';
             font-style: normal;
             font-weight: normal;
             /* src: url("{{ public_path('fonts/THSarabunNew.ttf') }}") format('truetype'); */
-            src: url("{{ asset('fonts/THSarabunNew.ttf') }}") format('truetype');
+            src: url("{{ asset('fonts/THSarabunNew2.ttf') }}") format('truetype');
         }
-
-        @font-face {
-            font-family: 'THSarabunNew';
-            font-style: normal;
-            font-weight: bold;
-            /* src: url("{{ public_path('fonts/THSarabunNew Bold.ttf') }}") format('truetype'); */
-            src: url("{{ asset('fonts/THSarabunNew Bold.ttf') }}") format('truetype');
-        }
-
-        @font-face {
-            font-family: 'THSarabunNew';
-            font-style: italic;
-            font-weight: normal;
-            /* src: url("{{ public_path('fonts/THSarabunNew Italic.ttf') }}") format('truetype'); */
-            src: url("{{ asset('fonts/THSarabunNew Italic.ttf') }}") format('truetype');
-        }
-
-        @font-face {
-            font-family: 'THSarabunNew';
-            font-style: italic;
-            font-weight: bold;
-            /* src: url("{{ public_path('fonts/THSarabunNew BoldItalic.ttf') }}") format('truetype'); */
-            src: url("{{ asset('fonts/THSarabunNew BoldItalic.ttf') }}") format('truetype');
-        }
-
 
         @page {
             margin: 10px;
@@ -155,7 +130,7 @@
     <table style="text-align: center; width:80%; margin-left:70px;" border="0">
         <tbody>
             <tr>
-                <td class="p_t" style="text-align: center; font-family:'THSarabunNew';">xx รับรองว่าผู้เรียนได้สำเร็จ</td>
+                <td class="p_t" style="text-align: center; font-family:'THSarabunNew2';">xx รับรองว่าผู้เรียนได้สำเร็จ</td>
                 <td class="p_t" style="text-align: center;">{{$courses->name}}</td>
             </tr>
             <tr>
