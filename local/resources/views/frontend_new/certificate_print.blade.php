@@ -138,7 +138,7 @@
                 <td class="p_t" style="text-align: center; vertical-align: middle;" align="center">
                     <br>
                     <div class="image-cropper" style="text-align: center; vertical-align: middle;">
-                        <img src="https://via.placeholder.com/150" class="rounded" />
+                        {{-- <img src="https://via.placeholder.com/150" class="rounded" /> --}}
                         {{-- <img src="{{ asset('assets/images/logo_pthai.png') }}" width="120px" height="120px"
                             class="rounded" />
                         <img src="{{ asset('assets/images/logo_care.png') }}" width="120px" height="120px"
