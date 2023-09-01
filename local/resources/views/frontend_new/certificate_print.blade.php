@@ -3,7 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
-        @font-face {
+
+        /* @font-face {
             font-family: 'FCMinimalBlack';
             font-style: normal;
             font-weight: normal;
@@ -29,14 +30,14 @@
             font-style: italic;
             font-weight: bold;
             src: url("{{ asset('fonts/FCMinimalBlackBoldItalic.ttf') }}") format('truetype');
-        }
+        } */
 
         @page {
             margin: 10px;
         }
     </style>
 
-    {{-- <style>
+    <style>
 
      body {
             font-family: "FCMinimalBlack";
@@ -101,10 +102,10 @@
             font-weight: 90;
         }
 
-    </style> --}}
+    </style>
 </head>
 
-{{-- <body>
+<body>
 
     <footer class="pt-8 pt-md-11 bg-footer">
         <div class="container" style=" height: 200px; text-align: center;">
@@ -162,6 +163,6 @@
     </table>
 
 
-</body> --}}
+</body>
 
 </html>
