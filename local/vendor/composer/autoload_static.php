@@ -620,6 +620,8 @@ class ComposerStaticInit7516ef23c9c2b1a7fe00648e89cdddf7
         'App\\Models\\BitCoin' => __DIR__ . '/../..' . '/app/Models/BitCoin.php',
         'App\\Models\\Brands' => __DIR__ . '/../..' . '/app/Models/Brands.php',
         'App\\Models\\BuddingAir' => __DIR__ . '/../..' . '/app/Models/BuddingAir.php',
+        'App\\Models\\CategoryCourse' => __DIR__ . '/../..' . '/app/Models/CategoryCourse.php',
+        'App\\Models\\CategoryWork' => __DIR__ . '/../..' . '/app/Models/CategoryWork.php',
         'App\\Models\\Course' => __DIR__ . '/../..' . '/app/Models/Course.php',
         'App\\Models\\CourseChapter' => __DIR__ . '/../..' . '/app/Models/CourseChapter.php',
         'App\\Models\\CourseComment' => __DIR__ . '/../..' . '/app/Models/CourseComment.php',

@@ -70,6 +70,7 @@ Route::group(['middleware' => ['web','auth']], function () {
 
     Route::get('/profile_student/{page?}','frontend\ProfileNewController@profile_student');
     Route::get('/profile_company/{page?}','frontend\ProfileNewController@profile_company');
+    Route::get('/certificate_print/{c_id}/{u_id}/{cl_id}/{qd_id}','PDFController@certificate_print');
 
 
 });

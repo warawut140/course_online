@@ -103,7 +103,7 @@
 
                     <div class="tab-pane fade show" id="pills-overview5" role="tabpanel"
                         aria-labelledby="pills-overview-tab5">
-                        {{-- @include('auth.profile.tab.student.rasume') --}}
+                        @include('auth.profile.tab.student.certificate')
                     </div>
 
 

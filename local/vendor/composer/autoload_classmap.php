@@ -94,6 +94,8 @@ return array(
     'App\\Models\\BitCoin' => $baseDir . '/app/Models/BitCoin.php',
     'App\\Models\\Brands' => $baseDir . '/app/Models/Brands.php',
     'App\\Models\\BuddingAir' => $baseDir . '/app/Models/BuddingAir.php',
+    'App\\Models\\CategoryCourse' => $baseDir . '/app/Models/CategoryCourse.php',
+    'App\\Models\\CategoryWork' => $baseDir . '/app/Models/CategoryWork.php',
     'App\\Models\\Course' => $baseDir . '/app/Models/Course.php',
     'App\\Models\\CourseChapter' => $baseDir . '/app/Models/CourseChapter.php',
     'App\\Models\\CourseComment' => $baseDir . '/app/Models/CourseComment.php',

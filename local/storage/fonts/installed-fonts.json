@@ -1,0 +1,16 @@
+{
+    "thsarabunnew": {
+        "normal": "C:\\xampp\\htdocs\\course_online\\local\\storage\\fonts\/thsarabunnew_normal_f4183b40cd3da6b52a745fe039b96aff",
+        "bold": "C:\\xampp\\htdocs\\course_online\\local\\storage\\fonts\/thsarabunnew_bold_728a5885693b22278d6716433aeb760a",
+        "italic": "C:\\xampp\\htdocs\\course_online\\local\\storage\\fonts\/thsarabunnew_italic_eb58dce81ef4d3acf3e331954e20b0ed",
+        "bold_italic": "thsarabunnew_bold_italic_d65c3b7bf73b3f9d7df1fb91e403e023"
+    },
+    "fcminimalblack": {
+        "normal": "fcminimalblack_normal_077e5933a8bc4e86f904f7cfdbbed255"
+    },
+    "fcminimallight": {
+        "bold": "fcminimallight_bold_f734ab40c20d4a9f99e6c01ba5e1da96",
+        "italic": "C:\\xampp\\htdocs\\course_online\\local\\storage\\fonts\/fcminimallight_italic_5693f51d74d4d06c8e25d74ef4c4de99",
+        "bold_italic": "C:\\xampp\\htdocs\\course_online\\local\\storage\\fonts\/fcminimallight_bold_italic_5693f51d74d4d06c8e25d74ef4c4de99"
+    }
+}
