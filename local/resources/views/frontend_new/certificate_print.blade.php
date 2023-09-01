@@ -40,7 +40,7 @@
     <style>
 
      body {
-            font-family: "FCMinimalBlack";
+            /* font-family: "FCMinimalBlack"; */
             font-size: 13px;
             font-weight: normal;
             line-height: 14px;
@@ -79,7 +79,7 @@
         }
 
         .p_h {
-            font-family: "FCMinimalBlack";
+            /* font-family: "FCMinimalBlack"; */
             font-size: 20px;
             color: rgb(52, 52, 52);
             font-weight: normal;
@@ -87,7 +87,7 @@
         }
 
         .p_n {
-            font-family: "FCMinimalBlack";
+            /* font-family: "FCMinimalBlack"; */
             font-size: 40px;
             color: rgb(52, 52, 52);
             font-weight: normal;
@@ -95,7 +95,7 @@
         }
 
         .p_t {
-            font-family: "FCMinimalBlack";
+            /* font-family: "FCMinimalBlack"; */
             font-size: 20px;
             color: rgb(52, 52, 52);
             font-weight: normal;
