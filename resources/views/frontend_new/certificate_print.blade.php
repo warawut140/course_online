@@ -132,14 +132,12 @@
 </head>
 
 <body>
-    {{-- <p>วราวุฒิ</p> --}}
-
     <footer class="pt-8 pt-md-11 bg-footer">
         <div class="container" style=" height: 200px; text-align: center;">
             <h3 style="color:white;">YOUR COMPANY NAME S.L</h3>
             <h1 style="color:white; margin-top:60px;">CERTIFICATE</h1>
             <h2 style="color:white; margin-top:50px;">OF APRECIATION</h2>
-        </div> <!-- / .container -->
+        </div>
     </footer>
     <div class="container" style="text-align: center;">
         <p style="margin-top:60px;" class="p_h">THE CERTIFICATE IS PRESENTED TO:</p>
@@ -149,12 +147,12 @@
     <table style="text-align: center; width:80%; margin-left:70px;" border="0">
         <tbody>
             <tr>
-                {{-- <td class="p_t" style="text-align: center;">รับรองว่าผู้เรียนได้สำเร็จ</td> --}}
-                {{-- <td class="p_t" style="text-align: center;">{{ $courses->name }}</td> --}}
+                <td class="p_t" style="text-align: center;">รับรองว่าผู้เรียนได้สำเร็จ</td>
+                <td class="p_t" style="text-align: center;">{{ $courses->name }}</td>
             </tr>
             <tr>
-                {{-- <td class="p_t" style="text-align: center;"><br>สอนและสนับสนุนด้านเนื้อหา</td> --}}
-                {{-- <td class="p_t" style="text-align: center;"><br>{{ $com->company }}</td> --}}
+                <td class="p_t" style="text-align: center;"><br>สอนและสนับสนุนด้านเนื้อหา</td>
+                <td class="p_t" style="text-align: center;"><br>{{ $com->company }}</td>
             </tr>
         </tbody>
     </table>
