@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {{-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
         @font-face {
             font-family: 'FCMinimalBlack';
@@ -128,13 +128,13 @@
             margin-left: auto;
             margin-right: auto; */
         }
-    </style>
+    </style> --}}
 </head>
 
 <body>
     {{-- <p>วราวุฒิ</p> --}}
 
-    <footer class="pt-8 pt-md-11 bg-footer">
+    {{-- <footer class="pt-8 pt-md-11 bg-footer">
         <div class="container" style=" height: 200px; text-align: center;">
             <h3 style="color:white;">YOUR COMPANY NAME S.L</h3>
             <h1 style="color:white; margin-top:60px;">CERTIFICATE</h1>
@@ -187,7 +187,7 @@
                 <br><label class="p_h" style="font-size: 16px;">Signature</label>
             </td>
         </tr>
-    </table>
+    </table> --}}
 
 
 </body>
