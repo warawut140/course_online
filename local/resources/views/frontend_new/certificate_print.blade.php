@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
-        /* @font-face {
+        @font-face {
             font-family: 'FCMinimalBlack';
             font-style: normal;
             font-weight: normal;
@@ -29,7 +29,7 @@
             font-style: italic;
             font-weight: bold;
             src: url("{{ asset('fonts/FCMinimalBlackBoldItalic.ttf') }}") format('truetype');
-        } */
+        }
 
         @page {
             margin: 10px;
