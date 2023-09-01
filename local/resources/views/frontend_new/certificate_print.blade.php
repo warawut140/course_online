@@ -34,8 +34,11 @@
         @page {
             margin: 10px;
         }
+    </style>
 
-        body {
+    {{-- <style>
+
+     body {
             font-family: "FCMinimalBlack";
             font-size: 13px;
             font-weight: normal;
@@ -52,9 +55,7 @@
             font-weight: 300;
             font-family: Arial, sans-serif;
         }
-    </style>
 
-    <style>
         .bg-footer {
             --bs-bg-opacity: 1;
             background-color: #E54E43;
@@ -84,14 +85,6 @@
             font-weight: 100;
         }
 
-        /* p {
-            font-family: "FCMinimalBlack";
-            font-size: 20px;
-            color: rgb(52, 52, 52);
-            font-weight: normal;
-            font-weight: 100;
-        } */
-
         .p_n {
             font-family: "FCMinimalBlack";
             font-size: 40px;
@@ -108,31 +101,10 @@
             font-weight: 90;
         }
 
-        .image-cropper {
-            /* width: 100px;
-            height: 100px;
-
-            border: 1px; */
-            /* position: relative;
-            overflow: hidden;
-            border-radius: 50%;
-            border-style: solid; */
-        }
-
-        img {
-            /* display: inline;
-            margin: 0 auto;
-            height: 100%;
-            width: auto;
-            display: block;
-            margin-left: auto;
-            margin-right: auto; */
-        }
-    </style>
+    </style> --}}
 </head>
 
-<body>
-    {{-- <p>วราวุฒิ</p> --}}
+{{-- <body>
 
     <footer class="pt-8 pt-md-11 bg-footer">
         <div class="container" style=" height: 200px; text-align: center;">
@@ -190,6 +162,6 @@
     </table>
 
 
-</body>
+</body> --}}
 
 </html>
