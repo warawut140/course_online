@@ -15,6 +15,12 @@
 //    return view('welcome');
 //});
 
+
+Route::get('/phpinfo', function () {
+    phpinfo();
+ });
+
+
 Auth::routes();
 
 Route::group(['middleware' => ['web','auth']], function () {
