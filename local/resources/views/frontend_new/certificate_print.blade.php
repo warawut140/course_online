@@ -3,8 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
-
-        /* @font-face {
+        @font-face {
             font-family: 'FCMinimalBlack';
             font-style: normal;
             font-weight: normal;
@@ -30,25 +29,14 @@
             font-style: italic;
             font-weight: bold;
             src: url("{{ asset('fonts/FCMinimalBlackBoldItalic.ttf') }}") format('truetype');
-        } */
-
-        @font-face {
-            font-family: 'THSarabunNew2';
-            font-style: normal;
-            font-weight: normal;
-            /* src: url("{{ public_path('fonts/THSarabunNew.ttf') }}") format('truetype'); */
-            src: url("{{ asset('fonts/THSarabunNew2.ttf') }}") format('truetype');
         }
 
         @page {
             margin: 10px;
         }
-    </style>
 
-    <style>
-
-     body {
-            /* font-family: "FCMinimalBlack"; */
+        body {
+            font-family: "FCMinimalBlack";
             font-size: 13px;
             font-weight: normal;
             line-height: 14px;
@@ -64,7 +52,9 @@
             font-weight: 300;
             font-family: Arial, sans-serif;
         }
+    </style>
 
+    <style>
         .bg-footer {
             --bs-bg-opacity: 1;
             background-color: #E54E43;
@@ -87,15 +77,23 @@
         }
 
         .p_h {
-            /* font-family: "FCMinimalBlack"; */
+            font-family: "FCMinimalBlack";
             font-size: 20px;
             color: rgb(52, 52, 52);
             font-weight: normal;
             font-weight: 100;
         }
 
+        /* p {
+            font-family: "FCMinimalBlack";
+            font-size: 20px;
+            color: rgb(52, 52, 52);
+            font-weight: normal;
+            font-weight: 100;
+        } */
+
         .p_n {
-            /* font-family: "FCMinimalBlack"; */
+            font-family: "FCMinimalBlack";
             font-size: 40px;
             color: rgb(52, 52, 52);
             font-weight: normal;
@@ -103,17 +101,38 @@
         }
 
         .p_t {
-            /* font-family: "FCMinimalBlack"; */
+            font-family: "FCMinimalBlack";
             font-size: 20px;
             color: rgb(52, 52, 52);
             font-weight: normal;
             font-weight: 90;
         }
 
+        .image-cropper {
+            /* width: 100px;
+            height: 100px;
+
+            border: 1px; */
+            /* position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            border-style: solid; */
+        }
+
+        img {
+            /* display: inline;
+            margin: 0 auto;
+            height: 100%;
+            width: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto; */
+        }
     </style>
 </head>
 
 <body>
+    {{-- <p>วราวุฒิ</p> --}}
 
     <footer class="pt-8 pt-md-11 bg-footer">
         <div class="container" style=" height: 200px; text-align: center;">
@@ -124,18 +143,18 @@
     </footer>
     <div class="container" style="text-align: center;">
         <p style="margin-top:60px;" class="p_h">THE CERTIFICATE IS PRESENTED TO:</p>
-        <p style="" class="p_n">{{$profile->firstname}} {{$profile->lastname}}</p>
+        <p style="" class="p_n">{{ $profile->firstname }} {{ $profile->lastname }}</p>
     </div>
 
     <table style="text-align: center; width:80%; margin-left:70px;" border="0">
         <tbody>
             <tr>
-                <td class="p_t" style="text-align: center; font-family:'THSarabunNew2';">xx รับรองว่าผู้เรียนได้สำเร็จ</td>
-                <td class="p_t" style="text-align: center;">{{$courses->name}}</td>
+                <td class="p_t" style="text-align: center;">รับรองว่าผู้เรียนได้สำเร็จ</td>
+                <td class="p_t" style="text-align: center;">{{ $courses->name }}</td>
             </tr>
             <tr>
                 <td class="p_t" style="text-align: center;"><br>สอนและสนับสนุนด้านเนื้อหา</td>
-                <td class="p_t" style="text-align: center;"><br>{{$com->company}}</td>
+                <td class="p_t" style="text-align: center;"><br>{{ $com->company }}</td>
             </tr>
         </tbody>
     </table>
