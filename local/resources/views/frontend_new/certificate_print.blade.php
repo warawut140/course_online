@@ -32,6 +32,39 @@
             src: url("{{ asset('fonts/FCMinimalBlackBoldItalic.ttf') }}") format('truetype');
         } */
 
+        @font-face {
+            font-family: 'THSarabunNew';
+            font-style: normal;
+            font-weight: normal;
+            /* src: url("{{ public_path('fonts/THSarabunNew.ttf') }}") format('truetype'); */
+            src: url("{{ asset('fonts/THSarabunNew.ttf') }}") format('truetype');
+        }
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            font-style: normal;
+            font-weight: bold;
+            /* src: url("{{ public_path('fonts/THSarabunNew Bold.ttf') }}") format('truetype'); */
+            src: url("{{ asset('fonts/THSarabunNew Bold.ttf') }}") format('truetype');
+        }
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            font-style: italic;
+            font-weight: normal;
+            /* src: url("{{ public_path('fonts/THSarabunNew Italic.ttf') }}") format('truetype'); */
+            src: url("{{ asset('fonts/THSarabunNew Italic.ttf') }}") format('truetype');
+        }
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            font-style: italic;
+            font-weight: bold;
+            /* src: url("{{ public_path('fonts/THSarabunNew BoldItalic.ttf') }}") format('truetype'); */
+            src: url("{{ asset('fonts/THSarabunNew BoldItalic.ttf') }}") format('truetype');
+        }
+
+
         @page {
             margin: 10px;
         }
@@ -122,7 +155,7 @@
     <table style="text-align: center; width:80%; margin-left:70px;" border="0">
         <tbody>
             <tr>
-                <td class="p_t" style="text-align: center;">รับรองว่าผู้เรียนได้สำเร็จ</td>
+                <td class="p_t" style="text-align: center; font-family:'THSarabunNew';">xx รับรองว่าผู้เรียนได้สำเร็จ</td>
                 <td class="p_t" style="text-align: center;">{{$courses->name}}</td>
             </tr>
             <tr>
@@ -138,7 +171,6 @@
                 <td class="p_t" style="text-align: center; vertical-align: middle;" align="center">
                     <br>
                     <div class="image-cropper" style="text-align: center; vertical-align: middle;">
-                        {{-- <img src="https://via.placeholder.com/150" class="rounded" /> --}}
                         {{-- <img src="{{ asset('assets/images/logo_pthai.png') }}" width="120px" height="120px"
                             class="rounded" />
                         <img src="{{ asset('assets/images/logo_care.png') }}" width="120px" height="120px"
