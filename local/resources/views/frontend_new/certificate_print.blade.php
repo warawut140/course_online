@@ -3,11 +3,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
-        @font-face {
+        /* @font-face {
             font-family: 'FCMinimalBlack';
             font-style: normal;
             font-weight: normal;
-            /* src: url("{{ public_path('fonts/THSarabunNew.ttf') }}") format('truetype'); */
             src: url("{{ asset('fonts/FCMinimalBlack.ttf') }}") format('truetype');
         }
 
@@ -15,7 +14,6 @@
             font-family: 'FCMinimalBlack';
             font-style: normal;
             font-weight: bold;
-            /* src: url("{{ public_path('fonts/THSarabunNew Bold.ttf') }}") format('truetype'); */
             src: url("{{ asset('fonts/FCMinimalBlackBold.ttf') }}") format('truetype');
         }
 
@@ -23,7 +21,6 @@
             font-family: 'FCMinimalBlack';
             font-style: italic;
             font-weight: normal;
-            /* src: url("{{ public_path('fonts/THSarabunNew Italic.ttf') }}") format('truetype'); */
             src: url("{{ asset('fonts/FCMinimalBlackItalic.ttf') }}") format('truetype');
         }
 
@@ -31,9 +28,8 @@
             font-family: 'FCMinimalBlack';
             font-style: italic;
             font-weight: bold;
-            /* src: url("{{ public_path('fonts/THSarabunNew BoldItalic.ttf') }}") format('truetype'); */
             src: url("{{ asset('fonts/FCMinimalBlackBoldItalic.ttf') }}") format('truetype');
-        }
+        } */
 
         @page {
             margin: 10px;
