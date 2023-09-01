@@ -149,12 +149,12 @@
     <table style="text-align: center; width:80%; margin-left:70px;" border="0">
         <tbody>
             <tr>
-                <td class="p_t" style="text-align: center;">รับรองว่าผู้เรียนได้สำเร็จ</td>
-                <td class="p_t" style="text-align: center;">{{ $courses->name }}</td>
+                {{-- <td class="p_t" style="text-align: center;">รับรองว่าผู้เรียนได้สำเร็จ</td> --}}
+                {{-- <td class="p_t" style="text-align: center;">{{ $courses->name }}</td> --}}
             </tr>
             <tr>
-                <td class="p_t" style="text-align: center;"><br>สอนและสนับสนุนด้านเนื้อหา</td>
-                <td class="p_t" style="text-align: center;"><br>{{ $com->company }}</td>
+                {{-- <td class="p_t" style="text-align: center;"><br>สอนและสนับสนุนด้านเนื้อหา</td> --}}
+                {{-- <td class="p_t" style="text-align: center;"><br>{{ $com->company }}</td> --}}
             </tr>
         </tbody>
     </table>
