@@ -110,7 +110,7 @@
 
                                             <!-- Preheading -->
                                             <a href="{{ url('course_online_view/' . $c->id) }}"><span
-                                                    class="mb-1 d-inline-block text-gray-800">{{ $c->CategoryCourse->name }}</span></a>
+                                                    class="mb-1 d-inline-block text-gray-800">{{ @$c->CategoryCourse->name }}</span></a>
 
 
                                             <!-- Heading -->
@@ -686,7 +686,7 @@
 
                                 <!-- Preheading -->
                                 <a href="{{ url('course_online_view/' . $c->id) }}"><span
-                                        class="mb-1 d-inline-block text-gray-800">{{ $c->CategoryCourse->name }}</span></a>
+                                        class="mb-1 d-inline-block text-gray-800">{{ @$c->CategoryCourse->name }}</span></a>
 
 
                                 <!-- Heading -->
@@ -1019,7 +1019,7 @@
 
                                 <!-- Preheading -->
                                 <a href="{{ url('course_online_view/' . $c->id) }}"><span
-                                        class="mb-1 d-inline-block text-gray-800">{{ $c->CategoryCourse->name }}</span></a>
+                                        class="mb-1 d-inline-block text-gray-800">{{ @$c->CategoryCourse->name }}</span></a>
 
 
                                 <!-- Heading -->

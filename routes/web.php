@@ -23,6 +23,8 @@ Route::get('/phpinfo', function () {
 
 Auth::routes();
 
+Route::get('/', 'frontend\HomeController@index')->name('index');
+
 Route::group(['middleware' => ['web','auth']], function () {
     Route::get('/register_company_detail/{type?}','frontend\RegisterFullController@register_company_detail');
     Route::get('/course_add','frontend\CourseNewController@course_add');
@@ -84,7 +86,7 @@ Route::post('/register_full','frontend\RegisterFullController@register');
 
  Route::get('/worklist', 'frontend\HomeController@worklist');
 //Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'frontend\HomeController@index')->name('index');
+
 Route::get('/index', 'frontend\HomeController@index')->name('index');
 Route::resource('/work', 'frontend\WorkController');
 Route::post('/addCommentWork','frontend\WorkController@addComment');
