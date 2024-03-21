@@ -5,7 +5,7 @@
         <div class="row" id="accordionFooter">
             <div class="col-12 col-md-4 col-lg-4">
                 <!-- Brand -->
-                <img src="{{ asset('images/logowutco2.png') }}" alt="..." class="footer-brand img-fluid mb-4 h-60p">
+                <img src="{{ asset('images/logowutco3.jpg') }}" alt="..." class="footer-brand img-fluid mb-4 h-60p">
 
                 <!-- Text -->
                 <p class="text-white-800 mb-4 font-size-sm-alone">

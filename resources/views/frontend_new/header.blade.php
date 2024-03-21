@@ -1,11 +1,11 @@
 <link rel="icon" href="">
-<title>{{ config('app.title', 'ครอบครัวเพื่อไทย') }}</title>
+<title>{{ config('app.title', 'กองมาตรฐานราคากลาง') }}</title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<link type="image/ico" rel="shortcut icon" href="{{ asset('image/faviconx.ico') }}" sizes="32x32">
+<link type="image/ico" rel="shortcut icon" href="{{ asset('image/logo.jpg') }}" sizes="32x32">
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

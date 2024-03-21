@@ -19,11 +19,11 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta content="" name="author" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-    <link href="{{ asset('image/faviconx.ico') }}" rel="shortcut icon">
+    <link href="{{ asset('image/logo.jpg') }}" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="">
     <meta name="author" content="LEFT4CODE">
-    <title>{{ config('app.title', 'ครอบครัวเพื่อไทย') }}</title>
+    <title>{{ config('app.title', 'กองมาตรฐานราคากลาง') }}</title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}" />
     <!-- END: CSS Assets-->
@@ -231,7 +231,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <a href="" class="logo -intro-x hidden md:flex xl:w-[180px] block">
                 <img alt="Midone - HTML Admin Template" class="logo__image w-6"
                     src="{{ asset('dist/images/logo.svg') }}">
-                <span class="logo__text text-white text-lg ml-3"> ครอบครัวเพื่อไทย </span>
+                <span class="logo__text text-white text-lg ml-3"> กองมาตรฐานราคากลาง </span>
             </a>
             <!-- END: Logo -->
             <!-- BEGIN: Breadcrumb -->

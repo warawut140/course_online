@@ -412,7 +412,7 @@
 
          <!-- Brand -->
          <a class="navbar-brand me-0" href="{{ url('index') }}">
-             <img src="{{ asset('images/logowutco2.png') }}" class="navbar-brand-img" alt="...">
+             <img src="{{ asset('images/logowutco3.jpg') }}" class="navbar-brand-img" alt="...">
          </a>
 
          <!-- Collapse -->

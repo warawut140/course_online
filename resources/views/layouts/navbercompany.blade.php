@@ -30,7 +30,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <link type="image/ico" rel="shortcut icon" href="{{ asset('image/faviconx.ico') }}" sizes="32x32">
+    <link type="image/ico" rel="shortcut icon" href="{{ asset('image/logo.jpg') }}" sizes="32x32">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
@@ -66,7 +66,7 @@
 {{-- begin z#navber--}}
     <nav class="navbar navbar-expand-md navbar-light bg-white">
         <h3 class="my-auto"><a class="navbar-brand" href="{{ url('index') }}">
-                <img src="{{ asset('images/logowutco.png') }}" class="img-fluid" alt="Responsive image"></a>
+                <img src="{{ asset('images/logowutco3.jpg') }}" class="img-fluid" alt="Responsive image"></a>
         </h3>
 
 
