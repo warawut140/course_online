@@ -337,7 +337,7 @@
                     class="border-top pb-5 pt-6 py-md-4 text-center text-xl-start d-flex flex-column d-md-block d-xl-flex flex-xl-row align-items-center">
                     <p
                         class="text-white-800 font-size-sm-alone d-block mb-0 mb-md-2 mb-xl-0 order-1 order-md-0 px-9 px-md-0">
-                        Copyright © 2023 J.S. Engineering and Mechanical. All Right Reserved.</p>
+                        Copyright © 2023 Dpt.Scad All Right Reserved.</p>
 
                     <div
                         class="ms-xl-auto d-flex flex-column flex-md-row align-items-stretch align-items-md-center justify-content-center">
